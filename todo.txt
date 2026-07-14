@@ -1,0 +1,9 @@
+- setup my colors, fonts and my images placeholders
+- setup the architecture of the project
+- setup the main layout of the website
+- create reusable components
+- implement the main pages
+
+
+ACTUAL
+    * setup my colors, fonts and my images placeholders
