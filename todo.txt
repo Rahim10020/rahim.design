@@ -7,3 +7,25 @@
 
 ACTUAL
     * setup my colors, fonts and my images placeholders
+
+        RESEARCH
+
+        Colors:
+        - primary color: #FFEA00
+        - background color: #FFFFFF, #F4F4F0
+        - foreground color: #000000, #171717
+        * Other colors : #FDDF7C, #ED5C2B,
+
+        Font families
+        - Sans serif fonts: Geist, Overused Grotesk
+        - Serif fonts: Hedvig Letters Serif, Ortica,  (uncut.wtf)
+
+        Images
+        <!-- Image aléatoire de 600x400 -->
+        <img src="https://picsum.photos/600/400" alt="Photo aléatoire">
+
+        <!-- Image en noir et blanc -->
+        <img src="https://picsum.photos/600/400?grayscale" alt="Photo N&B">
+
+        <!-- Image floutée (effet de flou de 1 à 10) -->
+        <img src="https://picsum.photos/600/400?blur=5" alt="Photo floutée">
