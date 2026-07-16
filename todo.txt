@@ -7,3 +7,11 @@
 
 ACTUAL
     * setup the architecture of the project
+
+    on aura:
+    - la partie about(Je parle de moi des mes hobies et tout)
+    - la partie contact (formulaire pour me contacter et aussi un lien pour m'ecrire sur whatsapp)
+    - la partie projects(pour presenter mes projets)
+    - la page de detail d'un projet(pour presenter tout ce qui conscerne un projet specifique)
+    - la partie learn (ou j'apprends des trucs aux gens, je peux faire un resume sur un livre que j'ai lu, un resume sur une video etc
+        ce sera un espace ou les visiteurs pourront apprendre beaucoup de choses sur moi.)
