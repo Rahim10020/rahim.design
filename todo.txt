@@ -15,3 +15,5 @@ ACTUAL
     - la page de detail d'un projet(pour presenter tout ce qui conscerne un projet specifique)
     - la partie learn (ou j'apprends des trucs aux gens, je peux faire un resume sur un livre que j'ai lu, un resume sur une video etc
         ce sera un espace ou les visiteurs pourront apprendre beaucoup de choses sur moi.)
+
+    Prochainement je continue avec le codage de header et je finis ca.
