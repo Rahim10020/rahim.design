@@ -85,6 +85,17 @@
   }
 }
 
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-alt: var(--primary-alt);
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-foreground-alt: var(--foreground-alt);
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
   }
