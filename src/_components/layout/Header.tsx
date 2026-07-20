@@ -8,23 +8,31 @@
 
 export default function Header() {
   return (
-    <header className="py-8 px-6 bg-red-500">
-      <div className="flex items-center justify-between">
+    <header className="bg-primary">
+      <div className="flex items-center justify-between py-8 px-6">
         <div>
           <h2>Rahim</h2>
         </div>
-        <nav className="flex items-center justify-between gap-8">
+        <nav className="flex items-center justify-between gap-16">
           <li>
-            <a href="#">About</a>
+            <a href="#" className="text-lg font-medium text-foreground">
+              About
+            </a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#" className="text-lg font-medium text-foreground">
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#">Learn</a>
+            <a href="#" className="text-lg font-medium text-foreground">
+              Learn
+            </a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" className="text-lg font-medium text-foreground">
+              Contact
+            </a>
           </li>
         </nav>
       </div>
