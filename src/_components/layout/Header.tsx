@@ -1,41 +1,32 @@
-// const navLinks = [
-//   { to: '/', label: 'Accueil' },
-//   { to: '/about', label: 'About' },
-//   { to: '/projects', label: 'Projets' },
-//   { to: '/learn', label: 'Learn' },
-//   { to: '/contact', label: 'Contact' },
-// ];
-
+import { Link } from "react-router-dom";
 import Logo from "../ui/Logo";
+import { ROUTES } from "../../routes";
 
 export default function Header() {
+  const navLinks = [
+    { to: ROUTES.ABOUT, label: "About" },
+    { to: ROUTES.PROJECTS.LIST, label: "Projects" },
+    { to: ROUTES.LEARN.LIST, label: "Learn" },
+    { to: ROUTES.CONTACT, label: "Contact" },
+  ];
+
   return (
     <header className="bg-primary">
       <div className="flex items-center justify-between py-8 px-6">
-        <div>
+        <Link to={ROUTES.HOME}>
           <Logo />
-        </div>
+        </Link>
         <nav className="flex items-center justify-between gap-16">
-          <li>
-            <a href="#" className="text-lg font-medium text-foreground">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-lg font-medium text-foreground">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-lg font-medium text-foreground">
-              Learn
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-lg font-medium text-foreground">
-              Contact
-            </a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className="text-lg font-medium text-foreground"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </nav>
       </div>
     </header>
