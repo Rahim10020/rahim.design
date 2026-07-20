@@ -81,6 +81,10 @@
     margin-top: 0.5rem;
     line-height: 1.75;
   }
+
+  li {
+    list-style: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
