@@ -6,12 +6,14 @@
 //   { to: '/contact', label: 'Contact' },
 // ];
 
+import Logo from "../ui/Logo";
+
 export default function Header() {
   return (
     <header className="bg-primary">
       <div className="flex items-center justify-between py-8 px-6">
         <div>
-          <h2>Rahim</h2>
+          <Logo />
         </div>
         <nav className="flex items-center justify-between gap-16">
           <li>
