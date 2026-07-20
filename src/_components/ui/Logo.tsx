@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ROUTES } from "../../routes";
 
 export type LogoProps = {
@@ -9,7 +10,7 @@ export default function Logo(props: LogoProps) {
   const { size = 64, className } = props;
 
   return (
-    <a href={ROUTES.HOME}>
+    <Link to={ROUTES.HOME} aria-label="Go to home page">
       <img
         src="/images/logo64.svg"
         srcSet="/images/logo16.svg 16w, /images/logo32.svg 32w, /images/logo64.svg 64w, /images/logo128.svg 128w"
@@ -19,6 +20,6 @@ export default function Logo(props: LogoProps) {
         alt="Website logo"
         className={className}
       />
-    </a>
+    </Link>
   );
 }

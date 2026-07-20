@@ -13,9 +13,7 @@ export default function Header() {
   return (
     <header className="bg-primary">
       <div className="flex items-center justify-between py-8 px-6">
-        <Link to={ROUTES.HOME}>
-          <Logo />
-        </Link>
+        <Logo />
         <nav className="flex items-center justify-between gap-16">
           {navLinks.map((link) => (
             <li key={link.to}>
