@@ -14,17 +14,28 @@ export default function Header() {
   // ];
 
   return (
-    <header className="bg-foreground flex items-center justify-between py-8 px-6">
-      <Logo size={32} />
-      <nav className="flex items-center gap-8">
-        {navLinks.map((link) => (
-          <li key={link.to}>
-            <Link to={link.to} className="text-lg font-normal text-background">
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </nav>
+    <header className="">
+      <div>
+        {/* Logo */}
+        <Logo size={32} />
+
+        {/* Navigation */}
+        <nav>
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className="text-lg font-normal text-background"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </nav>
+
+        {/* Right */}
+        <div></div>
+      </div>
     </header>
   );
 }
