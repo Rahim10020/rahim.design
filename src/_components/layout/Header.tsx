@@ -14,13 +14,13 @@ export default function Header() {
   // ];
 
   return (
-    <header className="">
-      <div>
+    <header className="sticky ">
+      <div className="">
         {/* Logo */}
         <Logo size={32} />
 
         {/* Navigation */}
-        <nav>
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.to}>
               <Link
@@ -34,7 +34,7 @@ export default function Header() {
         </nav>
 
         {/* Right */}
-        <div></div>
+        <div className=""></div>
       </div>
     </header>
   );
