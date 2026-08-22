@@ -1,0 +1,25 @@
+import type { IconProps } from "./types";
+
+const ArrowUpIcon = ({
+  size = 24,
+  color = "currentColor",
+  ...props
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 14 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M0.5 10.1499L6.65 3.99991C6.69489 3.95208 6.74911 3.91395 6.80931 3.88789C6.8695 3.86183 6.9344 3.84839 7 3.84839C7.0656 3.84839 7.1305 3.86183 7.19069 3.88789C7.25089 3.91395 7.30511 3.95208 7.35 3.99991L13.5 10.1499"
+      stroke={color}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export default ArrowUpIcon;
