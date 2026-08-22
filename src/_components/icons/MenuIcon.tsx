@@ -1,28 +1,37 @@
-
 import type { IconProps } from "./types";
 
-const HamburgerMdIcon = ({
+const MenuIcon = ({
   size = 24,
   color = "currentColor",
-  strokeWidth = 2,
   ...props
 }: IconProps) => (
   <svg
     width={size}
     height={size}
-    viewBox="0 0 24 24"
+    viewBox="0 0 14 14"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      d="M5 17H19M5 12H19M5 7H19"
+      d="M13.5 2H0.5"
       stroke={color}
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M13.5 7H0.5"
+      stroke={color}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M13.5 12H0.5"
+      stroke={color}
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 );
 
-export default HamburgerMdIcon;
+export default MenuIcon;

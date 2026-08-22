@@ -1,28 +1,38 @@
-
 import type { IconProps } from "./types";
 
-const CloseLgIcon = ({
+const CloseIcon = ({
   size = 24,
   color = "currentColor",
-  strokeWidth = 2,
   ...props
 }: IconProps) => (
   <svg
     width={size}
     height={size}
-    viewBox="0 0 24 24"
+    viewBox="0 0 14 14"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <path
-      d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
-      stroke={color}
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <g clip-path="url(#clip0_1545_11106)">
+      <path
+        d="M13.5 0.5L0.5 13.5"
+        stroke={color}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M0.5 0.5L13.5 13.5"
+        stroke={color}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1545_11106">
+        <rect width="14" height="14" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );
 
-export default CloseLgIcon;
+export default CloseIcon;
