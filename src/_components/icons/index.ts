@@ -1,6 +1,5 @@
-export { default as AddPlusIcon } from "./AddPlusIcon";
-export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
-export { default as ChevronRightIcon } from "./ChevronRightIcon";
-export { default as CloseIcon } from "./CloseLgIcon";
-export { default as HambugerIcon } from "./HamburgerMdIcon";
-export { default as InfoIcon } from "./InfoIcon";
+export { default as AddPlusIcon } from "./AddIcon";
+export { default as ChevronLeftIcon } from "./ArrowLeftIcon";
+export { default as ChevronRightIcon } from "./ArrowRightIcon";
+export { default as CloseIcon } from "./CloseIcon";
+export { default as HambugerIcon } from "./MenuIcon";
