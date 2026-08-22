@@ -1,27 +1,25 @@
 import type { IconProps } from "./types";
 
-const ChevronRightIcon = ({
+const ArrowRightIcon = ({
   size = 24,
   color = "currentColor",
-  strokeWidth = 2,
   ...props
 }: IconProps) => (
   <svg
     width={size}
     height={size}
-    viewBox="0 0 24 24"
+    viewBox="0 0 14 14"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      d="M9 5L16 12L9 19"
+      d="M3.84998 0.5L9.99998 6.65C10.0478 6.69489 10.0859 6.74911 10.112 6.80931C10.138 6.8695 10.1515 6.9344 10.1515 7C10.1515 7.0656 10.138 7.1305 10.112 7.19069C10.0859 7.25089 10.0478 7.30511 9.99998 7.35L3.84998 13.5"
       stroke={color}
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 );
 
-export default ChevronRightIcon;
+export default ArrowRightIcon;

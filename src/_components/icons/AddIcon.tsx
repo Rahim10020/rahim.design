@@ -1,6 +1,6 @@
 import type { IconProps } from "./types";
 
-const AddPlusIcon = ({
+const AddIcon = ({
   size = 24,
   color = "currentColor",
   ...props
@@ -35,4 +35,4 @@ const AddPlusIcon = ({
   </svg>
 );
 
-export default AddPlusIcon;
+export default AddIcon;
