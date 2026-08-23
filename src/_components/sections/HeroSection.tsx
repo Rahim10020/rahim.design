@@ -6,10 +6,10 @@ export default function HeroSection() {
       <div className="max-w-350 mx-auto px-2">
         <div className="py-12 my-12 max-w-6xl mx-auto w-full">
           <div className="w-full">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-8">
               <div className="w-full">
                 {/* Headline */}
-                <h1 className="text-[2.5rem] sm:text-[2.75rem] md:text-[3rem] lg:text-[3.2rem] xl:text-[3.4rem] leading-[1.1] text-foreground tracking-tight">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-medium text-foreground">
                   You have an idea. Let's
                   <br />
                   make it something
