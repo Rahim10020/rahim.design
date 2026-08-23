@@ -18,13 +18,12 @@ export default function HeroSection() {
               <div className="w-full flex justify-end">
                 <div className="flex flex-col justify-end gap-6">
                   <p className="text-foreground text-base md:text-2xl leading-relaxed max-w-xl">
-                    I'm Rahim ALI, I design and code beautifully simple things
-                    that make the web feel intuitive and alive — and I genuinely
-                    love what I do.
+                    I'm Rahim ALI. I design and code things that make the web
+                    feel simple, intuitive, and alive.
                   </p>
 
                   <div>
-                    <Button className="px-8 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
+                    <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                       So what are we building?
                     </Button>
                   </div>

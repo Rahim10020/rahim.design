@@ -42,7 +42,9 @@ export default function Header() {
                     } ${i === 4 ? "border-r-2 border-foreground" : ""}`}
                   >
                     {link.name}
-                    {link.hasDropdown && <ArrowDownIcon size={16} />}
+                    {link.hasDropdown && (
+                      <ArrowDownIcon size={16} strokeWidth={1.5} />
+                    )}
                   </a>
                 ))}
               </nav>
@@ -56,7 +58,11 @@ export default function Header() {
             aria-label="Toggle nav"
             aria-expanded={navOpen}
           >
-            {navOpen ? <CloseIcon /> : <MenuIcon />}
+            {navOpen ? (
+              <CloseIcon strokeWidth={1.5} />
+            ) : (
+              <MenuIcon strokeWidth={1.5} />
+            )}
           </button>
         </div>
 
