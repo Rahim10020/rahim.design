@@ -24,7 +24,7 @@ export default function ServiceCard({
             className="w-full h-full object-cover"
           />
         ) : (
-          // Placeholder (tu pourras remplacer plus tard)
+          // Placeholder
           <img
             src="/images/image_placeholder.svg"
             alt="placeholder image"
