@@ -10,15 +10,19 @@ export default function ContactSection() {
       <div className="max-w-350 mx-auto flex w-full px-2">
         <div className="mx-auto w-full max-w-6xl py-12 mt-16">
           {/* 1st line */}
-          <div className="flex justify-end">
-            <h1 className="text-foreground text-4xl md:text-8xl">So</h1>
+          <div className="flex justify-center">
+            <div className="flex justify-start max-w-xs">
+              <h1 className="text-foreground text-4xl md:text-8xl">So</h1>
+            </div>
           </div>
           {/* 2nd line */}
-          <div className="flex justify-end">
-            <h1 className="text-foreground text-4xl md:text-8xl">What</h1>
+          <div className="flex justify-end mx-auto max-w-md">
+            <div className="flex justify-end max-w-xs">
+              <h1 className="text-foreground text-4xl md:text-8xl">What</h1>
+            </div>
           </div>
           {/* 3rd line */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-end justify-between mb-12">
             <p className="text-foreground text-xl leading-relaxed max-w-sm">
               No need to have all the answers. Come up with the idea, we'll
               start there.
