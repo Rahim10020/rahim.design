@@ -1,9 +1,9 @@
 import AboutSection from "../_components/sections/AboutSection";
+import ContactSection from "../_components/sections/ContactSection";
 import HeroSection from "../_components/sections/HeroSection";
 import ProjectsSection from "../_components/sections/ProjectsSection";
 import ServicesSection from "../_components/sections/ServicesSection";
 import StepsSection from "../_components/sections/StepsSection";
-import { SECTION_IDS } from "../routes";
 
 export default function HomePage() {
   return (
@@ -23,10 +23,7 @@ export default function HomePage() {
       {/* Steps section */}
       <StepsSection />
       {/* Contact section */}
-      <section
-        id={SECTION_IDS.CONTACT}
-        className="min-h-[calc(100svh-104px)]"
-      ></section>
+      <ContactSection />
     </div>
   );
 }
