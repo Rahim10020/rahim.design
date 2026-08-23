@@ -22,12 +22,12 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 3rd line */}
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between max-w-4xl mx-auto mb-12">
             <p className="text-foreground text-xl leading-relaxed max-w-sm">
               No need to have all the answers. Come up with the idea, we'll
               start there.
             </p>
-            <div>
+            <div className="flex flex-col items-end">
               <h1 className="text-foreground text-4xl md:text-8xl">are we</h1>
               <h1 className="text-foreground text-4xl md:text-8xl">
                 Building ?
@@ -35,7 +35,7 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 4th line */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between max-w-4xl mx-auto">
             <div>
               <p className="text-foreground text-xl font-normal">
                 Write directly to:
