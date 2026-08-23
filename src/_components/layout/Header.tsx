@@ -38,8 +38,8 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     className={`text-foreground text-xl font-normal px-6 py-4 flex items-center gap-1 ${
-                      i !== 0 ? "border-l border-foreground" : ""
-                    }`}
+                      i !== 0 ? "border-l-2 border-foreground" : ""
+                    } ${i === 4 ? "border-r-2 border-foreground" : ""}`}
                   >
                     {link.name}
                     {link.hasDropdown && <ArrowDownIcon size={16} />}
@@ -51,9 +51,7 @@ export default function Header() {
 
           {/* Toggle button (close icon lives here) */}
           <button
-            className={`p-4 flex items-center justify-center cursor-pointer shrink-0 ${
-              navOpen ? "border-l border-foreground" : ""
-            }`}
+            className={`p-4 h-full flex items-center justify-center cursor-pointer shrink-0`}
             onClick={() => setNavOpen((v) => !v)}
             aria-label="Toggle nav"
             aria-expanded={navOpen}
