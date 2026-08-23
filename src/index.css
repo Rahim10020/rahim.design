@@ -8,8 +8,10 @@
   --background-alt: #f4f4f0;
   --foreground: #000000;
   --foreground-alt: #171717;
-  --accent: #ed5c2b;
-  --accent-alt: #fddf7c;
+  --accent: #ff6547;
+  --accent-b: #f4ed55;
+  --accent-c: #1982c4;
+  --accent-d: #f9c74f;
 
   /* Typographie */
   --sans: "Sniglet", "Geist", "Host Grotesk", sans-serif;
@@ -27,27 +29,6 @@
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Image placeholders */
-
-  .img-placeholder {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    background-color: var(--background-alt);
-    border-radius: 4px;
-  }
-
-  .img-placeholder--grayscale {
-    filter: grayscale(100%);
-  }
-
-  .img-placeholder--blur {
-    filter: blur(5px);
   }
 
   /* Markdown article typography */
@@ -102,7 +83,9 @@
   --color-foreground: var(--foreground);
   --color-foreground-alt: var(--foreground-alt);
   --color-accent: var(--accent);
-  --color-accent-alt: var(--accent-alt);
+  --color-accent-b: var(--accent-b);
+  --color-accent-c: var(--accent-c);
+  --color-accent-d: var(--accent-d);
 }
 
 @media (prefers-color-scheme: dark) {
