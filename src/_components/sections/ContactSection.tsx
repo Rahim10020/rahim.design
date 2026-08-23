@@ -8,24 +8,24 @@ export default function ContactSection() {
       className="flex min-h-[calc(100svh-104px)] w-full bg-background"
     >
       <div className="max-w-350 mx-auto flex w-full px-2">
-        <div className="mx-auto w-full max-w-6xl">
+        <div className="mx-auto w-full max-w-6xl py-12 mt-16">
           {/* 1st line */}
-          <div>
-            <h1 className="text-foreground text-4xl md:text-7xl">So</h1>
+          <div className="flex justify-end">
+            <h1 className="text-foreground text-4xl md:text-8xl">So</h1>
           </div>
           {/* 2nd line */}
-          <div>
-            <h1 className="text-foreground text-4xl md:text-7xl">What</h1>
+          <div className="flex justify-end">
+            <h1 className="text-foreground text-4xl md:text-8xl">What</h1>
           </div>
           {/* 3rd line */}
-          <div>
-            <p className="text-foreground text-xl leading-relaxed">
+          <div className="flex items-center justify-between">
+            <p className="text-foreground text-xl leading-relaxed max-w-sm">
               No need to have all the answers. Come up with the idea, we'll
               start there.
             </p>
             <div>
-              <h1 className="text-foreground text-4xl md:text-7xl">are we</h1>
-              <h1 className="text-foreground text-4xl md:text-7xl">
+              <h1 className="text-foreground text-4xl md:text-8xl">are we</h1>
+              <h1 className="text-foreground text-4xl md:text-8xl">
                 Building ?
               </h1>
             </div>
