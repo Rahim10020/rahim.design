@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 export default function HeroSection() {
   return (
     <section className="w-full bg-background">
-      <div className="max-w-350 mx-auto px-6">
+      <div className="max-w-350 mx-auto px-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-100px)]">
           {/*  Left content  */}
           <div className="flex flex-col justify-between py-12 lg:py-16 lg:pr-12">
@@ -40,22 +40,25 @@ export default function HeroSection() {
           </div>
 
           {/* Right visual */}
-          <div className="relative hidden lg:block border-l border-foreground">
-            <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-0">
+          <div className="relative hidden lg:block border-l-2 border-foreground">
+            <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-0">
               {/* Row 1 */}
-              <div className="bg-foreground col-span-1 row-span-1" />
-              <div className="bg-transparent col-span-1 row-span-1" />
-              <div className="bg-transparent col-span-1 row-span-1" />
+              <div className="bg-foreground border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
 
               {/* Row 2 */}
-              <div className="bg-transparent col-span-1 row-span-1" />
-              <div className="bg-foreground col-span-1 row-span-1" />
-              <div className="bg-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-foreground border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-foreground border-2 border-foreground col-span-1 row-span-1" />
 
               {/* Row 3 */}
-              <div className="bg-foreground col-span-1 row-span-1" />
-              <div className="bg-transparent col-span-1 row-span-1" />
-              <div className="bg-transparent col-span-1 row-span-1" />
+              <div className="bg-foreground border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
+              <div className="bg-transparent border-2 border-foreground col-span-1 row-span-1" />
             </div>
           </div>
         </div>

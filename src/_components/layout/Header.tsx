@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-background">
-      <div className="max-w-7xl mx-auto px-2 py-5 flex items-center justify-between">
+      <div className="max-w-350 mx-auto px-2 py-5 flex items-center justify-between">
         {/* Logo */}
         <Logo />
 

@@ -1,8 +1,12 @@
+import HeroSection from "../_components/sections/HeroSection";
+
 export default function HomePage() {
   return (
     <div>
       {/* Hero section */}
-      <section className="mx-auto max-w-6xl px-6 py-20"></section>
+      <section className="">
+        <HeroSection />
+      </section>
 
       {/* About section */}
       <section className=""></section>
