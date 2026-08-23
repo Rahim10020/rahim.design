@@ -34,7 +34,7 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-xl sm:text-3xl font-medium mb-3">
+      <h3 className="text-foreground text-xl md:text-3xl font-medium mb-3">
         {title}
       </h3>
 
