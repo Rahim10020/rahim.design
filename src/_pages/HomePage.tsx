@@ -1,3 +1,4 @@
+import AboutSection from "../_components/sections/AboutSection";
 import HeroSection from "../_components/sections/HeroSection";
 
 export default function HomePage() {
@@ -7,7 +8,9 @@ export default function HomePage() {
       <HeroSection />
 
       {/* About section */}
-      <section id="about" className="min-h-[calc(100svh-104px)]"></section>
+      <section id="about">
+        <AboutSection />
+      </section>
 
       {/* Services section */}
       <section id="services" className="min-h-[calc(100svh-104px)]"></section>
