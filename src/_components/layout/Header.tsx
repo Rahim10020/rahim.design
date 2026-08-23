@@ -22,8 +22,8 @@ export default function Header() {
 
         {/* Desktop expandable pill nav */}
         <div
-          className={`hidden lg:flex items-center overflow-hidden border-2 transition-colors duration-500 ${
-            navOpen ? "border-foreground" : "border-transparent"
+          className={`hidden lg:flex items-center border-2 overflow-hidden transition-colors duration-500 ${
+            navOpen ? "border-foreground" : ""
           }`}
         >
           {/* Sliding links track */}
@@ -37,8 +37,8 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className={`text-foreground text-xl font-normal px-4 py-3 flex items-center gap-1 ${
-                      i !== 0 ? "border-l border-2 border-foreground" : ""
+                    className={`text-foreground text-xl font-normal px-6 py-4 flex items-center gap-1 ${
+                      i !== 0 ? "border-l border-foreground" : ""
                     }`}
                   >
                     {link.name}
@@ -51,8 +51,8 @@ export default function Header() {
 
           {/* Toggle button (close icon lives here) */}
           <button
-            className={`p-3 flex items-center justify-center shrink-0 ${
-              navOpen ? "border-l border-2 border-foreground" : ""
+            className={`p-4 flex items-center justify-center cursor-pointer shrink-0 ${
+              navOpen ? "border-l border-foreground" : ""
             }`}
             onClick={() => setNavOpen((v) => !v)}
             aria-label="Toggle nav"
