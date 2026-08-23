@@ -1,5 +1,6 @@
 import AboutSection from "../_components/sections/AboutSection";
 import HeroSection from "../_components/sections/HeroSection";
+import ServicesSection from "../_components/sections/ServicesSection";
 
 export default function HomePage() {
   return (
@@ -8,12 +9,10 @@ export default function HomePage() {
       <HeroSection />
 
       {/* About section */}
-      <section id="about">
-        <AboutSection />
-      </section>
+      <AboutSection />
 
       {/* Services section */}
-      <section id="services" className="min-h-[calc(100svh-104px)]"></section>
+      <ServicesSection />
 
       {/* Projects section */}
       <section id="projects" className="min-h-[calc(100svh-104px)]"></section>

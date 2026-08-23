@@ -2,7 +2,10 @@ import Logo from "../ui/Logo";
 
 export default function AboutSection() {
   return (
-    <section className="flex min-h-[calc(100svh-104px)] w-full bg-background">
+    <section
+      id="about"
+      className="flex min-h-[calc(100svh-104px)] w-full bg-background"
+    >
       <div className="max-w-350 mx-auto flex w-full px-2 border-b-2 border-foreground">
         <div className="mx-auto w-full max-w-6xl py-12 mt-16 space-y-12">
           {/* First line */}
