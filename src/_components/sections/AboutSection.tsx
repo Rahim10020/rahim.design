@@ -28,21 +28,21 @@ export default function AboutSection() {
             </div>
             {/* Third line */}
             <div className="flex justify-end">
-              <div className="max-w-2xl space-y-4">
-                <p className="text-lg md:text-2xl font-normal text-foreground">
+              <div className="max-w-2xl space-y-6">
+                <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed">
                   I'm the type of developer who notices when a button is
                   misaligned by 4 pixels.
                 </p>
-                <p className="text-lg md:text-2xl font-normal text-foreground">
+                <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed">
                   More seriously, I like to understand why an interface works —
                   and especially why it doesn't work.
                 </p>
-                <p className="text-lg md:text-2xl font-normal text-foreground">
+                <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed">
                   I work at the intersection of web design and development, with
                   an obsession with clean interfaces, details that matter, and
                   experiences that feel natural.
                 </p>
-                <p className="text-lg md:text-2xl font-normal text-foreground">
+                <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed">
                   My goal is simple: build products that you will be proud to
                   show off and that your users will enjoy using.
                 </p>
