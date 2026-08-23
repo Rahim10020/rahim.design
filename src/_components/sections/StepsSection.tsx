@@ -41,14 +41,6 @@ const stepsData: Step[] = [
     backgroundColor: "#f9c74f",
     textColor: "dark",
   },
-  {
-    number: "05",
-    title: "We refine",
-    description:
-      "Small details often make the big difference. We test, adjust and improve before considering the completed project.",
-    backgroundColor: "#dcf763",
-    textColor: "dark",
-  },
 ];
 
 export default function StepsSection() {
