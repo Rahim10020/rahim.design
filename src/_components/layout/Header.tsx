@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
-      <div className="max-w-350 mx-auto flex h-[104px] items-center justify-between px-2">
+      <div className="max-w-350 mx-auto flex h-26 items-center justify-between px-2">
         {/* Logo */}
         <Logo />
 
@@ -37,7 +37,7 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className={`text-foreground text-xl font-normal px-6 py-4 flex items-center gap-1 ${
+                    className={`text-foreground hover:bg-primary text-xl font-normal px-6 py-4 flex items-center gap-1 ${
                       i !== 0 ? "border-l-2 border-foreground" : ""
                     } ${i === 4 ? "border-r-2 border-foreground" : ""}`}
                   >
@@ -51,7 +51,7 @@ export default function Header() {
 
           {/* Toggle button (close icon lives here) */}
           <button
-            className={`p-4 h-full flex items-center justify-center cursor-pointer shrink-0`}
+            className={`p-4 flex items-center justify-center cursor-pointer shrink-0`}
             onClick={() => setNavOpen((v) => !v)}
             aria-label="Toggle nav"
             aria-expanded={navOpen}
