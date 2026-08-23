@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-background">
-      <div className="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 py-5 flex items-center justify-between">
         {/* Logo */}
         <Logo />
 
@@ -25,7 +25,7 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
-              className="text-[#1e1e1e] text-[15px] font-medium hover:opacity-70 transition-opacity flex items-center gap-1"
+              className="text-foreground text-xl font-normal hover:opacity-70 transition-opacity flex items-center gap-1"
             >
               {link.name}
               {link.hasDropdown && <ArrowDownIcon />}
