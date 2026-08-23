@@ -15,8 +15,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-background">
-      <div className="max-w-350 mx-auto px-2 py-5 flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-background">
+      <div className="max-w-350 mx-auto flex h-[104px] items-center justify-between px-2">
         {/* Logo */}
         <Logo />
 
@@ -72,7 +72,7 @@ export default function Header() {
 
       {/* Mobile Menu (inchangé) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white">
+        <div className="absolute left-0 top-full w-full border-t border-gray-100 bg-background shadow-sm lg:hidden">
           <nav className="flex flex-col px-6 py-4 gap-4">
             {navLinks.map((link) => (
               <a

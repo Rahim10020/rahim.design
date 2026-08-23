@@ -2,9 +2,9 @@ import Button from "../ui/Button";
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-full bg-background">
-      <div className="max-w-350 mx-auto h-full px-2">
-        <div className="py-12 my-12 max-w-6xl mx-auto h-full w-full">
+    <section className="flex w-full bg-background">
+      <div className="max-w-350 mx-auto flex w-full px-2">
+        <div className="mx-auto flex w-full max-w-6xl flex-col justify-between py-12">
           <div className="w-full">
             <div className="flex flex-col gap-12">
               <div className="w-full">

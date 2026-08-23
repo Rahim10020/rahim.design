@@ -4,24 +4,24 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero section */}
-      <section className="">
+      <section id="about" className="min-h-[calc(100svh-104px)]">
         <HeroSection />
       </section>
 
       {/* About section */}
-      <section className=""></section>
+      <section id="about" className="min-h-[calc(100svh-104px)]"></section>
 
       {/* Services section */}
-      <section className=""></section>
+      <section id="services" className="min-h-[calc(100svh-104px)]"></section>
 
       {/* Projects section */}
-      <section className=""></section>
+      <section id="projects" className="min-h-[calc(100svh-104px)]"></section>
 
       {/* Steps section */}
-      <section className=""></section>
+      <section className="min-h-[calc(100svh-104px)]"></section>
 
       {/* Contact section */}
-      <section className=""></section>
+      <section id="contact" className="min-h-[calc(100svh-104px)]"></section>
     </div>
   );
 }
