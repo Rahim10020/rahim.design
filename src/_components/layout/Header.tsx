@@ -1,19 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
-
-const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Learn", href: "#learn", hasDropdown: true },
-  { name: "Contact", href: "#contact" },
-];
-
-const learnLinks = [
-  { name: "Books", href: "/learn?type=books" },
-  { name: "Notes", href: "/learn?type=notes" },
-];
+import { NAV_ITEMS } from "../../navigation.ts";
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
@@ -22,16 +11,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <div className="max-w-350 mx-auto flex h-26 items-center justify-between px-2">
-        {/* Logo */}
         <Logo />
 
-        {/* Desktop expandable pill nav */}
         <div
           className={`hidden lg:flex items-center border-2 overflow-visible transition-colors duration-500 ${
             navOpen ? "border-foreground" : ""
           }`}
         >
-          {/* Sliding links track */}
           <div
             className="grid transition-[grid-template-columns] duration-500 ease-in-out"
             style={{ gridTemplateColumns: navOpen ? "1fr" : "0fr" }}
@@ -40,55 +26,66 @@ export default function Header() {
               className={`${navOpen ? "overflow-visible" : "overflow-hidden"} flex min-w-0 justify-end`}
             >
               <nav className="flex items-center whitespace-nowrap">
-                {navLinks.map((link, i) => {
+                {NAV_ITEMS.map((link, i) => {
                   const linkClassName = `text-foreground hover:bg-primary text-xl font-normal px-6 py-4 flex items-center gap-1 ${
                     i !== 0 ? "border-l-2 border-foreground" : ""
                   } ${i === 4 ? "border-r-2 border-foreground" : ""}`;
 
-                  if (!link.hasDropdown) {
+                  if (link.kind === "route" && link.children) {
                     return (
-                      <a
-                        key={link.name}
-                        href={link.href}
+                      <div key={link.label} className="group relative">
+                        <Link to={link.to} className={linkClassName}>
+                          {link.label}
+                          <ArrowDownIcon
+                            size={16}
+                            strokeWidth={1.5}
+                            className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                          />
+                        </Link>
+
+                        <nav className="absolute left-0 top-full z-50 mt-1 hidden w-full border-2 border-foreground bg-background group-hover:block group-focus-within:block">
+                          {link.children.map((item) => (
+                            <Link
+                              key={item.label}
+                              to={item.to}
+                              className="block px-6 py-3 text-xl text-foreground hover:bg-primary"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </nav>
+                      </div>
+                    );
+                  }
+
+                  if (link.kind === "route") {
+                    return (
+                      <Link
+                        key={link.label}
+                        to={link.to}
                         className={linkClassName}
                       >
-                        {link.name}
-                      </a>
+                        {link.label}
+                      </Link>
                     );
                   }
 
                   return (
-                    <div key={link.name} className="group relative">
-                      <a href={link.href} className={linkClassName}>
-                        {link.name}
-                        <ArrowDownIcon
-                          size={16}
-                          strokeWidth={1.5}
-                          className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
-                        />
-                      </a>
-
-                      <nav className="absolute left-0 top-full z-50 mt-1 hidden w-full border-2 border-foreground bg-background group-hover:block group-focus-within:block">
-                        {learnLinks.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="block px-6 py-3 text-xl text-foreground hover:bg-primary"
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-                      </nav>
-                    </div>
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className={linkClassName}
+                    >
+                      {link.label}
+                    </a>
                   );
                 })}
               </nav>
             </div>
           </div>
 
-          {/* Toggle button (close icon lives here) */}
           <button
-            className={`p-4 flex items-center justify-center cursor-pointer shrink-0`}
+            className="flex shrink-0 items-center justify-center p-4"
             onClick={() => setNavOpen((v) => !v)}
             aria-label="Toggle nav"
             aria-expanded={navOpen}
@@ -101,7 +98,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile menu button (inchangé) */}
         <button
           className="lg:hidden p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -111,19 +107,44 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu (inchangé) */}
       {mobileMenuOpen && (
         <div className="absolute left-0 top-full w-full border-t border-gray-100 bg-background shadow-sm lg:hidden">
           <nav className="flex flex-col px-6 py-4 gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-[#1e1e1e] text-base font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
+            {NAV_ITEMS.map((link) => (
+              <div key={link.label} className="flex flex-col gap-2">
+                {link.kind === "route" ? (
+                  <Link
+                    to={link.to}
+                    className="text-[#1e1e1e] text-base font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="text-[#1e1e1e] text-base font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )}
+
+                {link.kind === "route" && link.children && (
+                  <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        to={child.to}
+                        className="text-sm text-[#1e1e1e]/80 py-1"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
         </div>

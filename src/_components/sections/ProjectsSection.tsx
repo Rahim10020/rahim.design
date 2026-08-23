@@ -1,53 +1,10 @@
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ProjectCard from "../ui/ProjectCard";
 import { ChevronRightIcon } from "../icons";
-
-interface Project {
-  title: string;
-  category?: string;
-  imageSrc?: string;
-  href: string;
-  imageHeight: string;
-}
-
-const projectsData: Project[] = [
-  {
-    title: "Lovance",
-    category: "E-commerce",
-    href: "/projects/lovance",
-    imageHeight: "h-96",
-  },
-  {
-    title: "Twocoderz",
-    category: "SaaS Platform",
-    href: "/projects/twocoderz",
-    imageHeight: "h-64",
-  },
-  {
-    title: "Ahoe",
-    category: "Mobile App",
-    href: "/projects/ahoe",
-    imageHeight: "h-80",
-  },
-  {
-    title: "Nova Studio",
-    category: "Agency Website",
-    href: "/projects/nova-studio",
-    imageHeight: "h-72",
-  },
-  {
-    title: "Pulse Analytics",
-    category: "Dashboard",
-    href: "/projects/pulse",
-    imageHeight: "h-96",
-  },
-  {
-    title: "Forma",
-    category: "Design System",
-    href: "/projects/forma",
-    imageHeight: "h-64",
-  },
-];
+import { getProjectPath, SECTION_IDS } from "../../routes";
+import { projects } from "../../data/project";
+import { ROUTES } from "../../routes";
 
 const TOTAL_BARS = 16;
 
@@ -101,7 +58,7 @@ export default function ProjectsSection() {
 
   return (
     <section
-      id="projects"
+      id={SECTION_IDS.PROJECTS}
       className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28 overflow-hidden"
     >
       <div className="max-w-350 mx-auto px-6">
@@ -117,12 +74,12 @@ export default function ProjectsSection() {
         className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {projectsData.map((project) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.title}
             title={project.title}
             category={project.category}
-            href={project.href}
+            href={getProjectPath(project.slug)}
             imageHeight={project.imageHeight}
             imageSrc={project.imageSrc}
           />
@@ -130,12 +87,12 @@ export default function ProjectsSection() {
 
         {/* "See all projects" link at the end */}
         <div className="shrink-0 snap-center flex items-center self-center pl-4 pr-10">
-          <a
-            href="/projects"
+          <Link
+            to={ROUTES.PROJECTS.LIST}
             className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
           >
             See all projects <ChevronRightIcon className="pl-2" />
-          </a>
+          </Link>
         </div>
       </div>
 
