@@ -1,31 +1,56 @@
-import { Link } from 'react-router-dom';
-import type { Project } from '../../data/project';
-
 interface ProjectCardProps {
-  project: Project;
+  title: string;
+  category?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  href: string;
+  imageHeight?: string; // ex: "h-64", "h-80", "h-96"...
+  className?: string;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({
+  title,
+  category,
+  imageSrc,
+  imageAlt = "",
+  href,
+  imageHeight = "h-72",
+  className = "",
+}: ProjectCardProps) {
   return (
-    <Link
-      to={`/projects/${project.slug}`}
-      className="group block rounded-lg border border-black/10 p-4 transition hover:border-black/30"
+    <a
+      href={href}
+      className={`group shrink-0 w-72 sm:w-80 snap-center flex flex-col ${className}`}
     >
-      <div className="aspect-video w-full rounded bg-background-alt" />
-      <h3 className="mt-4 text-lg font-semibold group-hover:underline">
-        {project.title}
-      </h3>
-      <p className="mt-2 text-sm text-foreground/70">{project.description}</p>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {project.tags.map(tag => (
-          <span
-            key={tag}
-            className="rounded-full bg-foreground/5 px-2 py-0.5 text-xs font-medium"
-          >
-            {tag}
-          </span>
-        ))}
+      {/* Image */}
+      <div
+        className={`w-full ${imageHeight} overflow-hidden bg-background mb-4`}
+      >
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt || title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          // Placeholder
+          <img
+            src="/images/image_placeholder.svg"
+            alt="placeholder image"
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
-    </Link>
+
+      {/* Title + Category */}
+      <div className="px-1">
+        <h3 className="text-foreground text-lg font-medium group-hover:underline underline-offset-4 decoration-1 transition-all">
+          {title}
+        </h3>
+        {category && (
+          <p className="text-neutral-500 text-sm mt-1">{category}</p>
+        )}
+      </div>
+    </a>
   );
 }
