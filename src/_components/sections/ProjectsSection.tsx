@@ -49,7 +49,7 @@ const projectsData: Project[] = [
   },
 ];
 
-const TOTAL_BARS = 11;
+const TOTAL_BARS = 16;
 
 export default function ProjectsSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -107,16 +107,14 @@ export default function ProjectsSection() {
       <div className="max-w-350 mx-auto px-6">
         {/* Title */}
         <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-14 lg:mb-20 max-w-lg">
-          Let's look at what I've already
-          <br />
-          built
+          Let's look at what I've already built
         </h2>
       </div>
 
       {/*  SLIDER  */}
       <div
         ref={sliderRef}
-        className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-6 pb-4"
+        className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {projectsData.map((project) => (
@@ -134,7 +132,7 @@ export default function ProjectsSection() {
         <div className="shrink-0 snap-center flex items-center self-center pl-4 pr-10">
           <a
             href="/projects"
-            className="text-foreground text-base font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
+            className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
           >
             See all projects <ChevronRightIcon className="pl-2" />
           </a>
