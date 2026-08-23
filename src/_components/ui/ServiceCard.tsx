@@ -16,7 +16,7 @@ export default function ServiceCard({
   return (
     <article className={`flex flex-col ${className}`}>
       {/* Image */}
-      <div className="w-full aspect-6/5 overflow-hidden bg-[#f5f5f5] mb-6">
+      <div className="w-full aspect-6/5 overflow-hidden bg-background mb-6">
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -26,7 +26,7 @@ export default function ServiceCard({
         ) : (
           // Placeholder (tu pourras remplacer plus tard)
           <img
-            src="/images"
+            src="/images/image_placeholder.svg"
             alt="placeholder image"
             className="w-full h-full object-cover"
           />
@@ -34,12 +34,14 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-[#1e1e1e] text-xl sm:text-2xl font-medium mb-3">
+      <h3 className="text-foreground text-xl sm:text-3xl font-medium mb-3">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-[#1e1e1e] text-base leading-relaxed">{description}</p>
+      <p className="text-foreground text-xl font-normal leading-relaxed">
+        {description}
+      </p>
     </article>
   );
 }
