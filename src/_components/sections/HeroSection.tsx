@@ -9,12 +9,9 @@ export default function HeroSection() {
             <div className="flex flex-col gap-8">
               <div className="w-full">
                 {/* Headline */}
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-medium text-foreground">
-                  You have an idea. Let's
-                  <br />
-                  make it something
-                  <br />
-                  people will want to use.
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-medium text-foreground max-w-4xl">
+                  You have an idea. Let's make it something people will want to
+                  use.
                 </h1>
               </div>
 
