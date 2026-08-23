@@ -7,3 +7,7 @@ export { default as CloseIcon } from "./CloseIcon";
 export { default as MenuIcon } from "./MenuIcon";
 export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
 export { default as ChevronRightIcon } from "./ChevronRightIcon";
+export { default as GithubIcon } from "./GithubIcon";
+export { default as InstagramIcon } from "./InstagramIcon";
+export { default as LinkedinIcon } from "./LinkedinIcon";
+export { default as WhatsappIcon } from "./WhatsappIcon";
