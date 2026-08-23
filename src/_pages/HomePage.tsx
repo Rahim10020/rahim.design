@@ -4,9 +4,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero section */}
-      <section id="about" className="min-h-[calc(100svh-104px)]">
-        <HeroSection />
-      </section>
+      <HeroSection />
 
       {/* About section */}
       <section id="about" className="min-h-[calc(100svh-104px)]"></section>
