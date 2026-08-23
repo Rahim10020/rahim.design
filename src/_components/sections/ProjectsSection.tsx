@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import ProjectCard from "../ui/ProjectCard";
+import { ChevronRightIcon } from "../icons";
 
 interface Project {
   title: string;
@@ -50,7 +51,7 @@ const projectsData: Project[] = [
 
 const TOTAL_BARS = 11;
 
-export default function Projects() {
+export default function ProjectsSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -101,11 +102,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="w-full bg-background py-20 lg:py-28 overflow-hidden"
+      className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28 overflow-hidden"
     >
       <div className="max-w-350 mx-auto px-6">
         {/* Title */}
-        <h2 className="text-[#1e1e1e] text-4xl sm:text-5xl font-medium leading-tight mb-14 lg:mb-20 max-w-lg">
+        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-14 lg:mb-20 max-w-lg">
           Let's look at what I've already
           <br />
           built
@@ -135,7 +136,7 @@ export default function Projects() {
             href="/projects"
             className="text-foreground text-base font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
           >
-            See all projects →
+            See all projects <ChevronRightIcon className="pl-2" />
           </a>
         </div>
       </div>
