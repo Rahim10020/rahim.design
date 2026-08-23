@@ -11,6 +11,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [navOpen, setNavOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -19,21 +20,49 @@ export default function Header() {
         {/* Logo */}
         <Logo />
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-foreground text-xl font-normal hover:opacity-70 transition-opacity flex items-center gap-1"
-            >
-              {link.name}
-              {link.hasDropdown && <ArrowDownIcon />}
-            </a>
-          ))}
-        </nav>
+        {/* Desktop expandable pill nav */}
+        <div
+          className={`hidden lg:flex items-center overflow-hidden border-2 transition-colors duration-500 ${
+            navOpen ? "border-foreground" : "border-transparent"
+          }`}
+        >
+          {/* Sliding links track */}
+          <div
+            className="grid transition-[grid-template-columns] duration-500 ease-in-out"
+            style={{ gridTemplateColumns: navOpen ? "1fr" : "0fr" }}
+          >
+            <div className="overflow-hidden min-w-0 flex justify-end">
+              <nav className="flex items-center whitespace-nowrap">
+                {navLinks.map((link, i) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`text-foreground text-xl font-normal px-4 py-3 flex items-center gap-1 ${
+                      i !== 0 ? "border-l border-2 border-foreground" : ""
+                    }`}
+                  >
+                    {link.name}
+                    {link.hasDropdown && <ArrowDownIcon size={16} />}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
 
-        {/* Mobile menu button */}
+          {/* Toggle button (close icon lives here) */}
+          <button
+            className={`p-3 flex items-center justify-center shrink-0 ${
+              navOpen ? "border-l border-2 border-foreground" : ""
+            }`}
+            onClick={() => setNavOpen((v) => !v)}
+            aria-label="Toggle nav"
+            aria-expanded={navOpen}
+          >
+            {navOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+
+        {/* Mobile menu button (inchangé) */}
         <button
           className="lg:hidden p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -43,7 +72,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (inchangé) */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-100 bg-white">
           <nav className="flex flex-col px-6 py-4 gap-4">
