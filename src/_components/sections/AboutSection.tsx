@@ -16,35 +16,37 @@ export default function AboutSection() {
               </h2>
             </div>
           </div>
-          {/* Second line */}
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-7xl font-medium text-foreground">
-              Designer,
-            </h1>
-            <h1 className="text-4xl md:text-7xl font-medium text-foreground">
-              Coder💀
-            </h1>
-          </div>
-          {/* Third line */}
-          <div className="flex justify-end">
-            <div className="max-w-2xl space-y-4">
-              <p className="text-lg md:text-2xl font-normal text-foreground">
-                I'm the type of developer who notices when a button is
-                misaligned by 4 pixels.
-              </p>
-              <p className="text-lg md:text-2xl font-normal text-foreground">
-                More seriously, I like to understand why an interface works —
-                and especially why it doesn't work.
-              </p>
-              <p className="text-lg md:text-2xl font-normal text-foreground">
-                I work at the intersection of web design and development, with
-                an obsession with clean interfaces, details that matter, and
-                experiences that feel natural.
-              </p>
-              <p className="text-lg md:text-2xl font-normal text-foreground">
-                My goal is simple: build products that you will be proud to show
-                off and that your users will enjoy using.
-              </p>
+          <div>
+            {/* Second line */}
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-7xl font-medium text-foreground">
+                Designer,
+              </h1>
+              <h1 className="text-4xl md:text-7xl font-medium text-foreground">
+                Coder💀
+              </h1>
+            </div>
+            {/* Third line */}
+            <div className="flex justify-end">
+              <div className="max-w-2xl space-y-4">
+                <p className="text-lg md:text-2xl font-normal text-foreground">
+                  I'm the type of developer who notices when a button is
+                  misaligned by 4 pixels.
+                </p>
+                <p className="text-lg md:text-2xl font-normal text-foreground">
+                  More seriously, I like to understand why an interface works —
+                  and especially why it doesn't work.
+                </p>
+                <p className="text-lg md:text-2xl font-normal text-foreground">
+                  I work at the intersection of web design and development, with
+                  an obsession with clean interfaces, details that matter, and
+                  experiences that feel natural.
+                </p>
+                <p className="text-lg md:text-2xl font-normal text-foreground">
+                  My goal is simple: build products that you will be proud to
+                  show off and that your users will enjoy using.
+                </p>
+              </div>
             </div>
           </div>
         </div>
