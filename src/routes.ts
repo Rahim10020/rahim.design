@@ -1,14 +1,12 @@
 export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  CONTACT: '/contact',
+  HOME: "/",
   PROJECTS: {
-    LIST: '/projects',
-    DETAIL: '/projects/:slug',
+    LIST: "/projects",
+    DETAIL: "/projects/:slug",
   },
   LEARN: {
-    LIST: '/learn',
-    ARTICLE: '/learn/:slug',
+    LIST: "/learn",
+    ARTICLE: "/learn/:slug",
   },
 } as const;
 
