@@ -10,6 +10,11 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
+const learnLinks = [
+  { name: "Books", href: "/learn?type=books" },
+  { name: "Notes", href: "/learn?type=notes" },
+];
+
 export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +27,7 @@ export default function Header() {
 
         {/* Desktop expandable pill nav */}
         <div
-          className={`hidden lg:flex items-center border-2 overflow-hidden transition-colors duration-500 ${
+          className={`hidden lg:flex items-center border-2 overflow-visible transition-colors duration-500 ${
             navOpen ? "border-foreground" : ""
           }`}
         >
@@ -31,22 +36,52 @@ export default function Header() {
             className="grid transition-[grid-template-columns] duration-500 ease-in-out"
             style={{ gridTemplateColumns: navOpen ? "1fr" : "0fr" }}
           >
-            <div className="overflow-hidden min-w-0 flex justify-end">
+            <div
+              className={`${navOpen ? "overflow-visible" : "overflow-hidden"} flex min-w-0 justify-end`}
+            >
               <nav className="flex items-center whitespace-nowrap">
-                {navLinks.map((link, i) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className={`text-foreground hover:bg-primary text-xl font-normal px-6 py-4 flex items-center gap-1 ${
-                      i !== 0 ? "border-l-2 border-foreground" : ""
-                    } ${i === 4 ? "border-r-2 border-foreground" : ""}`}
-                  >
-                    {link.name}
-                    {link.hasDropdown && (
-                      <ArrowDownIcon size={16} strokeWidth={1.5} />
-                    )}
-                  </a>
-                ))}
+                {navLinks.map((link, i) => {
+                  const linkClassName = `text-foreground hover:bg-primary text-xl font-normal px-6 py-4 flex items-center gap-1 ${
+                    i !== 0 ? "border-l-2 border-foreground" : ""
+                  } ${i === 4 ? "border-r-2 border-foreground" : ""}`;
+
+                  if (!link.hasDropdown) {
+                    return (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className={linkClassName}
+                      >
+                        {link.name}
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <div key={link.name} className="group relative">
+                      <a href={link.href} className={linkClassName}>
+                        {link.name}
+                        <ArrowDownIcon
+                          size={16}
+                          strokeWidth={1.5}
+                          className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                        />
+                      </a>
+
+                      <nav className="absolute left-0 top-full z-50 mt-1 hidden w-full border-2 border-foreground bg-background group-hover:block group-focus-within:block">
+                        {learnLinks.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="block px-6 py-3 text-xl text-foreground hover:bg-primary"
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </nav>
+                    </div>
+                  );
+                })}
               </nav>
             </div>
           </div>
