@@ -31,10 +31,15 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 4th line */}
-          <div>
+          <div className="flex items-center justify-between">
             <div>
-              <p>Write directly to:</p>
-              <a href="#" className="underline cursor-pointer">
+              <p className="text-foreground text-xl font-normal">
+                Write directly to:
+              </p>
+              <a
+                href="#"
+                className="underline cursor-pointer text-foreground text-xl decoration-2"
+              >
                 rahim100codeur@gmail.com
               </a>
             </div>
