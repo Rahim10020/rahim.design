@@ -5,3 +5,5 @@ export { default as ArrowUpIcon } from "./ArrowUpIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
 export { default as CloseIcon } from "./CloseIcon";
 export { default as MenuIcon } from "./MenuIcon";
+export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
+export { default as ChevronRightIcon } from "./ChevronRightIcon";
