@@ -1,3 +1,6 @@
 - rendre learn card cliquable pour mener vers le detail du learn correspondant, 
 lors du hover sur une card, on va underline le titre
 avec une animation qui part de la gauche vers la droite.
+
+-- Continuer avec le codage des pages de detail et des all pages.
+-- faire de recherches sur le type d'animation a mettre.
