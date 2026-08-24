@@ -1,4 +1,10 @@
 import { SECTION_IDS } from "../../routes";
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  WhatsappIcon,
+} from "../icons";
 import Button from "../ui/Button";
 
 export default function ContactSection() {
@@ -52,7 +58,12 @@ export default function ContactSection() {
             </Button>
           </div>
           {/* 5th line */}
-          <div></div>
+          <div className="flex items-center justify-center gap-12 mt-24">
+            <GithubIcon />
+            <LinkedinIcon />
+            <InstagramIcon />
+            <WhatsappIcon />
+          </div>
         </div>
       </div>
     </section>
