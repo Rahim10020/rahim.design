@@ -14,16 +14,16 @@ const stepsData: Step[] = [
     title: "We start by talking",
     description:
       "Before I think about colors, components, or code, I want to understand what you're actually trying to build.",
-    backgroundColor: "#1e1e1e",
-    textColor: "light",
+    backgroundColor: "#f4ed55",
+    textColor: "dark",
   },
   {
     number: "02",
     title: "We put the idea in order",
     description:
       "I transform needs, constraints and ideas into a clear experience.",
-    backgroundColor: "#f4ed55",
-    textColor: "dark",
+    backgroundColor: "#1e1e1e",
+    textColor: "light",
   },
   {
     number: "03",

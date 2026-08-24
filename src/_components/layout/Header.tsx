@@ -85,7 +85,7 @@ export default function Header() {
           </div>
 
           <button
-            className="flex shrink-0 items-center justify-center p-4"
+            className="flex shrink-0 cursor-pointer items-center justify-center p-4"
             onClick={() => setNavOpen((v) => !v)}
             aria-label="Toggle nav"
             aria-expanded={navOpen}
