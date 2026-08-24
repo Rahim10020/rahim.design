@@ -14,7 +14,7 @@ export default function ContactSection() {
       className="flex min-h-[calc(100svh-104px)] w-full bg-background"
     >
       <div className="max-w-350 mx-auto flex w-full px-2">
-        <div className="mx-auto w-full max-w-6xl py-12 mt-16">
+        <div className="mx-auto w-full max-w-6xl py-12 mb-16 mt-16">
           {/* 1st line */}
           <div className="flex justify-center">
             <div className="flex justify-start max-w-md">
@@ -59,10 +59,10 @@ export default function ContactSection() {
           </div>
           {/* 5th line */}
           <div className="flex items-center justify-center gap-8 mt-24">
-            <GithubIcon />
-            <LinkedinIcon />
-            <InstagramIcon />
-            <WhatsappIcon />
+            <GithubIcon size={46} />
+            <LinkedinIcon size={46} />
+            <InstagramIcon size={46} />
+            <WhatsappIcon size={46} />
           </div>
         </div>
       </div>
