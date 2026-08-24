@@ -17,31 +17,31 @@ export default function ContactSection() {
         <div className="mx-auto w-full max-w-6xl py-12 mt-16">
           {/* 1st line */}
           <div className="flex justify-center">
-            <div className="flex justify-start max-w-xs">
-              <h1 className="text-foreground text-4xl md:text-8xl">So</h1>
+            <div className="flex justify-start max-w-md">
+              <h1 className="text-foreground text-4xl md:text-9xl">So</h1>
             </div>
           </div>
           {/* 2nd line */}
           <div className="flex justify-end mx-auto max-w-md">
             <div className="flex justify-end max-w-xs">
-              <h1 className="text-foreground text-4xl md:text-8xl">What</h1>
+              <h1 className="text-foreground text-4xl md:text-9xl">What</h1>
             </div>
           </div>
           {/* 3rd line */}
-          <div className="flex items-end justify-between max-w-4xl mx-auto mb-12">
+          <div className="flex items-end justify-between max-w-6xl mx-auto mb-16">
             <p className="text-foreground text-xl leading-relaxed max-w-sm">
               No need to have all the answers. Come up with the idea, we'll
               start there.
             </p>
             <div className="flex flex-col items-end">
-              <h1 className="text-foreground text-4xl md:text-8xl">are we</h1>
-              <h1 className="text-foreground text-4xl md:text-8xl">
+              <h1 className="text-foreground text-4xl md:text-9xl">are we</h1>
+              <h1 className="text-foreground text-4xl md:text-9xl">
                 Building ?
               </h1>
             </div>
           </div>
           {/* 4th line */}
-          <div className="flex items-center justify-between max-w-4xl mx-auto">
+          <div className="flex items-center justify-between max-w-6xl mx-auto">
             <div>
               <p className="text-foreground text-xl font-normal">
                 Write directly to:
@@ -58,7 +58,7 @@ export default function ContactSection() {
             </Button>
           </div>
           {/* 5th line */}
-          <div className="flex items-center justify-center gap-12 mt-24">
+          <div className="flex items-center justify-center gap-8 mt-24">
             <GithubIcon />
             <LinkedinIcon />
             <InstagramIcon />
