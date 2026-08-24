@@ -39,7 +39,7 @@ export default function Header() {
                           <ArrowDownIcon
                             size={16}
                             strokeWidth={1.5}
-                            className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                            className="transition-transform group-hover:rotate-180 ml-2 group-focus-within:rotate-180"
                           />
                         </Link>
 
