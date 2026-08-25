@@ -14,7 +14,7 @@ export default function LearnCard({
   className = "",
 }: LearnCardProps) {
   return (
-    <article className={`flex flex-col ${className}`}>
+    <article className={`flex flex-col group ${className}`}>
       {/* Image */}
       <div className="w-full aspect-6/5 overflow-hidden bg-background mb-6">
         {imageSrc ? (
@@ -34,7 +34,7 @@ export default function LearnCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-xl sm:text-3xl font-medium mb-3">
+      <h3 className="text-foreground text-xl sm:text-3xl font-medium group-hover:underline mb-3">
         {title}
       </h3>
 
