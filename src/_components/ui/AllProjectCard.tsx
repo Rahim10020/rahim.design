@@ -42,13 +42,13 @@ export default function AllProjectCard({
 
       {/* Overlay (only on hover) */}
       <div className="absolute inset-0 bg-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-        <p className="text-background/70 text-xs tracking-wide uppercase mb-3 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+        <p className="text-background text-sm md:text-lg tracking-wide uppercase mb-3 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
           {category}
         </p>
-        <h3 className="text-background text-xl sm:text-2xl font-medium mb-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-primary text-2xl md:text-4xl font-medium mb-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
           {title}
         </h3>
-        <p className="text-background text-sm leading-relaxed translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+        <p className="text-background text-xl leading-relaxed max-w-md translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
           {description}
         </p>
       </div>
