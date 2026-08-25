@@ -1,15 +1,4 @@
-export const PROJECT_CATEGORIES = [
-  "E-commerce",
-  "SaaS Platform",
-  "Mobile App",
-  "Agency Website",
-  "Dashboard",
-  "Design System",
-  "Motion Design",
-  "Fintech",
-  "Editorial",
-  "Product Marketing",
-] as const;
+export const PROJECT_CATEGORIES = ["Projects", "Design"] as const;
 
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 export type ProjectFilter = "all" | ProjectCategory;
@@ -28,7 +17,7 @@ export const projects: Project[] = [
   {
     slug: "lovance",
     title: "Lovance",
-    category: "E-commerce",
+    category: "Projects",
     description:
       "An e-commerce platform focused on clean product discovery and smooth checkout flow.",
     tags: ["React", "TypeScript", "Tailwind"],
@@ -37,7 +26,7 @@ export const projects: Project[] = [
   {
     slug: "twocoderz",
     title: "Twocoderz",
-    category: "SaaS Platform",
+    category: "Projects",
     description:
       "A SaaS dashboard designed for collaboration with a conversion-first structure.",
     tags: ["Astro", "Tailwind", "CMS"],
@@ -46,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: "ahoe",
     title: "Ahoe",
-    category: "Mobile App",
+    category: "Projects",
     description:
       "A mobile-first brand experience focused on readability and quick actions.",
     tags: ["Next.js", "D3.js", "API"],
@@ -55,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: "nova-studio",
     title: "Nova Studio",
-    category: "Agency Website",
+    category: "Projects",
     description:
       "An agency website with a strong visual identity and clear service storytelling.",
     tags: ["React", "Framer Motion", "Tailwind"],
@@ -64,7 +53,7 @@ export const projects: Project[] = [
   {
     slug: "pulse",
     title: "Pulse Analytics",
-    category: "Dashboard",
+    category: "Projects",
     description:
       "A data visualization interface that prioritizes key metrics without noise.",
     tags: ["React", "Charts", "API"],
@@ -73,7 +62,7 @@ export const projects: Project[] = [
   {
     slug: "forma",
     title: "Forma",
-    category: "Design System",
+    category: "Design",
     description:
       "A design system and component library built for consistency and faster iteration.",
     tags: ["Design System", "Tokens", "Accessibility"],
@@ -82,7 +71,7 @@ export const projects: Project[] = [
   {
     slug: "kinetic",
     title: "Kinetic",
-    category: "Motion Design",
+    category: "Design",
     description:
       "A portfolio website for a motion design studio with strong rhythm and narrative.",
     tags: ["React", "Motion", "Storytelling"],
@@ -91,7 +80,7 @@ export const projects: Project[] = [
   {
     slug: "harbor",
     title: "Harbor",
-    category: "Fintech",
+    category: "Design",
     description:
       "A fintech landing page with a sharp hierarchy and trust-focused messaging.",
     tags: ["React", "Fintech", "Conversion"],
@@ -100,7 +89,7 @@ export const projects: Project[] = [
   {
     slug: "atelier",
     title: "Atelier",
-    category: "Editorial",
+    category: "Projects",
     description:
       "An editorial website for a creative collective with immersive reading flow.",
     tags: ["Editorial", "Typography", "Content"],
@@ -109,7 +98,7 @@ export const projects: Project[] = [
   {
     slug: "orbit",
     title: "Orbit",
-    category: "Product Marketing",
+    category: "Design",
     description:
       "A product marketing site with interactive storytelling sections.",
     tags: ["Marketing", "Interaction", "Product"],
