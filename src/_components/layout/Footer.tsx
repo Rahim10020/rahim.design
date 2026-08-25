@@ -7,7 +7,7 @@ interface FooterProps {
 export default function Footer({ className = "" }: FooterProps) {
   return (
     <footer className={`w-full bg-background ${className}`}>
-      <div className="px-6 py-6 lg:py-6">
+      <div className="px-6 py-4 lg:py-2">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left - Copyright */}
           <div className="flex items-center gap-2 text-foreground text-xl order-2 lg:order-1">
