@@ -1,4 +1,4 @@
-export const PROJECT_CATEGORIES = ["Projects", "Design"] as const;
+export const PROJECT_CATEGORIES = ["Web", "Mobile", "Design"] as const;
 
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 export type ProjectFilter = "all" | ProjectCategory;
@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     slug: "lovance",
     title: "Lovance",
-    category: "Projects",
+    category: "Web",
     description:
       "An e-commerce platform focused on clean product discovery and smooth checkout flow.",
     tags: ["React", "TypeScript", "Tailwind"],
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   {
     slug: "twocoderz",
     title: "Twocoderz",
-    category: "Projects",
+    category: "Web",
     description:
       "A SaaS dashboard designed for collaboration with a conversion-first structure.",
     tags: ["Astro", "Tailwind", "CMS"],
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: "ahoe",
     title: "Ahoe",
-    category: "Projects",
+    category: "Mobile",
     description:
       "A mobile-first brand experience focused on readability and quick actions.",
     tags: ["Next.js", "D3.js", "API"],
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: "nova-studio",
     title: "Nova Studio",
-    category: "Projects",
+    category: "Web",
     description:
       "An agency website with a strong visual identity and clear service storytelling.",
     tags: ["React", "Framer Motion", "Tailwind"],
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   {
     slug: "pulse",
     title: "Pulse Analytics",
-    category: "Projects",
+    category: "Web",
     description:
       "A data visualization interface that prioritizes key metrics without noise.",
     tags: ["React", "Charts", "API"],
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     slug: "atelier",
     title: "Atelier",
-    category: "Projects",
+    category: "Web",
     description:
       "An editorial website for a creative collective with immersive reading flow.",
     tags: ["Editorial", "Typography", "Content"],
