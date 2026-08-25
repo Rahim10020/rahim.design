@@ -8,7 +8,10 @@ import {
   type LearnType,
 } from "../../routes";
 
-const filters: ReadonlyArray<{ label: string; value: LearnType }> = [
+type LearnFilter = "all" | LearnType;
+
+const filters: ReadonlyArray<{ label: string; value: LearnFilter }> = [
+  { label: "All", value: "all" },
   { label: "Books", value: LEARN_TYPES.BOOKS },
   { label: "Notes", value: LEARN_TYPES.NOTES },
 ];
@@ -18,9 +21,9 @@ export default function LearnPage() {
   const requestedType = searchParams.get("type");
   const activeFilter = isLearnType(requestedType)
     ? requestedType
-    : LEARN_TYPES.BOOKS;
+    : "all";
   const filteredArticles = articles.filter(
-    (article) => article.type === activeFilter,
+    (article) => activeFilter === "all" || article.type === activeFilter,
   );
 
   return (
@@ -40,7 +43,11 @@ export default function LearnPage() {
                   <button
                     key={filter.value}
                     type="button"
-                    onClick={() => setSearchParams({ type: filter.value })}
+                    onClick={() =>
+                      setSearchParams(
+                        filter.value === "all" ? {} : { type: filter.value },
+                      )
+                    }
                     className={`
                       px-8 py-2.5 text-lg md:text-xl font-medium cursor-pointer border-2 border-foreground transition-colors
                       ${
