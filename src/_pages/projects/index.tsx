@@ -131,7 +131,7 @@ export default function ProjectsPage() {
           })}
         </div>
 
-        {/* True Masonry Grid */}
+        {/* Masonry Grid */}
         <div className="columns-1 md:columns-2 gap-6">
           {filteredProjects.map((project) => (
             <AllProjectCard
