@@ -2,5 +2,5 @@
 lors du hover sur une card, on va underline le titre
 avec une animation qui part de la gauche vers la droite.
 
--- Continuer avec le codage des pages de detail et des all pages.
+-- Continuer avec le codage des pages de detail (project detail et learn detail).
 -- faire de recherches sur le type d'animation a mettre.
