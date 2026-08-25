@@ -9,12 +9,12 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p>Projet non trouvé.</p>
+        <p>Project not found.</p>
         <Link
           to={ROUTES.PROJECTS.LIST}
           className="mt-4 inline-block underline underline-offset-4"
         >
-          ← Retour aux projets
+          ← Back to projects
         </Link>
       </div>
     );
@@ -26,7 +26,7 @@ export default function ProjectDetail() {
         to={ROUTES.PROJECTS.LIST}
         className="text-sm underline underline-offset-4"
       >
-        ← Retour aux projets
+        ← Back to projects
       </Link>
       <h1 className="mt-6 text-4xl font-bold tracking-tight">
         {project.title}

@@ -1,7 +1,23 @@
+export const PROJECT_CATEGORIES = [
+  "E-commerce",
+  "SaaS Platform",
+  "Mobile App",
+  "Agency Website",
+  "Dashboard",
+  "Design System",
+  "Motion Design",
+  "Fintech",
+  "Editorial",
+  "Product Marketing",
+] as const;
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
+export type ProjectFilter = "all" | ProjectCategory;
+
 export interface Project {
   slug: string;
   title: string;
-  category: string;
+  category: ProjectCategory;
   description: string;
   tags: string[];
   imageHeight: string;
@@ -14,7 +30,7 @@ export const projects: Project[] = [
     title: "Lovance",
     category: "E-commerce",
     description:
-      "Une boutique pensée pour transformer une vitrine éditoriale en parcours d'achat fluide.",
+      "An e-commerce platform focused on clean product discovery and smooth checkout flow.",
     tags: ["React", "TypeScript", "Tailwind"],
     imageHeight: "h-96",
   },
@@ -23,7 +39,7 @@ export const projects: Project[] = [
     title: "Twocoderz",
     category: "SaaS Platform",
     description:
-      "Une interface SaaS orientée conversion avec un cockpit produit simple à faire évoluer.",
+      "A SaaS dashboard designed for collaboration with a conversion-first structure.",
     tags: ["Astro", "Tailwind", "CMS"],
     imageHeight: "h-64",
   },
@@ -32,7 +48,7 @@ export const projects: Project[] = [
     title: "Ahoe",
     category: "Mobile App",
     description:
-      "Une expérience mobile centrée sur la lisibilité et les actions rapides.",
+      "A mobile-first brand experience focused on readability and quick actions.",
     tags: ["Next.js", "D3.js", "API"],
     imageHeight: "h-80",
   },
@@ -41,7 +57,7 @@ export const projects: Project[] = [
     title: "Nova Studio",
     category: "Agency Website",
     description:
-      "Un site vitrine structuré pour présenter une offre et ses preuves de façon nette.",
+      "An agency website with a strong visual identity and clear service storytelling.",
     tags: ["React", "Framer Motion", "Tailwind"],
     imageHeight: "h-72",
   },
@@ -50,7 +66,7 @@ export const projects: Project[] = [
     title: "Pulse Analytics",
     category: "Dashboard",
     description:
-      "Un tableau de bord qui hiérarchise les signaux clés sans surcharger l'écran.",
+      "A data visualization interface that prioritizes key metrics without noise.",
     tags: ["React", "Charts", "API"],
     imageHeight: "h-96",
   },
@@ -59,11 +75,59 @@ export const projects: Project[] = [
     title: "Forma",
     category: "Design System",
     description:
-      "Un système de composants pensé pour normaliser les interfaces et accélérer les itérations.",
+      "A design system and component library built for consistency and faster iteration.",
     tags: ["Design System", "Tokens", "Accessibility"],
     imageHeight: "h-64",
   },
+  {
+    slug: "kinetic",
+    title: "Kinetic",
+    category: "Motion Design",
+    description:
+      "A portfolio website for a motion design studio with strong rhythm and narrative.",
+    tags: ["React", "Motion", "Storytelling"],
+    imageHeight: "h-80",
+  },
+  {
+    slug: "harbor",
+    title: "Harbor",
+    category: "Fintech",
+    description:
+      "A fintech landing page with a sharp hierarchy and trust-focused messaging.",
+    tags: ["React", "Fintech", "Conversion"],
+    imageHeight: "h-72",
+  },
+  {
+    slug: "atelier",
+    title: "Atelier",
+    category: "Editorial",
+    description:
+      "An editorial website for a creative collective with immersive reading flow.",
+    tags: ["Editorial", "Typography", "Content"],
+    imageHeight: "h-96",
+  },
+  {
+    slug: "orbit",
+    title: "Orbit",
+    category: "Product Marketing",
+    description:
+      "A product marketing site with interactive storytelling sections.",
+    tags: ["Marketing", "Interaction", "Product"],
+    imageHeight: "h-64",
+  },
 ];
+
+export function getProjectCategories(): ProjectCategory[] {
+  return [...PROJECT_CATEGORIES];
+}
+
+export function getProjectsByFilter(filter: ProjectFilter): Project[] {
+  if (filter === "all") {
+    return projects;
+  }
+
+  return projects.filter((project) => project.category === filter);
+}
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);

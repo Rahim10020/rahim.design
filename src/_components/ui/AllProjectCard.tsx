@@ -1,7 +1,9 @@
+import { type ProjectCategory } from "../../data/project";
+
 interface AllProjectCardProps {
   title: string;
   description: string;
-  category: "project" | "design";
+  category: ProjectCategory;
   imageSrc?: string;
   href: string;
   className?: string;
@@ -10,6 +12,7 @@ interface AllProjectCardProps {
 export default function AllProjectCard({
   title,
   description,
+  category,
   imageSrc,
   href,
   className = "",
@@ -39,6 +42,9 @@ export default function AllProjectCard({
 
       {/* Overlay (only on hover) */}
       <div className="absolute inset-0 bg-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <p className="text-background/70 text-xs tracking-wide uppercase mb-3 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+          {category}
+        </p>
         <h3 className="text-background text-xl sm:text-2xl font-medium mb-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
           {title}
         </h3>
