@@ -11,58 +11,58 @@ export interface ArticleFrontmatter {
 export const articles: ArticleFrontmatter[] = [
   {
     slug: "premier-article",
-    title: "Résumé : Atomic Habits",
+    title: "Summary: Atomic Habits",
     date: "2026-07-10",
     description:
-      "Les points clés du livre de James Clear sur les petites habitudes qui changent tout.",
+      "Key takeaways from James Clear's book on the small habits that change everything.",
     type: LEARN_TYPES.BOOKS,
   },
   {
     slug: "notes-systeme-design",
-    title: "Notes : Principes de design systémique",
+    title: "Notes: Systems Design Principles",
     date: "2026-08-02",
     description:
-      "Réflexions sur l'approche systémique en design et son impact sur la résolution de problèmes complexes.",
+      "Reflections on the systems approach in design and its impact on solving complex problems.",
     type: LEARN_TYPES.NOTES,
   },
   {
     slug: "notes-typographie-web",
-    title: "Notes : Typographie sur le web",
+    title: "Notes: Web Typography",
     date: "2026-08-05",
     description:
-      "Notes de lecture et bonnes pratiques sur l'usage de la typographie dans les interfaces web modernes.",
+      "Reading notes and best practices on typography usage in modern web interfaces.",
     type: LEARN_TYPES.NOTES,
   },
   {
     slug: "notes-couleur-accessibilite",
-    title: "Notes : Couleur et accessibilité",
+    title: "Notes: Color and Accessibility",
     date: "2026-08-08",
     description:
-      "Notes sur le contraste des couleurs, la daltonisme et les guidelines pour une interface accessible.",
+      "Notes on color contrast, color blindness, and guidelines for an accessible interface.",
     type: LEARN_TYPES.NOTES,
   },
   {
     slug: "notes-animation-ui",
-    title: "Notes : Animation en UI",
+    title: "Notes: UI Animation",
     date: "2026-08-12",
     description:
-      "Notes sur les transitions, les easings et les principes de mouvement dans les interfaces utilisateur.",
+      "Notes on transitions, easings, and movement principles in user interfaces.",
     type: LEARN_TYPES.NOTES,
   },
   {
     slug: "resume-deep-work",
-    title: "Résumé : Deep Work",
+    title: "Summary: Deep Work",
     date: "2026-08-15",
     description:
-      "Les concepts clés du livre de Cal Newport sur la concentration profonde et la productivité intellectuelle.",
+      "Key concepts from Cal Newport's book on deep concentration and intellectual productivity.",
     type: LEARN_TYPES.BOOKS,
   },
   {
     slug: "resume-design-everyday",
-    title: "Résumé : The Design of Everyday Things",
+    title: "Summary: The Design of Everyday Things",
     date: "2026-08-20",
     description:
-      "Les principes fondamentaux de Don Norman sur l'affordance, le feedback et l'ergonomie du quotidien.",
+      "Don Norman's fundamental principles on affordance, feedback, and everyday ergonomics.",
     type: LEARN_TYPES.BOOKS,
   },
 ];
