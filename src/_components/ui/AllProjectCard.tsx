@@ -5,6 +5,7 @@ interface AllProjectCardProps {
   description: string;
   category: ProjectCategory;
   imageSrc?: string;
+  imageHeight: string;
   href: string;
   className?: string;
 }
@@ -14,6 +15,7 @@ export default function AllProjectCard({
   description,
   category,
   imageSrc,
+  imageHeight,
   href,
   className = "",
 }: AllProjectCardProps) {
@@ -23,7 +25,7 @@ export default function AllProjectCard({
       className={`group relative block w-full mb-6 break-inside-avoid overflow-hidden bg-background ${className}`}
     >
       {/* Image */}
-      <div className="w-full">
+      <div className={`w-full ${imageSrc ? "" : imageHeight}`}>
         {imageSrc ? (
           <img
             src={imageSrc}

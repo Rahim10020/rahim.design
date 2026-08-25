@@ -63,6 +63,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 category={project.category}
                 imageSrc={project.imageSrc}
+                imageHeight={project.imageHeight}
                 href={getProjectPath(project.slug)}
               />
             ))}

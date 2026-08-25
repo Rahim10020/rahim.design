@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       "A SaaS dashboard designed for collaboration with a conversion-first structure.",
     tags: ["Astro", "Tailwind", "CMS"],
-    imageHeight: "h-64",
+    imageHeight: "h-96",
   },
   {
     slug: "ahoe",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     description:
       "A mobile-first brand experience focused on readability and quick actions.",
     tags: ["Next.js", "D3.js", "API"],
-    imageHeight: "h-80",
+    imageHeight: "h-120",
   },
   {
     slug: "nova-studio",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     description:
       "An agency website with a strong visual identity and clear service storytelling.",
     tags: ["React", "Framer Motion", "Tailwind"],
-    imageHeight: "h-72",
+    imageHeight: "h-120",
   },
   {
     slug: "pulse",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     description:
       "A design system and component library built for consistency and faster iteration.",
     tags: ["Design System", "Tokens", "Accessibility"],
-    imageHeight: "h-64",
+    imageHeight: "h-120",
   },
   {
     slug: "kinetic",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       "A portfolio website for a motion design studio with strong rhythm and narrative.",
     tags: ["React", "Motion", "Storytelling"],
-    imageHeight: "h-80",
+    imageHeight: "h-96",
   },
   {
     slug: "harbor",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     description:
       "A fintech landing page with a sharp hierarchy and trust-focused messaging.",
     tags: ["React", "Fintech", "Conversion"],
-    imageHeight: "h-72",
+    imageHeight: "h-120",
   },
   {
     slug: "atelier",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     description:
       "A product marketing site with interactive storytelling sections.",
     tags: ["Marketing", "Interaction", "Product"],
-    imageHeight: "h-64",
+    imageHeight: "h-120",
   },
 ];
 
