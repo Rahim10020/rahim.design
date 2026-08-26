@@ -9,7 +9,9 @@ export default function Markdown({ content }: { content: string }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          h2: ({ children }) => <h2 className="text-foreground">{children}</h2>,
+          h2: ({ children }) => (
+            <h2 className="text-foreground font-semibold">{children}</h2>
+          ),
           h3: ({ children }) => (
             <h3 className="mb-3 mt-8 text-xl font-semibold text-foreground">
               {children}
