@@ -33,7 +33,7 @@ export default function ProjectCard({
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
-          // Placeholder
+          //Placeholder
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"

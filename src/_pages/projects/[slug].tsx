@@ -39,6 +39,7 @@ export default function ProjectDetail() {
       </div>
       {/* Content */}
       <div>
+        {/* All textual content will have "mx-auto max-w-xl" */}
         <div className="mx-auto max-w-xl">
           <h1 className="text-foreground text-4xl mb-4">Twocoderz</h1>
           <p className="text-foreground text-xl font-normal leading-relaxed">
@@ -46,6 +47,14 @@ export default function ProjectDetail() {
             mattis aliquam. Phasellus ante arcu, semper quis mi a, volutpat
             bibendum risus. Donec at quam pellentesque, aliquam ipsum sed,{" "}
           </p>
+        </div>
+        <div>
+          {/*Placeholder*/}
+          <img
+            src="/images/others/image_placeholder.svg"
+            alt="placeholder image"
+            className="w-full h-[400px] object-cover"
+          />
         </div>
       </div>
     </div>
