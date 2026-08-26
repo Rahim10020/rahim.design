@@ -41,20 +41,36 @@ export default function ProjectDetail() {
       <div>
         {/* All textual content will have "mx-auto max-w-xl" */}
         <div className="mx-auto max-w-xl">
-          <h1 className="text-foreground text-4xl mb-4">Twocoderz</h1>
+          <h1 className="text-foreground text-4xl md:text-6xl mb-4">
+            {project.title}
+          </h1>
           <p className="text-foreground text-xl font-normal leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus
             mattis aliquam. Phasellus ante arcu, semper quis mi a, volutpat
-            bibendum risus. Donec at quam pellentesque, aliquam ipsum sed,{" "}
+            bibendum risus. Donec at quam pellentesque, aliquam ipsum sed
           </p>
         </div>
-        <div>
-          {/*Placeholder*/}
+        {/* All images will have "" */}
+        <div className="mx-auto max-w-4xl my-8">
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"
-            className="w-full h-[400px] object-cover"
+            className="w-full h-100px object-cover"
           />
+        </div>
+        <div className="mx-auto max-w-xl">
+          <p className="text-foreground text-xl font-normal leading-relaxed">
+            Pellentesque et metus ut est finibus fringilla. Curabitur sit amet
+            mi dolor. Nam fermentum mi in erat pellentesque venenatis. Mauris
+            justo ante, vulputate quis laoreet ac, mattis eget justo. Aliquam
+            euismod lobortis commodo. Nam et accumsan dui. Etiam sit amet dolor
+            quis elit tristique interdum non ac ex. Nullam massa lorem, sodales
+            viverra leo eget, blandit pharetra mauris. Integer sed consequat
+            libero. Aliquam venenatis semper tortor quis volutpat. Vivamus sit
+            amet molestie leo, eget luctus odio. Ut tempor nisl sem, at congue
+            urna ultricies eu. Maecenas scelerisque sagittis lorem et auctor.
+            Aenean et gravida enim.
+          </p>
         </div>
       </div>
     </div>
