@@ -22,28 +22,24 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      {/* Detail header */}
-      <div className="flex items-center justify-between mb-8">
-        <a
-          href="#"
-          className="underline cursor-pointer text-foreground text-xl"
-        >
-          Close
-        </a>
-        {/* icons */}
-        <div className="flex items-center justify-between gap-6">
-          <AddIcon />
-          <AddIcon />
-        </div>
-      </div>
+    <div className="max-w-350 mx-auto px-6 py-20">
       {/* Content */}
       <div>
-        {/* All textual content will have "mx-auto max-w-xl" */}
-        <div className="mx-auto max-w-xl">
-          <h1 className="text-foreground text-4xl md:text-6xl mb-4">
-            {project.title}
-          </h1>
+        {/* All textual content will have "mx-auto max-w-xl mb-8" */}
+        <div className="mx-auto max-w-xl mb-8 mt-8 ">
+          <div className="flex items-center gap-4 mb-4">
+            <h1 className="text-foreground text-4xl md:text-6xl">
+              {project.title}
+            </h1>
+            <a
+              href="http://"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <AddIcon />
+            </a>
+          </div>
           <p className="text-foreground text-xl font-normal leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus
             mattis aliquam. Phasellus ante arcu, semper quis mi a, volutpat
@@ -55,7 +51,7 @@ export default function ProjectDetail() {
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"
-            className="w-full h-100px object-cover"
+            className="w-full h-100 object-cover"
           />
         </div>
         <div className="mx-auto max-w-xl">
