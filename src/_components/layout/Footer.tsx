@@ -2,8 +2,8 @@ import Logo from "../ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-background">
-      <div className="px-6 py-4 lg:py-2">
+    <footer className="bg-background">
+      <div className="px-6 py-4 lg:py-2 max-w-350 mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left - Copyright */}
           <div className="flex items-center gap-2 text-foreground text-xl order-2 lg:order-1">
