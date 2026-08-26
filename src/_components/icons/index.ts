@@ -11,3 +11,5 @@ export { default as GithubIcon } from "./GithubIcon";
 export { default as InstagramIcon } from "./InstagramIcon";
 export { default as LinkedinIcon } from "./LinkedinIcon";
 export { default as WhatsappIcon } from "./WhatsappIcon";
+export { default as OpenLinkIcon } from "./OpenLinkIcon";
+export { default as AsteriskIcon } from "./AsteriskIcon";
