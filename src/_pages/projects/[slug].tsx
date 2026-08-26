@@ -57,7 +57,7 @@ export default function ProjectDetail() {
             bibendum risus. Donec at quam pellentesque, aliquam ipsum sed
           </p>
         </div>
-        {/* All images will have "" */}
+        {/* All images will have "mx-auto max-w-4xl my-8" */}
         <div className="mx-auto max-w-4xl my-8">
           <img
             src="/images/others/image_placeholder.svg"
