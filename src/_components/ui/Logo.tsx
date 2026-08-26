@@ -12,8 +12,8 @@ export default function Logo(props: LogoProps) {
   return (
     <Link to={ROUTES.HOME} aria-label="Go to home page">
       <img
-        src="/images/logo64.svg"
-        srcSet="/images/logo16.svg 16w, /images/logo32.svg 32w, /images/logo64.svg 64w, /images/logo128.svg 128w"
+        src="/images/others/logo64.svg"
+        srcSet="/images/others/logo16.svg 16w, /images/others/logo32.svg 32w, /images/others/logo64.svg 64w, /images/others/logo128.svg 128w"
         sizes={`${size}px`}
         width={size}
         height={size}
