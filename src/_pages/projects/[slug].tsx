@@ -38,7 +38,16 @@ export default function ProjectDetail() {
         </div>
       </div>
       {/* Content */}
-      <div></div>
+      <div>
+        <div className="mx-auto max-w-xl">
+          <h1 className="text-foreground text-4xl mb-4">Twocoderz</h1>
+          <p className="text-foreground text-xl font-normal leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus
+            mattis aliquam. Phasellus ante arcu, semper quis mi a, volutpat
+            bibendum risus. Donec at quam pellentesque, aliquam ipsum sed,{" "}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
