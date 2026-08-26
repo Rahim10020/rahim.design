@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ROUTES } from "../../routes";
 import { getProjectBySlug } from "../../data/project";
-import { AddIcon } from "../../_components/icons";
+import { OpenLinkIcon } from "../../_components/icons";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -37,7 +37,7 @@ export default function ProjectDetail() {
               rel="noopener noreferrer"
               className="cursor-pointer"
             >
-              <AddIcon />
+              <OpenLinkIcon />
             </a>
           </div>
           <p className="text-foreground text-xl font-normal leading-relaxed">
