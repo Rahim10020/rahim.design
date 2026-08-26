@@ -25,7 +25,7 @@ export interface Project {
 }
 type ContentEntry<T> = { meta: T; content: string };
 
-const modules = import.meta.glob("../../public/content/**/*.md", {
+const modules = import.meta.glob("../content/**/*.md", {
   query: "?raw",
   import: "default",
   eager: true,
