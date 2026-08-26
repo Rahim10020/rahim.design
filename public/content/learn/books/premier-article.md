@@ -1,25 +1,16 @@
-# Résumé : Atomic Habits
+---
+title: "Summary: Atomic Habits"
+date: "2026-07-10"
+description: "Key takeaways from James Clear's book on the small habits that change everything."
+---
 
-## L'effet des petites habitudes
+## Small habits compound
 
-Les grands résultats ne viennent pas d'un seul effort massif, mais de
-l'accumulation de petites actions répétées quotidiennement.
+Lasting progress comes from small actions repeated consistently. Focus on the process you can practice today.
 
-### 1% mieux chaque jour
+## Four laws of behavior change
 
-Si tu t'améliores de 1% chaque jour pendant un an, tu seras 37 fois
-meilleur à la fin de l'année. À l'inverse, 1% de déclin chaque jour te
-ramène presque à zéro.
-
-### Les quatre lois du changement
-
-1. **Rendre l'habitude évidente**
-2. **Rendre l'habitude attrayante**
-3. **Rendre l'habitude facile**
-4. **Rendre l'habitude satisfaisante**
-
-## Ce que je retiens
-
-Le livre insiste sur le système plutôt que le but. Au lieu de se concentrer
-sur le résultat final, il vaut mieux construire un système qui te permet
-de progresser chaque jour sans dépendre de la motivation.
+1. Make the habit obvious.
+2. Make it attractive.
+3. Make it easy.
+4. Make it satisfying.
