@@ -39,7 +39,7 @@ export default function LearnCard({
       </h3>
 
       {/* Description */}
-      <p className="text-foreground text-xl font-normal leading-relaxed">
+      <p className="text-foreground max-w-lg text-xl font-normal leading-relaxed">
         {description}
       </p>
     </article>

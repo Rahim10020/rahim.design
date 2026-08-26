@@ -19,9 +19,7 @@ const filters: ReadonlyArray<{ label: string; value: LearnFilter }> = [
 export default function LearnPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedType = searchParams.get("type");
-  const activeFilter = isLearnType(requestedType)
-    ? requestedType
-    : "all";
+  const activeFilter = isLearnType(requestedType) ? requestedType : "all";
   const filteredArticles = articles.filter(
     (article) => activeFilter === "all" || article.type === activeFilter,
   );
@@ -31,7 +29,7 @@ export default function LearnPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24">
         <div className="mx-auto w-full max-w-6xl">
           <h1 className="mb-10 text-foreground text-6xl sm:text-7xl md:text-8xl font-medium tracking-tight">
-            Learn
+            Learn.
           </h1>
 
           <div className="flex items-center justify-center">
