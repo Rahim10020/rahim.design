@@ -35,7 +35,7 @@ export default function AllProjectCard({
         ) : (
           // Placeholder
           <img
-            src="/images/image_placeholder.svg"
+            src="/images/others/image_placeholder.svg"
             alt="placeholder image"
             className="w-full h-full object-cover"
           />
