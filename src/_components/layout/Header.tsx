@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
-      <div className="max-w-350 mx-auto flex h-26 items-center justify-between px-2">
+      <div className="max-w-350 mx-auto flex h-20 items-center justify-between px-2">
         <Logo />
 
         <div
