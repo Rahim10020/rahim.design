@@ -52,7 +52,9 @@ export default function LearnArticle() {
   if (!content) {
     return (
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p>Chargement...</p>
+        <div className="flex items-center justify-center py-24">
+          <p>Chargement...</p>
+        </div>
       </div>
     );
   }
