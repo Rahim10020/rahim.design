@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { getArticleBySlug } from "../../data/articles";
 import { useEffect, useState } from "react";
 import { ROUTES } from "../../routes";
+import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
 
 const modules = import.meta.glob("../../../../public/content/learn/*.md", {
   as: "raw",
@@ -25,13 +26,23 @@ export default function LearnArticle() {
   if (!article) {
     return (
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p>Article non trouvé.</p>
-        <Link
-          to={ROUTES.LEARN.LIST}
-          className="mt-4 inline-block underline underline-offset-4"
-        >
-          ← Retour aux articles
-        </Link>
+        <div className="flex items-center justify-center py-48">
+          <div>
+            <div className="flex flex-col items-center gap-12">
+              <AsteriskIcon size={54} />
+              <h4 className="text-foreground text-xl font-normal">
+                Learn article not found.
+              </h4>
+            </div>
+            <Link
+              to={ROUTES.PROJECTS.LIST}
+              className="mt-8 flex items-center gap-4 text-foreground text-xl underline underline-offset-4"
+            >
+              <ArrowLeftIcon size={16} />
+              Back to learns
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
