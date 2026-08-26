@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/Markdown";
+import ContentImages from "../../_components/ContentImages";
 import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
 import { getLearnArticle } from "../../lib/content";
 import { ROUTES } from "../../routes";
@@ -26,7 +27,13 @@ export default function LearnArticle() {
           {article.meta.description}
         </p>
       </header>
+      <ContentImages
+        primaryImage={article.meta.imageSrc}
+        images={[]}
+        alt={article.meta.title}
+      />
       <Markdown content={article.content} />
+      <ContentImages images={article.meta.images} alt={article.meta.title} />
     </article>
   );
 }

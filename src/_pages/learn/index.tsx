@@ -68,6 +68,8 @@ export default function LearnPage() {
                 <LearnCard
                   title={article.title}
                   description={article.description}
+                  imageSrc={article.imageSrc}
+                  imageAlt={article.title}
                 />
               </Link>
             ))}

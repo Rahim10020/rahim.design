@@ -7,6 +7,8 @@ export interface ArticleFrontmatter {
   date: string;
   description: string;
   type: LearnType;
+  imageSrc?: string;
+  images: string[];
 }
 export const PROJECT_CATEGORIES = ["Web", "Mobile", "Design"] as const;
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
@@ -18,6 +20,7 @@ export interface Project {
   tags: string[];
   imageHeight: string;
   imageSrc?: string;
+  images: string[];
   link?: string;
 }
 type ContentEntry<T> = { meta: T; content: string };
@@ -30,6 +33,10 @@ const modules = import.meta.glob("../../public/content/**/*.md", {
 const slugFromPath = (path: string) =>
   path.split("/").pop()?.replace(/\.md$/, "") ?? "";
 const text = (value: unknown) => (typeof value === "string" ? value : "");
+const stringArray = (value: unknown) =>
+  Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === "string")
+    : [];
 
 function typeFromPath(path: string): LearnType | undefined {
   const type = path.match(/\/learn\/([^/]+)\//)?.[1];
@@ -45,6 +52,8 @@ function learnEntries(): ContentEntry<ArticleFrontmatter>[] {
       const { data, content } = parseFrontmatter(raw);
       const type = typeFromPath(path);
       const slug = slugFromPath(path);
+      const images = stringArray(data.images);
+      const imageSrc = text(data.imageSrc) || images[0];
       return type && slug
         ? [
             {
@@ -54,6 +63,8 @@ function learnEntries(): ContentEntry<ArticleFrontmatter>[] {
                 date: text(data.date),
                 description: text(data.description),
                 type,
+                ...(imageSrc ? { imageSrc } : {}),
+                images: images.filter((image) => image !== imageSrc),
               },
               content,
             },
@@ -72,6 +83,7 @@ function projectEntries(): ContentEntry<Project>[] {
       if (!slug || !PROJECT_CATEGORIES.includes(category as ProjectCategory))
         return [];
       const imageSrc = text(data.imageSrc);
+      const images = stringArray(data.images);
       const link = text(data.link);
       return [
         {
@@ -80,13 +92,10 @@ function projectEntries(): ContentEntry<Project>[] {
             title: text(data.title),
             category: category as ProjectCategory,
             description: text(data.description),
-            tags: Array.isArray(data.tags)
-              ? data.tags.filter(
-                  (tag): tag is string => typeof tag === "string",
-                )
-              : [],
+            tags: stringArray(data.tags),
             imageHeight: text(data.imageHeight) || "h-96",
-            ...(imageSrc ? { imageSrc } : {}),
+            ...(imageSrc || images[0] ? { imageSrc: imageSrc || images[0] } : {}),
+            images: images.filter((image) => image !== (imageSrc || images[0])),
             ...(link ? { link } : {}),
           },
           content,
