@@ -62,7 +62,7 @@ export default function LearnPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {filteredArticles.map((article) => (
               <Link key={article.slug} to={getLearnPath(article.slug)}>
                 <LearnCard
