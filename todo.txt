@@ -1,5 +1,1 @@
 -- faire de recherches sur le type d'animation a mettre.
--- les navItems qui sont dans le header(about, services, projects et contact) 
-sont actuellement des anchors.
-dois je creer des pages dediees ? j'aimerais que quand on clique sur projects ca nous
-emmene sur la page qui affiche tous les projets.
