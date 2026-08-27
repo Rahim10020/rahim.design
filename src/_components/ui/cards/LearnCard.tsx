@@ -16,7 +16,7 @@ export default function LearnCard({
   return (
     <article className={`flex flex-col group ${className}`}>
       {/* Image */}
-      <div className="w-full aspect-6/5 overflow-hidden bg-background mb-6">
+      <div className="w-full aspect-2/1 overflow-hidden bg-background mb-6">
         {imageSrc ? (
           <img
             src={imageSrc}
