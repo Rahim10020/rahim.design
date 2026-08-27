@@ -87,7 +87,7 @@ export default function Button({
         onMouseLeave={(event) => rest(event.currentTarget)}
         onMouseDown={(event) => press(event.currentTarget)}
         onMouseUp={(event) => release(event.currentTarget)}
-        className={`${base} ${variants[variant]} ${className}`}
+        className={`relative z-10 ${base} ${variants[variant]} ${className}`}
       >
         {children}
       </button>
