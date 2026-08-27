@@ -1,4 +1,4 @@
-import { type ProjectCategory } from "../../data/project";
+import { type ProjectCategory } from "../../../data/project";
 
 interface AllProjectCardProps {
   title: string;

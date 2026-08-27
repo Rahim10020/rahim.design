@@ -1,4 +1,4 @@
-import ServiceCard from "../ui/ServiceCard";
+import ServiceCard from "../ui/cards/ServiceCard";
 import { SECTION_IDS } from "../../routes";
 
 interface Service {

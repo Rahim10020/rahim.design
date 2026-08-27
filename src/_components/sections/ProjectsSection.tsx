@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ProjectCard from "../ui/ProjectCard";
+import ProjectCard from "../ui/cards/ProjectCard";
 import { ChevronRightIcon } from "../icons";
 import { getProjectPath, SECTION_IDS } from "../../routes";
 import { projects } from "../../data/project";

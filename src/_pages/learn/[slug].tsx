@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import Markdown from "../../_components/Markdown";
-import ContentImages from "../../_components/ContentImages";
+import Markdown from "../../_components/ui/others/Markdown";
+import ContentImages from "../../_components/ui/others/ContentImages";
 import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
 import { getLearnArticle } from "../../lib/content";
 import { ROUTES } from "../../routes";

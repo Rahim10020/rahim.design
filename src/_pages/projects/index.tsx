@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AllProjectCard from "../../_components/ui/AllProjectCard";
+import AllProjectCard from "../../_components/ui/cards/AllProjectCard";
 import {
   getProjectCategories,
   getProjectsByFilter,

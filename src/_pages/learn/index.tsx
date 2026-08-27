@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
-import LearnCard from "../../_components/ui/LearnCard";
+import LearnCard from "../../_components/ui/cards/LearnCard";
 import { articles } from "../../data/articles";
 import {
   getLearnPath,

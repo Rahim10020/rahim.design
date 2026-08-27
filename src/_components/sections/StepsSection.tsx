@@ -1,4 +1,4 @@
-import StepCard from "../ui/StepCard";
+import StepCard from "../ui/cards/StepCard";
 
 interface Step {
   number: string;
