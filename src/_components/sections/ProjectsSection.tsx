@@ -68,31 +68,33 @@ export default function ProjectsSection() {
         </h2>
       </div>
 
-      {/*  SLIDER  */}
-      <div
-        ref={sliderRef}
-        className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            category={project.category}
-            href={getProjectPath(project.slug)}
-            imageHeight={project.imageHeight}
-            imageSrc={project.imageSrc}
-          />
-        ))}
+      <div className="max-w-350 mx-auto">
+        {/*  SLIDER  */}
+        <div
+          ref={sliderRef}
+          className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              category={project.category}
+              href={getProjectPath(project.slug)}
+              imageHeight={project.imageHeight}
+              imageSrc={project.imageSrc}
+            />
+          ))}
 
-        {/* "See all projects" link at the end */}
-        <div className="shrink-0 snap-center flex items-center self-center pl-4 pr-10">
-          <Link
-            to={ROUTES.PROJECTS.LIST}
-            className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
-          >
-            See all projects <ChevronRightIcon className="pl-2" />
-          </Link>
+          {/* "See all projects" link at the end */}
+          <div className="shrink-0 snap-center flex items-center self-center pl-4 pr-10">
+            <Link
+              to={ROUTES.PROJECTS.LIST}
+              className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
+            >
+              See all projects <ChevronRightIcon className="pl-2" />
+            </Link>
+          </div>
         </div>
       </div>
 

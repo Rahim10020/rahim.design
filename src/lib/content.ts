@@ -94,7 +94,9 @@ function projectEntries(): ContentEntry<Project>[] {
             description: text(data.description),
             tags: stringArray(data.tags),
             imageHeight: text(data.imageHeight) || "h-96",
-            ...(imageSrc || images[0] ? { imageSrc: imageSrc || images[0] } : {}),
+            ...(imageSrc || images[0]
+              ? { imageSrc: imageSrc || images[0] }
+              : {}),
             images: images.filter((image) => image !== (imageSrc || images[0])),
             ...(link ? { link } : {}),
           },
