@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
 import { NAV_ITEMS } from "../../navigation.ts";
@@ -7,6 +7,8 @@ import { NAV_ITEMS } from "../../navigation.ts";
 export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
@@ -70,7 +72,7 @@ export default function Header() {
                     );
                   }
 
-                  return (
+                  return isHome ? (
                     <a
                       key={link.label}
                       href={link.href}
@@ -78,6 +80,14 @@ export default function Header() {
                     >
                       {link.label}
                     </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={`/${link.href}`}
+                      className={linkClassName}
+                    >
+                      {link.label}
+                    </Link>
                   );
                 })}
               </nav>
@@ -120,7 +130,7 @@ export default function Header() {
                   >
                     {link.label}
                   </Link>
-                ) : (
+                ) : isHome ? (
                   <a
                     href={link.href}
                     className="text-[#1e1e1e] text-base font-medium py-2"
@@ -128,6 +138,14 @@ export default function Header() {
                   >
                     {link.label}
                   </a>
+                ) : (
+                  <Link
+                    to={`/${link.href}`}
+                    className="text-[#1e1e1e] text-base font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 )}
 
                 {link.kind === "route" && link.children && (

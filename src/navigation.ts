@@ -19,7 +19,7 @@ export type NavItem = AnchorNavItem | RouteNavItem;
 export const NAV_ITEMS: NavItem[] = [
   { label: "About", kind: "anchor", href: `#${SECTION_IDS.ABOUT}` },
   { label: "Services", kind: "anchor", href: `#${SECTION_IDS.SERVICES}` },
-  { label: "Projects", kind: "anchor", href: `#${SECTION_IDS.PROJECTS}` },
+  { label: "Projects", kind: "route", to: ROUTES.PROJECTS.LIST },
   {
     label: "Learn",
     kind: "route",
