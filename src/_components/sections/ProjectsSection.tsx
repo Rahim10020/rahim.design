@@ -75,7 +75,7 @@ export default function ProjectsSection() {
           className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {projects.map((project) => (
+          {projects.slice(0, 4).map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
