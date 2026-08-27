@@ -1,4 +1,5 @@
 import Button from "../ui/Button";
+import Words from "../ui/for-animation/Words";
 
 export default function HeroSection() {
   return (
@@ -10,8 +11,11 @@ export default function HeroSection() {
               <div className="w-full">
                 {/* Headline */}
                 <h1 className="text-2xl md:text-4xl lg:text-7xl font-medium text-foreground max-w-4xl">
-                  You have an idea. Let's make it something people will want to
-                  use.
+                  <Words
+                    text="You have an idea. Let's make it something people will want to
+                  use."
+                    highlight={{ "idea.": "text-primary" }}
+                  />
                 </h1>
               </div>
 
