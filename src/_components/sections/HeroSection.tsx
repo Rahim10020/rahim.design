@@ -14,7 +14,7 @@ export default function HeroSection() {
                   <Words
                     text="You have an idea. Let's make it something people will want to
                   use."
-                    highlight={{ "idea.": "text-primary" }}
+                    highlight={{ "idea.": "" }}
                   />
                 </h1>
               </div>
