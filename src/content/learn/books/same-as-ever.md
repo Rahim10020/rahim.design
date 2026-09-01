@@ -2,6 +2,7 @@
 title: "Summary: The Design of Everyday Things"
 date: "2026-08-20"
 description: "Don Norman's principles on affordance, feedback, and everyday ergonomics."
+imageSrc: "/images/books/same_as_ever/same_as_ever.png"
 ---
 
 ## Make actions discoverable
