@@ -21,7 +21,7 @@ export default function HeroSection() {
 
               <div className="w-full flex justify-end">
                 <div className="flex flex-col justify-end gap-6">
-                  <p className="text-foreground text-base md:text-3xl leading-relaxed font-normal max-w-lg">
+                  <p className="text-foreground text-base md:text-2xl leading-relaxed font-normal max-w-md">
                     I am Rahim ALI. I design and code things that make the web
                     feel simple, intuitive, and alive.
                   </p>
