@@ -33,14 +33,6 @@
 
   /* Markdown article typography */
 
-  .prose h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.3;
-  }
-
   .prose p {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
