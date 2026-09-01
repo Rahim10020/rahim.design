@@ -77,6 +77,28 @@ export default function Markdown({ content }: { content: string }) {
               {children}
             </pre>
           ),
+          table: ({ children }) => (
+            <div className="my-6 w-full overflow-x-auto">
+              <table className="w-full max-w-4xl border-collapse text-xl border border-foreground-alt text-foreground">
+                {children}
+              </table>
+            </div>
+          ),
+          thead: ({ children }) => (
+            <thead className="border-b text-2xl text-foreground-alt border-foreground-alt">
+              {children}
+            </thead>
+          ),
+          tbody: ({ children }) => <tbody>{children}</tbody>,
+          tr: ({ children }) => (
+            <tr className="border-b border-foreground-alt last:border-0">
+              {children}
+            </tr>
+          ),
+          th: ({ children }) => (
+            <th className="px-4 py-2 text-left font-medium">{children}</th>
+          ),
+          td: ({ children }) => <td className="px-4 py-2">{children}</td>,
         }}
       >
         {content}
