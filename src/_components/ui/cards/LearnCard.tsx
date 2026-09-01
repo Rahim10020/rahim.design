@@ -8,7 +8,6 @@ interface LearnCardProps {
 
 export default function LearnCard({
   title,
-  description,
   imageSrc,
   imageAlt = "",
   className = "",
@@ -37,11 +36,6 @@ export default function LearnCard({
       <h3 className="text-foreground text-xl sm:text-3xl font-medium group-hover:underline mb-3">
         {title}
       </h3>
-
-      {/* Description */}
-      <p className="text-foreground max-w-lg text-xl font-normal leading-relaxed">
-        {description}
-      </p>
     </article>
   );
 }

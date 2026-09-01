@@ -1,5 +1,3 @@
 -- faire de recherches sur le type d'animation a mettre.
 -- La prochaine fois je continue avec:
-    1- Ajout des images de Books
-    2- Preparation des captures d'ecrans des notes et Books
-    3- Preparation des images gifs des projets.
+    1- 
