@@ -69,6 +69,11 @@ export default function Markdown({ content }: { content: string }) {
               {children}
             </code>
           ),
+          strong: ({ children }) => (
+            <strong className="font-medium text-foreground-alt">
+              {children}
+            </strong>
+          ),
           pre: ({ children }) => (
             <pre className="my-6 overflow-x-auto rounded bg-foreground p-4 text-background">
               {children}
