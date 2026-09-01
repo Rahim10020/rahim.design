@@ -20,7 +20,7 @@ export default function Markdown({ content }: { content: string }) {
             </h3>
           ),
           p: ({ children }) => (
-            <p className="text-xl leading-relaxed text-foreground-alt">
+            <p className="text-xl leading-relaxed text-foreground">
               {children}
             </p>
           ),
@@ -45,12 +45,10 @@ export default function Markdown({ content }: { content: string }) {
             </figure>
           ),
           ul: ({ children }) => (
-            <ul className="my-5 list-disc pl-6 text-foreground-alt">
-              {children}
-            </ul>
+            <ul className="my-5 list-disc pl-6 text-foreground">{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol className="my-5 list-decimal pl-6 text-foreground-alt">
+            <ol className="my-5 list-decimal pl-6 text-foreground">
               {children}
             </ol>
           ),
@@ -60,7 +58,7 @@ export default function Markdown({ content }: { content: string }) {
             </li>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="my-6 border-l-4 border-primary pl-5 text-xl italic text-foreground-alt">
+            <blockquote className="my-6 border-l-4 border-primary pl-5 text-xl italic text-foreground">
               {children}
             </blockquote>
           ),

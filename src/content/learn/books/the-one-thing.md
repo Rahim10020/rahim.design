@@ -1,6 +1,6 @@
 ---
 title: "Summary: The ONE Thing"
-date: "2026-09-01"
+date: "2026-08-15"
 description: "Key concepts and notes on extraordinary results from Gary Keller and Jay Papasan's book."
 ---
 
@@ -21,17 +21,33 @@ When you want the absolute best chance to succeed at anything, your approach sho
 
 ---
 
-## The 6 Lies Between You and Success
+## Lie #1: Everything Matters Equally
 
-To adopt this mindset, we must first dismantle the common misconceptions about productivity and achievement:
+The first major obstacle to extraordinary success is believing that everything on your plate carries equal importance. When everything feels urgent and important, we default to busyness—active and working hard, yet getting no closer to meaningful success.
 
-1. **Everything Matters Equally:** When everything feels urgent and important, everything seems equal. However, activity is often unrelated to productivity, and busyness rarely equals progress. _The things that matter most must never be at the mercy of things that matter least._
-2. **Multitasking:** Attempting to do multiple complex tasks simultaneously divides focus and reduces performance.
-3. **A Disciplined Life:** Success isn't about having unlimited discipline; it's about building targeted habits step-by-step.
-4. **Willpower Is Always on Will-Call:** Willpower is a limited resource that depletes throughout the day.
-5. **A Balanced Life:** Extraordinary success requires temporary imbalance to give proper focus to what matters most.
-6. **Big Is Bad:** Thinking big is essential for achieving remarkable growth and reaching full potential.
+> "It’s not enough to be busy, so are the ants. The question is, what are we busy about?"  
+> — _Henry David Thoreau_
 
----
+### From To-Do Lists to Success Lists
 
-_Note: This article is an evolving summary written as I read through the book. New chapters, takeaways, and personal insights will be added progressively._
+Most people operate from daily **To-Do Lists**. However, traditional to-do lists are inherently flawed:
+
+- **They lack intent:** They are simply lists of whatever popped into your head first.
+- **They act as survival lists:** They help you get through the day, but they don't turn today into a stepping-stone for long-term growth.
+- **They pull you in all directions:** Long to-do lists scatter your focus.
+
+Achievers work differently. They don't fall into the "check off" trap—checking off a hundred low-value items to end the day with a clean desk. Instead, they convert their To-Do List into a **Success List** by applying priority.
+
+| To-Do List                   | Success List                     |
+| :--------------------------- | :------------------------------- |
+| Long and disorganized        | Short and highly focused         |
+| Filled with "Could do" items | Built around "Should do" items   |
+| Pulls you in every direction | Aims you in a specific direction |
+
+### Taking Pareto to the Extreme (Extreme Pareto)
+
+The Pareto Principle (the 80/20 rule) states that 80% of your results come from 20% of your efforts. But Gary Keller points out that Pareto doesn't go far enough—you need to take it to the extreme:
+
+1. Start with your full list of tasks (e.g., 25 items).
+2. Apply the 20% rule to find the vital few (5 items).
+3. **Apply the 20% rule again** to find the vital few of the vital few, until you arrive at **the ONE Thing** (1 item).

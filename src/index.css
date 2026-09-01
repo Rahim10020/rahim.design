@@ -7,7 +7,7 @@
   --background: #ffffff;
   --background-alt: #f4f4f0;
   --foreground: #000000;
-  --foreground-alt: #c5d86d;
+  --foreground-alt: #14532d;
   --accent: #ff6547;
   --accent-b: #f4ed55;
   --accent-c: #1982c4;
@@ -45,7 +45,6 @@
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     line-height: 1.75;
-    color: var(--foreground-alt);
   }
 
   .prose ul {
@@ -53,7 +52,6 @@
     margin-bottom: 1.25rem;
     padding-left: 1.5rem;
     list-style-type: disc;
-    color: var(--foreground-alt);
   }
 
   .prose li {
