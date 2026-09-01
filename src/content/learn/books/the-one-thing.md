@@ -2,6 +2,7 @@
 title: "Summary: The ONE Thing"
 date: "2026-08-15"
 description: "Key concepts and notes on extraordinary results from Gary Keller and Jay Papasan's book."
+imageSrc: "/images/books/the_one_thing/the-one-thing.jpeg"
 ---
 
 ## Core Philosophy: The Power of Going Small
