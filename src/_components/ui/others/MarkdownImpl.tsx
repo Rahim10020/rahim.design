@@ -34,11 +34,13 @@ export default function Markdown({ content }: { content: string }) {
             </a>
           ),
           img: ({ src, alt }) => (
-            <img
-              src={src}
-              alt={alt ?? ""}
-              className="mx-auto my-8 w-full max-w-4xl object-cover"
-            />
+            <figure className="mx-auto mb-10 max-w-4xl">
+              <img
+                src={src}
+                alt={alt ?? ""}
+                className="aspect-video w-full object-cover"
+              />
+            </figure>
           ),
           ul: ({ children }) => (
             <ul className="my-5 list-disc pl-6 text-foreground-alt">
