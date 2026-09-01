@@ -96,9 +96,15 @@ export default function Markdown({ content }: { content: string }) {
             </tr>
           ),
           th: ({ children }) => (
-            <th className="px-4 py-2 text-left font-medium">{children}</th>
+            <th className="border-r border-foreground-alt px-4 py-2 text-left font-medium last:border-r-0">
+              {children}
+            </th>
           ),
-          td: ({ children }) => <td className="px-4 py-2">{children}</td>,
+          td: ({ children }) => (
+            <td className="border-r border-foreground-alt px-4 py-4 last:border-r-0">
+              {children}
+            </td>
+          ),
         }}
       >
         {content}
