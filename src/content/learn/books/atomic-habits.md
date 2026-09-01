@@ -2,6 +2,7 @@
 title: "Summary: Atomic Habits"
 date: "2026-07-10"
 description: "Key takeaways from James Clear's book on the small habits that change everything."
+imageSrc: "/images/books/atomic_habits/atomic-habits.jpeg"
 ---
 
 ## Small habits compound
