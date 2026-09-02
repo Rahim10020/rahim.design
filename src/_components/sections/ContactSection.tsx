@@ -1,4 +1,4 @@
-import { SECTION_IDS } from "../../routes";
+import { SECTION_IDS, WHATSAPP_URL } from "../../routes";
 import {
   GithubIcon,
   InstagramIcon,
@@ -30,12 +30,19 @@ export default function ContactSection() {
           {/* 3rd line */}
           <div className="flex items-end justify-between max-w-6xl mx-auto mb-16">
             <div className="flex flex-col gap-6">
-              <div className="flex items-center justify-start gap-8">
-                <GithubIcon size={46} />
-                <LinkedinIcon size={46} />
-                <InstagramIcon size={46} />
-                <WhatsappIcon size={46} />
-              </div>
+               <div className="flex items-center justify-start gap-8">
+                 <GithubIcon size={46} />
+                 <LinkedinIcon size={46} />
+                 <InstagramIcon size={46} />
+                 <a
+                   href={WHATSAPP_URL}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="WhatsApp"
+                 >
+                   <WhatsappIcon size={46} />
+                 </a>
+               </div>
               <p className="text-foreground text-xl leading-relaxed max-w-sm">
                 No need to have all the answers. Come up with the idea, we'll
                 start there.
@@ -51,19 +58,28 @@ export default function ContactSection() {
           {/* 4th line */}
           <div className="flex items-center justify-between max-w-6xl mx-auto">
             <div>
-              <p className="text-foreground text-xl font-normal">
-                Write directly to:
-              </p>
-              <a
-                href="#"
-                className="underline cursor-pointer text-foreground text-xl decoration-2"
-              >
-                rahim100codeur@gmail.com
-              </a>
-            </div>
-            <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-              Start a Conversation
-            </Button>
+               <p className="text-foreground text-xl font-normal">
+                 Write directly to:
+               </p>
+               <a
+                 href={WHATSAPP_URL}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="underline cursor-pointer text-foreground text-xl decoration-2"
+               >
+                 rahim100codeur@gmail.com
+               </a>
+             </div>
+             <a
+               href={WHATSAPP_URL}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="relative inline-block"
+             >
+               <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                 Start a Conversation
+               </Button>
+             </a>
           </div>
         </div>
       </div>

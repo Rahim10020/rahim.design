@@ -1,4 +1,4 @@
-import { getLearnListPath, LEARN_TYPES, ROUTES, SECTION_IDS } from "./routes";
+import { getLearnListPath, LEARN_TYPES, ROUTES, WHATSAPP_URL } from "./routes";
 
 type AnchorNavItem = {
   label: string;
@@ -14,11 +14,17 @@ type RouteNavItem = {
   children?: RouteNavItem[];
 };
 
-export type NavItem = AnchorNavItem | RouteNavItem;
+type ExternalNavItem = {
+  label: string;
+  kind: "external";
+  href: string;
+};
+
+export type NavItem = AnchorNavItem | RouteNavItem | ExternalNavItem;
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "About", kind: "anchor", href: `#${SECTION_IDS.ABOUT}` },
-  { label: "Services", kind: "anchor", href: `#${SECTION_IDS.SERVICES}` },
+  { label: "About", kind: "route", to: ROUTES.ABOUT },
+  { label: "Services", kind: "route", to: ROUTES.SERVICES },
   { label: "Projects", kind: "route", to: ROUTES.PROJECTS.LIST },
   {
     label: "Learn",
@@ -37,7 +43,7 @@ export const NAV_ITEMS: NavItem[] = [
       },
     ],
   },
-  { label: "Contact", kind: "anchor", href: `#${SECTION_IDS.CONTACT}` },
+  { label: "Contact", kind: "external", href: WHATSAPP_URL },
 ];
 
 export const DEFAULT_LEARN_LIST_PATH = ROUTES.LEARN.LIST;

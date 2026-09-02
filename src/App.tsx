@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./_components/layout/MainLayout";
 import HomePage from "./_pages/HomePage";
+import AboutPage from "./_pages/About";
+import ServicesPage from "./_pages/Services";
 import ProjectsList from "./_pages/projects/index";
 import ProjectDetail from "./_pages/projects/[slug]";
 import LearnList from "./_pages/learn/index";
@@ -12,6 +14,8 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: ROUTES.ABOUT, element: <AboutPage /> },
+      { path: ROUTES.SERVICES, element: <ServicesPage /> },
       { path: ROUTES.PROJECTS.LIST, element: <ProjectsList /> },
       { path: ROUTES.PROJECTS.DETAIL, element: <ProjectDetail /> },
       { path: ROUTES.LEARN.LIST, element: <LearnList /> },

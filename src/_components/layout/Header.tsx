@@ -15,6 +15,10 @@ const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
     return pathname === item.to || pathname.startsWith(`${item.to}/`);
   }
 
+  if (item.kind === "external") {
+    return false;
+  }
+
   const targetHash = item.href.replace(/^#/, "");
 
   return pathname === "/" && hash === `#${targetHash}`;
@@ -25,11 +29,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { pathname, hash } = location;
   const isAnchorSectionActive = (href: string) => {
     const sectionId = href.replace(/^#/, "");
     return pathname === "/" && hash === `#${sectionId}`;
   };
-  const { pathname, hash } = location;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
@@ -96,6 +100,20 @@ export default function Header() {
                           })}
                         </nav>
                       </div>
+                    );
+                  }
+
+                   if (link.kind === "external") {
+                    return (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClassName}
+                      >
+                        {link.label}
+                      </a>
                     );
                   }
 
@@ -175,18 +193,30 @@ export default function Header() {
 
               return (
                 <div key={link.label} className="flex flex-col gap-2">
-                  {link.kind === "route" ? (
-                    <Link
-                      to={link.to}
-                      className={`text-base font-medium py-2 ${
-                        isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : isHome ? (
+                   {link.kind === "route" ? (
+                     <Link
+                       to={link.to}
+                       className={`text-base font-medium py-2 ${
+                         isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
+                       }`}
+                       onClick={() => setMobileMenuOpen(false)}
+                       aria-current={isActive ? "page" : undefined}
+                     >
+                       {link.label}
+                     </Link>
+                   ) : link.kind === "external" ? (
+                     <a
+                       href={link.href}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className={`text-base font-medium py-2 ${
+                         isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
+                       }`}
+                       onClick={() => setMobileMenuOpen(false)}
+                     >
+                       {link.label}
+                     </a>
+                   ) : isHome ? (
                     <a
                       href={link.href}
                       className={`text-base font-medium py-2 ${

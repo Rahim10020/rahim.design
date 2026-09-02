@@ -1,5 +1,7 @@
 export const ROUTES = {
   HOME: "/",
+  ABOUT: "/about",
+  SERVICES: "/services",
   PROJECTS: {
     LIST: "/projects",
     DETAIL: "/projects/:slug",
@@ -9,6 +11,8 @@ export const ROUTES = {
     ARTICLE: "/learn/:slug",
   },
 } as const;
+
+export const WHATSAPP_URL = "https://wa.me/PLACEHOLDER";
 
 export const SECTION_IDS = {
   ABOUT: "about",
@@ -29,6 +33,8 @@ export const isLearnType = (value: string | null): value is LearnType =>
 
 export const getProjectPath = (slug: string) => `/projects/${slug}`;
 export const getLearnPath = (slug: string) => `/learn/${slug}`;
+export const getAboutPath = () => ROUTES.ABOUT;
+export const getServicesPath = () => ROUTES.SERVICES;
 
 export const getLearnListPath = (type?: LearnType) =>
   type ? `/learn?type=${type}` : ROUTES.LEARN.LIST;

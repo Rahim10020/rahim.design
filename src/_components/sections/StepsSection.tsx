@@ -1,47 +1,5 @@
 import StepCard from "../ui/cards/StepCard";
-
-interface Step {
-  number: string;
-  title: string;
-  description: string;
-  backgroundColor: string;
-  textColor: "light" | "dark";
-}
-
-const stepsData: Step[] = [
-  {
-    number: "01",
-    title: "We start by talking",
-    description:
-      "Before I think about colors, components, or code, I want to understand what you're actually trying to build.",
-    backgroundColor: "#f4ed55",
-    textColor: "dark",
-  },
-  {
-    number: "02",
-    title: "We put the idea in order",
-    description:
-      "I transform needs, constraints and ideas into a clear experience.",
-    backgroundColor: "#1e1e1e",
-    textColor: "light",
-  },
-  {
-    number: "03",
-    title: "We give it a shape",
-    description:
-      "Design, interactions, responsive, visual details: we build something that makes you want to be used.",
-    backgroundColor: "#1982c4",
-    textColor: "light",
-  },
-  {
-    number: "04",
-    title: "I then move on to the code",
-    description:
-      "I transform the design into a clean, efficient interface that is faithful to the initial intention.",
-    backgroundColor: "#f9c74f",
-    textColor: "dark",
-  },
-];
+import { stepsData } from "../../data/steps";
 
 export default function StepsSection() {
   return (
