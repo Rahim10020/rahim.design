@@ -14,13 +14,6 @@ export const ROUTES = {
 
 export const WHATSAPP_URL = "https://wa.me/PLACEHOLDER";
 
-export const SECTION_IDS = {
-  ABOUT: "about",
-  SERVICES: "services",
-  PROJECTS: "projects",
-  CONTACT: "contact",
-} as const;
-
 export const LEARN_TYPES = {
   BOOKS: "books",
   NOTES: "notes",

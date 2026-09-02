@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "../ui/cards/ProjectCard";
 import { ChevronRightIcon } from "../icons";
-import { getProjectPath, SECTION_IDS } from "../../routes";
+import { getProjectPath } from "../../routes";
 import { projects } from "../../data/project";
 import { ROUTES } from "../../routes";
 
@@ -57,10 +57,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section
-      id={SECTION_IDS.PROJECTS}
-      className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28 overflow-hidden"
-    >
+    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28 overflow-hidden">
       <div className="max-w-350 mx-auto px-6">
         {/* Title */}
         <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-14 lg:mb-20 max-w-lg">

@@ -1,5 +1,4 @@
 import ServiceCard from "../ui/cards/ServiceCard";
-import { SECTION_IDS } from "../../routes";
 
 interface Service {
   title: string;
@@ -30,10 +29,7 @@ const services: Service[] = [
 
 export default function ServicesSection() {
   return (
-    <section
-      id={SECTION_IDS.SERVICES}
-      className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28"
-    >
+    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28">
       <div className="max-w-350 mx-auto px-6">
         {/* Title */}
         <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-20 max-w-md">
