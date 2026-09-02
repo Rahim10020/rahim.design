@@ -55,7 +55,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 gap-6">
+          <div className="columns-1 md:columns-2 gap-6 mx-auto max-w-4xl">
             {filteredProjects.map((project) => (
               <AllProjectCard
                 key={project.slug}
