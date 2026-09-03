@@ -1,6 +1,6 @@
 export default function PieChart() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-foreground">
+    <div>
       <div className="relative w-72 h-72 sm:w-80 sm:h-80">
         {/* Pie chart avec conic-gradient */}
         <div
