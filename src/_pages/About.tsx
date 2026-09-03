@@ -123,7 +123,7 @@ export default function AboutPage() {
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
               The tools I use to get the job done.
             </h2>
-            <div className="flex items-center justify-between gap-6">
+            <div className="flex items-center justify-between gap-16">
               <div className="flex flex-col gap-6">
                 <h3 className="text-foreground text-3xl font-medium">Design</h3>
                 <div className="flex items-center gap-4">
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-16">
                 <h3 className="text-foreground text-3xl font-medium">
                   Front-end
                 </h3>
@@ -147,17 +147,17 @@ export default function AboutPage() {
                   <img
                     src="/icons/tools/react.svg"
                     alt="React logo image"
-                    className="w-32 h-32"
+                    className="w-24 h-24"
                   />
                   <img
                     src="/icons/tools/typescript.svg"
                     alt="Typescript logo image"
-                    className="w-32 h-32"
+                    className="w-24 h-24"
                   />
                   <img
                     src="/icons/tools/next-js.svg"
                     alt="Next JS logo image"
-                    className="w-32 h-32"
+                    className="w-24 h-24"
                   />
                   <img
                     src="/icons/tools/tailwind-css.png"
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-16">
                 <h3 className="text-foreground text-3xl font-medium">
                   For brainstorming and code
                 </h3>
@@ -184,6 +184,10 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+            <p className="text-foreground text-2xl font-normal leading-relaxed mt-12 max-w-2xl">
+              I don't choose a technology because it's fashionable. I choose the
+              tool that corresponds to the problem.
+            </p>
           </div>
         </div>
       </div>
