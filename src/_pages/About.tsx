@@ -1,8 +1,11 @@
+import PieChart from "../_components/ui/others/PieChart";
+
 export default function AboutPage() {
   return (
     <section className="w-full bg-background min-h-screen">
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
+          {/* First section */}
           <div className="flex items-center justify-between gap-16">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl md:text-7xl font-medium text-foreground">
@@ -30,6 +33,31 @@ export default function AboutPage() {
                 alt="Rahim image"
                 className="w-full h-full"
               />
+            </div>
+          </div>
+          {/* Second section */}
+          <div className="flex items-center justify-between">
+            <div>
+              <h3>Part Designer</h3>
+              <ul>
+                <li>UX Design</li>
+                <li>UI Design</li>
+                <li>Design systems</li>
+                <li>Make it pop</li>
+              </ul>
+            </div>
+            <div>
+              <PieChart />
+            </div>
+            <div>
+              <h3>Part Coder</h3>
+              <ul>
+                <li>Front-end Development</li>
+                <li>React/Next js</li>
+                <li>Tailwind css</li>
+                <li>GSAP</li>
+                <li>Typescript</li>
+              </ul>
             </div>
           </div>
         </div>
