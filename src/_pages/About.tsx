@@ -36,28 +36,42 @@ export default function AboutPage() {
             </div>
           </div>
           {/* Second section */}
-          <div className="flex items-center justify-between">
-            <div>
-              <h3>Part Designer</h3>
-              <ul>
-                <li>UX Design</li>
-                <li>UI Design</li>
-                <li>Design systems</li>
-                <li>Make it pop</li>
-              </ul>
-            </div>
-            <div>
-              <PieChart />
-            </div>
-            <div>
-              <h3>Part Coder</h3>
-              <ul>
-                <li>Front-end Development</li>
-                <li>React/Next js</li>
-                <li>Tailwind css</li>
-                <li>GSAP</li>
-                <li>Typescript</li>
-              </ul>
+          <div className="flex items-center justify-center">
+            <div className="flex items-center gap-16 pt-24">
+              <div className="flex flex-col gap-8">
+                <h3 className="text-foreground text-2xl font-medium">
+                  Part Designer
+                </h3>
+                <ul className="space-y-4">
+                  <li className="text-foreground-alt-a text-xl">UX Design</li>
+                  <li className="text-foreground-alt-a text-xl">UI Design</li>
+                  <li className="text-foreground-alt-a text-xl">
+                    Design systems
+                  </li>
+                  <li className="text-foreground-alt-a text-xl">Make it pop</li>
+                </ul>
+              </div>
+              <div>
+                <PieChart />
+              </div>
+              <div className="flex flex-col gap-8">
+                <h3 className="text-foreground text-2xl font-medium">
+                  Part Coder
+                </h3>
+                <ul className="space-y-4">
+                  <li className="text-foreground-alt-a text-xl">
+                    Front-end Development
+                  </li>
+                  <li className="text-foreground-alt-a text-xl">
+                    React/Next js
+                  </li>
+                  <li className="text-foreground-alt-a text-xl">
+                    Tailwind css
+                  </li>
+                  <li className="text-foreground-alt-a text-xl">GSAP</li>
+                  <li className="text-foreground-alt-a text-xl">Typescript</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
