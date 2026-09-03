@@ -1,6 +1,6 @@
-import StepCard from "../_components/ui/cards/StepCard";
+import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import PieChart from "../_components/ui/others/PieChart";
-import { stepsData } from "../data/steps";
+import { knowmeData } from "../data/knowme";
 
 export default function AboutPage() {
   return (
@@ -101,21 +101,19 @@ export default function AboutPage() {
             </div>
           </div>
           {/* fourth section */}
-          <div>
+          <div className="py-24">
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
               Some things you can expect from me.
             </h2>
 
-            {/* Steps Grid */}
+            {/* knowme Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-x-16 lg:gap-y-14">
-              {stepsData.map((step) => (
-                <StepCard
+              {knowmeData.map((step) => (
+                <KnowMeCard
                   key={step.number}
                   number={step.number}
                   title={step.title}
                   description={step.description}
-                  backgroundColor={step.backgroundColor}
-                  textColor={step.textColor}
                 />
               ))}
             </div>
