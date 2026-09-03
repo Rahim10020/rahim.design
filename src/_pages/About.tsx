@@ -74,6 +74,30 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+          {/* third section */}
+          <div className="flex items-center justify-between pt-24">
+            <div className="mx-auto max-w-xl flex flex-col gap-6">
+              <p className="text-foreground-alt-a text-xl font-normal leading-relaxed">
+                I can start in Figma and end up in my code editor without
+                needing to pass the baton to anyone else. This dual role allows
+                me to think about the experience while keeping technical
+                constraints in mind. The result: fewer back and forths, more
+                coherent decisions and better continuity between what has been
+                imagined and what is actually constructed.
+              </p>
+              <h2 >
+                I don't want to just build things that work. I want to build
+                things that make sense.
+              </h2>
+              <p className="text-foreground-alt-a text-xl font-normal leading-relaxed">
+                For me, design and development are not two completely separate
+                stages. A good interface should be beautiful, but above all it
+                should be understandable. A good product should work, but it
+                should also make you want to use it. It is this intersection
+                between thinking, design and technology that interests me.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
