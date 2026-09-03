@@ -123,6 +123,20 @@ export default function AboutPage() {
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
               The tools I use to get the job done.
             </h2>
+            <div>
+              <div>
+                <h3>Design</h3>
+                <div></div>
+              </div>
+              <div>
+                <h3>Front-end</h3>
+                <div></div>
+              </div>
+              <div>
+                <h3>For brainstorming and code</h3>
+                <div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
