@@ -118,6 +118,12 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+          {/* fith section */}
+          <div className="py-24">
+            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
+              The tools I use to get the job done.
+            </h2>
+          </div>
         </div>
       </div>
     </section>
