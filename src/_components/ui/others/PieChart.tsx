@@ -15,10 +15,10 @@ export default function PieChart() {
         />
 
         {/* Labels */}
-        <span className="absolute left-[18%] top-[42%] text-background text-xl sm:text-2xl font-medium select-none">
+        <span className="absolute left-[08%] top-[40%] text-background text-xl md:text-2xl font-medium select-none">
           Designer
         </span>
-        <span className="absolute right-[16%] top-[38%] text-background text-xl sm:text-2xl font-medium select-none">
+        <span className="absolute right-[16%] top-[42%] text-background text-xl md:text-2xl font-medium select-none">
           Coder
         </span>
       </div>
