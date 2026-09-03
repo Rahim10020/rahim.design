@@ -123,18 +123,65 @@ export default function AboutPage() {
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
               The tools I use to get the job done.
             </h2>
-            <div>
-              <div>
-                <h3>Design</h3>
-                <div></div>
+            <div className="flex items-center justify-between gap-6">
+              <div className="flex flex-col gap-6">
+                <h3 className="text-foreground text-3xl font-medium">Design</h3>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/icons/tools/figma.svg"
+                    alt="Figma logo image"
+                    className="w-32 h-32"
+                  />
+                  <img
+                    src="/icons/tools/excalidraw.png"
+                    alt="Excalidraw logo image"
+                    className="w-24 h-24"
+                  />
+                </div>
               </div>
-              <div>
-                <h3>Front-end</h3>
-                <div></div>
+              <div className="flex flex-col gap-6">
+                <h3 className="text-foreground text-3xl font-medium">
+                  Front-end
+                </h3>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/icons/tools/react.svg"
+                    alt="React logo image"
+                    className="w-32 h-32"
+                  />
+                  <img
+                    src="/icons/tools/typescript.svg"
+                    alt="Typescript logo image"
+                    className="w-32 h-32"
+                  />
+                  <img
+                    src="/icons/tools/next-js.svg"
+                    alt="Next JS logo image"
+                    className="w-32 h-32"
+                  />
+                  <img
+                    src="/icons/tools/tailwind-css.png"
+                    alt="Tailwind logo image"
+                    className="w-24 h-24"
+                  />
+                </div>
               </div>
-              <div>
-                <h3>For brainstorming and code</h3>
-                <div></div>
+              <div className="flex flex-col gap-6">
+                <h3 className="text-foreground text-3xl font-medium">
+                  For brainstorming and code
+                </h3>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/icons/tools/claude.png"
+                    alt="Claude logo image"
+                    className="w-24 h-24"
+                  />
+                  <img
+                    src="/icons/tools/open-ai.png"
+                    alt="Open ai logo image"
+                    className="w-24 h-24"
+                  />
+                </div>
               </div>
             </div>
           </div>
