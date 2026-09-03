@@ -37,7 +37,7 @@ export default function AboutPage() {
           </div>
           {/* Second section */}
           <div className="flex items-center justify-center">
-            <div className="flex items-center gap-16 pt-24">
+            <div className="flex items-center gap-24 py-24">
               <div className="flex flex-col gap-8">
                 <h3 className="text-foreground text-2xl font-medium">
                   Part Designer
@@ -75,9 +75,9 @@ export default function AboutPage() {
             </div>
           </div>
           {/* third section */}
-          <div className="flex items-center justify-between pt-24">
-            <div className="mx-auto max-w-xl flex flex-col gap-6">
-              <p className="text-foreground-alt-a text-xl font-normal leading-relaxed">
+          <div className="flex items-center justify-between py-24">
+            <div className="mx-auto max-w-xl flex flex-col gap-12">
+              <p className="text-foreground text-xl font-normal leading-relaxed">
                 I can start in Figma and end up in my code editor without
                 needing to pass the baton to anyone else. This dual role allows
                 me to think about the experience while keeping technical
@@ -85,11 +85,11 @@ export default function AboutPage() {
                 coherent decisions and better continuity between what has been
                 imagined and what is actually constructed.
               </p>
-              <h2 >
+              <h2 className="text-foreground text-4xl font-medium">
                 I don't want to just build things that work. I want to build
                 things that make sense.
               </h2>
-              <p className="text-foreground-alt-a text-xl font-normal leading-relaxed">
+              <p className="text-foreground text-xl font-normal leading-relaxed">
                 For me, design and development are not two completely separate
                 stages. A good interface should be beautiful, but above all it
                 should be understandable. A good product should work, but it
