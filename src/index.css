@@ -8,6 +8,7 @@
   --background-alt: #f4f4f0;
   --foreground: #000000;
   --foreground-alt: #5c0000;
+  --foreground-alt-a: #494848;
   --accent: #ff6547;
   --accent-b: #f4ed55;
   --accent-c: #1982c4;
@@ -73,6 +74,7 @@
   --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
   --color-foreground-alt: var(--foreground-alt);
+  --color-foreground-alt-a: var(--foreground-alt-a);
   --color-accent: var(--accent);
   --color-accent-b: var(--accent-b);
   --color-accent-c: var(--accent-c);
