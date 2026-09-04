@@ -26,6 +26,7 @@ const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -63,7 +64,20 @@ export default function Header() {
 
                   if (link.kind === "route" && link.children) {
                     return (
-                      <div key={link.label} className="group relative">
+                      <div
+                        key={link.label}
+                        className="group relative"
+                        onMouseEnter={() => setOpenDropdown(link.label)}
+                        onMouseLeave={() => setOpenDropdown(null)}
+                        onFocus={() => setOpenDropdown(link.label)}
+                        onBlur={(event) => {
+                          if (
+                            !event.currentTarget.contains(event.relatedTarget)
+                          ) {
+                            setOpenDropdown(null);
+                          }
+                        }}
+                      >
                         <Link
                           to={link.to}
                           className={linkClassName}
@@ -73,11 +87,17 @@ export default function Header() {
                           <ArrowDownIcon
                             size={16}
                             strokeWidth={1.5}
-                            className="transition-transform group-hover:rotate-180 ml-2 group-focus-within:rotate-180"
+                            className={`ml-2 transition-transform ${
+                              openDropdown === link.label ? "rotate-180" : ""
+                            }`}
                           />
                         </Link>
 
-                        <nav className="absolute left-0 top-full z-50 mt-1 hidden w-full border-2 border-foreground bg-background group-hover:block group-focus-within:block">
+                        <nav
+                          className={`absolute left-0 top-full z-50 mt-1 w-full border-2 border-foreground bg-background ${
+                            openDropdown === link.label ? "block" : "hidden"
+                          }`}
+                        >
                           {link.children.map((item) => {
                             const childIsActive =
                               pathname === item.to ||
@@ -90,6 +110,7 @@ export default function Header() {
                                 className={`block px-6 py-3 text-xl text-foreground hover:bg-primary ${
                                   childIsActive ? "bg-primary" : ""
                                 }`}
+                                onClick={() => setOpenDropdown(null)}
                                 aria-current={
                                   childIsActive ? "page" : undefined
                                 }
@@ -103,7 +124,7 @@ export default function Header() {
                     );
                   }
 
-                   if (link.kind === "external") {
+                  if (link.kind === "external") {
                     return (
                       <a
                         key={link.label}
@@ -193,30 +214,30 @@ export default function Header() {
 
               return (
                 <div key={link.label} className="flex flex-col gap-2">
-                   {link.kind === "route" ? (
-                     <Link
-                       to={link.to}
-                       className={`text-base font-medium py-2 ${
-                         isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
-                       }`}
-                       onClick={() => setMobileMenuOpen(false)}
-                       aria-current={isActive ? "page" : undefined}
-                     >
-                       {link.label}
-                     </Link>
-                   ) : link.kind === "external" ? (
-                     <a
-                       href={link.href}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className={`text-base font-medium py-2 ${
-                         isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
-                       }`}
-                       onClick={() => setMobileMenuOpen(false)}
-                     >
-                       {link.label}
-                     </a>
-                   ) : isHome ? (
+                  {link.kind === "route" ? (
+                    <Link
+                      to={link.to}
+                      className={`text-base font-medium py-2 ${
+                        isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : link.kind === "external" ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-base font-medium py-2 ${
+                        isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ) : isHome ? (
                     <a
                       href={link.href}
                       className={`text-base font-medium py-2 ${
