@@ -189,29 +189,41 @@ export default function AboutPage() {
               tool that corresponds to the problem.
             </p>
           </div>
+          {/* sixth section */}
           <div className="py-24">
             <div>
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
                 And when I'm not in front of my screen?
               </h2>
-              <div>
-                <ul>
-                  <li>I run,</li>
-                  <li>I play basketball,</li>
-                  <li>I experiment with new ideas,</li>
-                  <li>I like to read books,</li>
-                  <li>I like to listen to music</li>
-                  <li>
-                    I'm probably taking apart something I should leave alone.😅
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <img
-                  src="/images/others/reads.png"
-                  alt="Hoobies image"
-                  className="h-full w-full"
-                />
+              <div className="flex items-center justify-between">
+                <div className="max-w-xl">
+                  <ul className="space-y-4">
+                    <li className="text-foreground-alt-a text-xl">I run,</li>
+                    <li className="text-foreground-alt-a text-xl">
+                      I play basketball,
+                    </li>
+                    <li className="text-foreground-alt-a text-xl">
+                      I experiment with new ideas,
+                    </li>
+                    <li className="text-foreground-alt-a text-xl">
+                      I like to read books,
+                    </li>
+                    <li className="text-foreground-alt-a text-xl">
+                      I like to listen to music
+                    </li>
+                    <li className="text-foreground-alt-a text-xl">
+                      I'm probably taking apart something I should leave
+                      alone.😅
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <img
+                    src="/images/others/reads.png"
+                    alt="Hoobies image"
+                    className="h-full w-full"
+                  />
+                </div>
               </div>
             </div>
           </div>
