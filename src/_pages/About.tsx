@@ -1,3 +1,4 @@
+import Button from "../_components/ui/Button";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import PieChart from "../_components/ui/others/PieChart";
 import { knowmeData } from "../data/knowme";
@@ -11,7 +12,7 @@ export default function AboutPage() {
           <div className="flex items-center justify-between gap-16">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl md:text-7xl font-medium text-foreground">
-                About
+                About.
               </h1>
               <div>
                 <p className="text-foreground-alt-a text-xl font-light leading-relaxed mx-auto max-w-xl">
@@ -195,8 +196,8 @@ export default function AboutPage() {
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
                 And when I'm not in front of my screen?
               </h2>
-              <div className="flex items-center justify-between">
-                <div className="max-w-xl">
+              <div className="flex items-center justify-between gap-12">
+                <div className=" max-w-md">
                   <ul className="space-y-4">
                     <li className="text-foreground-alt-a text-xl">I run,</li>
                     <li className="text-foreground-alt-a text-xl">
@@ -217,7 +218,7 @@ export default function AboutPage() {
                     </li>
                   </ul>
                 </div>
-                <div>
+                <div className="max-w-xl">
                   <img
                     src="/images/others/reads.png"
                     alt="Hoobies image"
@@ -228,14 +229,20 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mx-auto max-w-4xl py-24 flex justify-center">
-            <div className="">
-              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-xl">
+            <div className="flex flex-col items-center">
+              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-2xl">
                 Code is what I use to build. Experience is what I'm really
                 trying to create.
               </h2>
-              <p className="text-foreground text-xl leading-relaxed text-center">
-                Now you know who is behind the screen.
+              <p className="text-foreground text-xl leading-relaxed text-center flex items-center max-w-md">
+                Now you know who is behind the screen. Let's talk about what
+                you're trying to build.
               </p>
+              <div className="text-center mt-12">
+                <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                  Let's talk about your project
+                </Button>
+              </div>
             </div>
           </div>
         </div>
