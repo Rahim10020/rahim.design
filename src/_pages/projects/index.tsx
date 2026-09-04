@@ -6,6 +6,7 @@ import {
   type ProjectFilter,
 } from "../../data/project";
 import { getProjectPath } from "../../routes";
+import Button from "../../_components/ui/Button";
 
 const filters: ReadonlyArray<{ label: string; value: ProjectFilter }> = [
   { label: "All", value: "all" },
@@ -67,6 +68,11 @@ export default function ProjectsPage() {
                 href={getProjectPath(project.slug)}
               />
             ))}
+          </div>
+          <div className="text-center mt-24">
+            <Button className="px-8 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              Let's talk about your project
+            </Button>
           </div>
         </div>
       </div>
