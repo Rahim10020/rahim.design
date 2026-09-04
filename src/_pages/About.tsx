@@ -190,7 +190,7 @@ export default function AboutPage() {
             </p>
           </div>
           {/* sixth section */}
-          <div className="py-24">
+          <div className="pt-24 pb-12">
             <div>
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
                 And when I'm not in front of my screen?
@@ -225,6 +225,17 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="mx-auto max-w-4xl py-24 flex justify-center">
+            <div className="">
+              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-xl">
+                Code is what I use to build. Experience is what I'm really
+                trying to create.
+              </h2>
+              <p className="text-foreground text-xl leading-relaxed text-center">
+                Now you know who is behind the screen.
+              </p>
             </div>
           </div>
         </div>
