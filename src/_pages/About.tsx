@@ -213,8 +213,8 @@ export default function AboutPage() {
                       I like to listen to music
                     </li>
                     <li className="text-foreground-alt-a text-xl">
-                      I'm probably taking apart something I should leave
-                      alone.😅
+                      I'm probably taking apart something I should leave alone
+                      😅.
                     </li>
                   </ul>
                 </div>
@@ -235,11 +235,11 @@ export default function AboutPage() {
                 trying to create.
               </h2>
               <p className="text-foreground text-xl leading-relaxed text-center flex items-center max-w-md">
-                Now you know who is behind the screen. Let's talk about what
-                you're trying to build.
+                Now you know who is behind the screen. So what you're trying to
+                build?
               </p>
-              <div className="text-center mt-12">
-                <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              <div className="text-center mt-16">
+                <Button className="px-8 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                   Let's talk about your project
                 </Button>
               </div>
