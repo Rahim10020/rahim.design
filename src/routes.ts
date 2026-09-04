@@ -12,7 +12,7 @@ export const ROUTES = {
   },
 } as const;
 
-export const WHATSAPP_URL = "https://wa.me/PLACEHOLDER";
+export const WHATSAPP_URL = "https://wa.me/22891796115";
 
 export const GITHUB_URL = "https://github.com/Rahim10020";
 export const LINKEDIN_URL = "http://www.linkedin.com/in/rahim-ali-a6003226b";
