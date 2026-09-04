@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../../routes";
+import { WHATSAPP_URL, GITHUB_URL, LINKEDIN_URL, INSTAGRAM_URL } from "../../routes";
 import {
   GithubIcon,
   InstagramIcon,
@@ -28,9 +28,15 @@ export default function ContactSection() {
           <div className="flex items-end justify-between max-w-6xl mx-auto mb-16">
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-start gap-8">
-                <GithubIcon size={46} />
-                <LinkedinIcon size={46} />
-                <InstagramIcon size={46} />
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <GithubIcon size={46} />
+                </a>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <LinkedinIcon size={46} />
+                </a>
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <InstagramIcon size={46} />
+                </a>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
@@ -59,9 +65,7 @@ export default function ContactSection() {
                 Write directly to:
               </p>
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:rahim100codeur@gmail.com"
                 className="hover:underline cursor-pointer text-foreground text-2xl decoration-2"
               >
                 rahim100codeur@gmail.com

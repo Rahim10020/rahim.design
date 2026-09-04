@@ -6,5 +6,6 @@
     3- faire des recherches sur comment creer une image gif anime de mon projet afin de l'utiliser dans 
         portfolio
 
-- finir avec la page about: determiner les differents sections et voir comment les afficher
+-- finir avec la page about: determiner les differents sections et voir comment les afficher
 correctement pour tous les devices.
+-- coder la page de detail d'un projet
