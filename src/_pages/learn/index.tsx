@@ -28,7 +28,7 @@ export default function LearnPage() {
     <section className="w-full min-h-screen bg-background">
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
-          <h1 className="mb-10 text-foreground text-6xl sm:text-7xl md:text-8xl font-medium tracking-tight">
+          <h1 className="mb-10 text-foreground text-6xl font-medium tracking-tight">
             Learn.
           </h1>
 

@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           {/* Title */}
-          <h1 className="text-foreground text-6xl sm:text-7xl md:text-8xl font-medium tracking-tight mb-10">
+          <h1 className="text-foreground text-6xl font-medium tracking-tight mb-10">
             Projects.
           </h1>
 
