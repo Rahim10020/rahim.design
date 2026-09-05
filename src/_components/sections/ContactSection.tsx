@@ -1,4 +1,9 @@
-import { WHATSAPP_URL, GITHUB_URL, LINKEDIN_URL, INSTAGRAM_URL } from "../../routes";
+import {
+  WHATSAPP_URL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  INSTAGRAM_URL,
+} from "../../routes";
 import {
   GithubIcon,
   InstagramIcon,
@@ -28,13 +33,31 @@ export default function ContactSection() {
           <div className="flex items-end justify-between max-w-6xl mx-auto mb-16">
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-start gap-8">
-                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:text-foreground-alt-a transition-all duration-300"
+                >
                   <GithubIcon size={46} />
                 </a>
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-foreground-alt-a transition-all duration-300"
+                >
                   <LinkedinIcon size={46} />
                 </a>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="hover:text-foreground-alt-a transition-all duration-300"
+                >
                   <InstagramIcon size={46} />
                 </a>
                 <a
@@ -42,6 +65,7 @@ export default function ContactSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
+                  className="hover:text-foreground-alt-a transition-all duration-300"
                 >
                   <WhatsappIcon size={46} />
                 </a>
