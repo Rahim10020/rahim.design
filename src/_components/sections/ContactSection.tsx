@@ -101,7 +101,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               className="relative inline-block"
             >
-              <Button className="px-8 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              <Button className="px-12 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                 Start a Conversation
               </Button>
             </a>
