@@ -16,7 +16,7 @@ export default function ServiceCard({
   return (
     <article className={`flex flex-col ${className}`}>
       {/* Image */}
-      <div className="w-full aspect-6/5 overflow-hidden bg-background mb-6">
+      <div className="w-full aspect-6/5 overflow-hidden bg-background mb-comfortable">
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -34,7 +34,7 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-xl md:text-3xl font-medium mb-3">
+      <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text">
         {title}
       </h3>
 

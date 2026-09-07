@@ -15,8 +15,8 @@ import Button from "../ui/Button";
 export default function ContactSection() {
   return (
     <section className="flex min-h-[calc(100svh-104px)] w-full bg-background">
-      <div className="max-w-350 mx-auto flex w-full px-2">
-        <div className="mx-auto w-full max-w-6xl pt-12 mt-16">
+      <div className="max-w-350 mx-auto flex w-full px-page-x">
+        <div className="mx-auto w-full max-w-6xl pt-block mt-block">
           {/* 1st line */}
           <div className="flex justify-center">
             <div className="flex justify-start max-w-md">
@@ -30,9 +30,9 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 3rd line */}
-          <div className="flex items-end justify-between max-w-6xl mx-auto mb-16">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center justify-start gap-8">
+          <div className="flex items-end justify-between max-w-6xl mx-auto mb-major">
+            <div className="flex flex-col gap-comfortable">
+              <div className="flex items-center justify-start gap-block">
                 <a
                   href={GITHUB_URL}
                   target="_blank"

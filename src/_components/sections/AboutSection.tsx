@@ -3,11 +3,11 @@ import Logo from "../ui/Logo";
 export default function AboutSection() {
   return (
     <section className="flex min-h-[calc(100svh-104px)] w-full bg-background">
-      <div className="max-w-350 mx-auto flex w-full px-2">
-        <div className="mx-auto w-full max-w-6xl py-12 mt-16 space-y-12">
+      <div className="max-w-350 mx-auto flex w-full px-page-x">
+        <div className="mx-auto w-full max-w-6xl py-block mt-block space-y-block">
           {/* First line */}
-          <div className="flex items-start justify-between">
-            <div className="border-r-2 pr-2">
+          <div className="flex items-start justify-between gap-block">
+            <div className="border-r-2 pr-tight">
               <Logo size={128} />
             </div>
             <div className="flex items-start justify-end">
@@ -18,7 +18,7 @@ export default function AboutSection() {
           </div>
           <div>
             {/* Second line */}
-            <div className="space-y-2">
+            <div className="space-y-tight">
               <h1 className="text-4xl md:text-7xl font-medium text-foreground">
                 Designer,
               </h1>
@@ -28,7 +28,7 @@ export default function AboutSection() {
             </div>
             {/* Third line */}
             <div className="flex justify-end">
-              <div className="max-w-2xl space-y-6">
+              <div className="max-w-2xl space-y-comfortable">
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed">
                   I'm the type of developer who notices when a button is
                   misaligned by 4 pixels.

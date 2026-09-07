@@ -3,10 +3,10 @@ import Logo from "../ui/Logo";
 export default function Footer() {
   return (
     <footer className="bg-background">
-      <div className="px-6 py-4 lg:py-2 max-w-350 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="px-comfortable py-block lg:py-comfortable max-w-350 mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-block">
           {/* Left - Copyright */}
-          <div className="flex items-center gap-2 text-foreground text-xl order-2 lg:order-1">
+          <div className="flex items-center gap-tight text-foreground text-xl order-2 lg:order-1">
             <span className="flex items-center gap-1.5">
               <svg
                 width="18"
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Center - Name + Logo */}
-          <div className="flex items-center gap-4 order-1 lg:order-2">
+          <div className="flex items-center gap-element order-1 lg:order-2">
             <span className="text-foreground text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-none">
               rahim
             </span>

@@ -57,10 +57,10 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28 overflow-hidden">
-      <div className="max-w-350 mx-auto px-6">
+    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-section lg:py-section-lg overflow-hidden">
+      <div className="max-w-350 mx-auto px-page-x">
         {/* Title */}
-        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-14 lg:mb-20 max-w-lg">
+        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-lg">
           Let's look at what I've already built
         </h2>
       </div>
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
         {/*  SLIDER  */}
         <div
           ref={sliderRef}
-          className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-12 pb-4"
+          className="flex items-end gap-block sm:gap-heading-content overflow-x-auto snap-x snap-mandatory scrollbar-hide px-major pb-element"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {projects.slice(0, 4).map((project) => (
@@ -84,19 +84,19 @@ export default function ProjectsSection() {
           ))}
 
           {/* "See all projects" link at the end */}
-          <div className="shrink-0 snap-center flex items-center self-center pl-4 pr-10">
+          <div className="shrink-0 snap-center flex items-center self-center pl-element pr-heading-content">
             <Link
               to={ROUTES.PROJECTS.LIST}
               className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
             >
-              See all projects <ChevronRightIcon className="pl-2" />
+              See all projects <ChevronRightIcon className="pl-tight" />
             </Link>
           </div>
         </div>
       </div>
 
       {/*  GAUGE (Camera-style)  */}
-      <div className="max-w-350 mx-auto px-6 mt-10">
+      <div className="max-w-350 mx-auto px-page-x mt-heading-content">
         <div className="flex items-end justify-center gap-1.5 h-10">
           {Array.from({ length: TOTAL_BARS }).map((_, index) => (
             <div

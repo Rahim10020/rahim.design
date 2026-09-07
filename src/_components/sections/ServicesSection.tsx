@@ -29,17 +29,17 @@ const services: Service[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-20 lg:py-28">
-      <div className="max-w-350 mx-auto px-6">
+    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-section lg:py-section-lg">
+      <div className="max-w-350 mx-auto px-page-x">
         {/* Title */}
-        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-20 max-w-md">
+        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-md">
           What I can do
           <br />
           for you
         </h2>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-heading-content lg:gap-major">
           {services.map((service) => (
             <ServiceCard
               key={service.title}

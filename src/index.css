@@ -18,6 +18,19 @@
   --sans: "Sniglet", "Geist", "Host Grotesk", sans-serif;
   --serif: "Hedvig Letters Serif", serif;
 
+  /* Spacing — 4px grid, named by usage */
+  --space-micro: 0.25rem; /* 4px — éléments très serrés */
+  --space-tight: 0.5rem; /* 8px — gouttière page / micro confort */
+  --space-heading-text: 0.75rem; /* 12px — titre → texte court */
+  --space-element: 1rem; /* 16px — élément → CTA / standard */
+  --space-comfortable: 1.5rem; /* 24px — image → titre / confortable */
+  --space-block: 2rem; /* 32px — titre → contenu / inset section */
+  --space-heading-content: 2.5rem; /* 40px — titre de section → contenu */
+  --space-major: 3rem; /* 48px — entre blocs majeurs */
+  --space-cluster: 3.5rem; /* 56px — grille de cartes (lignes) */
+  --space-section: 4rem; /* 64px — padding vertical de section */
+  --space-section-lg: 5rem; /* 80px — padding vertical section (lg) */
+
   *,
   *::before,
   *::after {
@@ -79,6 +92,19 @@
   --color-accent-b: var(--accent-b);
   --color-accent-c: var(--accent-c);
   --color-accent-d: var(--accent-d);
+
+  --spacing-micro: var(--space-micro);
+  --spacing-tight: var(--space-tight);
+  --spacing-heading-text: var(--space-heading-text);
+  --spacing-element: var(--space-element);
+  --spacing-comfortable: var(--space-comfortable);
+  --spacing-block: var(--space-block);
+  --spacing-heading-content: var(--space-heading-content);
+  --spacing-major: var(--space-major);
+  --spacing-cluster: var(--space-cluster);
+  --spacing-section: var(--space-section);
+  --spacing-section-lg: var(--space-section-lg);
+  --spacing-page-x: var(--space-tight);
 }
 
 @media (prefers-color-scheme: dark) {

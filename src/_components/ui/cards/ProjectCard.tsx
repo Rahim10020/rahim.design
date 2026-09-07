@@ -24,7 +24,7 @@ export default function ProjectCard({
     >
       {/* Image */}
       <div
-        className={`w-full ${imageHeight} overflow-hidden bg-background mb-4`}
+        className={`w-full ${imageHeight} overflow-hidden bg-background mb-element`}
       >
         {imageSrc ? (
           <img
@@ -43,12 +43,12 @@ export default function ProjectCard({
       </div>
 
       {/* Title + Category */}
-      <div className="px-1">
-        <h3 className="text-foreground text-xl md:text-3xl font-medium mb-3 group-hover:underline underline-offset-4 decoration-2 transition-all">
+      <div className="px-micro">
+        <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text group-hover:underline underline-offset-4 decoration-2 transition-all">
           {title}
         </h3>
         {category && (
-          <p className="text-neutral-500 text-sm mt-1">{category}</p>
+          <p className="text-neutral-500 text-sm mt-tight">{category}</p>
         )}
       </div>
     </a>

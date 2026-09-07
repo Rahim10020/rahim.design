@@ -18,9 +18,9 @@ export default function StepCard({
   const isLightText = textColor === "light";
 
   return (
-    <article className={`relative flex gap-6 ${className}`}>
+    <article className={`relative flex gap-element ${className}`}>
       {/* Number */}
-      <div className="shrink-0 pt-2">
+      <div className="shrink-0 pt-tight">
         <span className="text-foreground text-5xl sm:text-6xl md:text-7xl font-medium leading-none">
           {number}
         </span>
@@ -28,15 +28,15 @@ export default function StepCard({
 
       {/* Card */}
       <div
-        className="relative flex-1 p-6 sm:p-8 min-h-60 flex flex-col"
+        className="relative flex-1 p-comfortable sm:p-block min-h-60 flex flex-col"
         style={{ backgroundColor }}
       >
         {/* Orange accent bar */}
-        <div className="absolute top-6 left-0 w-16 h-1.5 bg-accent" />
+        <div className="absolute top-comfortable left-0 w-16 h-1.5 bg-accent" />
 
         {/* Title */}
         <h3
-          className={`text-xl md:text-3xl font-medium mt-6 mb-4 leading-snug ${
+          className={`text-xl md:text-3xl font-medium mt-comfortable mb-element leading-snug ${
             isLightText ? "text-background" : "text-foreground"
           }`}
         >
