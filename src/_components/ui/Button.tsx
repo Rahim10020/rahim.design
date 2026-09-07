@@ -22,7 +22,7 @@ export default function Button({
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const base =
-    "inline-flex w-max max-w-full shrink-0 items-center justify-center whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    "relative z-10 inline-flex min-w-max items-center justify-center whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
     primary:
@@ -72,7 +72,7 @@ export default function Button({
   });
 
   return (
-    <div ref={wrapperRef} className="relative inline-block max-w-full">
+    <div ref={wrapperRef} className="relative inline-flex w-fit shrink-0">
       {/* Ombre dure, sous le bouton */}
       <div
         aria-hidden
@@ -87,7 +87,7 @@ export default function Button({
         onMouseLeave={(event) => rest(event.currentTarget)}
         onMouseDown={(event) => press(event.currentTarget)}
         onMouseUp={(event) => release(event.currentTarget)}
-        className={`relative z-10 ${base} ${variants[variant]} ${className}`}
+        className={`${base} ${variants[variant]} ${className}`}
       >
         {children}
       </button>
