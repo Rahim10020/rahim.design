@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "src/_components/sections/HeroSection.tsx": {
-    "mtime": 1788781448.5699768,
-    "seen": 1788781577.6796255,
+    "mtime": 1788779658.4348102,
+    "seen": 1788779744.1118274,
     "ast_hash": "739c94b2e3f4186807b13c3f467033c2",
     "semantic_hash": ""
   },
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "src/_components/ui/Button.tsx": {
-    "mtime": 1788781566.273087,
-    "seen": 1788781577.6796362,
-    "ast_hash": "013209cff7a7a1999c69bb4c784b288f",
+    "mtime": 1787844296.00669,
+    "seen": 1788779744.1118395,
+    "ast_hash": "c0aa6ae5d1a3a802d0dcb8268e3191c3",
     "semantic_hash": ""
   },
   "src/_components/ui/Logo.tsx": {
@@ -389,9 +389,15 @@
     "ast_hash": "a545815e9774665a916fe473809fbd87",
     "semantic_hash": ""
   },
+  ".kilo/plans/1788775637698-spacing-audit-plan.md": {
+    "mtime": 1788776210.3522558,
+    "seen": 1788779744.111964,
+    "ast_hash": "d30ba642c583ba922a2b219eb58de5ae",
+    "semantic_hash": ""
+  },
   "README.md": {
-    "mtime": 1788780232.6495612,
-    "seen": 1788781577.6797254,
+    "mtime": 1784048016.776904,
+    "seen": 1788779744.111967,
     "ast_hash": "af3303e78cd52144a929434bb58138a7",
     "semantic_hash": ""
   },
@@ -510,8 +516,8 @@
     "semantic_hash": ""
   },
   "todo.txt": {
-    "mtime": 1788780241.340185,
-    "seen": 1788781577.6797757,
+    "mtime": 1788546034.1158354,
+    "seen": 1788779744.112011,
     "ast_hash": "26cb1484985e298202ae95dea7595d3b",
     "semantic_hash": ""
   },
