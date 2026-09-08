@@ -83,7 +83,7 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 4th line */}
-          <div className="flex items-center justify-between max-w-6xl mx-auto">
+          <div className="flex flex-wrap items-center justify-between gap-comfortable max-w-6xl mx-auto">
             <div>
               <p className="text-foreground text-xl font-normal">
                 Write directly to:

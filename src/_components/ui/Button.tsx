@@ -22,7 +22,7 @@ export default function Button({
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const base =
-    "relative z-10 inline-flex min-w-max items-center justify-center whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    "relative z-10 inline-flex items-center justify-center whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
     primary:
@@ -72,7 +72,7 @@ export default function Button({
   });
 
   return (
-    <div ref={wrapperRef} className="relative inline-flex w-fit shrink-0">
+    <div ref={wrapperRef} className="relative inline-flex w-fit">
       {/* Ombre dure, sous le bouton */}
       <div
         aria-hidden
