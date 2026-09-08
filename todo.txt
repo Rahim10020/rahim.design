@@ -6,7 +6,5 @@
     3- faire des recherches sur comment creer une image gif anime de mon projet afin de l'utiliser dans 
         portfolio
 
--- finir avec la page about: determiner les differents sections et voir comment les afficher
-correctement pour tous les devices.
--- coder la page de detail d'un projet
--- appliquer mes custom syles
+-- Page de detail d'un projet: structurer le markdown comme c'est fais cote design (je vais utiliser l'IA)
+-- appliquer mes custom syles (espacements) aux autres pages qui ne les utilisent pas encore afin que tout sois propre.
