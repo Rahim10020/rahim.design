@@ -9,3 +9,4 @@
 -- finir avec la page about: determiner les differents sections et voir comment les afficher
 correctement pour tous les devices.
 -- coder la page de detail d'un projet
+-- appliquer mes custom syles

@@ -83,8 +83,8 @@ export default function ContactSection() {
             </div>
           </div>
           {/* 4th line */}
-          <div className="flex flex-wrap items-center justify-between gap-comfortable max-w-6xl mx-auto">
-            <div>
+          <div className="flex min-w-0 max-w-6xl mx-auto flex-wrap items-center justify-between gap-comfortable">
+            <div className="min-w-0">
               <p className="text-foreground text-xl font-normal">
                 Write directly to:
               </p>
@@ -99,9 +99,9 @@ export default function ContactSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-block"
+              className="relative inline-flex w-full min-w-0 max-w-full sm:w-auto"
             >
-              <Button className="px-12 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              <Button className="w-full max-w-full whitespace-normal px-12 py-6 text-center text-2xl font-medium bg-primary border-2 border-foreground text-foreground sm:w-auto">
                 Start a Conversation
               </Button>
             </a>
