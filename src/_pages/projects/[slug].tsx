@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
 import {
   ArrowLeftIcon,
+  ArrowRightIcon,
   AsteriskIcon,
   OpenLinkIcon,
 } from "../../_components/icons";
@@ -54,14 +55,24 @@ export default function ProjectDetail() {
         className="mx-auto mt-16 flex max-w-3xl items-center justify-between gap-6 text-xl underline underline-offset-4"
       >
         {previousProject ? (
-          <Link to={getProjectPath(previousProject.slug)}>
-            ← Recent Project
+          <Link
+            to={getProjectPath(previousProject.slug)}
+            className="flex items-center gap-3 text-foreground hover:text-foreground-alt transition-colors duration-200"
+          >
+            <ArrowLeftIcon size={16} />
+            Recent Project
           </Link>
         ) : (
           <span />
         )}
         {nextProject && (
-          <Link to={getProjectPath(nextProject.slug)}>Next Project →</Link>
+          <Link
+            to={getProjectPath(nextProject.slug)}
+            className="flex items-center gap-3 text-foreground hover:text-foreground-alt transition-colors duration-200"
+          >
+            Next Project
+            <ArrowRightIcon size={16} />
+          </Link>
         )}
       </nav>
     </article>
