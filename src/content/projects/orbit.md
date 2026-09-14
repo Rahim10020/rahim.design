@@ -14,7 +14,7 @@ year: "À compléter"
 | ----------- | ----------- | ----------- |
 | À compléter | À compléter | À compléter |
 
----
+![Orbit project image — à remplacer](/images/others/image_placeholder.svg)
 
 ## The context
 
