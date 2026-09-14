@@ -23,7 +23,7 @@ export default function Footer() {
               </svg>
               26
             </span>
-            <span>All Right Reserved</span>
+            <span>All Rights Reserved</span>
           </div>
 
           {/* Center - Name + Logo */}
