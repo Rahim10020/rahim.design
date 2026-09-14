@@ -6,5 +6,6 @@
     3- faire des recherches sur comment creer une image gif anime de mon projet afin de l'utiliser dans 
         portfolio
 
--- Page de detail d'un projet: structurer le markdown comme c'est fais cote design (je vais utiliser l'IA)
+-- Page de detail d'un projet: modifier chaque markdown apres avoir polish tous les 
+    projets a mettre dans le portfolio
 -- appliquer mes custom syles (espacements) aux autres pages qui ne les utilisent pas encore afin que tout sois propre.
