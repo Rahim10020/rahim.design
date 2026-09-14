@@ -22,15 +22,11 @@ year: "À compléter"
 
 Orbit uses interaction to reveal the value of a complex offering.
 
----
-
 ## The challenge
 
 **The challenge: keep it simple without making the experience simplistic.**
 
 À compléter.
-
----
 
 ## The approach
 
@@ -38,15 +34,11 @@ Orbit uses interaction to reveal the value of a complex offering.
 
 À compléter.
 
----
-
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
 ![Orbit UX — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## UI Design
 
@@ -54,15 +46,11 @@ Orbit uses interaction to reveal the value of a complex offering.
 
 ![Orbit UI design — à remplacer](/images/others/image_placeholder.svg)
 
----
-
 ## Important decisions
 
 Some decisions that changed the experience.
 
 - À compléter.
-
----
 
 ## Development
 
@@ -70,15 +58,11 @@ Some decisions that changed the experience.
 
 À compléter.
 
----
-
 ## The result
 
 **And finally, it looks like this.**
 
 ![Orbit result — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## What I learned
 

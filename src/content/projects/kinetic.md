@@ -22,15 +22,11 @@ year: "À compléter"
 
 Kinetic gives motion work room to set the pace of the story.
 
----
-
 ## The challenge
 
 **The challenge: keep it simple without making the experience simplistic.**
 
 À compléter.
-
----
 
 ## The approach
 
@@ -38,15 +34,11 @@ Kinetic gives motion work room to set the pace of the story.
 
 À compléter.
 
----
-
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
 ![Kinetic UX — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## UI Design
 
@@ -54,15 +46,11 @@ Kinetic gives motion work room to set the pace of the story.
 
 ![Kinetic UI design — à remplacer](/images/others/image_placeholder.svg)
 
----
-
 ## Important decisions
 
 Some decisions that changed the experience.
 
 - À compléter.
-
----
 
 ## Development
 
@@ -70,15 +58,11 @@ Some decisions that changed the experience.
 
 À compléter.
 
----
-
 ## The result
 
 **And finally, it looks like this.**
 
 ![Kinetic result — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## What I learned
 

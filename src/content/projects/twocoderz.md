@@ -5,6 +5,7 @@ category: "Web"
 description: "A SaaS dashboard designed for collaboration with a conversion-first structure."
 tags: ["Astro", "Tailwind", "CMS"]
 imageHeight: "h-96"
+link: "https://twocoderz-team.vercel.app/"
 role: "À compléter"
 platform: "À compléter"
 year: "À compléter"
@@ -22,15 +23,11 @@ year: "À compléter"
 
 Twocoderz explores a collaborative SaaS dashboard with a clear path from first visit to active workspace.
 
----
-
 ## The challenge
 
 **The challenge: keep it simple without making the experience simplistic.**
 
 À compléter.
-
----
 
 ## The approach
 
@@ -38,15 +35,11 @@ Twocoderz explores a collaborative SaaS dashboard with a clear path from first v
 
 À compléter.
 
----
-
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
 ![Twocoderz UX — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## UI Design
 
@@ -54,15 +47,11 @@ Twocoderz explores a collaborative SaaS dashboard with a clear path from first v
 
 ![Twocoderz UI design — à remplacer](/images/others/image_placeholder.svg)
 
----
-
 ## Important decisions
 
 Some decisions that changed the experience.
 
 - À compléter.
-
----
 
 ## Development
 
@@ -70,15 +59,11 @@ Some decisions that changed the experience.
 
 À compléter.
 
----
-
 ## The result
 
 **And finally, it looks like this.**
 
 ![Twocoderz result — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## What I learned
 

@@ -22,15 +22,11 @@ year: "À compléter"
 
 Lovance is a concept for a focused shopping experience that helps people discover products and complete purchases with confidence.
 
----
-
 ## The challenge
 
 **The challenge: keep it simple without making the experience simplistic.**
 
 À compléter.
-
----
 
 ## The approach
 
@@ -38,15 +34,11 @@ Lovance is a concept for a focused shopping experience that helps people discove
 
 À compléter.
 
----
-
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
 ![Lovance UX — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## UI Design
 
@@ -54,15 +46,11 @@ Lovance is a concept for a focused shopping experience that helps people discove
 
 ![Lovance UI design — à remplacer](/images/others/image_placeholder.svg)
 
----
-
 ## Important decisions
 
 Some decisions that changed the experience.
 
 - À compléter.
-
----
 
 ## Development
 
@@ -70,15 +58,11 @@ Some decisions that changed the experience.
 
 À compléter.
 
----
-
 ## The result
 
 **And finally, it looks like this.**
 
 ![Lovance result — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## What I learned
 

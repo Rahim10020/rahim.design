@@ -22,15 +22,11 @@ year: "À compléter"
 
 Forma makes repeatable interface decisions easier across a product team.
 
----
-
 ## The challenge
 
 **The challenge: keep it simple without making the experience simplistic.**
 
 À compléter.
-
----
 
 ## The approach
 
@@ -38,15 +34,11 @@ Forma makes repeatable interface decisions easier across a product team.
 
 À compléter.
 
----
-
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
 ![Forma UX — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## UI Design
 
@@ -54,15 +46,11 @@ Forma makes repeatable interface decisions easier across a product team.
 
 ![Forma UI design — à remplacer](/images/others/image_placeholder.svg)
 
----
-
 ## Important decisions
 
 Some decisions that changed the experience.
 
 - À compléter.
-
----
 
 ## Development
 
@@ -70,15 +58,11 @@ Some decisions that changed the experience.
 
 À compléter.
 
----
-
 ## The result
 
 **And finally, it looks like this.**
 
 ![Forma result — à remplacer](/images/others/image_placeholder.svg)
-
----
 
 ## What I learned
 
