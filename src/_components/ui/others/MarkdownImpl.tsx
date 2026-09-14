@@ -5,25 +5,30 @@ const external = (url: string) => /^https?:\/\//i.test(url);
 
 export default function Markdown({ content }: { content: string }) {
   return (
-    <div className="prose mx-auto max-w-xl">
+    <div className="prose mx-auto">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
           h2: ({ children }) => (
-            <h2 className="text-foreground mb-3 mt-8 text-4xl font-medium">
+            <h2 className="text-foreground mx-auto mb-3 mt-8 max-w-xl text-4xl font-medium">
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="mb-3 mt-8 text-3xl font-medium text-foreground">
+            <h3 className="mx-auto mb-3 mt-8 max-w-xl text-3xl font-medium text-foreground">
               {children}
             </h3>
           ),
-          p: ({ children }) => (
-            <p className="text-xl leading-relaxed text-foreground">
-              {children}
-            </p>
-          ),
+          p: ({ children, node }) =>
+            node?.children.length === 1 &&
+            node.children[0].type === "element" &&
+            node.children[0].tagName === "img" ? (
+              <>{children}</>
+            ) : (
+              <p className="mx-auto max-w-xl text-xl leading-relaxed text-foreground">
+                {children}
+              </p>
+            ),
           a: ({ href = "", children }) => (
             <a
               href={href}
@@ -36,7 +41,7 @@ export default function Markdown({ content }: { content: string }) {
             </a>
           ),
           img: ({ src, alt }) => (
-            <figure className="mx-auto mb-10 max-w-4xl">
+            <figure className="mx-auto mb-10 max-w-3xl">
               <img
                 src={src}
                 alt={alt ?? ""}
@@ -45,10 +50,12 @@ export default function Markdown({ content }: { content: string }) {
             </figure>
           ),
           ul: ({ children }) => (
-            <ul className="my-5 list-disc pl-6 text-foreground">{children}</ul>
+            <ul className="mx-auto my-5 max-w-xl list-disc pl-6 text-foreground">
+              {children}
+            </ul>
           ),
           ol: ({ children }) => (
-            <ol className="my-5 list-decimal pl-6 text-foreground">
+            <ol className="mx-auto my-5 max-w-xl list-decimal pl-6 text-foreground">
               {children}
             </ol>
           ),
@@ -58,7 +65,7 @@ export default function Markdown({ content }: { content: string }) {
             </li>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="my-6 border-l-4 border-primary pl-5 text-xl italic text-foreground">
+            <blockquote className="mx-auto my-6 max-w-xl border-l-4 border-primary pl-5 text-xl italic text-foreground">
               {children}
             </blockquote>
           ),
@@ -73,13 +80,13 @@ export default function Markdown({ content }: { content: string }) {
             </strong>
           ),
           pre: ({ children }) => (
-            <pre className="my-6 overflow-x-auto rounded bg-foreground p-4 text-background">
+            <pre className="mx-auto my-6 max-w-xl overflow-x-auto rounded bg-foreground p-4 text-background">
               {children}
             </pre>
           ),
           table: ({ children }) => (
-            <div className="my-6 w-full overflow-x-auto">
-              <table className="w-full max-w-4xl border-collapse text-xl border border-foreground-alt text-foreground">
+            <div className="mx-auto my-6 w-full max-w-xl overflow-x-auto">
+              <table className="w-full border-collapse border border-foreground-alt text-xl text-foreground">
                 {children}
               </table>
             </div>

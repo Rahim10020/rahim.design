@@ -1,18 +1,23 @@
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
-import ContentImages from "../../_components/ui/others/ContentImages";
 import {
   ArrowLeftIcon,
   AsteriskIcon,
   OpenLinkIcon,
 } from "../../_components/icons";
-import { getProject } from "../../lib/content";
-import { ROUTES } from "../../routes";
+import { getProject, getProjects } from "../../lib/content";
+import { getProjectPath, ROUTES } from "../../routes";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = getProject(slug ?? "");
   if (!project) return <NotFound />;
+  const projects = getProjects();
+  const currentIndex = projects.findIndex(
+    ({ slug: projectSlug }) => projectSlug === project.meta.slug,
+  );
+  const previousProject = projects[currentIndex - 1];
+  const nextProject = projects[currentIndex + 1];
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-20">
@@ -43,13 +48,22 @@ export default function ProjectDetail() {
           {project.meta.description}
         </p>
       </header>
-      <ContentImages
-        primaryImage={project.meta.imageSrc}
-        images={[]}
-        alt={project.meta.title}
-      />
       <Markdown content={project.content} />
-      <ContentImages images={project.meta.images} alt={project.meta.title} />
+      <nav
+        aria-label="Project navigation"
+        className="mx-auto mt-16 flex max-w-3xl items-center justify-between gap-6 text-xl underline underline-offset-4"
+      >
+        {previousProject ? (
+          <Link to={getProjectPath(previousProject.slug)}>
+            ← Recent Project
+          </Link>
+        ) : (
+          <span />
+        )}
+        {nextProject && (
+          <Link to={getProjectPath(nextProject.slug)}>Next Project →</Link>
+        )}
+      </nav>
     </article>
   );
 }

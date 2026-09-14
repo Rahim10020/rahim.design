@@ -14,11 +14,15 @@ export const PROJECT_CATEGORIES = ["Web", "Mobile", "Design"] as const;
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 export interface Project {
   slug: string;
+  order: number;
   title: string;
   category: ProjectCategory;
   description: string;
   tags: string[];
   imageHeight: string;
+  role: string;
+  platform: string;
+  year: string;
   imageSrc?: string;
   images: string[];
   link?: string;
@@ -33,6 +37,8 @@ const modules = import.meta.glob("../content/**/*.md", {
 const slugFromPath = (path: string) =>
   path.split("/").pop()?.replace(/\.md$/, "") ?? "";
 const text = (value: unknown) => (typeof value === "string" ? value : "");
+const number = (value: unknown) =>
+  typeof value === "number" && Number.isFinite(value) ? value : undefined;
 const stringArray = (value: unknown) =>
   Array.isArray(value)
     ? value.filter((item): item is string => typeof item === "string")
@@ -80,7 +86,12 @@ function projectEntries(): ContentEntry<Project>[] {
       const { data, content } = parseFrontmatter(raw);
       const category = text(data.category);
       const slug = slugFromPath(path);
-      if (!slug || !PROJECT_CATEGORIES.includes(category as ProjectCategory))
+      const order = number(data.order);
+      if (
+        !slug ||
+        order === undefined ||
+        !PROJECT_CATEGORIES.includes(category as ProjectCategory)
+      )
         return [];
       const imageSrc = text(data.imageSrc);
       const images = stringArray(data.images);
@@ -89,11 +100,15 @@ function projectEntries(): ContentEntry<Project>[] {
         {
           meta: {
             slug,
+            order,
             title: text(data.title),
             category: category as ProjectCategory,
             description: text(data.description),
             tags: stringArray(data.tags),
             imageHeight: text(data.imageHeight) || "h-96",
+            role: text(data.role) || "À compléter",
+            platform: text(data.platform) || "À compléter",
+            year: text(data.year) || "À compléter",
             ...(imageSrc || images[0]
               ? { imageSrc: imageSrc || images[0] }
               : {}),
@@ -112,6 +127,9 @@ export const getLearnArticles = () =>
     .sort((a, b) => b.date.localeCompare(a.date));
 export const getLearnArticle = (slug: string) =>
   learnEntries().find((article) => article.meta.slug === slug);
-export const getProjects = () => projectEntries().map(({ meta }) => meta);
+export const getProjects = () =>
+  projectEntries()
+    .map(({ meta }) => meta)
+    .sort((a, b) => a.order - b.order);
 export const getProject = (slug: string) =>
   projectEntries().find((project) => project.meta.slug === slug);
