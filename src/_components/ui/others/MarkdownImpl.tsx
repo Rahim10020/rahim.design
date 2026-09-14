@@ -41,7 +41,7 @@ export default function Markdown({ content }: { content: string }) {
             </a>
           ),
           img: ({ src, alt }) => (
-            <figure className="mx-auto mb-10 max-w-3xl">
+            <figure className="mx-auto m-12 max-w-3xl">
               <img
                 src={src}
                 alt={alt ?? ""}
