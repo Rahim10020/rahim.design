@@ -20,18 +20,18 @@ export default function ServicesPage() {
               </div>
             </div>
             {/* Center */}
-            <div className="mx-auto max-w-xl flex flex-col gap-8">
-              <p className="text-foreground text-xl leading-relaxed">
+            <div className="mx-auto max-w-2xl flex flex-col gap-8">
+              <p className="text-foreground text-2xl leading-relaxed max-w-xl">
                 An idea, a product, a site or an experience that deserves to be
                 better thought out? I help you move from the idea to something
                 clear, beautiful and truly usable — from design to development.
               </p>
               {/* Buttons */}
-              <div>
-                <Button className="px-6 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              <div className="flex items-center gap-4">
+                <Button className="px-6 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
                   Let's talk about your project
                 </Button>
-                <Button className="px-6 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                <Button className="px-6 py-4 text-xl font-medium bg-white border-2 border-foreground text-foreground">
                   See my projects
                 </Button>
               </div>
