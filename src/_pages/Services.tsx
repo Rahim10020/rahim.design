@@ -38,10 +38,10 @@ export default function ServicesPage() {
             </div>
           </div>
           {/* Second section */}
-          <div className="py-24 mx-auto max-w-3xl">
+          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-12">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl">
+                <h3 className="text-foreground text-4xl font-medium">
                   Do you have an idea?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
@@ -56,7 +56,36 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
-            <div></div>
+            <div className="flex items-start justify-between">
+              <div className="text-3xl text-foreground font-medium">
+                <h4>What i can do</h4>
+              </div>
+              <div>
+                <ul className="flex flex-col gap-4">
+                  <li className="text-foreground text-xl font-normal">
+                    UX research & product thinking
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    User flows
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    Wireframes
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    UI Design
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    Prototyping
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    Design systems
+                  </li>
+                  <li className="text-foreground text-xl font-normal">
+                    Responsive Design
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
