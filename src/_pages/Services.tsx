@@ -7,16 +7,21 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-6xl">
           {/* First section */}
           <div>
-            <div className="flex items-center justify-end">
-              <h1 className="text-4xl font-medium text-foreground">SERVICES</h1>
+            <div className="flex flex-col gap-2 mb-24">
+              <div className="flex items-center justify-end">
+                <h1 className="text-4xl font-medium text-foreground">
+                  SERVICES
+                </h1>
+              </div>
+              <div>
+                <h1 className="text-4xl md:text-6xl font-medium text-foreground">
+                  You have something to build.
+                </h1>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl md:text-6xl font-medium text-foreground">
-                You have something to build.
-              </h1>
-            </div>
-            <div>
-              <p>
+            {/* Center */}
+            <div className="mx-auto max-w-xl flex flex-col gap-8">
+              <p className="text-foreground text-xl leading-relaxed">
                 An idea, a product, a site or an experience that deserves to be
                 better thought out? I help you move from the idea to something
                 clear, beautiful and truly usable — from design to development.
