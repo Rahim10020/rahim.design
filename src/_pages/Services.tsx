@@ -21,7 +21,7 @@ export default function ServicesPage() {
             </div>
             {/* Center */}
             <div className="mx-auto max-w-2xl flex flex-col gap-8">
-              <p className="text-foreground text-2xl leading-relaxed max-w-xl">
+              <p className="text-foreground text-2xl leading-relaxed max-w-2xl">
                 An idea, a product, a site or an experience that deserves to be
                 better thought out? I help you move from the idea to something
                 clear, beautiful and truly usable — from design to development.
@@ -36,7 +36,6 @@ export default function ServicesPage() {
                 </Button>
               </div>
             </div>
-            <div></div>
           </div>
         </div>
       </div>
