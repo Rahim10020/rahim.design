@@ -62,25 +62,25 @@ export default function ServicesPage() {
               </div>
               <div>
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     UX research & product thinking
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     User flows
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Wireframes
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     UI Design
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Prototyping
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Design systems
                   </li>
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Responsive Design
                   </li>
                 </ul>
