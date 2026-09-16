@@ -22,7 +22,7 @@ export default function ServicesPage() {
               </div>
             </div>
             {/* Center */}
-            <div className="mx-auto max-w-5xl flex flex-col gap-8">
+            <div className="mx-auto max-w-3xl flex flex-col gap-8">
               <p className="text-foreground text-2xl leading-relaxed max-w-2xl">
                 An idea, a product, a site or an experience that deserves to be
                 better thought out? I help you move from the idea to something
@@ -40,7 +40,7 @@ export default function ServicesPage() {
             </div>
           </div>
           {/* Second section */}
-          <div className="py-24 mx-auto max-w-5xl flex flex-col gap-16">
+          <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
@@ -93,12 +93,12 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
-                className="w-full h-100 object-cover"
+                className="w-full h-120 object-cover"
               />
             </div>
           </div>
           {/* Third section */}
-          <div className="py-24 mx-auto max-w-5xl flex flex-col gap-16">
+          <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
@@ -148,12 +148,12 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
-                className="w-full h-100 object-cover"
+                className="w-full h-120 object-cover"
               />
             </div>
           </div>
           {/* Fourth section */}
-          <div className="py-24 mx-auto max-w-5xl flex flex-col gap-16">
+          <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
@@ -199,12 +199,12 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
-                className="w-full h-100 object-cover"
+                className="w-full h-120 object-cover"
               />
             </div>
           </div>
           {/* Fith section */}
-          <div className="py-24 mx-auto max-w-5xl flex flex-col gap-16">
+          <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
