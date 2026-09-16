@@ -271,6 +271,23 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
+          {/* Seventh section */}
+          <div className="py-24">
+            <div className="flex flex-col gap-2">
+              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
+                Want to see what it looks like in practice?
+              </h2>
+              <div className="flex items-center justify-end">
+                <p className="text-foreground text-xl font-normal max-w-lg">
+                  Here are some projects where I had the opportunity to
+                  transform an idea, a problem or an interface into something
+                  concrete.
+                </p>
+              </div>
+            </div>
+            {/* Projects */}
+            <div></div>
+          </div>
         </div>
       </div>
     </section>
