@@ -62,7 +62,7 @@ export default function ServicesPage() {
               </div>
               <div>
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal">
+                  <li className="text-foreground text-xl font-normal before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     UX research & product thinking
                   </li>
                   <li className="text-foreground text-xl font-normal">
