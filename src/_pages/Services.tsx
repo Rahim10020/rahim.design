@@ -91,7 +91,62 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
-                className="w-full h-100px object-cover"
+                className="w-full h-100 object-cover"
+              />
+            </div>
+          </div>
+          {/* Third section */}
+          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-16">
+            <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-foreground text-4xl font-medium">
+                  Already have the design?
+                </h3>
+                <h5 className="text-foreground text-xl leading-relaxed">
+                  I can build the product.
+                </h5>
+              </div>
+              <div>
+                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                  We start from your idea, even when it is still just a sketch
+                  in your head. I transform your needs into a clear experience:
+                  structure, route, wireframes, interface and prototype.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start justify-between">
+              <div className="text-3xl text-foreground font-medium">
+                <h4>What i can do</h4>
+              </div>
+              <div>
+                <ul className="flex flex-col gap-4">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Integration of models
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Frontend development
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Responsive interfaces Wireframes
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Interactions & animations
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Reusable components
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Performance optimization
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              {/* Placeholder */}
+              <img
+                src="/images/others/image_placeholder.svg"
+                alt="placeholder image"
+                className="w-full h-100 object-cover"
               />
             </div>
           </div>
