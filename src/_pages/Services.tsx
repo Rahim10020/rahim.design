@@ -43,7 +43,7 @@ export default function ServicesPage() {
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium">
+                <h3 className="text-foreground text-4xl font-medium max-w-md">
                   Do you have an idea ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium">
+                <h3 className="text-foreground text-4xl font-medium max-w-md">
                   Already have the design ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
@@ -156,7 +156,7 @@ export default function ServicesPage() {
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium">
+                <h3 className="text-foreground text-4xl font-medium max-w-md">
                   Do you need to be visible online ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
@@ -207,7 +207,7 @@ export default function ServicesPage() {
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium">
+                <h3 className="text-foreground text-4xl font-medium max-w-md">
                   Already have something that works ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
