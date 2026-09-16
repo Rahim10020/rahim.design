@@ -120,7 +120,7 @@ export default function ServicesPage() {
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
-              <div>
+              <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
                   <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Integration of models
@@ -180,7 +180,7 @@ export default function ServicesPage() {
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
-              <div>
+              <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
                   <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     Showcase sites
@@ -229,7 +229,7 @@ export default function ServicesPage() {
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
-              <div>
+              <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
                   <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     UX/UI Audit
