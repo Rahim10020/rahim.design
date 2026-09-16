@@ -1,6 +1,11 @@
 import Button from "../_components/ui/Button";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
+import ProjectCard from "../_components/ui/cards/ProjectCard";
+import { projects } from "../data/project";
+import { getProjectPath, ROUTES } from "../routes";
 import { workwithmeData } from "../data/workwithme";
+import { Link } from "react-router-dom";
+import { ChevronRightIcon } from "../_components/icons";
 
 export default function ServicesPage() {
   return (
@@ -273,7 +278,7 @@ export default function ServicesPage() {
           </div>
           {/* Seventh section */}
           <div className="py-24">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
                 Want to see what it looks like in practice?
               </h2>
@@ -286,7 +291,28 @@ export default function ServicesPage() {
               </div>
             </div>
             {/* Projects */}
-            <div></div>
+            <div className="flex items-between gap-8 mt-16">
+              <div className="flex items-center gap-8">
+                {projects.slice(0, 3).map((project) => (
+                  <ProjectCard
+                    key={project.title}
+                    title={project.title}
+                    category={project.category}
+                    href={getProjectPath(project.slug)}
+                    imageHeight={project.imageHeight}
+                    imageSrc={project.imageSrc}
+                  />
+                ))}
+              </div>
+              <div className="shrink-0 snap-center flex items-center self-center pl-element pr-heading-content">
+                <Link
+                  to={ROUTES.PROJECTS.LIST}
+                  className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
+                >
+                  See all projects <ChevronRightIcon className="pl-tight" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
