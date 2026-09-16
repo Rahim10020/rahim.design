@@ -86,6 +86,14 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
+            <div>
+              {/* Placeholder */}
+              <img
+                src="/images/others/image_placeholder.svg"
+                alt="placeholder image"
+                className="w-full h-100px object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
