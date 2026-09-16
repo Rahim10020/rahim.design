@@ -38,7 +38,7 @@ export default function ServicesPage() {
             </div>
           </div>
           {/* Second section */}
-          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-12">
+          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-16">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
