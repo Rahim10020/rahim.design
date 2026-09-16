@@ -42,7 +42,7 @@ export default function ServicesPage() {
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
-                  Do you have an idea?
+                  Do you have an idea ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
                   I can design the experience.
@@ -100,7 +100,7 @@ export default function ServicesPage() {
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium">
-                  Already have the design?
+                  Already have the design ?
                 </h3>
                 <h5 className="text-foreground text-xl leading-relaxed">
                   I can build the product.
@@ -199,6 +199,56 @@ export default function ServicesPage() {
                 alt="placeholder image"
                 className="w-full h-100 object-cover"
               />
+            </div>
+          </div>
+          {/* Fith section */}
+          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-16">
+            <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-foreground text-4xl font-medium">
+                  Already have something that works ?
+                </h3>
+                <h5 className="text-foreground text-xl leading-relaxed">
+                  I can improve it.
+                </h5>
+              </div>
+              <div>
+                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                  Not everything needs to be rebuilt from scratch.
+                </p>
+                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                  I can take your existing site or product, identify what
+                  creates friction and improve the experience, interface or
+                  certain technical aspects.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start justify-between">
+              <div className="text-3xl text-foreground font-medium">
+                <h4>What i can do</h4>
+              </div>
+              <div>
+                <ul className="flex flex-col gap-4">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    UX/UI Audit
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Interface redesign
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Simplification of routes
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Visual improvements
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Frontend optimization
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Fixed interface issues
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
