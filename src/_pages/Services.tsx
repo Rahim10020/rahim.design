@@ -51,7 +51,7 @@ export default function ServicesPage() {
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   We start from your idea, even when it is still just a sketch
                   in your head. I transform your needs into a clear experience:
                   structure, route, wireframes, interface and prototype.
@@ -62,7 +62,7 @@ export default function ServicesPage() {
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
-              <div>
+              <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
                   <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
                     UX research & product thinking
@@ -109,7 +109,7 @@ export default function ServicesPage() {
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   We start from your idea, even when it is still just a sketch
                   in your head. I transform your needs into a clear experience:
                   structure, route, wireframes, interface and prototype.
@@ -164,12 +164,12 @@ export default function ServicesPage() {
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   Your site doesn't just have to look pretty. It should explain
                   what you do, inspire confidence, and give the right people a
                   reason to contact you.
                 </p>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   I design and develop showcase sites and landing pages that
                   highlight your activity while keeping the experience simple
                   and intuitive.
@@ -215,10 +215,10 @@ export default function ServicesPage() {
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   Not everything needs to be rebuilt from scratch.
                 </p>
-                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                <p className="text-foreground text-xl leading-relaxed max-w-lg">
                   I can take your existing site or product, identify what
                   creates friction and improve the experience, interface or
                   certain technical aspects.
