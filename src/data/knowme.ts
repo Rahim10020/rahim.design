@@ -21,7 +21,7 @@ export const knowmeData: KnowMe[] = [
     number: "03",
     title: "I prefer clarity to complexity",
     description:
-      "Si quelque chose peut être rendu plus simple sans perdre sa valeur, je chercherai généralement cette direction.",
+      "If something can be made simpler without losing its value, I will usually look in that direction.",
   },
   {
     number: "04",
