@@ -86,7 +86,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="my-4">
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
@@ -141,7 +141,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="my-4">
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="my-4">
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
