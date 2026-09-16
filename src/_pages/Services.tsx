@@ -150,6 +150,57 @@ export default function ServicesPage() {
               />
             </div>
           </div>
+          {/* Fourth section */}
+          <div className="py-24 mx-auto max-w-3xl flex flex-col gap-16">
+            <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-foreground text-4xl font-medium">
+                  Do you need to be visible online ?
+                </h3>
+                <h5 className="text-foreground text-xl leading-relaxed">
+                  I can create your site.
+                </h5>
+              </div>
+              <div>
+                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                  Your site doesn't just have to look pretty. It should explain
+                  what you do, inspire confidence, and give the right people a
+                  reason to contact you.
+                </p>
+                <p className="text-foreground text-xl leading-relaxed max-w-sm">
+                  I design and develop showcase sites and landing pages that
+                  highlight your activity while keeping the experience simple
+                  and intuitive.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start justify-between">
+              <div className="text-3xl text-foreground font-medium">
+                <h4>What i can do</h4>
+              </div>
+              <div>
+                <ul className="flex flex-col gap-4">
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Showcase sites
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Landing pages
+                  </li>
+                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
+                    Personal sites
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              {/* Placeholder */}
+              <img
+                src="/images/others/image_placeholder.svg"
+                alt="placeholder image"
+                className="w-full h-100 object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
