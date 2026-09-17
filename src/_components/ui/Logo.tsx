@@ -7,12 +7,12 @@ export type LogoProps = {
 };
 
 export default function Logo(props: LogoProps) {
-  const { size = 64, className } = props;
+  const { size = 32, className } = props;
 
   return (
     <Link to={ROUTES.HOME} aria-label="Go to home page">
       <img
-        src="/images/others/logo64.svg"
+        src="/images/others/logo32.svg"
         srcSet="/images/others/logo16.svg 16w, /images/others/logo32.svg 32w, /images/others/logo64.svg 64w, /images/others/logo128.svg 128w"
         sizes={`${size}px`}
         width={size}
