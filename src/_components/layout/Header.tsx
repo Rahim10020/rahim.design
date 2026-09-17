@@ -1,9 +1,22 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useSyncExternalStore } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
 import { NAV_ITEMS, type NavItem } from "../../navigation.ts";
 import { gsap, useGSAP } from "../../lib/gsap";
+
+const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
+
+const subscribeToDesktopMediaQuery = (onStoreChange: () => void) => {
+  const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
+  mediaQuery.addEventListener("change", onStoreChange);
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+};
+
+const getDesktopMediaQuerySnapshot = () =>
+  window.matchMedia(DESKTOP_MEDIA_QUERY).matches;
+
+const getServerDesktopMediaQuerySnapshot = () => false;
 
 const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
   if (item.kind === "route") {
@@ -27,7 +40,11 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktop = useSyncExternalStore(
+    subscribeToDesktopMediaQuery,
+    getDesktopMediaQuerySnapshot,
+    getServerDesktopMediaQuerySnapshot,
+  );
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { pathname, hash } = location;
@@ -36,14 +53,6 @@ export default function Header() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement>(null);
   const bottomCloseRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    setIsDesktop(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
 
   const isAnchorSectionActive = (href: string) => {
     const sectionId = href.replace(/^#/, "");
