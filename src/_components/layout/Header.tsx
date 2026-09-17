@@ -337,7 +337,11 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
-          {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          {mobileMenuOpen ? (
+            <CloseIcon strokeWidth={2} />
+          ) : (
+            <MenuIcon strokeWidth={2} />
+          )}
         </button>
       </div>
 
@@ -417,7 +421,7 @@ export default function Header() {
           aria-label="Close menu"
           className="mb-10 flex justify-center text-background"
         >
-          <CloseIcon />
+          <CloseIcon strokeWidth={2} />
         </button>
       </div>
     </header>
