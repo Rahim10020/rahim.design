@@ -1,13 +1,45 @@
+import { useState } from "react";
 import Button from "../_components/ui/Button";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import ProjectCard from "../_components/ui/cards/ProjectCard";
 import { projects } from "../data/project";
-import { getProjectPath, ROUTES } from "../routes";
+import { getProjectPath, ROUTES, WHATSAPP_URL } from "../routes";
 import { workwithmeData } from "../data/workwithme";
 import { Link } from "react-router-dom";
-import { ChevronRightIcon } from "../_components/icons";
+import { ArrowDownIcon, ChevronRightIcon } from "../_components/icons";
+
+const faqItems = [
+  {
+    question: "I only have one idea. Is this enough to start with?",
+    answer:
+      "Yes. You don't need to have perfectly defined specifications. The first exchanges serve precisely to understand what you want to build and determine what the project really needs.",
+  },
+  {
+    question:
+      "I already have the models. Can you just take care of development?",
+    answer:
+      "Yes. If your design is already ready, I can focus on integrating and developing it.",
+  },
+  {
+    question: "Can you take care of the design and development?",
+    answer:
+      "Yes. This is one of my main ways of working: designing the experience, then transforming it directly into a product.",
+  },
+  {
+    question: "Do you only work on new projects?",
+    answer:
+      "No. I can also work on an existing product or site to improve its interface, its experience, or certain technical aspects.",
+  },
+  {
+    question: "How does a collaboration begin?",
+    answer:
+      "You just tell me what you're trying to build. No need to prepare a 30-page document. We start with a conversation.",
+  },
+] as const;
 
 export default function ServicesPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
   return (
     <section className="w-full bg-background min-h-screen">
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
@@ -319,15 +351,66 @@ export default function ServicesPage() {
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
               Frequently Asked Question
             </h2>
-            <div>
-              <div></div>
-              <div>
-                <h4>You've come this far, So what are we building?</h4>
-                <div className="text-center mt-16">
+            <div className="mx-auto max-w-4xl">
+              <div className="flex flex-col gap-3">
+                {faqItems.map((item, index) => {
+                  const isOpen = openFaqIndex === index;
+                  const answerId = `faq-answer-${index}`;
+                  const questionId = `faq-question-${index}`;
+
+                  return (
+                    <div
+                      key={item.question}
+                      className="border-2 border-foreground bg-background-alt"
+                    >
+                      <h3>
+                        <button
+                          type="button"
+                          id={questionId}
+                          aria-expanded={isOpen}
+                          aria-controls={answerId}
+                          onClick={() => setOpenFaqIndex(index)}
+                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-lg font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary sm:px-6 sm:text-xl"
+                        >
+                          <span>{item.question}</span>
+                          <ArrowDownIcon
+                            size={18}
+                            aria-hidden="true"
+                            className={`shrink-0 transition-transform duration-200 ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      </h3>
+                      <div
+                        id={answerId}
+                        role="region"
+                        aria-labelledby={questionId}
+                        hidden={!isOpen}
+                        className="px-4 pb-5 sm:px-6 sm:pb-6"
+                      >
+                        <p className="max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-24 text-center">
+                <h4 className="text-foreground text-2xl font-medium">
+                  You've come this far, So what are we building?
+                </h4>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex"
+                >
                   <Button className="px-8 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                     Let's talk about your project
                   </Button>
-                </div>
+                </a>
               </div>
             </div>
           </div>
