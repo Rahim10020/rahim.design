@@ -317,7 +317,7 @@ export default function ServicesPage() {
           {/* Eight section */}
           <div className="py-24">
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
-              Want to see what it looks like in practice?
+              Frequently Asked Question
             </h2>
             <div>
               <div></div>
