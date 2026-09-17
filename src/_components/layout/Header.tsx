@@ -184,7 +184,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-350 mx-auto flex h-20 items-center justify-between px-page-x">
-        <Logo size={isDesktop ? 64 : 48} />
+        <Logo size={isDesktop ? 64 : 44} />
 
         {/* ----- Titre mobile ----- */}
         <span className="lg:hidden text-2xl text-foreground">
