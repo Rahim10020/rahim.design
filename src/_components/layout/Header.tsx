@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
 import { NAV_ITEMS, type NavItem } from "../../navigation.ts";
+import { gsap, useGSAP } from "../../lib/gsap";
 
 const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
   if (item.kind === "route") {
@@ -11,7 +12,6 @@ const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
         (child) => pathname === child.to || pathname.startsWith(`${child.to}/`),
       );
     }
-
     return pathname === item.to || pathname.startsWith(`${item.to}/`);
   }
 
@@ -20,7 +20,6 @@ const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
   }
 
   const targetHash = item.href.replace(/^#/, "");
-
   return pathname === "/" && hash === `#${targetHash}`;
 };
 
@@ -31,16 +30,150 @@ export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { pathname, hash } = location;
+
+  const headerRef = useRef<HTMLElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<HTMLDivElement>(null);
+  const bottomCloseRef = useRef<HTMLButtonElement>(null);
+
   const isAnchorSectionActive = (href: string) => {
     const sectionId = href.replace(/^#/, "");
     return pathname === "/" && hash === `#${sectionId}`;
   };
 
+  /* ------------------------------------------------------------------
+   *  Setup initial : overlay caché, items préparés pour l'animation
+   * ------------------------------------------------------------------ */
+  useGSAP(
+    () => {
+      gsap.set(overlayRef.current, {
+        autoAlpha: 0,
+        scaleY: 0,
+        transformOrigin: "top center",
+      });
+      gsap.set(itemsRef.current?.children ?? [], {
+        y: 40,
+        autoAlpha: 0,
+      });
+      gsap.set(bottomCloseRef.current, {
+        autoAlpha: 0,
+        scale: 0.8,
+      });
+    },
+    { scope: headerRef },
+  );
+
+  /* ------------------------------------------------------------------
+   *  Réaction à l'ouverture / fermeture du menu mobile
+   * ------------------------------------------------------------------ */
+  useGSAP(
+    () => {
+      const overlay = overlayRef.current;
+      const items = itemsRef.current?.children;
+      const bottomClose = bottomCloseRef.current;
+      if (!overlay || !items || !bottomClose) return;
+
+      if (mobileMenuOpen) {
+        // OUVERTURE
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        tl.to(overlay, {
+          autoAlpha: 1,
+          scaleY: 1,
+          duration: 0.4,
+        })
+          .to(
+            items,
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.5,
+              stagger: 0.08,
+            },
+            "-=0.2", // commence légèrement avant la fin de l'overlay
+          )
+          .to(
+            bottomClose,
+            {
+              autoAlpha: 1,
+              scale: 1,
+              duration: 0.3,
+            },
+            "-=0.15",
+          );
+      } else {
+        // FERMETURE
+        const tl = gsap.timeline({ defaults: { ease: "power2.in" } });
+
+        tl.to(bottomClose, {
+          autoAlpha: 0,
+          scale: 0.8,
+          duration: 0.2,
+        })
+          .to(
+            items,
+            {
+              y: -20,
+              autoAlpha: 0,
+              duration: 0.25,
+              stagger: { each: 0.05, from: "end" },
+            },
+            "-=0.1",
+          )
+          .to(
+            overlay,
+            {
+              autoAlpha: 0,
+              scaleY: 0,
+              duration: 0.35,
+              ease: "power3.inOut",
+            },
+            "-=0.1",
+          );
+      }
+    },
+    { dependencies: [mobileMenuOpen], scope: headerRef },
+  );
+
+  /* ------------------------------------------------------------------
+   *  Fermer le menu mobile quand on change de route
+   * ------------------------------------------------------------------ */
+  useGSAP(
+    () => {
+      if (mobileMenuOpen) setMobileMenuOpen(false);
+    },
+    { dependencies: [pathname, hash], scope: headerRef },
+  );
+
+  /* ------------------------------------------------------------------
+   *  Bloquer le scroll body quand le menu mobile est ouvert
+   * ------------------------------------------------------------------ */
+  useGSAP(
+    () => {
+      document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    },
+    { dependencies: [mobileMenuOpen], scope: headerRef },
+  );
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background">
+    <header
+      ref={headerRef}
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+        mobileMenuOpen ? "bg-primary" : "bg-background"
+      }`}
+    >
       <div className="max-w-350 mx-auto flex h-20 items-center justify-between px-page-x">
         <Logo />
 
+        {/* ----- Titre mobile ----- */}
+        <span className="lg:hidden text-2xl text-foreground">
+          Designer/Coder
+        </span>
+
+        {/* ----- Nav desktop ----- */}
         <div
           className={`hidden lg:flex items-center border-2 overflow-visible transition-colors duration-500 ${
             navOpen ? "border-foreground" : ""
@@ -197,109 +330,96 @@ export default function Header() {
           </button>
         </div>
 
+        {/* ----- Burger mobile ----- */}
         <button
-          className="lg:hidden p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 text-foreground"
+          onClick={() => setMobileMenuOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
-      {mobileMenuOpen && (
-        <div className="absolute left-0 top-full w-full border-t border-gray-100 bg-background shadow-sm lg:hidden">
-          <nav className="flex flex-col px-6 py-4 gap-4">
-            {NAV_ITEMS.map((link) => {
-              const isActive = isNavItemActive(link, pathname, hash);
+      {/* ----- Overlay mobile ----- */}
+      <div
+        ref={overlayRef}
+        className="lg:hidden fixed left-0 top-20 z-40 flex h-[calc(100vh-5rem)] w-full flex-col bg-primary-alt"
+        style={{ visibility: "hidden" }}
+      >
+        <nav
+          ref={itemsRef}
+          className="flex flex-1 flex-col items-center justify-center gap-8"
+        >
+          {NAV_ITEMS.map((link) => {
+            const isActive = isNavItemActive(link, pathname, hash);
+            const itemClass = `text-4xl transition-colors ${
+              isActive ? "text-primary" : "text-white hover:text-primary"
+            }`;
 
+            if (link.kind === "route") {
               return (
-                <div key={link.label} className="flex flex-col gap-2">
-                  {link.kind === "route" ? (
-                    <Link
-                      to={link.to}
-                      className={`text-base font-medium py-2 ${
-                        isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : link.kind === "external" ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-base font-medium py-2 ${
-                        isActive ? "bg-primary px-2" : "text-[#1e1e1e]"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ) : isHome ? (
-                    <a
-                      href={link.href}
-                      className={`text-base font-medium py-2 ${
-                        isAnchorSectionActive(link.href)
-                          ? "bg-primary px-2"
-                          : "text-[#1e1e1e]"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-current={
-                        isAnchorSectionActive(link.href) ? "page" : undefined
-                      }
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={`/${link.href}`}
-                      className={`text-base font-medium py-2 ${
-                        isAnchorSectionActive(link.href)
-                          ? "bg-primary px-2"
-                          : "text-[#1e1e1e]"
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-current={
-                        isAnchorSectionActive(link.href) ? "page" : undefined
-                      }
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-
-                  {link.kind === "route" && link.children && (
-                    <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
-                      {link.children.map((child) => {
-                        const childIsActive =
-                          pathname === child.to ||
-                          pathname.startsWith(`${child.to}/`);
-
-                        return (
-                          <Link
-                            key={child.label}
-                            to={child.to}
-                            className={`text-sm py-1 ${
-                              childIsActive
-                                ? "bg-primary px-2 text-[#1e1e1e]"
-                                : "text-[#1e1e1e]/80"
-                            }`}
-                            onClick={() => setMobileMenuOpen(false)}
-                            aria-current={childIsActive ? "page" : undefined}
-                          >
-                            {child.label}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className={itemClass}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
               );
-            })}
-          </nav>
-        </div>
-      )}
+            }
+
+            if (link.kind === "external") {
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={itemClass}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              );
+            }
+
+            return isHome ? (
+              <a
+                key={link.label}
+                href={link.href}
+                className={itemClass}
+                onClick={() => setMobileMenuOpen(false)}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                to={`/${link.href}`}
+                className={itemClass}
+                onClick={() => setMobileMenuOpen(false)}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Croix du bas */}
+        <button
+          ref={bottomCloseRef}
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Close menu"
+          className="mb-10 flex justify-center text-background"
+        >
+          <CloseIcon />
+        </button>
+      </div>
     </header>
   );
 }
