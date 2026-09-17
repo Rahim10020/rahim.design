@@ -10,7 +10,7 @@ export default function HeroSection() {
             <div className="flex flex-col gap-block">
               <div className="w-full">
                 {/* Headline */}
-                <h1 className="text-2xl md:text-4xl lg:text-7xl font-medium text-foreground max-w-4xl">
+                <h1 className="text-2xl md:text-4xl lg:text-7xl font-medium text-foreground max-w-4xl text-center lg:text-left mx-auto lg:mx-0">
                   <Words
                     text="You have an idea. Let's make it something people will want to
                   use."
@@ -19,8 +19,8 @@ export default function HeroSection() {
                 </h1>
               </div>
 
-              <div className="w-full flex justify-end">
-                <div className="flex flex-col justify-end gap-comfortable">
+              <div className="w-full flex justify-center lg:justify-end">
+                <div className="flex flex-col items-center lg:items-end justify-end gap-comfortable text-center lg:text-right">
                   <p className="text-foreground text-base md:text-2xl leading-relaxed font-normal max-w-md">
                     I am Rahim ALI. I design and code things that make the web
                     feel simple, intuitive, and alive.
