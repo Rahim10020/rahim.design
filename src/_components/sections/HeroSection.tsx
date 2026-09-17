@@ -20,8 +20,8 @@ export default function HeroSection() {
               </div>
 
               <div className="w-full flex justify-center lg:justify-end">
-                <div className="flex flex-col items-center lg:items-end justify-end gap-comfortable text-center lg:text-right">
-                  <p className="text-foreground text-base md:text-2xl leading-relaxed font-normal max-w-md">
+                <div className="flex flex-col items-center lg:items-end justify-end gap-12 md:gap-comfortable text-center lg:text-right">
+                  <p className="text-foreground text-xl md:text-2xl leading-relaxed font-normal max-w-xs md:max-w-md">
                     I am Rahim ALI. I design and code things that make the web
                     feel simple, intuitive, and alive.
                   </p>
