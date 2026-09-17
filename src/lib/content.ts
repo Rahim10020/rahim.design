@@ -29,6 +29,62 @@ export interface Project {
 }
 type ContentEntry<T> = { meta: T; content: string };
 
+function requiredString(
+  data: Record<string, unknown>,
+  field: string,
+  path: string,
+): string {
+  const value = data[field];
+  if (typeof value !== "string" || !value.trim()) {
+    throw new Error(
+      `Invalid content in ${path}: "${field}" must be a non-empty string`,
+    );
+  }
+  return value.trim();
+}
+
+function requiredNumber(
+  data: Record<string, unknown>,
+  field: string,
+  path: string,
+): number {
+  const value = data[field];
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new Error(
+      `Invalid content in ${path}: "${field}" must be a finite number`,
+    );
+  }
+  return value;
+}
+
+function optionalString(
+  data: Record<string, unknown>,
+  field: string,
+  path: string,
+): string {
+  const value = data[field];
+  if (value === undefined) return "";
+  if (typeof value !== "string") {
+    throw new Error(`Invalid content in ${path}: "${field}" must be a string`);
+  }
+  return value.trim();
+}
+
+function stringArray(
+  data: Record<string, unknown>,
+  field: string,
+  path: string,
+): string[] {
+  const value = data[field];
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.some((item) => typeof item !== "string")) {
+    throw new Error(
+      `Invalid content in ${path}: "${field}" must be an array of strings`,
+    );
+  }
+  return value.map((item) => item.trim()).filter(Boolean);
+}
+
 const modules = import.meta.glob("../content/**/*.md", {
   query: "?raw",
   import: "default",
@@ -36,13 +92,6 @@ const modules = import.meta.glob("../content/**/*.md", {
 }) as Record<string, string>;
 const slugFromPath = (path: string) =>
   path.split("/").pop()?.replace(/\.md$/, "") ?? "";
-const text = (value: unknown) => (typeof value === "string" ? value : "");
-const number = (value: unknown) =>
-  typeof value === "number" && Number.isFinite(value) ? value : undefined;
-const stringArray = (value: unknown) =>
-  Array.isArray(value)
-    ? value.filter((item): item is string => typeof item === "string")
-    : [];
 
 function typeFromPath(path: string): LearnType | undefined {
   const type = path.match(/\/learn\/([^/]+)\//)?.[1];
@@ -58,16 +107,16 @@ function learnEntries(): ContentEntry<ArticleFrontmatter>[] {
       const { data, content } = parseFrontmatter(raw);
       const type = typeFromPath(path);
       const slug = slugFromPath(path);
-      const images = stringArray(data.images);
-      const imageSrc = text(data.imageSrc) || images[0];
+      const images = stringArray(data, "images", path);
+      const imageSrc = optionalString(data, "imageSrc", path) || images[0];
       return type && slug
         ? [
             {
               meta: {
                 slug,
-                title: text(data.title),
-                date: text(data.date),
-                description: text(data.description),
+                title: requiredString(data, "title", path),
+                date: requiredString(data, "date", path),
+                description: requiredString(data, "description", path),
                 type,
                 ...(imageSrc ? { imageSrc } : {}),
                 images: images.filter((image) => image !== imageSrc),
@@ -84,31 +133,27 @@ function projectEntries(): ContentEntry<Project>[] {
     .filter(([path]) => path.includes("/content/projects/"))
     .flatMap(([path, raw]) => {
       const { data, content } = parseFrontmatter(raw);
-      const category = text(data.category);
+      const category = requiredString(data, "category", path);
       const slug = slugFromPath(path);
-      const order = number(data.order);
-      if (
-        !slug ||
-        order === undefined ||
-        !PROJECT_CATEGORIES.includes(category as ProjectCategory)
-      )
-        return [];
-      const imageSrc = text(data.imageSrc);
-      const images = stringArray(data.images);
-      const link = text(data.link);
+      const order = requiredNumber(data, "order", path);
+      if (!slug || !PROJECT_CATEGORIES.includes(category as ProjectCategory))
+        throw new Error(`Invalid content in ${path}: unknown project category`);
+      const imageSrc = optionalString(data, "imageSrc", path);
+      const images = stringArray(data, "images", path);
+      const link = optionalString(data, "link", path);
       return [
         {
           meta: {
             slug,
             order,
-            title: text(data.title),
+            title: requiredString(data, "title", path),
             category: category as ProjectCategory,
-            description: text(data.description),
-            tags: stringArray(data.tags),
-            imageHeight: text(data.imageHeight) || "h-96",
-            role: text(data.role) || "À compléter",
-            platform: text(data.platform) || "À compléter",
-            year: text(data.year) || "À compléter",
+            description: requiredString(data, "description", path),
+            tags: stringArray(data, "tags", path),
+            imageHeight: optionalString(data, "imageHeight", path) || "h-96",
+            role: optionalString(data, "role", path) || "À compléter",
+            platform: optionalString(data, "platform", path) || "À compléter",
+            year: optionalString(data, "year", path) || "À compléter",
             ...(imageSrc || images[0]
               ? { imageSrc: imageSrc || images[0] }
               : {}),
