@@ -230,7 +230,7 @@ export default function AboutPage() {
           </div>
           <div className="mx-auto max-w-4xl py-24 flex justify-center">
             <div className="flex flex-col items-center">
-              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-2xl">
+              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[3.8rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-2xl">
                 Code is what I use to build. Experience is what I'm really
                 trying to create.
               </h2>

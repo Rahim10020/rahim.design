@@ -6,6 +6,6 @@
 
 -- Page de detail d'un projet: modifier chaque markdown apres avoir polish tous les 
     projets a mettre dans le portfolio
--- continuer avec le codage de la page services
+-- continuer avec le codage de la page services (Apres revoir la hierarchie et la taille des grands titres.)
 -- appliquer mes custom syles (espacements) aux autres pages qui ne les utilisent pas 
     encore afin que tout sois propre.
