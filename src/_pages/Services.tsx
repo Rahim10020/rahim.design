@@ -38,7 +38,7 @@ const faqItems = [
 ] as const;
 
 export default function ServicesPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
     <section className="w-full bg-background min-h-screen">
@@ -352,7 +352,7 @@ export default function ServicesPage() {
               Frequently Asked Question
             </h2>
             <div className="mx-auto max-w-4xl">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 {faqItems.map((item, index) => {
                   const isOpen = openFaqIndex === index;
                   const answerId = `faq-answer-${index}`;
@@ -369,8 +369,8 @@ export default function ServicesPage() {
                           id={questionId}
                           aria-expanded={isOpen}
                           aria-controls={answerId}
-                          onClick={() => setOpenFaqIndex(index)}
-                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-lg font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary sm:px-6 sm:text-xl"
+                          onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-lg font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-foreground-alt-a sm:px-6 sm:text-2xl"
                         >
                           <span>{item.question}</span>
                           <ArrowDownIcon
@@ -387,7 +387,7 @@ export default function ServicesPage() {
                         role="region"
                         aria-labelledby={questionId}
                         hidden={!isOpen}
-                        className="px-4 pb-5 sm:px-6 sm:pb-6"
+                        className="px-4 pb-5 sm:px-6 sm:pb-6 sm:pt-6"
                       >
                         <p className="max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
                           {item.answer}
