@@ -30,6 +30,7 @@ export default function ProjectCard({
           <img
             src={imageSrc}
             alt={imageAlt || title}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
@@ -37,6 +38,7 @@ export default function ProjectCard({
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         )}

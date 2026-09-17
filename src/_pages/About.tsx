@@ -132,11 +132,13 @@ export default function AboutPage() {
                   <img
                     src="/icons/tools/figma.svg"
                     alt="Figma logo image"
+                    loading="lazy"
                     className="w-24 h-24"
                   />
                   <img
                     src="/icons/tools/excalidraw.png"
                     alt="Excalidraw logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                 </div>
@@ -149,21 +151,25 @@ export default function AboutPage() {
                   <img
                     src="/icons/tools/react.svg"
                     alt="React logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                   <img
                     src="/icons/tools/typescript.svg"
                     alt="Typescript logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                   <img
                     src="/icons/tools/next-js.svg"
                     alt="Next JS logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                   <img
                     src="/icons/tools/tailwind-css.png"
                     alt="Tailwind logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                 </div>
@@ -176,11 +182,13 @@ export default function AboutPage() {
                   <img
                     src="/icons/tools/claude.png"
                     alt="Claude logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                   <img
                     src="/icons/tools/open-ai.png"
                     alt="Open ai logo image"
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                 </div>
@@ -223,6 +231,7 @@ export default function AboutPage() {
                   <img
                     src="/images/others/reads.png"
                     alt="Hoobies image"
+                    loading="lazy"
                     className="h-full w-full"
                   />
                 </div>

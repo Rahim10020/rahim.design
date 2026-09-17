@@ -20,6 +20,7 @@ export default function LearnCard({
           <img
             src={imageSrc}
             alt={imageAlt}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         ) : (
@@ -27,6 +28,7 @@ export default function LearnCard({
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         )}

@@ -21,6 +21,7 @@ export default function ServiceCard({
           <img
             src={imageSrc}
             alt={imageAlt}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         ) : (
@@ -28,6 +29,7 @@ export default function ServiceCard({
           <img
             src="/images/others/image_placeholder.svg"
             alt="placeholder image"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         )}

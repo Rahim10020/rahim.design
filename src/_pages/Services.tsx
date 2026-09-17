@@ -130,6 +130,7 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
+                loading="lazy"
                 className="w-full h-120 object-cover"
               />
             </div>
@@ -185,6 +186,7 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
+                loading="lazy"
                 className="w-full h-120 object-cover"
               />
             </div>
@@ -236,6 +238,7 @@ export default function ServicesPage() {
               <img
                 src="/images/others/image_placeholder.svg"
                 alt="placeholder image"
+                loading="lazy"
                 className="w-full h-120 object-cover"
               />
             </div>

@@ -45,6 +45,7 @@ export default function Markdown({ content }: { content: string }) {
               <img
                 src={src}
                 alt={alt ?? ""}
+                loading="lazy"
                 className="aspect-video w-full object-cover"
               />
             </figure>

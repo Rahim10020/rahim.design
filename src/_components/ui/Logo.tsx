@@ -18,6 +18,7 @@ export default function Logo(props: LogoProps) {
         width={size}
         height={size}
         alt="Website logo"
+        loading="lazy"
         className={className}
       />
     </Link>

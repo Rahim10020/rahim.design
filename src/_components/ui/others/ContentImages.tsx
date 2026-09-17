@@ -16,6 +16,7 @@ export default function ContentImages({
           <img
             src={primaryImage}
             alt={alt}
+            loading="lazy"
             className="aspect-video w-full object-cover"
           />
         </figure>
@@ -27,6 +28,7 @@ export default function ContentImages({
               key={image}
               src={image}
               alt={`${alt} — image ${index + 2}`}
+              loading="lazy"
               className="w-full object-cover"
             />
           ))}
