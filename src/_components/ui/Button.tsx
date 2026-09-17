@@ -26,7 +26,7 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-primary text-foreground border-2 border-foreground focus:ring-primary",
+      "bg-primary text-foreground border-2 border-foreground focus:ring-foreground-alt-a",
     secondary:
       "bg-foreground text-background border-2 border-foreground focus:ring-foreground",
   };

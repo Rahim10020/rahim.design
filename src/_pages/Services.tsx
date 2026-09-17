@@ -398,9 +398,6 @@ export default function ServicesPage() {
                 })}
               </div>
               <div className="mt-24 text-center">
-                <h4 className="text-foreground text-2xl font-medium">
-                  You've come this far, So what are we building?
-                </h4>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
