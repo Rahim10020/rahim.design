@@ -31,21 +31,28 @@ export default function Button({
       "bg-foreground text-background border-2 border-foreground focus:ring-foreground",
   };
 
-  const { contextSafe } = useGSAP({ scope: wrapperRef });
-  const lift = contextSafe((button: HTMLButtonElement) => {
-    if (disabled) return;
-    gsap.to(button, {
-      x: -4,
-      y: -4,
-      duration: 0.18,
-      ease: "power2.out",
-    });
-  });
-  const rest = contextSafe((button: HTMLButtonElement) => {
+  const { contextSafe } = useGSAP(
+    () => {
+      if (disabled) return;
+      gsap.set(buttonRef.current, { x: -4, y: -4 });
+    },
+    { scope: wrapperRef, dependencies: [disabled], revertOnUpdate: true },
+  );
+
+  const settle = contextSafe((button: HTMLButtonElement) => {
     if (disabled) return;
     gsap.to(button, {
       x: 0,
       y: 0,
+      duration: 0.18,
+      ease: "power2.out",
+    });
+  });
+  const raise = contextSafe((button: HTMLButtonElement) => {
+    if (disabled) return;
+    gsap.to(button, {
+      x: -4,
+      y: -4,
       duration: 0.18,
       ease: "power2.out",
     });
@@ -83,8 +90,8 @@ export default function Button({
         type={type}
         onClick={onClick}
         disabled={disabled}
-        onMouseEnter={(event) => lift(event.currentTarget)}
-        onMouseLeave={(event) => rest(event.currentTarget)}
+        onMouseEnter={(event) => settle(event.currentTarget)}
+        onMouseLeave={(event) => raise(event.currentTarget)}
         onMouseDown={(event) => press(event.currentTarget)}
         onMouseUp={(event) => release(event.currentTarget)}
         className={`${base} ${variants[variant]} ${className}`}
