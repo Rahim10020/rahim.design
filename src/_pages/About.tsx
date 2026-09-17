@@ -34,6 +34,7 @@ export default function AboutPage() {
               <img
                 src="/images/others/rahim-cartoon.png"
                 alt="Rahim image"
+                loading="lazy"
                 className="w-full h-full"
               />
             </div>
