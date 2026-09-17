@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
@@ -27,6 +27,7 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { pathname, hash } = location;
@@ -35,6 +36,14 @@ export default function Header() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement>(null);
   const bottomCloseRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const isAnchorSectionActive = (href: string) => {
     const sectionId = href.replace(/^#/, "");
@@ -162,11 +171,11 @@ export default function Header() {
     <header
       ref={headerRef}
       className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
-        mobileMenuOpen ? "bg-primary" : "bg-background"
+        mobileMenuOpen && !isDesktop ? "bg-primary" : "bg-background"
       }`}
     >
       <div className="max-w-350 mx-auto flex h-20 items-center justify-between px-page-x">
-        <Logo size={64} />
+        <Logo size={isDesktop ? 64 : 48} />
 
         {/* ----- Titre mobile ----- */}
         <span className="lg:hidden text-2xl text-foreground">
