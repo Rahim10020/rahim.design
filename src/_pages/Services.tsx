@@ -314,6 +314,23 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
+          {/* Eight section */}
+          <div className="py-24">
+            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
+              Want to see what it looks like in practice?
+            </h2>
+            <div>
+              <div></div>
+              <div>
+                <h4>You've come this far, So what are we building?</h4>
+                <div className="text-center mt-16">
+                  <Button className="px-8 py-6 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                    Let's talk about your project
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
