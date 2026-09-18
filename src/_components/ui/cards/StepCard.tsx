@@ -36,7 +36,7 @@ export default function StepCard({
 
         {/* Title */}
         <h3
-          className={`text-xl md:text-3xl font-medium mt-comfortable mb-element leading-snug ${
+          className={`text-2xl md:text-3xl font-medium mt-comfortable mb-element leading-snug ${
             isLightText ? "text-background" : "text-foreground"
           }`}
         >
@@ -45,7 +45,7 @@ export default function StepCard({
 
         {/* Description */}
         <p
-          className={`text-sm md:text-xl leading-relaxed ${
+          className={`text-md md:text-xl leading-relaxed ${
             isLightText ? "text-white/90" : "text-foreground"
           }`}
         >
