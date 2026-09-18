@@ -437,9 +437,9 @@ export default function Header() {
           ref={bottomCloseRef}
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Close menu"
-          className="mb-10 flex justify-center text-background"
+          className="mb-32 flex justify-center text-background"
         >
-          <CloseIcon strokeWidth={2} />
+          <CloseIcon size={32} />
         </button>
       </div>
     </header>
