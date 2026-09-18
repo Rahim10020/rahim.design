@@ -9,17 +9,17 @@ export default function AboutPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           {/* First section */}
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-0 lg:gap-16">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl md:text-7xl font-medium text-foreground">
                 About.
               </h1>
               <div>
-                <p className="text-foreground-alt-a text-xl font-light leading-relaxed mx-auto max-w-xl">
+                <p className="text-foreground-alt-a text-xl font-light leading-relaxed mx-auto max-w-sm md:max-w-lg lg:max-w-xl">
                   I am a web developer, UX/UI designer and freelancer based at
                   Lome/Togo.
                 </p>
-                <p className="text-foreground text-xl leading-relaxed mx-auto max-w-xl mt-6">
+                <p className="text-foreground text-xl leading-relaxed mx-auto max-w-sm md:max-w-lg lg:max-w-xl mt-6">
                   At first I just wanted to understand how things worked. Then I
                   started coding. Then I realized that writing code was only
                   part of the problem. We also had to understand what people
