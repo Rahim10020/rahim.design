@@ -9,7 +9,7 @@ export default function AboutPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           {/* First section */}
-          <div className="flex items-center justify-between gap-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl md:text-7xl font-medium text-foreground">
                 About.
@@ -30,7 +30,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="w-full lg:w-auto">
               <img
                 src="/images/others/rahim-cartoon.png"
                 alt="Rahim image"
@@ -40,8 +40,8 @@ export default function AboutPage() {
             </div>
           </div>
           {/* Second section */}
-          <div className="flex items-center justify-center">
-            <div className="flex items-center gap-24 py-24">
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 py-24">
               <div className="flex flex-col gap-8">
                 <h3 className="text-foreground text-2xl font-medium">
                   Part Designer
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
               The tools I use to get the job done.
             </h2>
-            <div className="flex items-center justify-between gap-16">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
               <div className="flex flex-col gap-6">
                 <h3 className="text-foreground text-3xl font-medium">Design</h3>
                 <div className="flex items-center gap-4">
@@ -205,8 +205,8 @@ export default function AboutPage() {
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
                 And when I'm not in front of my screen?
               </h2>
-              <div className="flex items-center justify-between gap-12">
-                <div className=" max-w-md">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className="max-w-md">
                   <ul className="space-y-4">
                     <li className="text-foreground-alt-a text-xl">I run,</li>
                     <li className="text-foreground-alt-a text-xl">
@@ -227,7 +227,7 @@ export default function AboutPage() {
                     </li>
                   </ul>
                 </div>
-                <div className="max-w-xl">
+                <div className="w-full lg:max-w-xl">
                   <img
                     src="/images/others/reads.png"
                     alt="Hoobies image"
