@@ -25,13 +25,13 @@ export default function ProjectsPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           {/* Title */}
-          <h1 className="text-foreground text-6xl font-medium tracking-tight mb-10">
+          <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-10">
             Projects.
           </h1>
 
           {/* Filters */}
           <div className="flex items-center justify-center">
-            <div className="flex flex-wrap gap-3 mb-14">
+            <div className="flex flex-wrap gap-4 md:gap-3 mb-14">
               {filters.map((filter) => {
                 const isActive = activeFilter === filter.value;
 
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
                     key={filter.value}
                     onClick={() => setActiveFilter(filter.value)}
                     className={`
-                  px-8 py-2.5 text-lg md:text-xl font-medium cursor-pointer border-2 border-foreground transition-colors
+                  px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer border-2 border-foreground transition-colors
                   ${
                     isActive
                       ? "bg-primary text-foreground"
