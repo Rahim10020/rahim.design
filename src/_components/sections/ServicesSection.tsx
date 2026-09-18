@@ -29,10 +29,10 @@ const services: Service[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full min-h-[calc(100svh-104px)] bg-background py-section lg:py-section-lg">
+    <section className="w-full bg-background py-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title */}
-        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-md">
+        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-md text-center lg:text-left mx-auto lg:mx-0">
           What I can do
           <br />
           for you
