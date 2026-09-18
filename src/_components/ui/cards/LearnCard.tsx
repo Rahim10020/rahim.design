@@ -35,7 +35,7 @@ export default function LearnCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-3xl md::text-3xl font-medium underline lg:group-hover:underline mb-3">
+      <h3 className="text-foreground text-2xl md:text-3xl font-medium underline  lg:no-underline lg:group-hover:underline mb-3">
         {title}
       </h3>
     </article>
