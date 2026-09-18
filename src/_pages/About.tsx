@@ -122,10 +122,10 @@ export default function AboutPage() {
           </div>
           {/* fith section */}
           <div className="py-24">
-            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
+            <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
               The tools I use to get the job done.
             </h2>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
               <div className="flex flex-col gap-6">
                 <h3 className="text-foreground text-3xl font-medium">Design</h3>
                 <div className="flex items-center gap-4">
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex flex-col gap-16">
-                <h3 className="text-foreground text-3xl font-medium">
+                <h3 className="text-foreground text-3xl max-w-xs lg:max-w-xl font-medium">
                   For brainstorming and code
                 </h3>
                 <div className="flex items-center gap-4">
