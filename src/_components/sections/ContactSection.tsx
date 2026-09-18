@@ -85,7 +85,7 @@ export default function ContactSection() {
             </div>
 
             {/* Email */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col gap-2 items-center">
               <p className="text-foreground text-xl font-normal">
                 Write directly to:
               </p>

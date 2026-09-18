@@ -2,7 +2,7 @@ import Logo from "../ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-background">
+    <footer className="bg-background mt-section">
       <div className="px-comfortable py-block lg:py-comfortable max-w-350 mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-block">
           {/* Left - Copyright */}
