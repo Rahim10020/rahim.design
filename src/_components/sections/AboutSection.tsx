@@ -2,7 +2,7 @@ import Logo from "../ui/Logo";
 
 export default function AboutSection() {
   return (
-    <section className="flex w-full bg-background">
+    <section className="flex w-full my-section bg-background">
       <div className="max-w-350 mx-auto flex w-full px-page-x">
         <div className="mx-auto w-full max-w-6xl py-block mt-block space-y-block">
           {/* First line — logo + titre (desktop only) */}

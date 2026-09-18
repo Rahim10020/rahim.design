@@ -183,7 +183,7 @@ export default function ProjectsSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-background py-section lg:py-section-lg overflow-hidden"
+      className="w-full bg-background my-section py-section lg:py-section-lg overflow-hidden"
     >
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title — pas d'animation */}

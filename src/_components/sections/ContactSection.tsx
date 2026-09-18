@@ -14,7 +14,7 @@ import Button from "../ui/Button";
 
 export default function ContactSection() {
   return (
-    <section className="flex w-full bg-background">
+    <section className="flex w-full my-section bg-background">
       <div className="max-w-350 mx-auto flex w-full px-page-x">
         <div className="mx-auto w-full max-w-6xl mt-block">
           {/* ============================================================
@@ -91,7 +91,7 @@ export default function ContactSection() {
               </p>
               <a
                 href="mailto:rahim100codeur@gmail.com"
-                className="hover:underline cursor-pointer text-foreground text-xl decoration-2 break-all"
+                className="underline cursor-pointer text-foreground text-2xl decoration-2 break-all"
               >
                 rahim100codeur@gmail.com
               </a>
