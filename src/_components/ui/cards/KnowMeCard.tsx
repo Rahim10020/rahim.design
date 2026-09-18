@@ -26,14 +26,12 @@ export default function KnowMeCard({
         <div className="absolute top-6 left-0 w-16 h-1.5 bg-accent" />
 
         {/* Title */}
-        <h3 className="text-xl md:text-3xl font-medium text-foreground mt-6 mb-4 ">
+        <h3 className="text-2xl md:text-3xl font-medium text-foreground mt-6 mb-4 ">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm md:text-xl text-foreground leading-relaxed">
-          {description}
-        </p>
+        <p className="text-xl text-foreground leading-relaxed">{description}</p>
       </div>
     </article>
   );

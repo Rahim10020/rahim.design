@@ -11,7 +11,7 @@ export default function AboutPage() {
           {/* First section */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-0 lg:gap-16">
             <div className="flex flex-col gap-4">
-              <h1 className="text-4xl md:text-7xl font-medium text-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium text-foreground">
                 About.
               </h1>
               <div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           </div>
           {/* third section */}
           <div className="flex items-center justify-between py-24">
-            <div className="mx-auto max-w-xl flex flex-col gap-12">
+            <div className="mx-auto max-w-sm md:max-w-lg lg:max-w-xl flex flex-col gap-12">
               <p className="text-foreground text-xl font-normal leading-relaxed">
                 I can start in Figma and end up in my code editor without
                 needing to pass the baton to anyone else. This dual role allows
@@ -104,7 +104,7 @@ export default function AboutPage() {
           </div>
           {/* fourth section */}
           <div className="py-24">
-            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
+            <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
               Some things you can expect from me.
             </h2>
 

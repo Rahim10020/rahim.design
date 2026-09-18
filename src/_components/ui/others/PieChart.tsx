@@ -1,7 +1,7 @@
 export default function PieChart() {
   return (
     <div>
-      <div className="relative w-72 h-72 sm:w-80 sm:h-80">
+      <div className="relative w-60 h-60 sm:w-80 sm:h-80">
         {/* Pie chart avec conic-gradient */}
         <div
           className="w-full h-full rounded-full"
