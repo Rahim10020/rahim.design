@@ -48,7 +48,7 @@ export default function AllProjectCard({
         className="
           absolute inset-0 z-10 flex flex-col justify-end p-6
           bg-linear-to-t from-black/85 via-black/40 to-transparent
-          opacity-0 group-hover:opacity-100
+          opacity-0 group-hover:opacity-100 max-md:opacity-100
           transition-opacity duration-300
           pointer-events-none
         "

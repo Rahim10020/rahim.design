@@ -39,7 +39,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               className="w-full max-w-sm"
             >
-              <Button className="w-full px-12 py-4 text-center text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+              <Button className="w-full px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                 Start a Conversation
               </Button>
             </a>
@@ -186,7 +186,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="relative inline-flex w-full min-w-0 max-w-full sm:w-auto"
               >
-                <Button className="w-full max-w-full whitespace-normal px-12 py-4 text-center text-2xl font-medium bg-primary border-2 border-foreground text-foreground sm:w-auto">
+                <Button className="w-full max-w-full whitespace-normal px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground sm:w-auto">
                   Start a Conversation
                 </Button>
               </a>

@@ -70,7 +70,7 @@ export default function ProjectsPage() {
             ))}
           </div>
           <div className="text-center mt-24">
-            <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+            <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
               Let's talk about your project
             </Button>
           </div>
