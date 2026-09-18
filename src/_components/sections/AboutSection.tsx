@@ -18,7 +18,7 @@ export default function AboutSection() {
           </div>
 
           {/* Titre mobile */}
-          <h2 className="lg:hidden text-4xl font-medium text-foreground text-center">
+          <h2 className="lg:hidden text-4xl md:text-5xl lg:text-4xl font-medium text-foreground text-center">
             Behind the screen
           </h2>
 
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
             {/* Paragraphes */}
             <div className="flex justify-center lg:justify-end">
-              <div className="max-w-xs lg:max-w-2xl space-y-comfortable">
+              <div className="max-w-xs md:max-w-lg lg:max-w-2xl space-y-comfortable">
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
                   I'm the type of developer who notices when a button is
                   misaligned by 4 pixels.
