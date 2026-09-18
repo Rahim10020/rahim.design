@@ -127,7 +127,9 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
               <div className="flex flex-col gap-6">
-                <h3 className="text-foreground text-3xl font-medium">Design</h3>
+                <h3 className="text-foreground text-2xl md:text-3xl font-medium">
+                  Design
+                </h3>
                 <div className="flex items-center gap-4">
                   <img
                     src="/icons/tools/figma.svg"
@@ -144,7 +146,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex flex-col gap-16">
-                <h3 className="text-foreground text-3xl font-medium">
+                <h3 className="text-foreground text-2xl md:text-3xl font-medium">
                   Front-end
                 </h3>
                 <div className="flex items-center gap-4">
@@ -175,7 +177,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex flex-col gap-16">
-                <h3 className="text-foreground text-3xl max-w-xs lg:max-w-xl font-medium">
+                <h3 className="text-foreground text-2xl md:text-3xl max-w-xs lg:max-w-xl font-medium">
                   For brainstorming and code
                 </h3>
                 <div className="flex items-center gap-4">
