@@ -101,7 +101,7 @@ export default function ContactSection() {
           {/* ============================================================
               DESKTOP (lg+)
               ============================================================ */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block pb-section">
             {/* 1st line */}
             <div className="flex justify-center">
               <div className="flex justify-start max-w-md">

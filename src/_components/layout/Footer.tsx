@@ -21,7 +21,7 @@ export default function Footer() {
     getServerDesktopMediaQuerySnapshot,
   );
   return (
-    <footer className="bg-background mt-section">
+    <footer className="bg-background mt-section lg:mt-section-lg">
       <div className="px-comfortable py-block lg:py-comfortable max-w-350 mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-block">
           {/* Left - Copyright */}
