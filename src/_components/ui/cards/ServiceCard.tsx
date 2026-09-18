@@ -38,12 +38,12 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text text-left">
+      <h3 className="text-foreground text-xl md:text-3xl max-w-50 lg:max-w-none font-medium mb-heading-text text-left">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-foreground text-base md:text-xl font-normal max-w-xs lg:max-w-none leading-relaxed text-left">
+      <p className="text-foreground text-base md:text-xl font-normal max-w-50 lg:max-w-none leading-relaxed text-left">
         {description}
       </p>
     </article>
