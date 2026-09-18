@@ -135,13 +135,13 @@ export default function AboutPage() {
                     src="/icons/tools/figma.svg"
                     alt="Figma logo image"
                     loading="lazy"
-                    className="w-24 h-24"
+                    className="w-16 lg:w-24 h-16 lg:h-24"
                   />
                   <img
                     src="/icons/tools/excalidraw.png"
                     alt="Excalidraw logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-16 lg:w-24 h-16 lg:h-24"
                   />
                 </div>
               </div>
@@ -154,25 +154,25 @@ export default function AboutPage() {
                     src="/icons/tools/react.svg"
                     alt="React logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/typescript.svg"
                     alt="Typescript logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/next-js.svg"
                     alt="Next JS logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/tailwind-css.png"
                     alt="Tailwind logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                 </div>
               </div>
@@ -185,18 +185,18 @@ export default function AboutPage() {
                     src="/icons/tools/claude.png"
                     alt="Claude logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/open-ai.png"
                     alt="Open ai logo image"
                     loading="lazy"
-                    className="w-16 h-16"
+                    className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                 </div>
               </div>
             </div>
-            <p className="text-foreground text-2xl font-normal leading-relaxed mt-24 max-w-2xl">
+            <p className="text-foreground text-xl font-normal leading-relaxed mt-24 max-w-sm md:max-w-lg lg:max-w-2xl">
               I don't choose a technology because it's fashionable. I choose the
               tool that corresponds to the problem.
             </p>
