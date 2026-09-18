@@ -125,8 +125,8 @@ export default function AboutPage() {
             <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
               The tools I use to get the job done.
             </h2>
-            <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-              <div className="flex flex-col gap-6">
+            <div className="flex flex-col lg:flex-row items-start justify-between mx-auto max-w-sm lg:mx-0 lg:max-w-none gap-16">
+              <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl font-medium">
                   Design
                 </h3>
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-16">
+              <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl font-medium">
                   Front-end
                 </h3>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-16">
+              <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl max-w-xs lg:max-w-xl font-medium">
                   For brainstorming and code
                 </h3>
@@ -204,11 +204,11 @@ export default function AboutPage() {
           {/* sixth section */}
           <div className="pt-24 pb-12">
             <div>
-              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-12 lg:mb-20 max-w-xl">
+              <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
                 And when I'm not in front of my screen?
               </h2>
               <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div className="max-w-md">
+                <div className="max-w-sm md:max-w-md">
                   <ul className="space-y-4">
                     <li className="text-foreground-alt-a text-xl">I run,</li>
                     <li className="text-foreground-alt-a text-xl">
