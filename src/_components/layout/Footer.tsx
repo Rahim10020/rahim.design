@@ -1,6 +1,25 @@
+import { useSyncExternalStore } from "react";
 import Logo from "../ui/Logo";
 
+const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
+
+const subscribeToDesktopMediaQuery = (onStoreChange: () => void) => {
+  const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
+  mediaQuery.addEventListener("change", onStoreChange);
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+};
+
+const getDesktopMediaQuerySnapshot = () =>
+  window.matchMedia(DESKTOP_MEDIA_QUERY).matches;
+
+const getServerDesktopMediaQuerySnapshot = () => false;
+
 export default function Footer() {
+  const isDesktop = useSyncExternalStore(
+    subscribeToDesktopMediaQuery,
+    getDesktopMediaQuerySnapshot,
+    getServerDesktopMediaQuerySnapshot,
+  );
   return (
     <footer className="bg-background mt-section">
       <div className="px-comfortable py-block lg:py-comfortable max-w-350 mx-auto">
