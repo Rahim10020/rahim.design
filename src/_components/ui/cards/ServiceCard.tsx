@@ -18,7 +18,7 @@ export default function ServiceCard({
       className={`flex flex-col mx-auto w-full max-w-xs lg:max-w-none ${className}`}
     >
       {/* Image */}
-      <div className="w-[90%] md:w-full max-w-50 md:max-w-none mx-auto aspect-square md:aspect-6/5 overflow-hidden bg-background mb-comfortable">
+      <div className="w-[90%] md:w-full max-w-50 md:max-w-none aspect-square md:aspect-6/5 overflow-hidden bg-background mb-comfortable">
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -38,7 +38,7 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-xl md:text-3xl mx-auto font-medium mb-heading-text text-left">
+      <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text text-left">
         {title}
       </h3>
 
