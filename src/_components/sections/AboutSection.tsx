@@ -35,7 +35,7 @@ export default function AboutSection() {
 
             {/* Paragraphes */}
             <div className="flex justify-center lg:justify-end">
-              <div className="max-w-xs md:max-w-lg lg:max-w-2xl space-y-comfortable">
+              <div className="max-w-sm md:max-w-lg lg:max-w-2xl space-y-comfortable">
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
                   I'm the type of developer who notices when a button is
                   misaligned by 4 pixels.
