@@ -33,7 +33,7 @@ export default function Footer() {
             </span>
 
             {/* Logo */}
-            <Logo />
+            <Logo size={isDesktop ? 64 : 44} />
           </div>
 
           {/* Right - Tagline */}
