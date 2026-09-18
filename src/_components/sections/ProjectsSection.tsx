@@ -187,7 +187,7 @@ export default function ProjectsSection() {
     >
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title — pas d'animation */}
-        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-md lg:max-w-lg text-center lg:text-left mx-auto lg:mx-0">
+        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-lg text-left">
           Let's look at what I've already built
         </h2>
       </div>
