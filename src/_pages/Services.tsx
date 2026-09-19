@@ -538,7 +538,7 @@ export default function ServicesPage() {
           </div>
           {/* Eight section */}
           <div className="py-24">
-            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
+            <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs md:max-w-md lg:max-w-xl">
               Frequently Asked Question
             </h2>
             <div className="mx-auto max-w-4xl">
@@ -560,7 +560,7 @@ export default function ServicesPage() {
                           aria-expanded={isOpen}
                           aria-controls={answerId}
                           onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-lg font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-foreground-alt-a sm:px-6 sm:text-2xl"
+                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-xl font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-foreground-alt-a sm:px-6 sm:text-2xl"
                         >
                           <span>{item.question}</span>
                           <ArrowDownIcon
@@ -577,7 +577,7 @@ export default function ServicesPage() {
                         role="region"
                         aria-labelledby={questionId}
                         hidden={!isOpen}
-                        className="px-4 pb-5 sm:px-6 sm:pb-6 sm:pt-6"
+                        className="px-4 pb-5 sm:px-6 py-8 md:py-6"
                       >
                         <p className="max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
                           {item.answer}
