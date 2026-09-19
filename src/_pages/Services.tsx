@@ -195,7 +195,7 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="w-full bg-background min-h-screen">
+    <section className="w-full bg-background min-h-screen overflow-x-hidden">
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           {/* First section */}
@@ -466,7 +466,7 @@ export default function ServicesPage() {
             </div>
           </div>
           {/* Seventh section */}
-          <div ref={sectionRef} className="py-24">
+          <div ref={sectionRef} className="py-24 overflow-hidden">
             <div className="max-w-350 mx-auto px-page-x">
               <div className="flex flex-col">
                 <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-8 lg:mb-20 max-w-xs md:max-w-lg lg:max-w-xl">
@@ -482,7 +482,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className="relative max-w-350 mx-auto mt-16">
+            <div className="relative max-w-350 mx-auto mt-16 overflow-hidden">
               <div
                 ref={sliderRef}
                 className="flex items-end gap-block sm:gap-heading-content overflow-x-auto snap-x snap-mandatory scrollbar-hide px-page-x lg:px-major pb-element"
