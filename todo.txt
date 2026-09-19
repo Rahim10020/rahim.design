@@ -8,4 +8,5 @@
     projets a mettre dans le portfolio
 -- appliquer mes custom syles (espacements) aux autres pages qui ne les utilisent pas 
     encore afin que tout sois propre.
+-- integrer un systeme de traduction: Fr et Eng
 -- continuer avec le responsive de all projects et all learn

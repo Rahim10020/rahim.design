@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
@@ -137,24 +137,24 @@ export default function ServicesPage() {
           </div>
           {/* Third section */}
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium max-w-md">
+                <h3 className="text-foreground text-4xl font-medium max-w-xs md:max-w-md">
                   Already have the design ?
                 </h3>
-                <h5 className="text-foreground text-xl leading-relaxed">
+                <h5 className="text-foreground-alt-a text-xl leading-relaxed">
                   I can build the product.
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
                   We start from your idea, even when it is still just a sketch
                   in your head. I transform your needs into a clear experience:
                   structure, route, wireframes, interface and prototype.
                 </p>
               </div>
             </div>
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
@@ -193,29 +193,29 @@ export default function ServicesPage() {
           </div>
           {/* Fourth section */}
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium max-w-md">
+                <h3 className="text-foreground text-4xl font-medium max-w-xs md:max-w-sm lg:max-w-md">
                   Do you need to be visible online ?
                 </h3>
-                <h5 className="text-foreground text-xl leading-relaxed">
+                <h5 className="text-foreground-alt-a text-xl leading-relaxed">
                   I can create your site.
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
                   Your site doesn't just have to look pretty. It should explain
                   what you do, inspire confidence, and give the right people a
                   reason to contact you.
                 </p>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
                   I design and develop showcase sites and landing pages that
                   highlight your activity while keeping the experience simple
                   and intuitive.
                 </p>
               </div>
             </div>
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
@@ -245,27 +245,27 @@ export default function ServicesPage() {
           </div>
           {/* Fith section */}
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium max-w-md">
+                <h3 className="text-foreground text-4xl font-medium max-w-sm lg:max-w-md">
                   Already have something that works ?
                 </h3>
-                <h5 className="text-foreground text-xl leading-relaxed">
+                <h5 className="text-foreground-alt-a text-xl leading-relaxed">
                   I can improve it.
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-xs md:max-w-md lg:max-w-lg">
                   Not everything needs to be rebuilt from scratch.
                 </p>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
                   I can take your existing site or product, identify what
                   creates friction and improve the experience, interface or
                   certain technical aspects.
                 </p>
               </div>
             </div>
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
                 <h4>What i can do</h4>
               </div>
