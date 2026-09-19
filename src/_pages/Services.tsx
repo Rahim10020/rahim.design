@@ -78,17 +78,17 @@ export default function ServicesPage() {
           </div>
           {/* Second section */}
           <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col gap-4 lg:flex-row items-start justify-between">
               <div className="flex flex-col gap-2">
-                <h3 className="text-foreground text-4xl font-medium max-w-md">
+                <h3 className="text-foreground text-4xl font-medium max-w-sm md:max-w-md">
                   Do you have an idea ?
                 </h3>
-                <h5 className="text-foreground text-xl leading-relaxed">
+                <h5 className="text-foreground-alt-a text-xl leading-relaxed">
                   I can design the experience.
                 </h5>
               </div>
               <div>
-                <p className="text-foreground text-xl leading-relaxed max-w-lg">
+                <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
                   We start from your idea, even when it is still just a sketch
                   in your head. I transform your needs into a clear experience:
                   structure, route, wireframes, interface and prototype.
