@@ -202,7 +202,7 @@ export default function AboutPage() {
             </p>
           </div>
           {/* sixth section */}
-          <div className="pt-24 pb-12">
+          <div className="pt-24">
             <div>
               <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
                 And when I'm not in front of my screen?
@@ -242,16 +242,16 @@ export default function AboutPage() {
           </div>
           <div className="mx-auto max-w-4xl py-24 flex justify-center">
             <div className="flex flex-col items-center">
-              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[3.8rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-3xl">
+              <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[3.8rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-sm md:max-w-xl lg:max-w-3xl">
                 Code is what I use to build. Experience is what I'm really
                 trying to create.
               </h2>
-              <p className="text-foreground text-xl leading-relaxed text-center flex items-center max-w-md">
+              <p className="text-foreground text-xl leading-relaxed text-center flex items-center max-w-sm md:max-w-md">
                 Now you know who is behind the screen. So what you're trying to
                 build?
               </p>
               <div className="text-center mt-16">
-                <Button className="px-8 py-4 text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                   Let's talk about your project
                 </Button>
               </div>
