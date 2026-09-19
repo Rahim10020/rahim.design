@@ -489,7 +489,7 @@ export default function ServicesPage() {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 <div ref={cardsWrapperRef} className="contents">
-                  {projects.slice(0, 3).map((project) => (
+                  {projects.slice(0, 4).map((project) => (
                     <ProjectCard
                       key={project.title}
                       title={project.title}
