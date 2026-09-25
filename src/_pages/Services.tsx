@@ -546,7 +546,7 @@ export default function ServicesPage() {
             </div>
           </div>
           {/* Eight section */}
-          <div className="py-24">
+          <div className="pt-24">
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs md:max-w-md lg:max-w-xl">
               Frequently Asked Question
             </h2>

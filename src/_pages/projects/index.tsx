@@ -5,7 +5,7 @@ import {
   getProjectsByFilter,
   type ProjectFilter,
 } from "../../data/project";
-import { getProjectPath } from "../../routes";
+import { getProjectPath, WHATSAPP_URL } from "../../routes";
 import Button from "../../_components/ui/Button";
 
 const filters: ReadonlyArray<{ label: string; value: ProjectFilter }> = [
@@ -69,10 +69,17 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
-          <div className="text-center mt-24">
-            <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-              Let's talk about your project
-            </Button>
+          <div className="mt-24 text-center">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex"
+            >
+              <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                Let's talk about your project
+              </Button>
+            </a>
           </div>
         </div>
       </div>
