@@ -241,7 +241,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <div className="mx-auto max-w-4xl py-24 flex justify-center">
+          <div className="mx-auto max-w-4xl pt-24 flex justify-center">
             <div className="flex flex-col items-center">
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[3.8rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-sm md:max-w-xl lg:max-w-3xl">
                 Code is what I use to build. Experience is what I'm really
