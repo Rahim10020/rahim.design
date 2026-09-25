@@ -77,7 +77,7 @@ export default function StepsSection() {
       <div className="max-w-350 mx-auto px-page-x">
         <div className="mx-auto max-w-6xl">
           {/* Title */}
-          <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-heading-content lg:mb-major max-w-2xl">
+          <h2 className="text-foreground text-center lg:text-left text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-18 max-w-2xl">
             This is how we will move from your idea to something concrete
           </h2>
 
