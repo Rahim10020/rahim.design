@@ -6,7 +6,22 @@ import { getProjectBySlug } from "../data/project";
 const DEFAULT_TITLE = "Rahim ALI | Web Developer & UX/UI Designer";
 const DEFAULT_DESCRIPTION =
   "Rahim ALI is a web developer and UX/UI designer based in Lome, Togo, helping turn ideas into useful digital products.";
-const SITE_URL = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "");
+const OG_IMAGE_PATH = "/images/others/og-image.png";
+const OG_IMAGE_WIDTH = "1200";
+const OG_IMAGE_HEIGHT = "630";
+
+/**
+ * Production site URL comes from VITE_SITE_URL. In development (variable
+ * absent), fall back to the current origin so og:image / og:url stay absolute.
+ */
+function getSiteUrl(): string | undefined {
+  const fromEnv = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
+  if (typeof window !== "undefined" && window.location?.origin) {
+    return window.location.origin.replace(/\/$/, "");
+  }
+  return undefined;
+}
 
 type PageMetadata = {
   title: string;
@@ -93,7 +108,9 @@ export default function SEO() {
 
   useEffect(() => {
     const { title, description } = getMetadata(pathname);
-    const canonicalUrl = SITE_URL ? `${SITE_URL}${pathname}` : undefined;
+    const siteUrl = getSiteUrl();
+    const canonicalUrl = siteUrl ? `${siteUrl}${pathname}` : undefined;
+    const ogImageUrl = siteUrl ? `${siteUrl}${OG_IMAGE_PATH}` : undefined;
 
     document.title = title;
     setMetaTag("name", "description", description);
@@ -101,9 +118,26 @@ export default function SEO() {
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:type", "website");
     setMetaTag("property", "og:site_name", "Rahim ALI");
-    setMetaTag("name", "twitter:card", "summary");
+
+    if (canonicalUrl) {
+      setMetaTag("property", "og:url", canonicalUrl);
+    }
+
+    if (ogImageUrl) {
+      setMetaTag("property", "og:image", ogImageUrl);
+      setMetaTag("property", "og:image:width", OG_IMAGE_WIDTH);
+      setMetaTag("property", "og:image:height", OG_IMAGE_HEIGHT);
+      setMetaTag("property", "og:image:alt", title);
+    }
+
+    setMetaTag("name", "twitter:card", "summary_large_image");
     setMetaTag("name", "twitter:title", title);
     setMetaTag("name", "twitter:description", description);
+
+    if (ogImageUrl) {
+      setMetaTag("name", "twitter:image", ogImageUrl);
+      setMetaTag("name", "twitter:image:alt", title);
+    }
 
     const existingCanonical = document.head.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]',
