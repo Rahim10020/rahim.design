@@ -200,7 +200,7 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-6xl">
           {/* First section */}
           <div className="mb-24">
-            <div className="flex flex-col gap-2 mb-32">
+            <div className="flex flex-col gap-2 mb-16 lg:mb-32">
               <div className="flex items-center justify-end">
                 <h1 className="text-2xl lg:text-4xl font-medium text-foreground">
                   SERVICES
@@ -213,7 +213,7 @@ export default function ServicesPage() {
               </div>
             </div>
             {/* Center */}
-            <div className="mx-auto max-w-3xl flex flex-col gap-8">
+            <div className="mx-auto max-w-3xl flex flex-col gap-12 lg:gap-8">
               <p className="text-foreground text-2xl text-center md:text-left leading-relaxed max-w-sm md:max-w-2xl">
                 An idea, a product, a site or an experience that deserves to be
                 better thought out? I help you move from the idea to something
