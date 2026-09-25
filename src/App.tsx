@@ -8,6 +8,7 @@ import ProjectDetail from "./_pages/projects/[slug]";
 import LearnList from "./_pages/learn/index";
 import LearnArticle from "./_pages/learn/[slug]";
 import { ROUTES } from "./routes";
+import SEO from "./_components/SEO";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <SEO />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
