@@ -40,11 +40,11 @@ export default function ProjectsPage() {
                     key={filter.value}
                     onClick={() => setActiveFilter(filter.value)}
                     className={`
-                   px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer border-2 border-foreground transition-colors
+                   px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground transition-colors
                   ${
                     isActive
                       ? "bg-primary text-foreground"
-                      : "bg-transparent text-foreground hover:bg-background"
+                      : "bg-transparent text-foreground hover:bg-background-alt transition-all duration-200"
                   }
                 `}
                   >
