@@ -1,3 +1,4 @@
+import { ROUTES } from "../../routes";
 import Logo from "../ui/Logo";
 
 export default function AboutSection() {
@@ -41,10 +42,6 @@ export default function AboutSection() {
                   misaligned by 4 pixels.
                 </p>
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
-                  More seriously, I like to understand why an interface works —
-                  and especially why it doesn't work.
-                </p>
-                <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
                   I work at the intersection of web design and development, with
                   an obsession with clean interfaces, details that matter, and
                   experiences that feel natural.
@@ -53,6 +50,14 @@ export default function AboutSection() {
                   My goal is simple: build products that you will be proud to
                   show off and that your users will enjoy using.
                 </p>
+                <div className="flex items-center justify-center lg:justify-start">
+                  <a
+                    href={ROUTES.ABOUT}
+                    className="text-xl text-foreground-alt font-normal underline decoration-2"
+                  >
+                    Know me more
+                  </a>
+                </div>
               </div>
             </div>
           </div>
