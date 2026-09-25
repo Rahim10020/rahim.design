@@ -6,7 +6,7 @@ import { getProjectBySlug } from "../data/project";
 const DEFAULT_TITLE = "Rahim ALI | Web Developer & UX/UI Designer";
 const DEFAULT_DESCRIPTION =
   "Rahim ALI is a web developer and UX/UI designer based in Lome, Togo, helping turn ideas into useful digital products.";
-const OG_IMAGE_PATH = "/images/others/og-image.png";
+const OG_IMAGE_PATH = "/images/og-image.png";
 const OG_IMAGE_WIDTH = "1200";
 const OG_IMAGE_HEIGHT = "630";
 
