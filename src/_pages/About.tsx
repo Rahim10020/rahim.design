@@ -1,4 +1,5 @@
 import Button from "../_components/ui/Button";
+import { WHATSAPP_URL } from "../routes";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import PieChart from "../_components/ui/others/PieChart";
 import { knowmeData } from "../data/knowme";
@@ -251,9 +252,16 @@ export default function AboutPage() {
                 build?
               </p>
               <div className="text-center mt-16">
-                <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                  Let's talk about your project
-                </Button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                    Let's talk about your project
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

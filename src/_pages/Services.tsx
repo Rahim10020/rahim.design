@@ -221,12 +221,21 @@ export default function ServicesPage() {
               </p>
               {/* Buttons */}
               <div className="flex flex-col lg:flex-row items-center gap-4">
-                <Button className="px-6 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
-                  Let's talk about your project
-                </Button>
-                <Button className="px-6 py-4 text-xl font-medium bg-white border-2 border-foreground text-foreground">
-                  See my projects
-                </Button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <Button className="px-6 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
+                    Let's talk about your project
+                  </Button>
+                </a>
+                <Link to={ROUTES.PROJECTS.LIST} className="inline-flex">
+                  <Button className="px-6 py-4 text-xl font-medium bg-white border-2 border-foreground text-foreground">
+                    See my projects
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

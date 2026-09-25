@@ -1,4 +1,5 @@
 import Button from "../ui/Button";
+import { WHATSAPP_URL } from "../../routes";
 import Words from "../ui/for-animation/Words";
 
 export default function HeroSection() {
@@ -27,9 +28,16 @@ export default function HeroSection() {
                   </p>
 
                   <div>
-                    <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                      So what are we building?
-                    </Button>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex"
+                    >
+                      <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                        So what are we building?
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
