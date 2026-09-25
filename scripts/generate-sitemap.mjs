@@ -7,8 +7,9 @@
  * and writes public/sitemap.xml + public/robots.txt before `vite build`,
  * so dist/ always contains absolute production URLs.
  *
- * Production fallback: https://rahim.design (repo: Rahim10020/rahim.design).
- * Override locally with a .env file: VITE_SITE_URL=https://rahim.design
+ * Production fallback: https://rahim-dev-me.vercel.app
+ * (matches VITE_SITE_URL set in the Vercel environment variables).
+ * Override locally with a .env file: VITE_SITE_URL=https://rahim-dev-me.vercel.app
  *
  * Only includes valid routes:
  * - static pages: /, /about, /services, /projects, /learn
@@ -22,10 +23,9 @@ import { readdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const SITE_URL = (process.env.VITE_SITE_URL || "https://rahim.design").replace(
-  /\/$/,
-  "",
-);
+const SITE_URL = (
+  process.env.VITE_SITE_URL || "https://rahim-dev-me.vercel.app"
+).replace(/\/$/, "");
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pub = join(root, "public");
