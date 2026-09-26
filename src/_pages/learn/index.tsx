@@ -1,22 +1,26 @@
 import { Link, useSearchParams } from "react-router-dom";
 import LearnCard from "../../_components/ui/cards/LearnCard";
-import { articles } from "../../data/articles";
+import { getArticles } from "../../data/articles";
 import {
   getLearnPath,
   isLearnType,
   LEARN_TYPES,
   type LearnType,
 } from "../../routes";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 type LearnFilter = "all" | LearnType;
 
-const filters: ReadonlyArray<{ label: string; value: LearnFilter }> = [
-  { label: "All", value: "all" },
-  { label: "Books", value: LEARN_TYPES.BOOKS },
-  { label: "Notes", value: LEARN_TYPES.NOTES },
-];
-
 export default function LearnPage() {
+  const locale = useLocale();
+  const t = getUi(locale).learnPage;
+  const articles = getArticles(locale);
+  const filters: ReadonlyArray<{ label: string; value: LearnFilter }> = [
+    { label: t.filterAll, value: "all" },
+    { label: t.filterBooks, value: LEARN_TYPES.BOOKS },
+    { label: t.filterNotes, value: LEARN_TYPES.NOTES },
+  ];
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedType = searchParams.get("type");
   const activeFilter = isLearnType(requestedType) ? requestedType : "all";
@@ -29,7 +33,7 @@ export default function LearnPage() {
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-6xl">
           <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-10">
-            Learn.
+            {t.title}
           </h1>
           {/* Filters */}
           <div className="flex items-center justify-center">

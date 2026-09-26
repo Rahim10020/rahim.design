@@ -1,51 +1,26 @@
 import ServiceCard from "../ui/cards/ServiceCard";
-
-interface Service {
-  title: string;
-  description: string;
-  imageSrc?: string;
-}
-
-const services: Service[] = [
-  {
-    title: "Design an interface",
-    description:
-      "I transform your ideas into clear, coherent and pleasant to use interfaces, designed for your users and your objective.",
-    // imageSrc: "/images/service-design.jpg", // à ajouter plus tard
-  },
-  {
-    title: "Build the product",
-    description:
-      "I develop fast, responsive and design-friendly web interfaces, with particular attention to detail.",
-    // imageSrc: "/images/service-build.jpg",
-  },
-  {
-    title: "Improve the existing",
-    description:
-      "I can take an existing interface, identify experience issues, and restore clarity, consistency, and character.",
-    // imageSrc: "/images/service-improve.jpg",
-  },
-];
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 export default function ServicesSection() {
+  const t = getUi(useLocale()).servicesSection;
   return (
     <section className="w-full bg-background my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title */}
         <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-md text-center lg:text-left mx-auto lg:mx-0">
-          What I can do
+          {t.titleA}
           <br />
-          for you
+          {t.titleB}
         </h2>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-heading-content lg:gap-major">
-          {services.map((service) => (
+          {t.items.map((service) => (
             <ServiceCard
               key={service.title}
               title={service.title}
               description={service.description}
-              imageSrc={service.imageSrc}
             />
           ))}
         </div>

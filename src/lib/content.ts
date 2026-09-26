@@ -1,4 +1,5 @@
 import { LEARN_TYPES, type LearnType } from "../routes";
+import type { SupportedLocale } from "./locale";
 import { parseFrontmatter } from "./frontmatter";
 
 export interface ArticleFrontmatter {
@@ -27,7 +28,7 @@ export interface Project {
   images: string[];
   link?: string;
 }
-type ContentEntry<T> = { meta: T; content: string };
+type LocalizedEntry<T> = { meta: T; content: string; locale: SupportedLocale };
 
 function requiredString(
   data: Record<string, unknown>,
@@ -90,8 +91,15 @@ const modules = import.meta.glob("../content/**/*.md", {
   import: "default",
   eager: true,
 }) as Record<string, string>;
+function localeFromPath(path: string): SupportedLocale {
+  return path.endsWith(".fr.md") ? "fr" : "en";
+}
 const slugFromPath = (path: string) =>
-  path.split("/").pop()?.replace(/\.md$/, "") ?? "";
+  path
+    .split("/")
+    .pop()
+    ?.replace(/\.fr\.md$/, "")
+    ?.replace(/\.md$/, "") ?? "";
 
 function typeFromPath(path: string): LearnType | undefined {
   const type = path.match(/\/learn\/([^/]+)\//)?.[1];
@@ -100,13 +108,14 @@ function typeFromPath(path: string): LearnType | undefined {
     : undefined;
 }
 
-function learnEntries(): ContentEntry<ArticleFrontmatter>[] {
-  return Object.entries(modules)
+function learnEntries(locale: SupportedLocale): LocalizedEntry<ArticleFrontmatter>[] {
+  const all = Object.entries(modules)
     .filter(([path]) => path.includes("/content/learn/"))
     .flatMap(([path, raw]) => {
       const { data, content } = parseFrontmatter(raw);
       const type = typeFromPath(path);
       const slug = slugFromPath(path);
+      const entryLocale = localeFromPath(path);
       const images = stringArray(data, "images", path);
       const imageSrc = optionalString(data, "imageSrc", path) || images[0];
       return type && slug
@@ -122,14 +131,31 @@ function learnEntries(): ContentEntry<ArticleFrontmatter>[] {
                 images: images.filter((image) => image !== imageSrc),
               },
               content,
+              locale: entryLocale,
             },
           ]
         : [];
     });
+  // Regroupe par slug : locale demandée prioritaire, fallback fr puis en
+  const bySlug = new Map<string, LocalizedEntry<ArticleFrontmatter>[]>();
+  for (const entry of all) {
+    const list = bySlug.get(entry.meta.slug) ?? [];
+    list.push(entry);
+    bySlug.set(entry.meta.slug, list);
+  }
+  const resolved: LocalizedEntry<ArticleFrontmatter>[] = [];
+  for (const list of bySlug.values()) {
+    const exact = list.find((e) => e.locale === locale);
+    const fallbackFr = list.find((e) => e.locale === "fr");
+    const fallbackEn = list.find((e) => e.locale === "en");
+    const chosen = exact ?? fallbackFr ?? fallbackEn;
+    if (chosen) resolved.push(chosen);
+  }
+  return resolved;
 }
 
-function projectEntries(): ContentEntry<Project>[] {
-  return Object.entries(modules)
+function projectEntries(locale: SupportedLocale): LocalizedEntry<Project>[] {
+  const all = Object.entries(modules)
     .filter(([path]) => path.includes("/content/projects/"))
     .flatMap(([path, raw]) => {
       const { data, content } = parseFrontmatter(raw);
@@ -161,20 +187,36 @@ function projectEntries(): ContentEntry<Project>[] {
             ...(link ? { link } : {}),
           },
           content,
+          locale: localeFromPath(path),
         },
       ];
     });
+  const bySlug = new Map<string, LocalizedEntry<Project>[]>();
+  for (const entry of all) {
+    const list = bySlug.get(entry.meta.slug) ?? [];
+    list.push(entry);
+    bySlug.set(entry.meta.slug, list);
+  }
+  const resolved: LocalizedEntry<Project>[] = [];
+  for (const list of bySlug.values()) {
+    const exact = list.find((e) => e.locale === locale);
+    const fallbackFr = list.find((e) => e.locale === "fr");
+    const fallbackEn = list.find((e) => e.locale === "en");
+    const chosen = exact ?? fallbackFr ?? fallbackEn;
+    if (chosen) resolved.push(chosen);
+  }
+  return resolved;
 }
 
-export const getLearnArticles = () =>
-  learnEntries()
+export const getLearnArticles = (locale: SupportedLocale = "fr") =>
+  learnEntries(locale)
     .map(({ meta }) => meta)
     .sort((a, b) => b.date.localeCompare(a.date));
-export const getLearnArticle = (slug: string) =>
-  learnEntries().find((article) => article.meta.slug === slug);
-export const getProjects = () =>
-  projectEntries()
+export const getLearnArticle = (slug: string, locale: SupportedLocale = "fr") =>
+  learnEntries(locale).find((article) => article.meta.slug === slug);
+export const getProjects = (locale: SupportedLocale = "fr") =>
+  projectEntries(locale)
     .map(({ meta }) => meta)
     .sort((a, b) => a.order - b.order);
-export const getProject = (slug: string) =>
-  projectEntries().find((project) => project.meta.slug === slug);
+export const getProject = (slug: string, locale: SupportedLocale = "fr") =>
+  projectEntries(locale).find((project) => project.meta.slug === slug);

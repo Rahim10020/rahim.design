@@ -14,7 +14,7 @@
 
 export type SupportedLocale = "fr" | "en";
 
-export const DEFAULT_LOCALE: SupportedLocale = "en";
+export const DEFAULT_LOCALE: SupportedLocale = "fr";
 const STORAGE_KEY = "rahim-locale";
 
 function normalizeLocale(value: string | null | undefined): SupportedLocale | null {

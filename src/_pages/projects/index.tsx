@@ -7,18 +7,21 @@ import {
 } from "../../data/project";
 import { getProjectPath, WHATSAPP_URL } from "../../routes";
 import Button from "../../_components/ui/Button";
-
-const filters: ReadonlyArray<{ label: string; value: ProjectFilter }> = [
-  { label: "All", value: "all" },
-  ...getProjectCategories().map((category) => ({
-    label: category,
-    value: category,
-  })),
-];
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 export default function ProjectsPage() {
+  const locale = useLocale();
+  const t = getUi(locale).projectsPage;
+  const filters: ReadonlyArray<{ label: string; value: ProjectFilter }> = [
+    { label: t.filterAll, value: "all" },
+    ...getProjectCategories().map((category) => ({
+      label: category,
+      value: category,
+    })),
+  ];
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>("all");
-  const filteredProjects = getProjectsByFilter(activeFilter);
+  const filteredProjects = getProjectsByFilter(activeFilter, locale);
 
   return (
     <section className="w-full bg-background min-h-screen">
@@ -26,7 +29,7 @@ export default function ProjectsPage() {
         <div className="mx-auto w-full max-w-6xl">
           {/* Title */}
           <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-10">
-            Projects.
+            {t.title}
           </h1>
 
           {/* Filters */}
@@ -77,7 +80,7 @@ export default function ProjectsPage() {
               className="mt-8 inline-flex"
             >
               <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                Let's talk about your project
+                {t.cta}
               </Button>
             </a>
           </div>

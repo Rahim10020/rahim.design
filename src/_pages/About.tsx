@@ -2,9 +2,14 @@ import Button from "../_components/ui/Button";
 import { WHATSAPP_URL } from "../routes";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import PieChart from "../_components/ui/others/PieChart";
-import { knowmeData } from "../data/knowme";
+import { useLocale } from "../lib/i18n";
+import { getAbout } from "../locales/about";
+import { getKnowme } from "../data/knowme";
 
 export default function AboutPage() {
+  const locale = useLocale();
+  const t = getAbout(locale);
+  const knowme = getKnowme(locale);
   return (
     <section className="w-full bg-background min-h-screen">
       <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
@@ -13,21 +18,14 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-0 lg:gap-16">
             <div className="flex flex-col gap-4">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium text-foreground">
-                About.
+                {t.title}
               </h1>
               <div>
                 <p className="text-foreground-alt-a text-xl font-light leading-relaxed mx-auto max-w-sm md:max-w-lg lg:max-w-xl">
-                  I am a web developer, UX/UI designer and freelancer based at
-                  Lome/Togo.
+                  {t.introAlt}
                 </p>
                 <p className="text-foreground text-xl leading-relaxed mx-auto max-w-sm md:max-w-lg lg:max-w-xl mt-6">
-                  At first I just wanted to understand how things worked. Then I
-                  started coding. Then I realized that writing code was only
-                  part of the problem. We also had to understand what people
-                  were actually going to use. This is where design, UX and
-                  development started to come together for me. Today I love
-                  being able to move from idea to interface and then from
-                  interface to actual product.
+                  {t.intro}
                 </p>
               </div>
             </div>
@@ -45,15 +43,14 @@ export default function AboutPage() {
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 py-24">
               <div className="flex flex-col gap-8">
                 <h3 className="text-foreground text-2xl font-medium">
-                  Part Designer
+                  {t.designerTitle}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="text-foreground-alt-a text-xl">UX Design</li>
-                  <li className="text-foreground-alt-a text-xl">UI Design</li>
-                  <li className="text-foreground-alt-a text-xl">
-                    Design systems
-                  </li>
-                  <li className="text-foreground-alt-a text-xl">Make it pop</li>
+                  {t.designerItems.map((item) => (
+                    <li key={item} className="text-foreground-alt-a text-xl">
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div>
@@ -61,20 +58,14 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col gap-8">
                 <h3 className="text-foreground text-2xl font-medium">
-                  Part Coder
+                  {t.coderTitle}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="text-foreground-alt-a text-xl">
-                    Front-end Development
-                  </li>
-                  <li className="text-foreground-alt-a text-xl">
-                    React/Next js
-                  </li>
-                  <li className="text-foreground-alt-a text-xl">
-                    Tailwind css
-                  </li>
-                  <li className="text-foreground-alt-a text-xl">GSAP</li>
-                  <li className="text-foreground-alt-a text-xl">Typescript</li>
+                  {t.coderItems.map((item) => (
+                    <li key={item} className="text-foreground-alt-a text-xl">
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -83,35 +74,25 @@ export default function AboutPage() {
           <div className="flex items-center justify-between py-24">
             <div className="mx-auto max-w-sm md:max-w-lg lg:max-w-xl flex flex-col gap-12">
               <p className="text-foreground text-xl font-normal leading-relaxed">
-                I can start in Figma and end up in my code editor without
-                needing to pass the baton to anyone else. This dual role allows
-                me to think about the experience while keeping technical
-                constraints in mind. The result: fewer back and forths, more
-                coherent decisions and better continuity between what has been
-                imagined and what is actually constructed.
+                {t.bridge}
               </p>
               <h2 className="text-foreground text-4xl font-medium">
-                I don't want to just build things that work. I want to build
-                things that make sense.
+                {t.statement}
               </h2>
               <p className="text-foreground text-xl font-normal leading-relaxed">
-                For me, design and development are not two completely separate
-                stages. A good interface should be beautiful, but above all it
-                should be understandable. A good product should work, but it
-                should also make you want to use it. It is this intersection
-                between thinking, design and technology that interests me.
+                {t.philosophy}
               </p>
             </div>
           </div>
           {/* fourth section */}
           <div className="py-24">
             <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xl">
-              Some things you can expect from me.
+              {t.expectTitle}
             </h2>
 
             {/* knowme Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-x-16 lg:gap-y-14">
-              {knowmeData.map((step) => (
+              {knowme.map((step) => (
                 <KnowMeCard
                   key={step.number}
                   number={step.number}
@@ -124,12 +105,12 @@ export default function AboutPage() {
           {/* fith section */}
           <div className="py-24">
             <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
-              The tools I use to get the job done.
+              {t.toolsTitle}
             </h2>
             <div className="flex flex-col lg:flex-row items-start justify-between mx-auto max-w-sm lg:mx-0 lg:max-w-none gap-16">
               <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl font-medium">
-                  Design
+                  {t.toolsDesign}
                 </h3>
                 <div className="flex items-center gap-4">
                   <img
@@ -148,7 +129,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl font-medium">
-                  Front-end
+                  {t.toolsFrontend}
                 </h3>
                 <div className="flex items-center gap-4">
                   <img
@@ -179,7 +160,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col gap-6 lg:gap-16">
                 <h3 className="text-foreground text-2xl md:text-3xl max-w-xs lg:max-w-xl font-medium">
-                  For brainstorming and code
+                  {t.toolsBrainstorm}
                 </h3>
                 <div className="flex items-center gap-4">
                   <img
@@ -198,36 +179,23 @@ export default function AboutPage() {
               </div>
             </div>
             <p className="text-foreground text-xl font-normal leading-relaxed mt-24 max-w-sm md:max-w-lg lg:max-w-2xl">
-              I don't choose a technology because it's fashionable. I choose the
-              tool that corresponds to the problem.
+              {t.toolsNote}
             </p>
           </div>
           {/* sixth section */}
           <div className="pt-24">
             <div>
               <h2 className="text-foreground text-4xl md:text-5xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs lg:max-w-lg">
-                And when I'm not in front of my screen?
+                {t.hobbiesTitle}
               </h2>
               <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                 <div className="max-w-sm md:max-w-md">
                   <ul className="space-y-4">
-                    <li className="text-foreground-alt-a text-xl">I run,</li>
-                    <li className="text-foreground-alt-a text-xl">
-                      I play basketball,
-                    </li>
-                    <li className="text-foreground-alt-a text-xl">
-                      I experiment with new ideas,
-                    </li>
-                    <li className="text-foreground-alt-a text-xl">
-                      I like to read books,
-                    </li>
-                    <li className="text-foreground-alt-a text-xl">
-                      I like to listen to music
-                    </li>
-                    <li className="text-foreground-alt-a text-xl">
-                      I'm probably taking apart something I should leave alone
-                      😅.
-                    </li>
+                    {t.hobbies.map((hobby) => (
+                      <li key={hobby} className="text-foreground-alt-a text-xl">
+                        {hobby}
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="w-full lg:max-w-xl">
@@ -244,12 +212,10 @@ export default function AboutPage() {
           <div className="mx-auto max-w-4xl pt-24 flex justify-center">
             <div className="flex flex-col items-center">
               <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[3.8rem] font-medium text-center leading-tight mb-12 lg:mb-20 max-w-sm md:max-w-xl lg:max-w-3xl">
-                Code is what I use to build. Experience is what I'm really
-                trying to create.
+                {t.closingTitle}
               </h2>
               <p className="text-foreground text-xl leading-relaxed text-center flex items-center max-w-sm md:max-w-md">
-                Now you know who is behind the screen. So what you're trying to
-                build?
+                {t.closingSub}
               </p>
               <div className="text-center mt-16">
                 <a
@@ -259,7 +225,7 @@ export default function AboutPage() {
                   className="inline-flex"
                 >
                   <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                    Let's talk about your project
+                    {t.cta}
                   </Button>
                 </a>
               </div>

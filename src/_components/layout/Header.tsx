@@ -2,7 +2,9 @@ import { useState, useRef, useSyncExternalStore } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
-import { NAV_ITEMS, type NavItem } from "../../navigation.ts";
+import { getNavItems, type NavItem } from "../../navigation.ts";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 import { gsap, useGSAP } from "../../lib/gsap";
 
 const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
@@ -37,6 +39,9 @@ const isNavItemActive = (item: NavItem, pathname: string, hash: string) => {
 };
 
 export default function Header() {
+  const locale = useLocale();
+  const t = getUi(locale);
+  const NAV_ITEMS = getNavItems(locale);
   const [navOpen, setNavOpen] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -188,7 +193,7 @@ export default function Header() {
 
         {/* ----- Titre mobile ----- */}
         <span className="lg:hidden text-2xl text-foreground">
-          Designer/Coder
+          {t.nav.headerMobileTitle}
         </span>
 
         {/* ----- Nav desktop ----- */}

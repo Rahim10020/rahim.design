@@ -1,5 +1,7 @@
 import { useSyncExternalStore } from "react";
 import Logo from "../ui/Logo";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
 
@@ -15,6 +17,7 @@ const getDesktopMediaQuerySnapshot = () =>
 const getServerDesktopMediaQuerySnapshot = () => false;
 
 export default function Footer() {
+  const t = getUi(useLocale()).footer;
   const isDesktop = useSyncExternalStore(
     subscribeToDesktopMediaQuery,
     getDesktopMediaQuerySnapshot,
@@ -42,7 +45,7 @@ export default function Footer() {
               </svg>
               26
             </span>
-            <span>All Rights Reserved</span>
+            <span>{t.rights}</span>
           </div>
 
           {/* Center - Name + Logo */}
@@ -56,7 +59,7 @@ export default function Footer() {
           </div>
 
           {/* Right - Tagline */}
-          <div className="text-foreground text-xl order-3">Made w/ hate</div>
+          <div className="text-foreground text-xl order-3">{t.tagline}</div>
         </div>
       </div>
     </footer>

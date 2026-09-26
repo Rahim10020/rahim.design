@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getArticleBySlug } from "../data/articles";
 import { getProjectBySlug } from "../data/project";
+import { useLocale } from "../lib/i18n";
+import { getUi } from "../locales/ui";
+import type { SupportedLocale } from "../lib/locale";
 
-const DEFAULT_TITLE = "Rahim ALI | Web Developer & UX/UI Designer";
-const DEFAULT_DESCRIPTION =
-  "Rahim ALI is a web developer and UX/UI designer based in Lome, Togo, helping turn ideas into useful digital products.";
 const OG_IMAGE_PATH = "/images/og-image.png";
 const OG_IMAGE_WIDTH = "1200";
 const OG_IMAGE_HEIGHT = "630";
@@ -28,82 +28,79 @@ type PageMetadata = {
   description: string;
 };
 
-function getMetadata(pathname: string): PageMetadata {
+function getMetadata(pathname: string, locale: SupportedLocale): PageMetadata {
+  const t = getUi(locale).seo;
   if (pathname === "/") {
     return {
-      title: DEFAULT_TITLE,
-      description: DEFAULT_DESCRIPTION,
+      title: t.defaultTitle,
+      description: t.defaultDescription,
     };
   }
 
   if (pathname === "/about") {
     return {
-      title: "About | Rahim ALI",
-      description:
-        "Discover Rahim ALI's approach to UX/UI design, frontend development, and digital products.",
+      title: t.aboutTitle,
+      description: t.aboutDescription,
     };
   }
 
   if (pathname === "/services") {
     return {
-      title: "Services | Rahim ALI",
-      description:
-        "UX/UI design, frontend development, and product improvement services by Rahim ALI.",
+      title: t.servicesTitle,
+      description: t.servicesDescription,
     };
   }
 
   if (pathname === "/projects") {
     return {
-      title: "Projects | Rahim ALI",
-      description:
-        "Selected UX/UI design and frontend development projects by Rahim ALI.",
+      title: t.projectsTitle,
+      description: t.projectsDescription,
     };
   }
 
   if (pathname === "/learn") {
     return {
-      title: "Learn | Rahim ALI",
-      description:
-        "Books, notes, and ideas about design, development, and building better products.",
+      title: t.learnTitle,
+      description: t.learnDescription,
     };
   }
 
   const projectMatch = pathname.match(/^\/projects\/([^/]+)$/);
   if (projectMatch) {
-    const project = getProjectBySlug(projectMatch[1]);
+    const project = getProjectBySlug(projectMatch[1], locale);
     if (project) {
       return {
-        title: `${project.title} | Rahim ALI`,
-        description: project.description,
+        title: `${project.meta.title} | Rahim ALI`,
+        description: project.meta.description,
       };
     }
     // Slug projet inexistant -> vraie 404 globale
     return {
-      title: "Page not found | Rahim ALI",
-      description: "The page you are looking for does not exist.",
+      title: t.notFoundTitle,
+      description: t.notFoundDescription,
     };
   }
 
   const articleMatch = pathname.match(/^\/learn\/([^/]+)$/);
   if (articleMatch) {
-    const article = getArticleBySlug(articleMatch[1]);
+    const article = getArticleBySlug(articleMatch[1], locale);
     if (article) {
       return {
-        title: `${article.title} | Rahim ALI`,
-        description: article.description,
+        title: `${article.meta.title} | Rahim ALI`,
+        description: article.meta.description,
       };
     }
     // Slug learn inexistant -> vraie 404 globale
     return {
-      title: "Page not found | Rahim ALI",
-      description: "The page you are looking for does not exist.",
+      title: t.notFoundTitle,
+      description: t.notFoundDescription,
     };
   }
 
   // Route inconnue -> 404 globale (route "*" du router)
   return {
-    title: "Page not found | Rahim ALI",
-    description: "The page you are looking for does not exist.",
+    title: t.notFoundTitle,
+    description: t.notFoundDescription,
   };
 }
 
@@ -127,10 +124,12 @@ function setMetaTag(
 
 export default function SEO() {
   const { pathname } = useLocation();
+  const locale = useLocale();
 
   useEffect(() => {
-    const { title, description } = getMetadata(pathname);
-    const isNotFound = title.startsWith("Page not found");
+    const { title, description } = getMetadata(pathname, locale);
+    const t = getUi(locale).seo;
+    const isNotFound = title === t.notFoundTitle;
     const siteUrl = getSiteUrl();
     const canonicalUrl = siteUrl ? `${siteUrl}${pathname}` : undefined;
     const ogImageUrl = siteUrl ? `${siteUrl}${OG_IMAGE_PATH}` : undefined;
@@ -143,6 +142,7 @@ export default function SEO() {
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:type", "website");
     setMetaTag("property", "og:site_name", "Rahim ALI");
+    setMetaTag("property", "og:locale", locale === "fr" ? "fr_FR" : "en_US");
 
     if (canonicalUrl) {
       setMetaTag("property", "og:url", canonicalUrl);
@@ -176,7 +176,7 @@ export default function SEO() {
     } else if (existingCanonical) {
       existingCanonical.remove();
     }
-  }, [pathname]);
+  }, [pathname, locale]);
 
   return null;
 }

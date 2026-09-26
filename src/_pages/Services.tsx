@@ -2,45 +2,22 @@ import { useRef, useState, useEffect } from "react";
 import Button from "../_components/ui/Button";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import ProjectCard from "../_components/ui/cards/ProjectCard";
-import { projects } from "../data/project";
+import { getProjects } from "../data/project";
 import { getProjectPath, ROUTES, WHATSAPP_URL } from "../routes";
-import { workwithmeData } from "../data/workwithme";
+import { getWorkWithMe } from "../data/workwithme";
+import { useLocale } from "../lib/i18n";
+import { getServices } from "../locales/services";
 import { Link } from "react-router-dom";
 import { ArrowDownIcon, ChevronRightIcon } from "../_components/icons";
 import { gsap, useGSAP } from "../lib/gsap";
 
 const TOTAL_BARS = 16;
 
-const faqItems = [
-  {
-    question: "I only have one idea. Is this enough to start with?",
-    answer:
-      "Yes. You don't need to have perfectly defined specifications. The first exchanges serve precisely to understand what you want to build and determine what the project really needs.",
-  },
-  {
-    question:
-      "I already have the models. Can you just take care of development?",
-    answer:
-      "Yes. If your design is already ready, I can focus on integrating and developing it.",
-  },
-  {
-    question: "Can you take care of the design and development?",
-    answer:
-      "Yes. This is one of my main ways of working: designing the experience, then transforming it directly into a product.",
-  },
-  {
-    question: "Do you only work on new projects?",
-    answer:
-      "No. I can also work on an existing product or site to improve its interface, its experience, or certain technical aspects.",
-  },
-  {
-    question: "How does a collaboration begin?",
-    answer:
-      "You just tell me what you're trying to build. No need to prepare a 30-page document. We start with a conversation.",
-  },
-] as const;
-
 export default function ServicesPage() {
+  const locale = useLocale();
+  const t = getServices(locale);
+  const workwithme = getWorkWithMe(locale);
+  const projects = getProjects(locale);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -203,21 +180,19 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-2 mb-16 lg:mb-32">
               <div className="flex items-center justify-end">
                 <h1 className="text-2xl lg:text-4xl font-medium text-foreground">
-                  SERVICES
+                  {t.eyebrow}
                 </h1>
               </div>
               <div>
                 <h1 className="text-4xl md:text-6xl font-medium text-foreground max-w-xs md:max-w-md lg:max-w-none">
-                  You have something to build.
+                  {t.heroTitle}
                 </h1>
               </div>
             </div>
             {/* Center */}
             <div className="mx-auto max-w-3xl flex flex-col gap-12 lg:gap-8">
               <p className="text-foreground text-2xl text-center md:text-left leading-relaxed max-w-sm md:max-w-2xl">
-                An idea, a product, a site or an experience that deserves to be
-                better thought out? I help you move from the idea to something
-                clear, beautiful and truly usable — from design to development.
+                {t.heroSub}
               </p>
               {/* Buttons */}
               <div className="flex flex-col lg:flex-row items-center gap-4">
@@ -228,12 +203,12 @@ export default function ServicesPage() {
                   className="inline-flex"
                 >
                   <Button className="px-6 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
-                    Let's talk about your project
+                    {t.ctaTalk}
                   </Button>
                 </a>
                 <Link to={ROUTES.PROJECTS.LIST} className="inline-flex">
                   <Button className="px-6 py-4 text-xl font-medium bg-white border-2 border-foreground text-foreground">
-                    See my projects
+                    {t.ctaProjects}
                   </Button>
                 </Link>
               </div>
@@ -244,47 +219,32 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4 lg:flex-row items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium max-w-sm md:max-w-md">
-                  Do you have an idea ?
+                  {t.designTitle}
                 </h3>
                 <h5 className="text-foreground-alt-a text-xl leading-relaxed">
-                  I can design the experience.
+                  {t.designSub}
                 </h5>
               </div>
               <div>
                 <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
-                  We start from your idea, even when it is still just a sketch
-                  in your head. I transform your needs into a clear experience:
-                  structure, route, wireframes, interface and prototype.
+                  {t.designDesc}
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
-                <h4>What i can do</h4>
+                <h4>{t.whatICanDo}</h4>
               </div>
               <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    UX research & product thinking
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    User flows
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Wireframes
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    UI Design
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Prototyping
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Design systems
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Responsive Design
-                  </li>
+                  {t.designItems.map((label) => (
+                    <li
+                      key={label}
+                      className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']"
+                    >
+                      {label}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -303,44 +263,32 @@ export default function ServicesPage() {
             <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium max-w-xs md:max-w-md">
-                  Already have the design ?
+                  {t.buildTitle}
                 </h3>
                 <h5 className="text-foreground-alt-a text-xl leading-relaxed">
-                  I can build the product.
+                  {t.buildSub}
                 </h5>
               </div>
               <div>
                 <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
-                  We start from your idea, even when it is still just a sketch
-                  in your head. I transform your needs into a clear experience:
-                  structure, route, wireframes, interface and prototype.
+                  {t.buildDesc}
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
-                <h4>What i can do</h4>
+                <h4>{t.whatICanDo}</h4>
               </div>
               <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Integration of models
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Frontend development
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Responsive interfaces Wireframes
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Interactions & animations
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Reusable components
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Performance optimization
-                  </li>
+                  {t.buildItems.map((label) => (
+                    <li
+                      key={label}
+                      className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']"
+                    >
+                      {label}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -359,40 +307,35 @@ export default function ServicesPage() {
             <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium max-w-xs md:max-w-sm lg:max-w-md">
-                  Do you need to be visible online ?
+                  {t.visibleTitle}
                 </h3>
                 <h5 className="text-foreground-alt-a text-xl leading-relaxed">
-                  I can create your site.
+                  {t.visibleSub}
                 </h5>
               </div>
               <div>
                 <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
-                  Your site doesn't just have to look pretty. It should explain
-                  what you do, inspire confidence, and give the right people a
-                  reason to contact you.
+                  {t.visibleDescA}
                 </p>
                 <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
-                  I design and develop showcase sites and landing pages that
-                  highlight your activity while keeping the experience simple
-                  and intuitive.
+                  {t.visibleDescB}
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
-                <h4>What i can do</h4>
+                <h4>{t.whatICanDo}</h4>
               </div>
               <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Showcase sites
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Landing pages
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Personal sites
-                  </li>
+                  {t.visibleItems.map((label) => (
+                    <li
+                      key={label}
+                      className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']"
+                    >
+                      {label}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -411,47 +354,35 @@ export default function ServicesPage() {
             <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div className="flex flex-col gap-2">
                 <h3 className="text-foreground text-4xl font-medium max-w-sm lg:max-w-md">
-                  Already have something that works ?
+                  {t.improveTitle}
                 </h3>
                 <h5 className="text-foreground-alt-a text-xl leading-relaxed">
-                  I can improve it.
+                  {t.improveSub}
                 </h5>
               </div>
               <div>
                 <p className="text-foreground text-xl leading-relaxed max-w-xs md:max-w-md lg:max-w-lg">
-                  Not everything needs to be rebuilt from scratch.
+                  {t.improveDescA}
                 </p>
                 <p className="text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg">
-                  I can take your existing site or product, identify what
-                  creates friction and improve the experience, interface or
-                  certain technical aspects.
+                  {t.improveDescB}
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div className="text-3xl text-foreground font-medium">
-                <h4>What i can do</h4>
+                <h4>{t.whatICanDo}</h4>
               </div>
               <div className="min-w-lg">
                 <ul className="flex flex-col gap-4">
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    UX/UI Audit
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Interface redesign
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Simplification of routes
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Visual improvements
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Frontend optimization
-                  </li>
-                  <li className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']">
-                    Fixed interface issues
-                  </li>
+                  {t.improveItems.map((label) => (
+                    <li
+                      key={label}
+                      className="text-foreground text-xl font-normal flex items-center gap-3 before:size-3 before:shrink-0 before:rounded-full before:bg-foreground before:content-['']"
+                    >
+                      {label}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -459,12 +390,12 @@ export default function ServicesPage() {
           {/* Sixth section */}
           <div className="py-24">
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs md:max-w-lg lg:max-w-xl">
-              And concretely, what does working together look like ?
+              {t.togetherTitle}
             </h2>
 
             {/* knowme Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-x-16 lg:gap-y-14">
-              {workwithmeData.map((step) => (
+              {workwithme.map((step) => (
                 <KnowMeCard
                   key={step.number}
                   number={step.number}
@@ -479,13 +410,11 @@ export default function ServicesPage() {
             <div className="max-w-350 mx-auto px-page-x">
               <div className="flex flex-col">
                 <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-8 lg:mb-20 max-w-xs md:max-w-lg lg:max-w-xl">
-                  Want to see what it looks like in practice?
+                  {t.practiceTitle}
                 </h2>
                 <div className="flex items-center justify-end">
                   <p className="text-foreground text-xl font-normal max-w-sm md:max-w-md lg:max-w-lg">
-                    Here are some projects where I had the opportunity to
-                    transform an idea, a problem or an interface into something
-                    concrete.
+                    {t.practiceSub}
                   </p>
                 </div>
               </div>
@@ -515,7 +444,7 @@ export default function ServicesPage() {
                     to={ROUTES.PROJECTS.LIST}
                     className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
                   >
-                    See all projects{" "}
+                    {t.seeAll}{" "}
                     <span ref={seeAllArrowRef} className="pl-tight inline-flex">
                       <ChevronRightIcon />
                     </span>
@@ -548,11 +477,11 @@ export default function ServicesPage() {
           {/* Eight section */}
           <div className="pt-24">
             <h2 className="text-foreground text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-tight mb-16 lg:mb-20 max-w-xs md:max-w-md lg:max-w-xl">
-              Frequently Asked Question
+              {t.faqTitle}
             </h2>
             <div className="mx-auto max-w-4xl">
               <div className="flex flex-col gap-4">
-                {faqItems.map((item, index) => {
+                {t.faq.map((item, index) => {
                   const isOpen = openFaqIndex === index;
                   const answerId = `faq-answer-${index}`;
                   const questionId = `faq-question-${index}`;
@@ -604,7 +533,7 @@ export default function ServicesPage() {
                   className="mt-8 inline-flex"
                 >
                   <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                    Let's talk about your project
+                    {t.ctaTalk}
                   </Button>
                 </a>
               </div>

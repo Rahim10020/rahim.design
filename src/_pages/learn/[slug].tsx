@@ -4,10 +4,14 @@ import ContentImages from "../../_components/ui/others/ContentImages";
 import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
 import { getLearnArticle } from "../../lib/content";
 import { ROUTES } from "../../routes";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 export default function LearnArticle() {
+  const locale = useLocale();
+  const t = getUi(locale).learnDetail;
   const { slug } = useParams();
-  const article = getLearnArticle(slug ?? "");
+  const article = getLearnArticle(slug ?? "", locale);
   if (!article) return <NotFound />;
 
   return (
@@ -18,7 +22,7 @@ export default function LearnArticle() {
           className="mb-8 flex items-center gap-3 text-xl underline underline-offset-4"
         >
           <ArrowLeftIcon size={16} />
-          Back to learn
+          {t.back}
         </Link>
         <h1 className="text-foreground text-4xl md:text-6xl">
           {article.meta.title}
@@ -39,6 +43,7 @@ export default function LearnArticle() {
 }
 
 function NotFound() {
+  const t = getUi(useLocale()).learnDetail;
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="flex items-center justify-center py-48">
@@ -46,7 +51,7 @@ function NotFound() {
           <div className="flex flex-col items-center gap-12">
             <AsteriskIcon size={54} />
             <h4 className="text-xl font-normal text-foreground">
-              Learn article not found.
+              {t.notFound}
             </h4>
           </div>
           <Link
@@ -54,7 +59,7 @@ function NotFound() {
             className="mt-8 flex items-center gap-4 text-xl text-foreground underline underline-offset-4"
           >
             <ArrowLeftIcon size={16} />
-            Back to learn
+            {t.back}
           </Link>
         </div>
       </div>

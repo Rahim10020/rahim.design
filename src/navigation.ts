@@ -1,4 +1,6 @@
 import { getLearnListPath, LEARN_TYPES, ROUTES, WHATSAPP_URL } from "./routes";
+import type { SupportedLocale } from "./lib/locale";
+import { getUi } from "./locales/ui";
 
 type AnchorNavItem = {
   label: string;
@@ -47,3 +49,30 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const DEFAULT_LEARN_LIST_PATH = ROUTES.LEARN.LIST;
+
+export function getNavItems(locale: SupportedLocale): NavItem[] {
+  const t = getUi(locale).nav;
+  return [
+    { label: t.about, kind: "route", to: ROUTES.ABOUT },
+    { label: t.services, kind: "route", to: ROUTES.SERVICES },
+    { label: t.projects, kind: "route", to: ROUTES.PROJECTS.LIST },
+    {
+      label: t.learn,
+      kind: "route",
+      to: ROUTES.LEARN.LIST,
+      children: [
+        {
+          label: t.books,
+          kind: "route",
+          to: getLearnListPath(LEARN_TYPES.BOOKS),
+        },
+        {
+          label: t.notes,
+          kind: "route",
+          to: getLearnListPath(LEARN_TYPES.NOTES),
+        },
+      ],
+    },
+    { label: t.contact, kind: "external", href: WHATSAPP_URL },
+  ];
+}

@@ -1,9 +1,14 @@
 import { useRef } from "react";
 import StepCard from "../ui/cards/StepCard";
-import { stepsData } from "../../data/steps";
+import { getSteps } from "../../data/steps";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 import { gsap, useGSAP } from "../../lib/gsap";
 
 export default function StepsSection() {
+  const locale = useLocale();
+  const t = getUi(locale).stepsSection;
+  const stepsData = getSteps(locale);
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +83,7 @@ export default function StepsSection() {
         <div className="mx-auto max-w-6xl">
           {/* Title */}
           <h2 className="text-foreground text-center lg:text-left text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-18 max-w-2xl">
-            This is how we will move from your idea to something concrete
+            {t.title}
           </h2>
 
           {/* Steps Grid */}

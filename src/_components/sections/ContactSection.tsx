@@ -11,8 +11,11 @@ import {
   WhatsappIcon,
 } from "../icons";
 import Button from "../ui/Button";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 export default function ContactSection() {
+  const t = getUi(useLocale()).contactSection;
   return (
     <section className="flex w-full my-section bg-background">
       <div className="max-w-350 mx-auto flex w-full px-page-x">
@@ -23,13 +26,12 @@ export default function ContactSection() {
           <div className="lg:hidden flex flex-col items-center gap-major text-center">
             {/* Titre complet */}
             <h1 className="text-foreground text-5xl font-medium max-w-xs">
-              So What are we Building ?
+              {t.titleMobile}
             </h1>
 
             {/* Paragraphe */}
             <p className="text-foreground text-2xl leading-relaxed max-w-sm">
-              No need to have all the answers. Come up with the idea, we'll
-              start there.
+              {t.paragraph}
             </p>
 
             {/* Bouton */}
@@ -40,7 +42,7 @@ export default function ContactSection() {
               className="w-full max-w-sm"
             >
               <Button className="w-full px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                Start a Conversation
+                {t.cta}
               </Button>
             </a>
 
@@ -87,7 +89,7 @@ export default function ContactSection() {
             {/* Email */}
             <div className="flex flex-col gap-2 items-center">
               <p className="text-foreground text-xl font-normal">
-                Write directly to:
+                {t.writeTo}
               </p>
               <a
                 href="mailto:rahim100codeur@gmail.com"
@@ -105,13 +107,13 @@ export default function ContactSection() {
             {/* 1st line */}
             <div className="flex justify-center">
               <div className="flex justify-start max-w-md">
-                <h1 className="text-foreground text-4xl md:text-8xl">So</h1>
+                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleA}</h1>
               </div>
             </div>
             {/* 2nd line */}
             <div className="flex justify-end mx-auto max-w-md">
               <div className="flex justify-end max-w-xs">
-                <h1 className="text-foreground text-4xl md:text-8xl">What</h1>
+                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleB}</h1>
               </div>
             </div>
             {/* 3rd line */}
@@ -156,14 +158,13 @@ export default function ContactSection() {
                   </a>
                 </div>
                 <p className="text-foreground text-2xl leading-relaxed max-w-sm">
-                  No need to have all the answers. Come up with the idea, we'll
-                  start there.
+                  {t.paragraph}
                 </p>
               </div>
               <div className="flex flex-col items-end">
-                <h1 className="text-foreground text-4xl md:text-8xl">are we</h1>
+                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleC}</h1>
                 <h1 className="text-foreground text-4xl md:text-8xl">
-                  Building ?
+                  {t.titleD}
                 </h1>
               </div>
             </div>
@@ -171,7 +172,7 @@ export default function ContactSection() {
             <div className="flex min-w-0 max-w-6xl mx-auto flex-wrap items-center justify-between gap-comfortable">
               <div className="min-w-0">
                 <p className="text-foreground text-xl font-normal">
-                  Write directly to:
+                  {t.writeTo}
                 </p>
                 <a
                   href="mailto:rahim100codeur@gmail.com"
@@ -187,7 +188,7 @@ export default function ContactSection() {
                 className="relative inline-flex w-full min-w-0 max-w-full sm:w-auto"
               >
                 <Button className="w-full max-w-full whitespace-normal px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground sm:w-auto">
-                  Start a Conversation
+                  {t.cta}
                 </Button>
               </a>
             </div>

@@ -1,8 +1,19 @@
-import { getLearnArticles, type ArticleFrontmatter } from "../lib/content";
+import {
+  getLearnArticles as getLearnArticlesFromContent,
+  getLearnArticle as getLearnArticleFromContent,
+  type ArticleFrontmatter,
+} from "../lib/content";
+import type { SupportedLocale } from "../lib/locale";
 
 export type { ArticleFrontmatter };
-export const articles = getLearnArticles();
 
-export function getArticleBySlug(slug: string): ArticleFrontmatter | undefined {
-  return articles.find((article) => article.slug === slug);
+export function getArticles(locale: SupportedLocale = "fr") {
+  return getLearnArticlesFromContent(locale);
 }
+
+export function getArticleBySlug(slug: string, locale: SupportedLocale = "fr") {
+  return getLearnArticleFromContent(slug, locale);
+}
+
+// Compatibilité FR par défaut
+export const articles = getLearnArticlesFromContent("fr");

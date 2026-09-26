@@ -8,12 +8,16 @@ import {
 } from "../../_components/icons";
 import { getProject, getProjects } from "../../lib/content";
 import { getProjectPath, ROUTES } from "../../routes";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 
 export default function ProjectDetail() {
+  const locale = useLocale();
+  const t = getUi(locale).projectDetail;
   const { slug } = useParams();
-  const project = getProject(slug ?? "");
+  const project = getProject(slug ?? "", locale);
   if (!project) return <NotFound />;
-  const projects = getProjects();
+  const projects = getProjects(locale);
   const currentIndex = projects.findIndex(
     ({ slug: projectSlug }) => projectSlug === project.meta.slug,
   );
@@ -28,7 +32,7 @@ export default function ProjectDetail() {
           className="mb-8 flex items-center gap-3 text-xl underline underline-offset-4"
         >
           <ArrowLeftIcon size={16} />
-          Back to projects
+          {t.back}
         </Link>
         <div className="flex items-center gap-4">
           <h1 className="text-foreground text-4xl md:text-6xl">
@@ -60,7 +64,7 @@ export default function ProjectDetail() {
             className="flex items-center gap-3 text-foreground hover:text-foreground-alt transition-colors duration-200"
           >
             <ArrowLeftIcon size={16} />
-            Recent Project
+            {t.recent}
           </Link>
         ) : (
           <span />
@@ -70,7 +74,7 @@ export default function ProjectDetail() {
             to={getProjectPath(nextProject.slug)}
             className="flex items-center gap-3 text-foreground hover:text-foreground-alt transition-colors duration-200"
           >
-            Next Project
+            {t.next}
             <ArrowRightIcon size={16} />
           </Link>
         )}
@@ -80,6 +84,7 @@ export default function ProjectDetail() {
 }
 
 function NotFound() {
+  const t = getUi(useLocale()).projectDetail;
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="flex items-center justify-center py-48">
@@ -87,7 +92,7 @@ function NotFound() {
           <div className="flex flex-col items-center gap-12">
             <AsteriskIcon size={54} />
             <h4 className="text-xl font-normal text-foreground">
-              Project not found.
+              {t.notFound}
             </h4>
           </div>
           <Link
@@ -95,7 +100,7 @@ function NotFound() {
             className="mt-8 flex items-center gap-4 text-xl text-foreground underline underline-offset-4"
           >
             <ArrowLeftIcon size={16} />
-            Back to projects
+            {t.back}
           </Link>
         </div>
       </div>

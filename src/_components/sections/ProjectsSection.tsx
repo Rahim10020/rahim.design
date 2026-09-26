@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import ProjectCard from "../ui/cards/ProjectCard";
 import { ChevronRightIcon } from "../icons";
 import { getProjectPath } from "../../routes";
-import { projects } from "../../data/project";
+import { getProjects } from "../../data/project";
+import { useLocale } from "../../lib/i18n";
+import { getUi } from "../../locales/ui";
 import { ROUTES } from "../../routes";
 import { gsap, useGSAP } from "../../lib/gsap";
 
 const TOTAL_BARS = 16;
 
 export default function ProjectsSection() {
+  const locale = useLocale();
+  const t = getUi(locale).projectsSection;
+  const projects = getProjects(locale);
   const sliderRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
@@ -188,7 +193,7 @@ export default function ProjectsSection() {
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title — pas d'animation */}
         <h2 className="text-foreground text-center lg:text-left text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-major max-w-lg">
-          Let's look at what I've already built
+          {t.title}
         </h2>
       </div>
 
@@ -219,7 +224,7 @@ export default function ProjectsSection() {
               to={ROUTES.PROJECTS.LIST}
               className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
             >
-              See all projects{" "}
+              {t.seeAll}{" "}
               <span ref={seeAllArrowRef} className="pl-tight inline-flex">
                 <ChevronRightIcon />
               </span>
