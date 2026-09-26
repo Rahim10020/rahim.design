@@ -7,6 +7,7 @@ import ProjectsList from "./_pages/projects/index";
 import ProjectDetail from "./_pages/projects/[slug]";
 import LearnList from "./_pages/learn/index";
 import LearnArticle from "./_pages/learn/[slug]";
+import NotFoundPage from "./_pages/NotFound";
 import { ROUTES } from "./routes";
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: ROUTES.PROJECTS.DETAIL, element: <ProjectDetail /> },
       { path: ROUTES.LEARN.LIST, element: <LearnList /> },
       { path: ROUTES.LEARN.ARTICLE, element: <LearnArticle /> },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);

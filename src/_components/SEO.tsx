@@ -29,6 +29,13 @@ type PageMetadata = {
 };
 
 function getMetadata(pathname: string): PageMetadata {
+  if (pathname === "/") {
+    return {
+      title: DEFAULT_TITLE,
+      description: DEFAULT_DESCRIPTION,
+    };
+  }
+
   if (pathname === "/about") {
     return {
       title: "About | Rahim ALI",
@@ -64,24 +71,39 @@ function getMetadata(pathname: string): PageMetadata {
   const projectMatch = pathname.match(/^\/projects\/([^/]+)$/);
   if (projectMatch) {
     const project = getProjectBySlug(projectMatch[1]);
+    if (project) {
+      return {
+        title: `${project.title} | Rahim ALI`,
+        description: project.description,
+      };
+    }
+    // Slug projet inexistant -> vraie 404 globale
     return {
-      title: project ? `${project.title} | Rahim ALI` : DEFAULT_TITLE,
-      description: project?.description ?? DEFAULT_DESCRIPTION,
+      title: "Page not found | Rahim ALI",
+      description: "The page you are looking for does not exist.",
     };
   }
 
   const articleMatch = pathname.match(/^\/learn\/([^/]+)$/);
   if (articleMatch) {
     const article = getArticleBySlug(articleMatch[1]);
+    if (article) {
+      return {
+        title: `${article.title} | Rahim ALI`,
+        description: article.description,
+      };
+    }
+    // Slug learn inexistant -> vraie 404 globale
     return {
-      title: article ? `${article.title} | Rahim ALI` : DEFAULT_TITLE,
-      description: article?.description ?? DEFAULT_DESCRIPTION,
+      title: "Page not found | Rahim ALI",
+      description: "The page you are looking for does not exist.",
     };
   }
 
+  // Route inconnue -> 404 globale (route "*" du router)
   return {
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESCRIPTION,
+    title: "Page not found | Rahim ALI",
+    description: "The page you are looking for does not exist.",
   };
 }
 
@@ -108,12 +130,15 @@ export default function SEO() {
 
   useEffect(() => {
     const { title, description } = getMetadata(pathname);
+    const isNotFound = title.startsWith("Page not found");
     const siteUrl = getSiteUrl();
     const canonicalUrl = siteUrl ? `${siteUrl}${pathname}` : undefined;
     const ogImageUrl = siteUrl ? `${siteUrl}${OG_IMAGE_PATH}` : undefined;
 
     document.title = title;
     setMetaTag("name", "description", description);
+    // Évite d'indexer les 404 dans Google
+    setMetaTag("name", "robots", isNotFound ? "noindex" : "index, follow");
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:type", "website");
