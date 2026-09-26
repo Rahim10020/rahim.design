@@ -7,6 +7,7 @@ import {
 } from "../../data/project";
 import { getProjectPath, WHATSAPP_URL } from "../../routes";
 import Button from "../../_components/ui/Button";
+import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 
@@ -39,20 +40,21 @@ export default function ProjectsPage() {
                 const isActive = activeFilter === filter.value;
 
                 return (
-                  <button
+                  <LiquidHoverButton
                     key={filter.value}
                     onClick={() => setActiveFilter(filter.value)}
+                    active={isActive}
                     className={`
-                   px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground transition-colors
+                   px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground
                   ${
                     isActive
                       ? "bg-primary text-foreground"
-                      : "bg-transparent text-foreground hover:bg-background-alt transition-all duration-200"
+                      : "bg-transparent text-foreground"
                   }
                 `}
                   >
                     {filter.label}
-                  </button>
+                  </LiquidHoverButton>
                 );
               })}
             </div>

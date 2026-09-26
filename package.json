@@ -36,5 +36,18 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.62.0",
     "vite": "^8.1.1"
-  }
+  },
+  "description": "[![Rahim ALI — Web Developer & UX/UI Designer](https://rahim-dev-me.vercel.app/images/og-image.png)](https://rahim-dev-me.vercel.app/)",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahim10020/rahim.design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rahim10020/rahim.design/issues"
+  },
+  "homepage": "https://github.com/Rahim10020/rahim.design#readme"
 }

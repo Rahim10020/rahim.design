@@ -9,6 +9,7 @@ import {
 } from "../../routes";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
+import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
 
 type LearnFilter = "all" | LearnType;
 
@@ -42,7 +43,7 @@ export default function LearnPage() {
                 const isActive = activeFilter === filter.value;
 
                 return (
-                  <button
+                  <LiquidHoverButton
                     key={filter.value}
                     type="button"
                     onClick={() =>
@@ -50,17 +51,18 @@ export default function LearnPage() {
                         filter.value === "all" ? {} : { type: filter.value },
                       )
                     }
+                    active={isActive}
                     className={`
-                      px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground transition-colors
+                      px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground
                       ${
                         isActive
                           ? "bg-primary text-foreground"
-                          : "bg-transparent text-foreground hover:bg-background-alt transition-all duration-200"
+                          : "bg-transparent text-foreground"
                       }
                     `}
                   >
                     {filter.label}
-                  </button>
+                  </LiquidHoverButton>
                 );
               })}
             </div>

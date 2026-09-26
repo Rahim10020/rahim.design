@@ -6,6 +6,7 @@ import { getNavItems, type NavItem } from "../../navigation.ts";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 import { gsap, useGSAP } from "../../lib/gsap";
+import { LiquidHoverAnchor, LiquidHoverLink } from "../ui/LiquidHover";
 
 const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
 
@@ -212,10 +213,10 @@ export default function Header() {
               <nav className="flex items-center whitespace-nowrap">
                 {NAV_ITEMS.map((link, i) => {
                   const isActive = isNavItemActive(link, pathname, hash);
-                  const linkClassName = `text-foreground hover:bg-primary text-xl font-normal px-6 py-4 flex items-center gap-1 transition-colors ${
+                  const linkClassName = `text-foreground text-xl font-normal px-6 py-4 ${
                     i !== 0 ? "border-l-2 border-foreground" : ""
                   } ${i === 4 ? "border-r-2 border-foreground" : ""} ${
-                    isActive ? "bg-primary" : ""
+                    isActive ? "bg-primary" : "bg-transparent"
                   }`;
 
                   if (link.kind === "route" && link.children) {
@@ -234,8 +235,9 @@ export default function Header() {
                           }
                         }}
                       >
-                        <Link
+                        <LiquidHoverLink
                           to={link.to}
+                          active={isActive}
                           className={linkClassName}
                           aria-current={isActive ? "page" : undefined}
                         >
@@ -247,7 +249,7 @@ export default function Header() {
                               openDropdown === link.label ? "rotate-180" : ""
                             }`}
                           />
-                        </Link>
+                        </LiquidHoverLink>
 
                         <nav
                           className={`absolute left-0 top-full z-50 mt-1 w-full border-2 border-foreground bg-background ${
@@ -260,11 +262,14 @@ export default function Header() {
                               pathname.startsWith(`${item.to}/`);
 
                             return (
-                              <Link
+                              <LiquidHoverLink
                                 key={item.label}
                                 to={item.to}
-                                className={`block px-6 py-3 text-xl text-foreground hover:bg-primary ${
-                                  childIsActive ? "bg-primary" : ""
+                                active={childIsActive}
+                                className={`block px-6 py-3 text-xl text-foreground ${
+                                  childIsActive
+                                    ? "bg-primary"
+                                    : "bg-transparent"
                                 }`}
                                 onClick={() => setOpenDropdown(null)}
                                 aria-current={
@@ -272,7 +277,7 @@ export default function Header() {
                                 }
                               >
                                 {item.label}
-                              </Link>
+                              </LiquidHoverLink>
                             );
                           })}
                         </nav>
@@ -282,35 +287,38 @@ export default function Header() {
 
                   if (link.kind === "external") {
                     return (
-                      <a
+                      <LiquidHoverAnchor
                         key={link.label}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
+                        active={false}
                         className={linkClassName}
                       >
                         {link.label}
-                      </a>
+                      </LiquidHoverAnchor>
                     );
                   }
 
                   if (link.kind === "route") {
                     return (
-                      <Link
+                      <LiquidHoverLink
                         key={link.label}
                         to={link.to}
+                        active={isActive}
                         className={linkClassName}
                         aria-current={isActive ? "page" : undefined}
                       >
                         {link.label}
-                      </Link>
+                      </LiquidHoverLink>
                     );
                   }
 
                   return isHome ? (
-                    <a
+                    <LiquidHoverAnchor
                       key={link.label}
                       href={link.href}
+                      active={isAnchorSectionActive(link.href)}
                       className={`${linkClassName} ${
                         isAnchorSectionActive(link.href) ? "bg-primary" : ""
                       }`}
@@ -319,11 +327,12 @@ export default function Header() {
                       }
                     >
                       {link.label}
-                    </a>
+                    </LiquidHoverAnchor>
                   ) : (
-                    <Link
+                    <LiquidHoverLink
                       key={link.label}
                       to={`/${link.href}`}
+                      active={isAnchorSectionActive(link.href)}
                       className={`${linkClassName} ${
                         isAnchorSectionActive(link.href) ? "bg-primary" : ""
                       }`}
@@ -332,7 +341,7 @@ export default function Header() {
                       }
                     >
                       {link.label}
-                    </Link>
+                    </LiquidHoverLink>
                   );
                 })}
               </nav>

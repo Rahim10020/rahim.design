@@ -80,6 +80,20 @@
   scrollbar-width: none;
 }
 
+/* Remplissage liquide directionnel (nav, dropdown, filters) — transform only */
+.liquid-fill {
+  will-change: transform;
+}
+.liquid-mask {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-mask {
+    display: none;
+  }
+}
+
 @theme {
   --color-primary: var(--primary);
   --color-primary-alt: var(--primary-alt);
