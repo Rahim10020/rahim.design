@@ -1,4 +1,3 @@
--- faire de recherches sur le type d'animation a mettre.
 -- La prochaine fois je continue avec:
     1- Trouver des images de couverture pour mes services
     2- faire des recherches sur comment creer une image gif anime de mon projet afin de l'utiliser dans 
