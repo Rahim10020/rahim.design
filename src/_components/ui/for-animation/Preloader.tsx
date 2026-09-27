@@ -37,20 +37,20 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         tl.fromTo(
           wordRef.current,
           { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.22, ease: "power2.out" },
+          { y: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out" },
           ">",
         );
         tl.to(
           wordRef.current,
-          { y: -14, autoAlpha: 0, duration: 0.16 },
-          ">+0.08",
+          { y: -14, autoAlpha: 0, duration: 0.25 },
+          ">+0.2",
         );
       });
       tl.to(
         counter,
         {
           v: 100,
-          duration: 1.4,
+          duration: 2.5,
           ease: "power2.inOut",
           onUpdate: () => {
             if (numRef.current)
@@ -65,7 +65,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       );
       tl.to(rootRef.current, {
         yPercent: -100,
-        duration: 0.7,
+        duration: 1,
         ease: "power4.inOut",
       });
     },
@@ -82,7 +82,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
     >
       <span
         ref={wordRef}
-        className="text-2xl md:text-4xl font-medium tracking-tight min-h-[1.5em]"
+        className="text-4xl md:text-6xl font-medium tracking-tight min-h-[1.5em]"
       >
         Design
       </span>
