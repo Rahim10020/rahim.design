@@ -1,15 +1,29 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import SEO from "../SEO";
+import Preloader from "../ui/for-animation/Preloader";
+import PageTransition from "../ui/for-animation/PageTransition";
 import { applyDetectedLocale } from "../../lib/locale";
 import { LocaleContext } from "../../lib/i18n";
+import { ScrollTrigger } from "../../lib/gsap";
 
 export default function MainLayout() {
   const [locale] = useState(() => applyDetectedLocale());
+  const [ready, setReady] = useState(
+    () =>
+      typeof sessionStorage !== "undefined" &&
+      sessionStorage.getItem("rd-preloader") === "1",
+  );
+  const handlePreloaderDone = useCallback(() => {
+    setReady(true);
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+  }, []);
   return (
     <LocaleContext.Provider value={locale}>
+      {!ready && <Preloader onDone={handlePreloaderDone} />}
+      <PageTransition />
       <div className="flex min-h-screen flex-col">
         <SEO />
         <Header />
