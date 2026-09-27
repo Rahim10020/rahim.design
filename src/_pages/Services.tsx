@@ -8,7 +8,8 @@ import { getWorkWithMe } from "../data/workwithme";
 import { useLocale } from "../lib/i18n";
 import { getServices } from "../locales/services";
 import { Link } from "react-router-dom";
-import { ArrowDownIcon, ChevronRightIcon } from "../_components/icons";
+import { ChevronRightIcon } from "../_components/icons";
+import FaqItem from "../_components/ui/for-animation/FaqItem";
 import { gsap, useGSAP } from "../lib/gsap";
 
 const TOTAL_BARS = 16;
@@ -481,49 +482,18 @@ export default function ServicesPage() {
             </h2>
             <div className="mx-auto max-w-4xl">
               <div className="flex flex-col gap-4">
-                {t.faq.map((item, index) => {
-                  const isOpen = openFaqIndex === index;
-                  const answerId = `faq-answer-${index}`;
-                  const questionId = `faq-question-${index}`;
-
-                  return (
-                    <div
-                      key={item.question}
-                      className="border-2 border-foreground bg-background-alt"
-                    >
-                      <h3>
-                        <button
-                          type="button"
-                          id={questionId}
-                          aria-expanded={isOpen}
-                          aria-controls={answerId}
-                          onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                          className="flex w-full cursor-pointer items-center justify-between gap-6 px-4 py-4 text-left text-xl font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-foreground-alt-a sm:px-6 sm:text-2xl"
-                        >
-                          <span>{item.question}</span>
-                          <ArrowDownIcon
-                            size={18}
-                            aria-hidden="true"
-                            className={`shrink-0 transition-transform duration-200 ${
-                              isOpen ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                      </h3>
-                      <div
-                        id={answerId}
-                        role="region"
-                        aria-labelledby={questionId}
-                        hidden={!isOpen}
-                        className="px-4 pb-5 sm:px-6 py-8 md:py-6"
-                      >
-                        <p className="max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
-                          {item.answer}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+                {t.faq.map((item, index) => (
+                  <FaqItem
+                    key={item.question}
+                    index={index}
+                    question={item.question}
+                    answer={item.answer}
+                    isOpen={openFaqIndex === index}
+                    onToggle={() =>
+                      setOpenFaqIndex(openFaqIndex === index ? null : index)
+                    }
+                  />
+                ))}
               </div>
               <div className="mt-24 text-center">
                 <a
