@@ -50,7 +50,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         counter,
         {
           v: 100,
-          duration: 2.5,
+          duration: 1,
           ease: "power2.inOut",
           onUpdate: () => {
             if (numRef.current)
@@ -65,7 +65,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       );
       tl.to(rootRef.current, {
         yPercent: -100,
-        duration: 1,
+        duration: 0.5,
         ease: "power4.inOut",
       });
     },

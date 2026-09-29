@@ -32,8 +32,11 @@ export default function AboutPage() {
             <div className="w-full lg:w-auto">
               <img
                 src="/images/others/rahim-cartoon.png"
-                alt="Rahim image"
+                alt="Illustration de Rahim ALI"
+                width={800}
+                height={800}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full"
               />
             </div>
@@ -115,14 +118,20 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4">
                   <img
                     src="/icons/tools/figma.svg"
-                    alt="Figma logo image"
+                    alt="Logo Figma"
+                    width={96}
+                    height={96}
                     loading="lazy"
+                    decoding="async"
                     className="w-16 lg:w-24 h-16 lg:h-24"
                   />
                   <img
                     src="/icons/tools/excalidraw.png"
-                    alt="Excalidraw logo image"
+                    alt="Logo Excalidraw"
+                    width={96}
+                    height={96}
                     loading="lazy"
+                    decoding="async"
                     className="w-16 lg:w-24 h-16 lg:h-24"
                   />
                 </div>
@@ -134,26 +143,38 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4">
                   <img
                     src="/icons/tools/react.svg"
-                    alt="React logo image"
+                    alt="Logo React"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/typescript.svg"
-                    alt="Typescript logo image"
+                    alt="Logo TypeScript"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/next-js.svg"
-                    alt="Next JS logo image"
+                    alt="Logo Next.js"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/tailwind-css.png"
-                    alt="Tailwind logo image"
+                    alt="Logo Tailwind CSS"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                 </div>
@@ -165,14 +186,20 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4">
                   <img
                     src="/icons/tools/claude.png"
-                    alt="Claude logo image"
+                    alt="Logo Claude"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                   <img
                     src="/icons/tools/open-ai.png"
-                    alt="Open ai logo image"
+                    alt="Logo OpenAI"
+                    width={64}
+                    height={64}
                     loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 lg:w-16 lg:h-16"
                   />
                 </div>
@@ -201,8 +228,11 @@ export default function AboutPage() {
                 <div className="w-full lg:max-w-xl">
                   <img
                     src="/images/others/reads.png"
-                    alt="Hoobies image"
+                    alt="Livres et passions de Rahim"
+                    width={1200}
+                    height={800}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full"
                   />
                 </div>

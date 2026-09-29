@@ -30,15 +30,22 @@ export default function ProjectCard({
           <img
             src={imageSrc}
             alt={imageAlt || title}
+            width={800}
+            height={600}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           //Placeholder
           <img
             src="/images/others/image_placeholder.svg"
-            alt="placeholder image"
+            alt=""
+            aria-hidden="true"
+            width={800}
+            height={600}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         )}

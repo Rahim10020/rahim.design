@@ -15,7 +15,7 @@
   --accent-d: #f9c74f;
 
   /* Typographie */
-  --sans: "Sniglet", "Geist", "Host Grotesk", sans-serif;
+  --sans: "Sniglet", sans-serif;
   --serif: "Hedvig Letters Serif", serif;
 
   /* Spacing — 4px grid, named by usage */
@@ -65,10 +65,38 @@
     line-height: 1.75;
     list-style: inherit;
   }
+}
 
-  li {
-    list-style: none;
-  }
+/* Reset puces uniquement pour la nav / menus (jamais les listes markdown .prose) */
+header nav ul,
+header nav li,
+footer ul,
+footer li {
+  list-style: none;
+}
+
+/* Focus visible global */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip-link : invisible jusqu'au focus clavier */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: var(--foreground);
+  color: var(--background);
+  font-weight: 700;
+  transform: translateY(-300%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 /* Hide scrollbar */

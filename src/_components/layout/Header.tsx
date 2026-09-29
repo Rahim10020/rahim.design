@@ -1,4 +1,4 @@
-import { useState, useRef, useSyncExternalStore } from "react";
+import { useEffect, useState, useRef, useSyncExternalStore } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../ui/Logo";
 import { ArrowDownIcon, CloseIcon, MenuIcon } from "../icons";
@@ -59,6 +59,31 @@ export default function Header() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement>(null);
   const bottomCloseRef = useRef<HTMLButtonElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+
+  /* ------------------------------------------------------------------
+   *  Accessibilité : Escape ferme le menu mobile / dropdown,
+   *  focus géré à l'ouverture / fermeture du menu mobile
+   * ------------------------------------------------------------------ */
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const firstLink = itemsRef.current?.querySelector<HTMLElement>("a");
+    firstLink?.focus();
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+        burgerRef.current?.focus();
+      } else if (openDropdown) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileMenuOpen, openDropdown]);
 
   const isAnchorSectionActive = (href: string) => {
     const sectionId = href.replace(/^#/, "");
@@ -220,6 +245,7 @@ export default function Header() {
                   }`;
 
                   if (link.kind === "route" && link.children) {
+                    const dropdownOpen = openDropdown === link.label;
                     return (
                       <div
                         key={link.label}
@@ -240,20 +266,26 @@ export default function Header() {
                           active={isActive}
                           className={linkClassName}
                           aria-current={isActive ? "page" : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={dropdownOpen}
+                          onClick={() =>
+                            setOpenDropdown(dropdownOpen ? null : link.label)
+                          }
                         >
                           {link.label}
                           <ArrowDownIcon
                             size={16}
                             strokeWidth={1.5}
                             className={`ml-2 transition-transform ${
-                              openDropdown === link.label ? "rotate-180" : ""
+                              dropdownOpen ? "rotate-180" : ""
                             }`}
                           />
                         </LiquidHoverLink>
 
                         <nav
+                          aria-label={`Sous-menu ${link.label}`}
                           className={`absolute left-0 top-full z-50 mt-1 w-full border-2 border-foreground bg-background ${
-                            openDropdown === link.label ? "block" : "hidden"
+                            dropdownOpen ? "block" : "hidden"
                           }`}
                         >
                           {link.children.map((item) => {
@@ -351,7 +383,7 @@ export default function Header() {
           <button
             className="flex shrink-0 cursor-pointer items-center justify-center p-4"
             onClick={() => setNavOpen((v) => !v)}
-            aria-label="Toggle nav"
+            aria-label={navOpen ? "Masquer la navigation" : "Afficher la navigation"}
             aria-expanded={navOpen}
           >
             {navOpen ? (
@@ -364,10 +396,12 @@ export default function Header() {
 
         {/* ----- Burger mobile ----- */}
         <button
+          ref={burgerRef}
           className="lg:hidden p-2 text-foreground"
           onClick={() => setMobileMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {mobileMenuOpen ? (
             <CloseIcon strokeWidth={2} />
@@ -380,6 +414,12 @@ export default function Header() {
       {/* ----- Overlay mobile ----- */}
       <div
         ref={overlayRef}
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu principal"
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
         className="lg:hidden fixed left-0 top-20 z-40 flex h-[calc(100vh-5rem)] w-full flex-col bg-primary-alt"
         style={{ visibility: "hidden" }}
       >
@@ -450,7 +490,7 @@ export default function Header() {
         <button
           ref={bottomCloseRef}
           onClick={() => setMobileMenuOpen(false)}
-          aria-label="Close menu"
+          aria-label="Fermer le menu"
           className="mb-32 flex justify-center text-background"
         >
           <CloseIcon size={32} />

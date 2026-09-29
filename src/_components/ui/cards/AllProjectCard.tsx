@@ -30,14 +30,21 @@ export default function AllProjectCard({
           <img
             src={imageSrc}
             alt={title}
+            width={1200}
+            height={800}
             loading="lazy"
+            decoding="async"
             className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <img
             src="/images/others/image_placeholder.svg"
-            alt="placeholder image"
+            alt=""
+            aria-hidden="true"
+            width={1200}
+            height={800}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         )}

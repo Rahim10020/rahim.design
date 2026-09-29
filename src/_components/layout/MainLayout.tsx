@@ -24,10 +24,13 @@ export default function MainLayout() {
     <LocaleContext.Provider value={locale}>
       {!ready && <Preloader onDone={handlePreloaderDone} />}
       <PageTransition />
+      <a href="#main" className="skip-link">
+        Aller au contenu
+      </a>
       <div className="flex min-h-screen flex-col">
         <SEO />
         <Header />
-        <main className="flex-1">
+        <main id="main" tabIndex={-1} className="flex-1">
           <Outlet />
         </main>
         <Footer />

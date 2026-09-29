@@ -180,9 +180,9 @@ export default function ServicesPage() {
           <div className="mb-24">
             <div className="flex flex-col gap-2 mb-16 lg:mb-32">
               <div className="flex items-center justify-end">
-                <h1 className="text-2xl lg:text-4xl font-medium text-foreground">
+                <p className="text-2xl lg:text-4xl font-medium text-foreground">
                   {t.eyebrow}
-                </h1>
+                </p>
               </div>
               <div>
                 <h1 className="text-4xl md:text-6xl font-medium text-foreground max-w-xs md:max-w-md lg:max-w-none">
@@ -253,8 +253,12 @@ export default function ServicesPage() {
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
-                alt="placeholder image"
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-120 object-cover"
               />
             </div>
@@ -297,8 +301,12 @@ export default function ServicesPage() {
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
-                alt="placeholder image"
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-120 object-cover"
               />
             </div>
@@ -344,8 +352,12 @@ export default function ServicesPage() {
               {/* Placeholder */}
               <img
                 src="/images/others/image_placeholder.svg"
-                alt="placeholder image"
+                alt=""
+                aria-hidden="true"
+                width={1600}
+                height={900}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-120 object-cover"
               />
             </div>

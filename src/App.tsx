@@ -1,14 +1,16 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./_components/layout/MainLayout";
 import HomePage from "./_pages/HomePage";
-import AboutPage from "./_pages/About";
-import ServicesPage from "./_pages/Services";
-import ProjectsList from "./_pages/projects/index";
-import ProjectDetail from "./_pages/projects/[slug]";
-import LearnList from "./_pages/learn/index";
-import LearnArticle from "./_pages/learn/[slug]";
-import NotFoundPage from "./_pages/NotFound";
 import { ROUTES } from "./routes";
+
+const AboutPage = lazy(() => import("./_pages/About"));
+const ServicesPage = lazy(() => import("./_pages/Services"));
+const ProjectsList = lazy(() => import("./_pages/projects/index"));
+const ProjectDetail = lazy(() => import("./_pages/projects/[slug]"));
+const LearnList = lazy(() => import("./_pages/learn/index"));
+const LearnArticle = lazy(() => import("./_pages/learn/[slug]"));
+const NotFoundPage = lazy(() => import("./_pages/NotFound"));
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={null}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;

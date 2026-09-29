@@ -25,9 +25,9 @@ export default function ContactSection() {
               ============================================================ */}
           <div className="lg:hidden flex flex-col items-center gap-major text-center">
             {/* Titre complet */}
-            <h1 className="text-foreground text-5xl font-medium max-w-xs">
+            <h2 className="text-foreground text-5xl font-medium max-w-xs">
               {t.titleMobile}
-            </h1>
+            </h2>
 
             {/* Paragraphe */}
             <p className="text-foreground text-2xl leading-relaxed max-w-sm">
@@ -107,13 +107,13 @@ export default function ContactSection() {
             {/* 1st line */}
             <div className="flex justify-center">
               <div className="flex justify-start max-w-md">
-                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleA}</h1>
+                <h2 className="text-foreground text-4xl md:text-8xl">{t.titleA}</h2>
               </div>
             </div>
             {/* 2nd line */}
             <div className="flex justify-end mx-auto max-w-md">
               <div className="flex justify-end max-w-xs">
-                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleB}</h1>
+                <h2 className="text-foreground text-4xl md:text-8xl">{t.titleB}</h2>
               </div>
             </div>
             {/* 3rd line */}
@@ -161,12 +161,10 @@ export default function ContactSection() {
                   {t.paragraph}
                 </p>
               </div>
-              <div className="flex flex-col items-end">
-                <h1 className="text-foreground text-4xl md:text-8xl">{t.titleC}</h1>
-                <h1 className="text-foreground text-4xl md:text-8xl">
-                  {t.titleD}
-                </h1>
-              </div>
+              <h2 className="flex flex-col items-end text-foreground text-4xl md:text-8xl">
+                <span>{t.titleC}</span>
+                <span>{t.titleD}</span>
+              </h2>
             </div>
             {/* 4th line */}
             <div className="flex min-w-0 max-w-6xl mx-auto flex-wrap items-center justify-between gap-comfortable">

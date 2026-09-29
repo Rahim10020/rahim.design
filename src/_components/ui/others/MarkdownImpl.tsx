@@ -45,7 +45,10 @@ export default function Markdown({ content }: { content: string }) {
               <img
                 src={src}
                 alt={alt ?? ""}
+                width={1280}
+                height={720}
                 loading="lazy"
+                decoding="async"
                 className="aspect-video w-full object-cover"
               />
             </figure>

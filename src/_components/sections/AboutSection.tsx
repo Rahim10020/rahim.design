@@ -29,12 +29,12 @@ export default function AboutSection() {
           <div>
             {/* Designer, / Coder💀 — desktop only */}
             <div className="hidden lg:block space-y-tight">
-              <h1 className="text-4xl md:text-7xl font-medium text-foreground">
+              <h2 className="text-4xl md:text-7xl font-medium text-foreground">
                 {t.designer}
-              </h1>
-              <h1 className="text-4xl md:text-7xl font-medium text-foreground">
+              </h2>
+              <h2 className="text-4xl md:text-7xl font-medium text-foreground">
                 {t.coder}
-              </h1>
+              </h2>
             </div>
 
             {/* Paragraphes */}

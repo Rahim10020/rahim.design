@@ -20,15 +20,22 @@ export default function LearnCard({
           <img
             src={imageSrc}
             alt={imageAlt}
+            width={800}
+            height={400}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         ) : (
           //Placeholder
           <img
             src="/images/others/image_placeholder.svg"
-            alt="placeholder image"
+            alt=""
+            aria-hidden="true"
+            width={800}
+            height={400}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         )}
