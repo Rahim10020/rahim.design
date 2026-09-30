@@ -79,14 +79,14 @@ export default function ContactSection() {
             {/* Right col */}
             <nav aria-label="Socials" className="lg:col-span-3">
               <div className="flex flex-col items-center lg:items-end">
-                <ul className="flex flex-col items-center lg:items-start gap-element">
+                <ul className="flex flex-col items-center lg:items-start gap-8 lg:gap-6">
                   {SOCIALS.map((s) => (
                     <li key={s.label}>
                       <a
                         href={s.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-2xl md:text-3xl hover:underline underline-offset-4 "
+                        className="text-2xl hover:underline underline-offset-4 "
                       >
                         {s.label}
                       </a>
