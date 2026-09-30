@@ -86,9 +86,13 @@ export const ui = {
       fr: "Alors, on construit quoi ?",
       en: "So What are we Building ?",
     },
-    paragraph: {
+    leftParagraph: {
       fr: "Pas besoin d'avoir toutes les réponses. Viens avec l'idée, on partira de là.",
       en: "No need to have all the answers. Come up with the idea, we'll start there.",
+    },
+    centerParagraph: {
+      fr: "Développeur Web, concepteur UX/UI et freelance basé à Lomé/Togo.",
+      en: "Web developer, UX/UI designer and freelancer based at Lome/Togo.",
     },
     cta: { fr: "Démarrer une conversation", en: "Start a Conversation" },
   },
@@ -218,7 +222,8 @@ export function getUi(locale: SupportedLocale) {
     stepsSection: { title: pick(ui.stepsSection.title) },
     contactSection: {
       contactSectionTitle: pick(ui.contactSection.contactSectionTitle),
-      paragraph: pick(ui.contactSection.paragraph),
+      leftParagraph: pick(ui.contactSection.leftParagraph),
+      centerParagraph: pick(ui.contactSection.centerParagraph),
       cta: pick(ui.contactSection.cta),
     },
     footer: {
