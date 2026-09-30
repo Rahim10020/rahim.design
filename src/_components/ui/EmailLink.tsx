@@ -66,18 +66,18 @@ export default function EmailLink(props: EmailLinkProps) {
       type="button"
       onClick={handleCopy}
       className={twMerge(
-        "cursor-pointer hover:underline flex items-center gap-p2 bg-transparent p-0 border-0",
+        "cursor-pointer underline lg:no-underline lg:hover:underline flex items-center gap-2 bg-transparent p-0 border-0",
         className,
       )}
       aria-live="polite"
     >
-      <span className="text-xl md:text-2xl lg:text-3xl font-medium text-black-80">
+      <span className="text-2xl md:text-3xl font-medium text-foreground">
         {copied ? copiedLabel : label}
       </span>
       {copied ? (
-        <CheckIcon className="text-black-80 w-8 h-8" />
+        <CheckIcon className="text-foreground w-8 h-8" />
       ) : (
-        <CopyIcon className="text-black-80" />
+        <CopyIcon className="text-foreground" />
       )}
     </button>
   );
