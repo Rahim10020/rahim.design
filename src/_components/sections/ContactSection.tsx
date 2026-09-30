@@ -7,6 +7,7 @@ import {
 } from "../../routes";
 import { getUi } from "../../locales/ui";
 import { useLocale } from "../../lib/i18n";
+import Button from "../ui/Button";
 
 const EMAIL = "rahim100codeur@gmail.com";
 
@@ -46,8 +47,24 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-block lg:gap-major">
             {/* Left col */}
             <div className="lg:col-span-5">
-              <h2>{t.contactSectionTitle}</h2>
-              <p>{t.paragraph}</p>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.05]">
+                {t.contactSectionTitle}
+              </h2>
+              <p className="text-foreground leading-relaxed text-xl lg:text-2xl max-w-sm mx-auto lg:mx-0 ">
+                {t.paragraph}
+              </p>
+              <div className="mt-element">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                    {t.cta}
+                  </Button>
+                </a>
+              </div>
             </div>
             {/* Center col */}
             <div className="lg:col-span-4"></div>
