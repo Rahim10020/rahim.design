@@ -27,14 +27,14 @@ const MOBILE_CELLS: CellDef[] = [
 export default function ContactSection() {
   const t = getUi(useLocale()).contactSection;
   return (
-    <section className="flex w-full flex-col border-y border-foreground bg-background lg:h-[552px] lg:flex-row">
-      {/* MOBILE : bande blanc / jaune */}
+    <section className="flex w-full flex-col border-2 border-foreground bg-background lg:h-[552px] lg:flex-row">
+      {/* MOBILE */}
       <div
         aria-hidden
-        className="grid h-[30px] grid-cols-2 border-b border-foreground lg:hidden"
+        className="grid h-7.5 grid-cols-2 border-b-2 border-foreground lg:hidden"
       >
         <div />
-        <div className="border-l border-foreground bg-primary" />
+        <div className="border-l-2 border-foreground bg-primary" />
       </div>
 
       {/* DESKTOP : barre jaune + diagonale */}
