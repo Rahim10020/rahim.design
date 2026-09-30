@@ -75,7 +75,22 @@ export default function ContactSection() {
               </p>
             </div>
             {/* Right col */}
-            <div className="lg:col-span-3"></div>
+            <nav aria-label="Socials" className="lg:col-span-3">
+              <ul className="flex flex-col items-center lg:items-start gap-element">
+                {SOCIALS.map((s) => (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl md:text-3xl hover:underline underline-offset-4 "
+                    >
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
