@@ -52,7 +52,7 @@ export default function ContactSection() {
                 <h2 className="text-5xl md:text-6xl font-medium text-foreground leading-[1.05]">
                   {t.contactSectionTitle}
                 </h2>
-                <p className="text-foreground leading-relaxed text-xl max-w-sm mx-auto lg:mx-0 ">
+                <p className="text-foreground leading-relaxed text-xl max-w-xs lg:max-w-lg mx-auto lg:mx-0 ">
                   {t.leftParagraph}
                 </p>
               </div>
@@ -97,16 +97,16 @@ export default function ContactSection() {
             </nav>
           </div>
           {/* Bottom grids */}
-          <div className="mt-major">
+          <div className="mt-major lg:mt-0">
             <div
               role="presentation"
-              className="grid grid-cols-[1fr_48px_48px_96px] md:grid-cols-[1fr_96px_96px_220px]"
+              className="grid grid-cols-[1fr_48px_48px_300px] md:grid-cols-[1fr_96px_96px_220px]"
             >
               {/* Top overflow — hour */}
               <div />
-              <div className="border-l-2 border-foreground h-10 md:h-14" />
-              <div className="border-l-2 border-foreground h-10 md:h-14" />
-              <div className="border-l-2 border-foreground h-10 md:h-14 flex items-end justify-end pb-6">
+              <div className="border-l-2 border-foreground h-4 md:h-20" />
+              <div className="border-l-2 border-foreground h-4 md:h-20" />
+              <div className="border-l-2 border-foreground h-4 md:h-20 flex items-end justify-end pb-2 pr-4 lg:pr-0 lg:pb-6">
                 <p className="text-xl lg:text-2xl text-foreground tabular-nums leading-none">
                   {lomeTime}
                 </p>
@@ -115,18 +115,14 @@ export default function ContactSection() {
               {/* 4 horizontales — les verticales les traversent */}
               {[0, 1, 2, 3].map((row) => (
                 <div key={row} className="contents">
-                  <div className="border-t-2 border-foreground h-12 md:h-14" />
-                  <div className="border-t-2 border-l-2 border-foreground h-12 md:h-14" />
-                  <div className="border-t-2 border-l-2 border-foreground h-12 md:h-14" />
-                  <div className="border-t-2 border-l-2 border-foreground h-12 md:h-14" />
+                  <div className="border-t-2 border-foreground h-8 md:h-14" />
+                  <div className="border-t-2 border-l-2 border-foreground h-8 md:h-14" />
+                  <div className="border-t-2 border-l-2 border-foreground h-8 md:h-14" />
+                  <div className="border-t-2 border-l-2 border-foreground h-8 md:h-14" />
                 </div>
               ))}
 
               {/* Bottom overflow — vide, juste pour dépasser */}
-              <div className="h-8" />
-              <div className="border-l-2 border-foreground h-8 md:h-10" />
-              <div className="border-l-2 border-foreground h-8 md:h-10" />
-              <div className="border-l-2 border-foreground h-8 md:h-10" />
             </div>
           </div>
         </div>
