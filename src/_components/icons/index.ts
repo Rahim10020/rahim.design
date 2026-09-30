@@ -13,3 +13,5 @@ export { default as LinkedinIcon } from "./LinkedinIcon";
 export { default as WhatsappIcon } from "./WhatsappIcon";
 export { default as OpenLinkIcon } from "./OpenLinkIcon";
 export { default as AsteriskIcon } from "./AsteriskIcon";
+export { default as CheckIcon } from "./CheckIcon";
+export { default as CopyIcon } from "./CopyIcon";
