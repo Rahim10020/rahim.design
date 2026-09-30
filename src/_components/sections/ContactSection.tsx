@@ -96,6 +96,31 @@ export default function ContactSection() {
               </div>
             </nav>
           </div>
+          {/* Bottom grids */}
+          <div className="mt-major lg:mt-section">
+            <p
+              className="text-right text-lg text-foreground tabular-nums"
+              aria-live="off"
+            >
+              {lomeTime}
+            </p>
+            <div
+              role="presentation"
+              className="mt-tight border-t-2 border-foreground"
+            >
+              {[0, 1, 2, 3].map((row) => (
+                <div
+                  key={row}
+                  className="grid grid-cols-[1fr_48px_48px_96px] md:grid-cols-[1fr_64px_64px_160px] border-b-2 border-foreground h-12 md:h-14"
+                >
+                  <div />
+                  <div className="border-l-2 border-foreground" />
+                  <div className="border-l-2 border-foreground" />
+                  <div className="border-l-2 border-foreground" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
