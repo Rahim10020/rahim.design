@@ -27,21 +27,21 @@ const MOBILE_CELLS: CellDef[] = [
 export default function ContactSection() {
   const t = getUi(useLocale()).contactSection;
   return (
-    <section className="flex w-full flex-col border-2 border-foreground bg-background lg:h-[552px] lg:flex-row">
+    <section className="flex w-full flex-col border-2 border-foreground mt-0 lg:mt-16 bg-background lg:h-[650px] lg:flex-row">
       {/* MOBILE */}
       <div
         aria-hidden
         className="grid h-7.5 grid-cols-2 border-b-2 border-foreground lg:hidden"
       >
         <div />
-        <div className="border-l-2 border-foreground bg-primary" />
+        <div className="border-l-2 border-foreground bg-background-alt" />
       </div>
 
-      {/* DESKTOP : barre jaune + diagonale */}
-      <div className="hidden w-[34px] shrink-0 bg-foreground lg:block" />
+      {/* DESKTOP  */}
+      <div className="hidden w-8.5 shrink-0 bg-foreground lg:block" />
       <div
         aria-hidden
-        className="relative hidden w-[310px] shrink-0 border-r border-foreground text-foreground lg:block"
+        className="relative hidden w-77.5 shrink-0 border-r-2 border-foreground text-foreground lg:block"
       >
         <svg
           className="absolute inset-0 h-full w-full"
@@ -54,15 +54,15 @@ export default function ContactSection() {
             x2="100"
             y2="0"
             stroke="currentColor"
-            strokeWidth="1"
+            strokeWidth="2"
             vectorEffect="non-scaling-stroke"
           />
         </svg>
       </div>
 
-      {/* Contenu — texte du projet, décor de l'exemple */}
+      {/* Contenu */}
       <div className="flex flex-1 flex-col items-center justify-center px-7 py-16 text-center lg:py-0">
-        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-6xl">
+        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-7xl">
           {t.titleMobile}
         </h2>
 
