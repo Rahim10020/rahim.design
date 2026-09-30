@@ -44,24 +44,26 @@ export default function ContactSection() {
   return (
     <section className="w-full bg-background my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-8xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-block lg:gap-major">
             {/* Left col */}
             <div className="lg:col-span-5 text-center lg:text-left">
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.05]">
-                {t.contactSectionTitle}
-              </h2>
-              <p className="text-foreground leading-relaxed text-xl max-w-sm mx-auto lg:mx-0 ">
-                {t.leftParagraph}
-              </p>
-              <div className="mt-element">
+              <div className="flex flex-col gap-6 lg:gap-8">
+                <h2 className="text-5xl md:text-6xl font-medium text-foreground leading-[1.05]">
+                  {t.contactSectionTitle}
+                </h2>
+                <p className="text-foreground leading-relaxed text-xl max-w-sm mx-auto lg:mx-0 ">
+                  {t.leftParagraph}
+                </p>
+              </div>
+              <div className="mt-12">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex"
                 >
-                  <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                  <Button className="px-8 lg:px-10 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
                     {t.cta}
                   </Button>
                 </a>
@@ -76,20 +78,22 @@ export default function ContactSection() {
             </div>
             {/* Right col */}
             <nav aria-label="Socials" className="lg:col-span-3">
-              <ul className="flex flex-col items-center lg:items-start gap-element">
-                {SOCIALS.map((s) => (
-                  <li key={s.label}>
-                    <a
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-2xl md:text-3xl hover:underline underline-offset-4 "
-                    >
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col items-center lg:items-end">
+                <ul className="flex flex-col items-center lg:items-start gap-element">
+                  {SOCIALS.map((s) => (
+                    <li key={s.label}>
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-2xl md:text-3xl hover:underline underline-offset-4 "
+                      >
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </nav>
           </div>
         </div>
