@@ -48,7 +48,7 @@ export default function CellGrid({
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)",
+            "linear-gradient(to right, var(--foreground) 2px, transparent 1px), linear-gradient(to bottom, var(--foreground) 2px, transparent 1px)",
           backgroundSize: "var(--cell) var(--cell)",
         }}
       />

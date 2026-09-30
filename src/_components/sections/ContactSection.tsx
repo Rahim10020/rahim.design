@@ -7,9 +7,9 @@ import { getUi } from "../../locales/ui";
 // col / row = position (départ à 0), colSpan / rowSpan = taille en cases
 // colSpan: "end" = jusqu'au bord droit du conteneur
 const DESKTOP_CELLS: CellDef[] = [
-  { col: 0, row: 3, colSpan: 2, color: "var(--primary)" },
-  { col: 1, row: 7, color: "var(--accent)" },
-  { col: 4, row: 8, color: "var(--accent-c)" },
+  { col: 0, row: 3, colSpan: 2, color: "var(--background-alt)" },
+  { col: 1, row: 7, color: "var(--foreground)" },
+  { col: 4, row: 8, color: "var(--foreground)" },
 ];
 
 const MOBILE_CELLS: CellDef[] = [
@@ -42,27 +42,11 @@ export default function ContactSection() {
       <div
         aria-hidden
         className="relative hidden w-77.5 shrink-0 border-r-2 border-foreground text-foreground lg:block"
-      >
-        <svg
-          className="absolute inset-0 h-full w-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 100 100"
-        >
-          <line
-            x1="0"
-            y1="100"
-            x2="100"
-            y2="0"
-            stroke="currentColor"
-            strokeWidth="2"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
-      </div>
+      ></div>
 
       {/* Contenu */}
       <div className="flex flex-1 flex-col items-center justify-center px-7 py-16 text-center lg:py-0">
-        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-8xl">
+        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-7xl">
           {t.titleMobile}
         </h2>
 
