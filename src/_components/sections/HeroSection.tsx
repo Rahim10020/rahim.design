@@ -1,8 +1,9 @@
 import Button from "../ui/Button";
-import { WHATSAPP_URL } from "../../routes";
+import { ROUTES } from "../../routes";
 import Words from "../ui/for-animation/Words";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   const t = getUi(useLocale()).hero;
@@ -29,16 +30,11 @@ export default function HeroSection() {
                   </p>
 
                   <div>
-                    <a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex"
-                    >
+                    <Link to={ROUTES.CONTACT} className="inline-flex">
                       <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                         {t.cta}
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

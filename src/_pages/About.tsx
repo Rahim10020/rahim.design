@@ -1,5 +1,6 @@
 import Button from "../_components/ui/Button";
-import { WHATSAPP_URL } from "../routes";
+import { ROUTES } from "../routes";
+import { Link } from "react-router-dom";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import PieChart from "../_components/ui/others/PieChart";
 import { useLocale } from "../lib/i18n";
@@ -248,16 +249,11 @@ export default function AboutPage() {
                 {t.closingSub}
               </p>
               <div className="text-center mt-16">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex"
-                >
+                <Link to={ROUTES.CONTACT} className="inline-flex">
                   <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                     {t.cta}
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

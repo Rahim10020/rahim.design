@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   GITHUB_URL,
   INSTAGRAM_URL,
   LINKEDIN_URL,
+  ROUTES,
   WHATSAPP_URL,
 } from "../../routes";
 import { getUi } from "../../locales/ui";
@@ -57,16 +59,11 @@ export default function ContactSection() {
                 </p>
               </div>
               <div className="mt-12">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex"
-                >
+                <Link to={ROUTES.CONTACT} className="inline-flex">
                   <Button className="px-8 lg:px-10 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
                     {t.cta}
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
             {/* Center col */}

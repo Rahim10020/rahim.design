@@ -149,6 +149,11 @@ export const ui = {
       fr: "Services design UX/UI, développement frontend et amélioration de produits par Rahim ALI.",
       en: "UX/UI design, frontend development, and product improvement services by Rahim ALI.",
     },
+    contactTitle: { fr: "Contact | Rahim ALI", en: "Contact | Rahim ALI" },
+    contactDescription: {
+      fr: "Démarrons ton projet : contacte Rahim ALI pour design UX/UI et développement frontend.",
+      en: "Let's start your project: contact Rahim ALI for UX/UI design and frontend development.",
+    },
     projectsTitle: { fr: "Projets | Rahim ALI", en: "Projects | Rahim ALI" },
     projectsDescription: {
       fr: "Sélection de projets design UX/UI et développement frontend par Rahim ALI.",
@@ -264,6 +269,8 @@ export function getUi(locale: SupportedLocale) {
       aboutDescription: pick(ui.seo.aboutDescription),
       servicesTitle: pick(ui.seo.servicesTitle),
       servicesDescription: pick(ui.seo.servicesDescription),
+      contactTitle: pick(ui.seo.contactTitle),
+      contactDescription: pick(ui.seo.contactDescription),
       projectsTitle: pick(ui.seo.projectsTitle),
       projectsDescription: pick(ui.seo.projectsDescription),
       learnTitle: pick(ui.seo.learnTitle),

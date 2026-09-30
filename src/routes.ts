@@ -2,6 +2,7 @@ export const ROUTES = {
   HOME: "/",
   ABOUT: "/about",
   SERVICES: "/services",
+  CONTACT: "/contact",
   PROJECTS: {
     LIST: "/projects",
     DETAIL: "/projects/:slug",
@@ -32,6 +33,7 @@ export const getProjectPath = (slug: string) => `/projects/${slug}`;
 export const getLearnPath = (slug: string) => `/learn/${slug}`;
 export const getAboutPath = () => ROUTES.ABOUT;
 export const getServicesPath = () => ROUTES.SERVICES;
+export const getContactPath = () => ROUTES.CONTACT;
 
 export const getLearnListPath = (type?: LearnType) =>
   type ? `/learn?type=${type}` : ROUTES.LEARN.LIST;

@@ -3,7 +3,7 @@ import Button from "../_components/ui/Button";
 import KnowMeCard from "../_components/ui/cards/KnowMeCard";
 import ProjectCard from "../_components/ui/cards/ProjectCard";
 import { getProjects } from "../data/project";
-import { getProjectPath, ROUTES, WHATSAPP_URL } from "../routes";
+import { getProjectPath, ROUTES } from "../routes";
 import { getWorkWithMe } from "../data/workwithme";
 import { useLocale } from "../lib/i18n";
 import { getServices } from "../locales/services";
@@ -197,16 +197,11 @@ export default function ServicesPage() {
               </p>
               {/* Buttons */}
               <div className="flex flex-col lg:flex-row items-center gap-4">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex"
-                >
+                <Link to={ROUTES.CONTACT} className="inline-flex">
                   <Button className="px-6 py-4 text-xl font-medium bg-primary border-2 border-foreground text-foreground">
                     {t.ctaTalk}
                   </Button>
-                </a>
+                </Link>
                 <Link to={ROUTES.PROJECTS.LIST} className="inline-flex">
                   <Button className="px-6 py-4 text-xl font-medium bg-white border-2 border-foreground text-foreground">
                     {t.ctaProjects}
@@ -508,16 +503,11 @@ export default function ServicesPage() {
                 ))}
               </div>
               <div className="mt-24 text-center">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex"
-                >
+                <Link to={ROUTES.CONTACT} className="mt-8 inline-flex">
                   <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                     {t.ctaTalk}
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

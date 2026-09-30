@@ -30,7 +30,7 @@ const SITE_URL = (
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pub = join(root, "public");
 
-const STATIC_ROUTES = ["/", "/about", "/services", "/projects", "/learn"];
+const STATIC_ROUTES = ["/", "/about", "/services", "/contact", "/projects", "/learn"];
 
 function slugsIn(dir) {
   try {

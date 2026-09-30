@@ -52,6 +52,13 @@ function getMetadata(pathname: string, locale: SupportedLocale): PageMetadata {
     };
   }
 
+  if (pathname === "/contact") {
+    return {
+      title: t.contactTitle,
+      description: t.contactDescription,
+    };
+  }
+
   if (pathname === "/projects") {
     return {
       title: t.projectsTitle,

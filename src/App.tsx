@@ -10,6 +10,7 @@ const ProjectsList = lazy(() => import("./_pages/projects/index"));
 const ProjectDetail = lazy(() => import("./_pages/projects/[slug]"));
 const LearnList = lazy(() => import("./_pages/learn/index"));
 const LearnArticle = lazy(() => import("./_pages/learn/[slug]"));
+const ContactPage = lazy(() => import("./_pages/Contact"));
 const NotFoundPage = lazy(() => import("./_pages/NotFound"));
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: ROUTES.PROJECTS.DETAIL, element: <ProjectDetail /> },
       { path: ROUTES.LEARN.LIST, element: <LearnList /> },
       { path: ROUTES.LEARN.ARTICLE, element: <LearnArticle /> },
+      { path: ROUTES.CONTACT, element: <ContactPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },
