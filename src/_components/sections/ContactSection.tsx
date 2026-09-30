@@ -88,9 +88,7 @@ export default function ContactSection() {
 
             {/* Email */}
             <div className="flex flex-col gap-2 items-center">
-              <p className="text-foreground text-xl font-normal">
-                {t.writeTo}
-              </p>
+              <p className="text-foreground text-xl font-normal">{t.writeTo}</p>
               <a
                 href="mailto:rahim100codeur@gmail.com"
                 className="underline cursor-pointer text-foreground text-2xl decoration-2 break-all"
@@ -107,13 +105,17 @@ export default function ContactSection() {
             {/* 1st line */}
             <div className="flex justify-center">
               <div className="flex justify-start max-w-md">
-                <h2 className="text-foreground text-4xl md:text-8xl">{t.titleA}</h2>
+                <h2 className="text-foreground text-4xl md:text-8xl">
+                  {t.titleA}
+                </h2>
               </div>
             </div>
             {/* 2nd line */}
             <div className="flex justify-end mx-auto max-w-md">
               <div className="flex justify-end max-w-xs">
-                <h2 className="text-foreground text-4xl md:text-8xl">{t.titleB}</h2>
+                <h2 className="text-foreground text-4xl md:text-8xl">
+                  {t.titleB}
+                </h2>
               </div>
             </div>
             {/* 3rd line */}
