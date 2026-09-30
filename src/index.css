@@ -13,6 +13,7 @@
   --accent-b: #f4ed55;
   --accent-c: #1982c4;
   --accent-d: #f9c74f;
+  --accent-e: #00a868;
 
   /* Typographie */
   --sans: "Sniglet", sans-serif;
@@ -134,6 +135,7 @@ footer li {
   --color-accent-b: var(--accent-b);
   --color-accent-c: var(--accent-c);
   --color-accent-d: var(--accent-d);
+  --color-accent-e: var(--accent-e);
 
   --spacing-micro: var(--space-micro);
   --spacing-tight: var(--space-tight);

@@ -1,200 +1,100 @@
-import {
-  WHATSAPP_URL,
-  GITHUB_URL,
-  LINKEDIN_URL,
-  INSTAGRAM_URL,
-} from "../../routes";
-import {
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  WhatsappIcon,
-} from "../icons";
+import { WHATSAPP_URL } from "../../routes";
 import Button from "../ui/Button";
+import CellGrid, { type CellDef } from "../ui/CellGrid";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
+
+// col / row = position (départ à 0), colSpan / rowSpan = taille en cases
+// colSpan: "end" = jusqu'au bord droit du conteneur
+const DESKTOP_CELLS: CellDef[] = [
+  { col: 0, row: 3, colSpan: 2, color: "var(--primary)" },
+  { col: 1, row: 7, color: "var(--accent)" },
+  { col: 4, row: 8, color: "var(--accent-c)" },
+];
+
+const MOBILE_CELLS: CellDef[] = [
+  { col: 8, row: 0, color: "var(--foreground)" },
+  { col: 1, row: 1, rowSpan: 2, color: "var(--foreground)" },
+  {
+    col: 4,
+    row: 1,
+    rowSpan: 2,
+    colSpan: "end",
+    color: "var(--background-alt)",
+  },
+];
 
 export default function ContactSection() {
   const t = getUi(useLocale()).contactSection;
   return (
-    <section className="flex w-full my-section bg-background">
-      <div className="max-w-350 mx-auto flex w-full px-page-x">
-        <div className="mx-auto w-full max-w-6xl mt-block">
-          {/* ============================================================
-              MOBILE (< lg) — tout centré, ordre simplifié
-              ============================================================ */}
-          <div className="lg:hidden flex flex-col items-center gap-major text-center">
-            {/* Titre complet */}
-            <h2 className="text-foreground text-5xl font-medium max-w-xs">
-              {t.titleMobile}
-            </h2>
-
-            {/* Paragraphe */}
-            <p className="text-foreground text-2xl leading-relaxed max-w-sm">
-              {t.paragraph}
-            </p>
-
-            {/* Bouton */}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-sm"
-            >
-              <Button className="w-full px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
-                {t.cta}
-              </Button>
-            </a>
-
-            {/* Icônes sociales */}
-            <div className="flex items-center justify-center gap-block">
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="hover:text-foreground-alt-a transition-all duration-300"
-              >
-                <GithubIcon size={46} />
-              </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="hover:text-foreground-alt-a transition-all duration-300"
-              >
-                <InstagramIcon size={46} />
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="hover:text-foreground-alt-a transition-all duration-300"
-              >
-                <LinkedinIcon size={46} />
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="hover:text-foreground-alt-a transition-all duration-300"
-              >
-                <WhatsappIcon size={46} />
-              </a>
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col gap-2 items-center">
-              <p className="text-foreground text-xl font-normal">{t.writeTo}</p>
-              <a
-                href="mailto:rahim100codeur@gmail.com"
-                className="underline cursor-pointer text-foreground text-2xl decoration-2 break-all"
-              >
-                rahim100codeur@gmail.com
-              </a>
-            </div>
-          </div>
-
-          {/* ============================================================
-              DESKTOP (lg+)
-              ============================================================ */}
-          <div className="hidden lg:block pb-section">
-            {/* 1st line */}
-            <div className="flex justify-center">
-              <div className="flex justify-start max-w-md">
-                <h2 className="text-foreground text-4xl md:text-8xl">
-                  {t.titleA}
-                </h2>
-              </div>
-            </div>
-            {/* 2nd line */}
-            <div className="flex justify-end mx-auto max-w-md">
-              <div className="flex justify-end max-w-xs">
-                <h2 className="text-foreground text-4xl md:text-8xl">
-                  {t.titleB}
-                </h2>
-              </div>
-            </div>
-            {/* 3rd line */}
-            <div className="flex items-end justify-between max-w-6xl mx-auto mb-major">
-              <div className="flex flex-col gap-comfortable">
-                <div className="flex items-center justify-start gap-block">
-                  <a
-                    href={GITHUB_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    className="hover:text-foreground-alt-a transition-all duration-300"
-                  >
-                    <GithubIcon size={46} />
-                  </a>
-                  <a
-                    href={LINKEDIN_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="hover:text-foreground-alt-a transition-all duration-300"
-                  >
-                    <LinkedinIcon size={46} />
-                  </a>
-                  <a
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="hover:text-foreground-alt-a transition-all duration-300"
-                  >
-                    <InstagramIcon size={46} />
-                  </a>
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="WhatsApp"
-                    className="hover:text-foreground-alt-a transition-all duration-300"
-                  >
-                    <WhatsappIcon size={46} />
-                  </a>
-                </div>
-                <p className="text-foreground text-2xl leading-relaxed max-w-sm">
-                  {t.paragraph}
-                </p>
-              </div>
-              <h2 className="flex flex-col items-end text-foreground text-4xl md:text-8xl">
-                <span>{t.titleC}</span>
-                <span>{t.titleD}</span>
-              </h2>
-            </div>
-            {/* 4th line */}
-            <div className="flex min-w-0 max-w-6xl mx-auto flex-wrap items-center justify-between gap-comfortable">
-              <div className="min-w-0">
-                <p className="text-foreground text-xl font-normal">
-                  {t.writeTo}
-                </p>
-                <a
-                  href="mailto:rahim100codeur@gmail.com"
-                  className="hover:underline cursor-pointer text-foreground text-2xl decoration-2"
-                >
-                  rahim100codeur@gmail.com
-                </a>
-              </div>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-flex w-full min-w-0 max-w-full sm:w-auto"
-              >
-                <Button className="w-full max-w-full whitespace-normal px-12 py-4 text-center text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground sm:w-auto">
-                  {t.cta}
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
+    <section className="flex w-full flex-col border-y border-foreground bg-background lg:h-[552px] lg:flex-row">
+      {/* MOBILE : bande blanc / jaune */}
+      <div
+        aria-hidden
+        className="grid h-[30px] grid-cols-2 border-b border-foreground lg:hidden"
+      >
+        <div />
+        <div className="border-l border-foreground bg-primary" />
       </div>
+
+      {/* DESKTOP : barre jaune + diagonale */}
+      <div className="hidden w-[34px] shrink-0 bg-foreground lg:block" />
+      <div
+        aria-hidden
+        className="relative hidden w-[310px] shrink-0 border-r border-foreground text-foreground lg:block"
+      >
+        <svg
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 100"
+        >
+          <line
+            x1="0"
+            y1="100"
+            x2="100"
+            y2="0"
+            stroke="currentColor"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+
+      {/* Contenu — texte du projet, décor de l'exemple */}
+      <div className="flex flex-1 flex-col items-center justify-center px-7 py-16 text-center lg:py-0">
+        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-6xl">
+          {t.titleMobile}
+        </h2>
+
+        <p className="text-foreground mt-comfortable text-2xl leading-relaxed max-w-sm">
+          {t.paragraph}
+        </p>
+
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-block flex w-full max-w-sm justify-center lg:w-auto lg:max-w-none"
+        >
+          <Button className="w-full px-12 py-4 text-center text-xl md:text-2xl font-medium lg:w-auto">
+            {t.cta}
+          </Button>
+        </a>
+      </div>
+
+      {/* MOBILE : grille de 3 rangées, pleine largeur */}
+      <CellGrid
+        cells={MOBILE_CELLS}
+        className="border-t [--cell:28px] lg:hidden"
+        style={{ height: "calc(var(--cell) * 3 + 1px)" }}
+      />
+
+      {/* DESKTOP : grille verticale à droite */}
+      <CellGrid
+        cells={DESKTOP_CELLS}
+        className="hidden shrink-0 border-l [--cell:46px] lg:block"
+        style={{ width: "calc(var(--cell) * 8)" }}
+      />
     </section>
   );
 }
