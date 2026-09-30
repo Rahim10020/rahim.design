@@ -5,6 +5,8 @@ import {
   LINKEDIN_URL,
   WHATSAPP_URL,
 } from "../../routes";
+import { getUi } from "../../locales/ui";
+import { useLocale } from "../../lib/i18n";
 
 const EMAIL = "rahim100codeur@gmail.com";
 
@@ -34,13 +36,19 @@ function useLomeTime() {
 }
 
 export default function ContactSection() {
+  const t = getUi(useLocale()).contactSection;
+  const lomeTime = useLomeTime();
+
   return (
     <section className="w-full bg-background my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-block">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-block lg:gap-major">
             {/* Left col */}
-            <div className="lg:col-span-5"></div>
+            <div className="lg:col-span-5">
+              <h2>{t.contactSectionTitle}</h2>
+              <p>{t.paragraph}</p>
+            </div>
             {/* Center col */}
             <div className="lg:col-span-4"></div>
             {/* Right col */}

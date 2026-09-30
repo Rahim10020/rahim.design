@@ -82,20 +82,15 @@ export const ui = {
     },
   },
   contactSection: {
-    titleMobile: {
+    contactSectionTitle: {
       fr: "Alors, on construit quoi ?",
       en: "So What are we Building ?",
     },
-    titleA: { fr: "Alors,", en: "So" },
-    titleB: { fr: "Quoi", en: "What" },
-    titleC: { fr: "construisons-", en: "are we" },
-    titleD: { fr: "nous ?", en: "Building ?" },
     paragraph: {
       fr: "Pas besoin d'avoir toutes les réponses. Viens avec l'idée, on partira de là.",
       en: "No need to have all the answers. Come up with the idea, we'll start there.",
     },
     cta: { fr: "Démarrer une conversation", en: "Start a Conversation" },
-    writeTo: { fr: "Écris directement à :", en: "Write directly to:" },
   },
   footer: {
     rights: { fr: "Tous droits réservés", en: "All Rights Reserved" },
@@ -222,14 +217,9 @@ export function getUi(locale: SupportedLocale) {
     },
     stepsSection: { title: pick(ui.stepsSection.title) },
     contactSection: {
-      titleMobile: pick(ui.contactSection.titleMobile),
-      titleA: pick(ui.contactSection.titleA),
-      titleB: pick(ui.contactSection.titleB),
-      titleC: pick(ui.contactSection.titleC),
-      titleD: pick(ui.contactSection.titleD),
+      contactSectionTitle: pick(ui.contactSection.contactSectionTitle),
       paragraph: pick(ui.contactSection.paragraph),
       cta: pick(ui.contactSection.cta),
-      writeTo: pick(ui.contactSection.writeTo),
     },
     footer: {
       rights: pick(ui.footer.rights),
