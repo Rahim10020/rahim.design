@@ -100,7 +100,7 @@ export default function ContactSection() {
           <div className="mt-major">
             <div
               role="presentation"
-              className="grid grid-cols-[1fr_48px_48px_96px] md:grid-cols-[1fr_64px_64px_160px]"
+              className="grid grid-cols-[1fr_48px_48px_96px] md:grid-cols-[1fr_96px_96px_220px]"
             >
               {/* Top overflow — hour */}
               <div />
