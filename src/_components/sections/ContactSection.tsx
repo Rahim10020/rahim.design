@@ -37,7 +37,16 @@ export default function ContactSection() {
   return (
     <section className="w-full bg-background my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
-        <div className="mx-auto max-w-6xl"></div>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-block">
+            {/* Left col */}
+            <div className="lg:col-span-5"></div>
+            {/* Center col */}
+            <div className="lg:col-span-4"></div>
+            {/* Right col */}
+            <div className="lg:col-span-3"></div>
+          </div>
+        </div>
       </div>
     </section>
   );
