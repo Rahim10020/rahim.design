@@ -99,7 +99,7 @@ export default function ContactSection() {
           {/* Bottom grids */}
           <div className="mt-major lg:mt-section">
             <p
-              className="text-right text-lg text-foreground tabular-nums"
+              className="text-right text-2xl text-foreground tabular-nums"
               aria-live="off"
             >
               {lomeTime}

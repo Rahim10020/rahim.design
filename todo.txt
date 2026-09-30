@@ -5,3 +5,6 @@
 
 -- Page de detail d'un projet: modifier chaque markdown apres avoir polish tous les 
     projets a mettre dans le portfolio
+-- corriger lome time. l'heure bouge a chaque fois que les secondes passent. 
+    je veux dire le layout. si c'est possible de le fixer afin qu'il ne bouge plus tu me fais 
+    un plan et on mets ca en place. D'abord dis moi si tu comprends ce que je veux dire.
