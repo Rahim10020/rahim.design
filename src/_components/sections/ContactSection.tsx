@@ -62,7 +62,7 @@ export default function ContactSection() {
 
       {/* Contenu */}
       <div className="flex flex-1 flex-col items-center justify-center px-7 py-16 text-center lg:py-0">
-        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-7xl">
+        <h2 className="text-foreground text-5xl font-medium leading-tight max-w-xl lg:text-8xl">
           {t.titleMobile}
         </h2>
 
@@ -76,7 +76,7 @@ export default function ContactSection() {
           rel="noopener noreferrer"
           className="mt-block flex w-full max-w-sm justify-center lg:w-auto lg:max-w-none"
         >
-          <Button className="w-full px-12 py-4 text-center text-xl md:text-2xl font-medium lg:w-auto">
+          <Button className="w-full px-10 py-4 text-center text-xl md:text-2xl font-medium lg:w-auto">
             {t.cta}
           </Button>
         </a>
