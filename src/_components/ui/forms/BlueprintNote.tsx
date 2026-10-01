@@ -11,23 +11,23 @@ export default function BlueprintNote() {
       />
 
       {/* Rangée 1 */}
-      <div className="flex h-[88px] items-center border-b-2 border-foreground pl-[90px]">
-        <p className="whitespace-nowrap pl-8 text-4xl">Don't want to</p>
+      <div className="flex h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
+        <p className="whitespace-nowrap pl-8 text-3xl">Don't want to</p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
-      <div className="flex h-[88px] items-stretch border-b-2 border-foreground pl-[90px]">
+      <div className="flex h-[88px] items-stretch border-b-2 border-foreground-alt-a pl-[90px]">
         <div
           aria-hidden
-          className="w-[100px] shrink-0 border-r-2 border-foreground"
+          className="w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
         />
-        <p className="flex items-center whitespace-nowrap pl-6 text-4xl">
+        <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
           fill out the form?
         </p>
       </div>
 
       {/* Rangée 3 */}
-      <div className="flex h-[88px] items-center border-b-2 border-foreground pl-[90px]">
+      <div className="flex h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
         <p className="whitespace-nowrap pl-5 text-xl">Say hello on WhatsApp.</p>
       </div>
 
@@ -38,7 +38,7 @@ export default function BlueprintNote() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-[240px] items-center gap-12 border-2 border-foreground py-3 pl-10 text-xl transition-colors hover:bg-background-alt"
+          className="flex w-[240px] items-center gap-12 border-2 border-foreground-alt-a py-3 pl-10 text-xl transition-colors hover:bg-background-alt"
         >
           Whatsapp <ArrowRightIcon size={20} />
         </a>

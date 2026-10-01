@@ -15,7 +15,7 @@ export default function ContactPage() {
               </h1>
               <BlueprintNote />
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-12">
               <EmailLink
                 label="rahim100codeur@gmail.com"
                 className="underline underline-offset-8 decoration-2"

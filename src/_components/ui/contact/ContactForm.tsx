@@ -7,7 +7,6 @@ import SketchTextarea from "../forms/SketchTextarea";
 const PROJECT_TYPES = [
   "A web product",
   "Improve something existing",
-  "An experience/interface",
   "A site/landing page",
   "I do not know yet",
 ];
