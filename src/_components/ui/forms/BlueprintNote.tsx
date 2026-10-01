@@ -12,7 +12,7 @@ export default function BlueprintNote() {
 
       {/* Rangée 1 */}
       <div className="flex h-[88px] items-center border-b-2 border-foreground pl-[90px]">
-        <p className="whitespace-nowrap pl-8 text-3xl">Don't want to</p>
+        <p className="whitespace-nowrap pl-8 text-4xl">Don't want to</p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
@@ -21,7 +21,7 @@ export default function BlueprintNote() {
           aria-hidden
           className="w-[100px] shrink-0 border-r-2 border-foreground"
         />
-        <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
+        <p className="flex items-center whitespace-nowrap pl-6 text-4xl">
           fill out the form?
         </p>
       </div>
