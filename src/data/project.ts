@@ -1,6 +1,7 @@
 import {
   getProjects as getProjectsFromContent,
   getProject as getProjectFromContent,
+  getProjectAsync as getProjectAsyncFromContent,
   PROJECT_CATEGORIES,
   type Project,
   type ProjectCategory,
@@ -28,6 +29,13 @@ export function getProjectsByFilter(
 
 export function getProjectBySlug(slug: string, locale: SupportedLocale = "fr") {
   return getProjectFromContent(slug, locale);
+}
+
+export function getProjectBySlugAsync(
+  slug: string,
+  locale: SupportedLocale = "fr",
+) {
+  return getProjectAsyncFromContent(slug, locale);
 }
 
 // Compatibilité : valeur par défaut FR pour les imports statiques restants

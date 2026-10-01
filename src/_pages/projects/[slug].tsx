@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
 import {
@@ -6,16 +7,40 @@ import {
   AsteriskIcon,
   OpenLinkIcon,
 } from "../../_components/icons";
-import { getProject, getProjects } from "../../lib/content";
+import { getProjectAsync, getProjects } from "../../lib/content";
+import type { Project } from "../../lib/content";
 import { getProjectPath, ROUTES } from "../../routes";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
+
+type ProjectEntry = { meta: Project; content: string };
 
 export default function ProjectDetail() {
   const locale = useLocale();
   const t = getUi(locale).projectDetail;
   const { slug } = useParams();
-  const project = getProject(slug ?? "", locale);
+  const [project, setProject] = useState<ProjectEntry | null | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    getProjectAsync(slug ?? "", locale).then((entry) => {
+      if (!cancelled) setProject(entry ?? null);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, locale]);
+
+  if (project === undefined || (project && project.meta.slug !== slug)) {
+    return (
+      <div className="mx-auto max-w-3xl px-6 py-20" aria-busy="true">
+        <p className="text-xl text-foreground-alt">…</p>
+      </div>
+    );
+  }
+
   if (!project) return <NotFound />;
   const projects = getProjects(locale);
   const currentIndex = projects.findIndex(

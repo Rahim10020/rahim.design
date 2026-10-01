@@ -1,17 +1,42 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
 import ContentImages from "../../_components/ui/others/ContentImages";
 import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
-import { getLearnArticle } from "../../lib/content";
+import { getLearnArticleAsync } from "../../lib/content";
+import type { ArticleFrontmatter } from "../../lib/content";
 import { ROUTES } from "../../routes";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
+
+type ArticleEntry = { meta: ArticleFrontmatter; content: string };
 
 export default function LearnArticle() {
   const locale = useLocale();
   const t = getUi(locale).learnDetail;
   const { slug } = useParams();
-  const article = getLearnArticle(slug ?? "", locale);
+  const [article, setArticle] = useState<ArticleEntry | null | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    getLearnArticleAsync(slug ?? "", locale).then((entry) => {
+      if (!cancelled) setArticle(entry ?? null);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, locale]);
+
+  if (article === undefined || (article && article.meta.slug !== slug)) {
+    return (
+      <div className="mx-auto max-w-3xl px-6 py-20" aria-busy="true">
+        <p className="text-xl text-foreground-alt">…</p>
+      </div>
+    );
+  }
+
   if (!article) return <NotFound />;
 
   return (

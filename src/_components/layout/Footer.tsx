@@ -18,6 +18,7 @@ const getServerDesktopMediaQuerySnapshot = () => false;
 
 export default function Footer() {
   const t = getUi(useLocale()).footer;
+  const year = new Date().getFullYear();
   const isDesktop = useSyncExternalStore(
     subscribeToDesktopMediaQuery,
     getDesktopMediaQuerySnapshot,
@@ -43,7 +44,7 @@ export default function Footer() {
                 <circle cx="12" cy="12" r="9.5" />
                 <path d="M15.5 9.03A4.5 4.5 0 0 0 8.5 12a4.5 4.5 0 0 0 7 3.47" />
               </svg>
-              26
+              {year}
             </span>
             <span>{t.rights}</span>
           </div>
