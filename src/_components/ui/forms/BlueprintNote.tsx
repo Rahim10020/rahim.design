@@ -12,9 +12,7 @@ export default function BlueprintNote() {
 
       {/* Rangée 1 */}
       <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[40px] lg:pl-[90px]">
-        <p className="whitespace-nowrap pl-8 text-3xl lg:text-3xl">
-          Don't want to
-        </p>
+        <p className="whitespace-nowrap pl-8 text-3xl">Don't want to</p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
@@ -23,14 +21,16 @@ export default function BlueprintNote() {
           aria-hidden
           className="w-[38px] lg:w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
         />
-        <p className="flex items-center whitespace-nowrap pl-6 text-3xl lg:text-3xl">
+        <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
           fill out the form?
         </p>
       </div>
 
       {/* Rangée 3 */}
       <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[30px] lg:pl-[90px]">
-        <p className="whitespace-nowrap pl-5 text-xl">Say hello on WhatsApp.</p>
+        <p className="whitespace-nowrap pl-5 text-xl text-foreground-alt-a">
+          Say hello on WhatsApp.
+        </p>
       </div>
 
       {/* Connecteur + bouton */}

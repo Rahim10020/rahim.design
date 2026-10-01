@@ -8,9 +8,14 @@ export default function ContactPage() {
     <section className="w-full bg-background min-h-screen">
       <div className="max-w-350 mx-auto px-page-x pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-8xl">
-          <h1 className="text-4xl md:text-5xl font-medium text-foreground max-w-md">
-            Let's start with your project.
-          </h1>
+          <div className="flex items-start justify-between">
+            <h1 className="text-4xl md:text-5xl font-medium text-foreground max-w-md">
+              Let's start with your project.
+            </h1>
+            <h2 className="hidden md:block text-2xl lg:text-4xl font-medium text-foreground">
+              CONTACT
+            </h2>
+          </div>
 
           <div className="mt-6 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Formulaire : premier sur mobile, deuxième sur desktop */}
