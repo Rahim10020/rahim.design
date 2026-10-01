@@ -129,7 +129,7 @@ function useLiquidTargets(disabled: boolean) {
   return ref;
 }
 
-function Fills() {
+function Fills({ fillClassName = "bg-primary" }: { fillClassName?: string }) {
   return (
     <span
       aria-hidden="true"
@@ -137,12 +137,12 @@ function Fills() {
     >
       <span
         data-liquid-fill
-        className="liquid-fill absolute inset-0 bg-primary"
+        className={`liquid-fill absolute inset-0 ${fillClassName}`}
         style={{ transform: "translateY(101%)" }}
       />
       <span
         data-liquid-fill
-        className="liquid-fill absolute inset-0 bg-primary"
+        className={`liquid-fill absolute inset-0 ${fillClassName}`}
         style={{ transform: "translateY(101%)" }}
       />
     </span>
@@ -152,6 +152,10 @@ function Fills() {
 type HoverProps = {
   active?: boolean;
   className?: string;
+  /** Couleur de la vague liquide (défaut: bg-primary comme la nav). */
+  fillClassName?: string;
+  /** Classes du contenu interne (défaut: gap-1 comme la nav). */
+  contentClassName?: string;
   children: ReactNode;
 };
 
@@ -159,6 +163,8 @@ type HoverProps = {
 export function LiquidHoverLink({
   active = false,
   className = "",
+  fillClassName = "bg-primary",
+  contentClassName = "gap-1",
   children,
   ...rest
 }: HoverProps & LinkProps) {
@@ -169,8 +175,10 @@ export function LiquidHoverLink({
       ref={targetRef as never}
       className={`relative block overflow-hidden isolate ${className}`}
     >
-      {!active && <Fills />}
-      <span className="relative z-10 flex items-center gap-1">{children}</span>
+      {!active && <Fills fillClassName={fillClassName} />}
+      <span className={`relative z-10 flex items-center ${contentClassName}`}>
+        {children}
+      </span>
     </Link>
   );
 }
@@ -179,6 +187,8 @@ export function LiquidHoverLink({
 export function LiquidHoverAnchor({
   active = false,
   className = "",
+  fillClassName = "bg-primary",
+  contentClassName = "gap-1",
   children,
   ...rest
 }: HoverProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
@@ -189,8 +199,10 @@ export function LiquidHoverAnchor({
       ref={targetRef as never}
       className={`relative block overflow-hidden isolate ${className}`}
     >
-      {!active && <Fills />}
-      <span className="relative z-10 flex items-center gap-1">{children}</span>
+      {!active && <Fills fillClassName={fillClassName} />}
+      <span className={`relative z-10 flex items-center ${contentClassName}`}>
+        {children}
+      </span>
     </a>
   );
 }
@@ -199,6 +211,7 @@ export function LiquidHoverAnchor({
 export function LiquidHoverButton({
   active = false,
   className = "",
+  fillClassName = "bg-primary",
   children,
   ...rest
 }: HoverProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
@@ -210,7 +223,7 @@ export function LiquidHoverButton({
       type={rest.type ?? "button"}
       className={`relative overflow-hidden isolate ${className}`}
     >
-      {!active && <Fills />}
+      {!active && <Fills fillClassName={fillClassName} />}
       <span className="relative z-10">{children}</span>
     </button>
   );

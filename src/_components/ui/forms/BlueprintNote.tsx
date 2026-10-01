@@ -2,6 +2,7 @@ import { WHATSAPP_URL } from "../../../routes";
 import ArrowRightIcon from "../../icons/ArrowRightIcon";
 import { useLocale } from "../../../lib/i18n";
 import { getContact } from "../../../locales/contact";
+import { LiquidHoverAnchor } from "../LiquidHover";
 
 export default function BlueprintNote() {
   const t = getContact(useLocale()).blueprint;
@@ -40,14 +41,16 @@ export default function BlueprintNote() {
       {/* Connecteur + bouton */}
       <div className="pb-6 pl-20 lg:pl-33.75 pr-11.25">
         <div aria-hidden className="mx-auto h-12.5 w-0.5 bg-foreground" />
-        <a
+        <LiquidHoverAnchor
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-55 items-center gap-8 border-2 border-foreground-alt-a py-2 pl-10 text-xl bg-accent-e"
+          fillClassName="bg-background"
+          contentClassName="gap-2"
+          className="w-55 border-2 border-foreground-alt-a bg-accent-e py-3 pl-10 text-xl text-foreground"
         >
           {t.cta} <ArrowRightIcon size={20} />
-        </a>
+        </LiquidHoverAnchor>
       </div>
     </div>
   );
