@@ -2,7 +2,7 @@ type SketchRadioProps = {
   name: string;
   value: string;
   label: string;
-  defaultChecked: boolean;
+  defaultChecked?: boolean;
 };
 
 export default function SketchRadio({
