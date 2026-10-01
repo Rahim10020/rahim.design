@@ -49,13 +49,12 @@ The journey is short and focused: land on a clear promise, understand the servic
 
 ![twocoderz.team UI design — à remplacer](/images/others/image_placeholder.svg)
 
-The interface is bold and modern, with strong typography, generous spacing and subtle motion that gives the site a sense of rhythm without distracting from the content. It adapts cleanly across desktop, tablet and mobile, and is available in both French and English — because our clients speak both.
+The interface is bold and modern, with strong typography, generous spacing and subtle motion that gives the site a sense of rhythm without distracting from the content. It adapts cleanly across desktop, tablet and mobile.
 
 ## Important decisions
 
 Some decisions that changed the experience.
 
-- **A bilingual site from the start.** French and English are treated as equal, so the studio can speak to local and international clients the same way.
 - **Motion with restraint.** Animations are used to guide attention and add personality, never to impress for the sake of it.
 - **Honest positioning.** Rather than pretending to be a large agency, the site embraces the strengths of a small studio: focus, proximity, and care.
 
@@ -77,7 +76,7 @@ The live website is available at: [twocoderz-team.vercel.app](https://twocoderz-
 
 ![twocoderz.team result — à remplacer](/images/others/image_placeholder.svg)
 
-A studio website that looks the part: modern, bilingual, and built to convert visitors into conversations. It's now the front door of twocoderz — and the first project we're proud to show potential clients.
+A studio website that looks the part: modern, focused, and built to convert visitors into conversations. It's now the front door of twocoderz — and the first project we're proud to show potential clients.
 
 ## What I learned
 

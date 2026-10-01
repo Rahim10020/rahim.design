@@ -49,13 +49,12 @@ Le parcours est court et concentré : arriver sur une promesse claire, comprendr
 
 ![Design d'interface de twocoderz.team — à remplacer](/images/others/image_placeholder.svg)
 
-L'interface est affirmée et moderne, avec une typographie forte, des espacements généreux et des animations subtiles qui donnent au site un vrai rythme sans distraire du contenu. Elle s'adapte proprement du desktop à la tablette et au mobile, et est disponible en français comme en anglais — parce que nos clients parlent les deux.
+L'interface est affirmée et moderne, avec une typographie forte, des espacements généreux et des animations subtiles qui donnent au site un vrai rythme sans distraire du contenu. Elle s'adapte proprement du desktop à la tablette et au mobile.
 
 ## Décisions importantes
 
 Quelques choix qui ont changé l'expérience.
 
-- **Un site bilingue dès le départ.** Le français et l'anglais sont traités à égalité, pour parler aux clients locaux comme internationaux de la même façon.
 - **Des animations avec retenue.** Les animations servent à guider l'attention et à donner de la personnalité, jamais à impressionner pour impressionner.
 - **Un positionnement honnête.** Plutôt que de prétendre être une grande agence, le site assume les forces d'un petit studio : la proximité, la concentration et le soin.
 
@@ -77,7 +76,7 @@ Le site est en ligne à l'adresse : [twocoderz-team.vercel.app](https://twocoder
 
 ![Résultat de twocoderz.team — à remplacer](/images/others/image_placeholder.svg)
 
-Un site de studio qui assume son rôle : moderne, bilingue, et conçu pour transformer les visiteurs en conversations. C'est aujourd'hui la porte d'entrée de twocoderz — et le premier projet que nous sommes fiers de montrer à nos clients potentiels.
+Un site de studio qui assume son rôle : moderne, concentré, et conçu pour transformer les visiteurs en conversations. C'est aujourd'hui la porte d'entrée de twocoderz — et le premier projet que nous sommes fiers de montrer à nos clients potentiels.
 
 ## Ce que j'ai appris
 
