@@ -17,7 +17,7 @@ export default function SketchField({
 }: SketchFieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-md lg:text-xl text-foreground">
+      <label htmlFor={id} className="text-lg text-foreground">
         {label}
       </label>
       <input
@@ -27,7 +27,7 @@ export default function SketchField({
         placeholder={placeholder}
         autoComplete={autoComplete}
         required={required}
-        className="w-full bg-transparent border-2 border-foreground rounded-none px-4 py-3 text-md lg:text-xl placeholder:text-foreground/60 focus:outline-none focus-visible:outline-3 focus-visible:outline-primary-alt"
+        className="w-full bg-transparent border-2 border-foreground rounded-none px-4 py-2 text-md placeholder:text-foreground/60 focus:outline-none focus-visible:outline-3 focus-visible:outline-primary-alt"
       />
     </div>
   );

@@ -38,7 +38,9 @@ export default function ContactForm() {
         </div>
 
         <fieldset>
-          <legend className="text-2xl mb-4">What are we going to build?</legend>
+          <legend className="text-xl text-foreground mb-4">
+            What are we going to build?
+          </legend>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
             {PROJECT_TYPES.map((t) => (
               <SketchRadio key={t} name="projectType" value={t} label={t} />
