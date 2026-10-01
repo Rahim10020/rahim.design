@@ -21,7 +21,7 @@ export default function SketchTextarea({
         name={id}
         required={required}
         placeholder={placeholder}
-        rows={9}
+        rows={5}
         className="w-full bg-transparent border-2 border-foreground/40 rounded-none p-6 text-md leading-relaxed placeholder:text-foreground/60 placeholder:max-w-sm focus:outline-none min-h-[100px] lg:min-h-[200px] resize-y"
       />
     </div>
