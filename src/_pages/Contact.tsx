@@ -1,3 +1,5 @@
+import BlueprintNote from "../_components/ui/forms/BlueprintNote";
+
 export default function ContactPage() {
   return (
     <section className="w-full bg-background min-h-screen">
@@ -7,6 +9,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-6xl font-medium text-foreground">
             Contact.
           </h1>
+          <BlueprintNote />
         </div>
       </div>
     </section>
