@@ -28,9 +28,7 @@ export default function BlueprintNote() {
 
       {/* Rangée 3 */}
       <div className="flex h-[68px] items-center border-b-2 border-foreground pl-[90px]">
-        <p className="whitespace-nowrap pl-5 text-xl">
-          Write to me directly on WhatsApp.
-        </p>
+        <p className="whitespace-nowrap pl-5 text-xl">Say hello on WhatsApp.</p>
       </div>
 
       {/* Connecteur + bouton */}
