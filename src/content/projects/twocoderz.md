@@ -1,70 +1,84 @@
 ---
-title: "Twocoderz"
-order: 10
+title: "twocoderz.team"
+order: 7
 category: "Web"
-description: "A SaaS dashboard designed for collaboration with a conversion-first structure."
-tags: ["Astro", "Tailwind", "CMS"]
-imageHeight: "h-96"
-link: "https://twocoderz-team.vercel.app/"
-role: "À compléter"
-platform: "À compléter"
-year: "À compléter"
+description: "The official website of twocoderz, a two-person studio helping businesses build a clear and modern digital presence."
+tags: ["Web", "Agency", "Design", "React"]
+imageHeight: "h-120"
+role: "Design & Development"
+platform: "Web"
+year: "2026"
+link: "https://twocoderz-team.vercel.app"
 ---
 
-| ROLE        | PLATFORM    | YEAR        |
-| ----------- | ----------- | ----------- |
-| À compléter | À compléter | À compléter |
+| ROLE                 | PLATFORM | YEAR |
+| -------------------- | -------- | ---- |
+| Design & Development | Web      | 2026 |
 
-![Twocoderz project image — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team project image — à remplacer](/images/others/image_placeholder.svg)
 
 ## The context
 
 **It all starts with a problem.**
 
-Twocoderz explores a collaborative SaaS dashboard with a clear path from first visit to active workspace.
+As a two-person studio, we needed a place to exist online — a site that would introduce who we are, what we do, and why a business should trust us with its digital presence. twocoderz.team is that place: a modern, bilingual agency website built to turn curiosity into conversations.
 
 ## The challenge
 
-**The challenge: keep it simple without making the experience simplistic.**
+**The challenge: look like a studio, not a side project.**
 
-À compléter.
+A website is often the first impression of an agency. The challenge was to design and build an experience polished enough to compete with larger studios, while staying honest about who we are — a small, focused team that ships real work for real clients.
 
 ## The approach
 
 **So how to solve this?**
 
-À compléter.
+Instead of trying to look like everyone else, the site leans into what makes a two-person studio strong: clarity, directness, and craft. Every section answers a single question a visitor might have — who are we, what do we offer, what do clients say, how do we get in touch — and does so with confident typography, smooth motion, and a layout that feels intentional from the first scroll.
 
 ## UX
 
 **Before we think about pixels, let's think about the journey.**
 
-![Twocoderz UX — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team UX — à remplacer](/images/others/image_placeholder.svg)
+
+The journey is short and focused: land on a clear promise, understand the services in a few seconds, see proof through client testimonials, and reach out. There's no noise, no filler — just the essentials that help a potential client decide whether to start a conversation.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-![Twocoderz UI design — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team UI design — à remplacer](/images/others/image_placeholder.svg)
+
+The interface is bold and modern, with strong typography, generous spacing and subtle motion that gives the site a sense of rhythm without distracting from the content. It adapts cleanly across desktop, tablet and mobile, and is available in both French and English — because our clients speak both.
 
 ## Important decisions
 
 Some decisions that changed the experience.
 
-- À compléter.
+- **A bilingual site from the start.** French and English are treated as equal, so the studio can speak to local and international clients the same way.
+- **Motion with restraint.** Animations are used to guide attention and add personality, never to impress for the sake of it.
+- **Honest positioning.** Rather than pretending to be a large agency, the site embraces the strengths of a small studio: focus, proximity, and care.
 
 ## Development
 
 **The design was ready. Now it had to be brought to life.**
 
-À compléter.
+![twocoderz.team Development — à remplacer](/images/others/image_placeholder.svg)
+
+The site was built as a modern single-page application, designed to feel fast and fluid on any device. Care was put into the parts visitors notice most: smooth transitions between sections, a fully responsive layout, and analytics that help us understand how people actually use the site.
+
+The project is open source and available on GitHub: [github.com/twocoderz/twocoderz.team](https://github.com/twocoderz/twocoderz.team)
+
+The live website is available at: [twocoderz-team.vercel.app](https://twocoderz-team.vercel.app)
 
 ## The result
 
 **And finally, it looks like this.**
 
-![Twocoderz result — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team result — à remplacer](/images/others/image_placeholder.svg)
+
+A studio website that looks the part: modern, bilingual, and built to convert visitors into conversations. It's now the front door of twocoderz — and the first project we're proud to show potential clients.
 
 ## What I learned
 
-À compléter.
+Building twocoderz.team taught me that a small team can produce work that stands next to much bigger studios, as long as the focus stays on craft and clarity. It also reinforced how much a well-designed website can do for a young studio — not just as a portfolio, but as the first real proof of what we can deliver.
