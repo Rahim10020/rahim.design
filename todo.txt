@@ -5,3 +5,4 @@
 
 -- Page de detail d'un projet: modifier chaque markdown apres avoir polish tous les 
     projets a mettre dans le portfolio
+-- apres rechecker les ordres des projets
