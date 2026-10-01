@@ -48,7 +48,7 @@ export default function ContactForm() {
 
   return (
     <SketchCard>
-      <form className="flex flex-col gap-12" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-8 lg:gap-12" onSubmit={handleSubmit}>
         {/* Honeypot anti-spam : les humains ne le voient/remplissent jamais */}
         <input
           type="text"
@@ -107,12 +107,18 @@ export default function ContactForm() {
             </Button>
           </div>
           {status === "sent" && (
-            <p role="status" className="text-center lg:text-right text-foreground">
+            <p
+              role="status"
+              className="text-center lg:text-right text-foreground"
+            >
               Message sent. I&apos;ll answer you soon.
             </p>
           )}
           {status === "error" && (
-            <p role="alert" className="text-center lg:text-right text-foreground">
+            <p
+              role="alert"
+              className="text-center lg:text-right text-foreground"
+            >
               Something went wrong. Try again or write me on WhatsApp.
             </p>
           )}

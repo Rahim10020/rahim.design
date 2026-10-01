@@ -34,7 +34,7 @@ export default function BlueprintNote() {
       </div>
 
       {/* Connecteur + bouton */}
-      <div className="pb-6 pl-[135px] pr-[45px]">
+      <div className="pb-6 pl-[80px] lg:pl-[135px] pr-[45px]">
         <div aria-hidden className="mx-auto h-[50px] w-0.5 bg-foreground" />
         <a
           href={WHATSAPP_URL}

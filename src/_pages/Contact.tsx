@@ -12,14 +12,14 @@ export default function ContactPage() {
             Let's start with your project.
           </h1>
 
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="mt-6 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Formulaire : premier sur mobile, deuxième sur desktop */}
             <div className="order-1 lg:order-2">
               <ContactForm />
             </div>
 
             {/* Colonne info : deuxième sur mobile, première sur desktop */}
-            <div className="order-2 lg:order-1 flex flex-col gap-36">
+            <div className="order-2 lg:order-1 flex flex-col gap-24 lg:gap-36">
               <BlueprintNote />
               <div className="flex flex-col gap-8 items-center text-center lg:items-start lg:text-left">
                 <EmailLink
