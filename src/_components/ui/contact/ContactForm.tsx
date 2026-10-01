@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button";
 import SketchCard from "../forms/SketchCard";
 import SketchField from "../forms/SketchField";
@@ -11,13 +12,53 @@ const PROJECT_TYPES = [
   "I do not know yet",
 ];
 
+type SubmitStatus = "idle" | "sending" | "sent" | "error";
+
 export default function ContactForm() {
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "sending") return;
+
+    const form = e.currentTarget;
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+
+    if (!formspreeId) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error(`Formspree responded with ${res.status}`);
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  const isSending = status === "sending";
+
   return (
     <SketchCard>
-      <form
-        className="flex flex-col gap-12"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <form className="flex flex-col gap-12" onSubmit={handleSubmit}>
+        {/* Honeypot anti-spam : les humains ne le voient/remplissent jamais */}
+        <input
+          type="text"
+          name="_gotcha"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          aria-hidden="true"
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           <SketchField
             id="name"
@@ -54,10 +95,27 @@ export default function ContactForm() {
           required
         />
 
-        <div className="flex justify-end">
-          <Button type="submit" variant="primary" className="px-8 py-2 text-md">
-            Start conversation
-          </Button>
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-center lg:justify-end">
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={isSending}
+              className="px-8 py-2 text-md"
+            >
+              {isSending ? "Sending..." : "Start conversation"}
+            </Button>
+          </div>
+          {status === "sent" && (
+            <p role="status" className="text-center lg:text-right text-foreground">
+              Message sent. I&apos;ll answer you soon.
+            </p>
+          )}
+          {status === "error" && (
+            <p role="alert" className="text-center lg:text-right text-foreground">
+              Something went wrong. Try again or write me on WhatsApp.
+            </p>
+          )}
         </div>
       </form>
     </SketchCard>

@@ -20,7 +20,7 @@ const ITEMS = [
 
 export default function SocialRow() {
   return (
-    <ul className="flex items-center gap-6">
+    <ul className="flex items-center justify-center lg:justify-start gap-6">
       {ITEMS.map(({ label, href, Icon }) => (
         <li key={label}>
           <a
