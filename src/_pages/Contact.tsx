@@ -1,3 +1,4 @@
+import SocialRow from "../_components/ui/contact/SocialRow";
 import BlueprintNote from "../_components/ui/forms/BlueprintNote";
 
 export default function ContactPage() {
@@ -9,7 +10,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-6xl font-medium text-foreground">
             Contact.
           </h1>
-          <BlueprintNote />
+          <SocialRow />
         </div>
       </div>
     </section>
