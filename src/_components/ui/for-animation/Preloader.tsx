@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "../../../lib/gsap";
-
-const WORDS = ["Design", "Code", "Fun", "Bienvenue"];
+import { useLocale } from "../../../lib/i18n";
+import { getUi } from "../../../locales/ui";
 
 export default function Preloader({ onDone }: { onDone: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -9,6 +9,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
   const wordRef = useRef<HTMLSpanElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
   const [done, setDone] = useState(false);
+  const words = getUi(useLocale()).preloader.words;
 
   useGSAP(
     () => {
@@ -30,7 +31,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
           onDone();
         },
       });
-      WORDS.forEach((w) => {
+      words.forEach((w) => {
         tl.call(() => {
           if (wordRef.current) wordRef.current.textContent = w;
         });

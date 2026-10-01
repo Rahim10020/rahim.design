@@ -1,6 +1,14 @@
 import type { SupportedLocale } from "../lib/locale";
 
 export const ui = {
+  preloader: {
+    words: [
+      { fr: "Design", en: "Design" },
+      { fr: "Code", en: "Code" },
+      { fr: "Fun", en: "Fun" },
+      { fr: "Bienvenue", en: "Welcome" },
+    ],
+  },
   nav: {
     about: { fr: "À propos", en: "About" },
     services: { fr: "Services", en: "Services" },
@@ -187,6 +195,9 @@ export function getUi(locale: SupportedLocale) {
     v[locale];
   return {
     locale,
+    preloader: {
+      words: ui.preloader.words.map((word) => pick(word)),
+    },
     nav: {
       about: pick(ui.nav.about),
       services: pick(ui.nav.services),
