@@ -78,7 +78,7 @@ footer li {
 
 /* Focus visible global */
 :focus-visible {
-  outline: 3px solid var(--primary);
+  outline: 2px solid var(--foreground-alt);
   outline-offset: 2px;
 }
 

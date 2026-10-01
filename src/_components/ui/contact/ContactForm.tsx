@@ -9,7 +9,7 @@ const PROJECT_TYPES = [
   "Improve something existing",
   "An experience/interface",
   "A site/landing page",
-  "Je ne sais pas encore",
+  "I do not know yet",
 ];
 
 export default function ContactForm() {
@@ -19,7 +19,7 @@ export default function ContactForm() {
         className="flex flex-col gap-12"
         onSubmit={(e) => e.preventDefault()}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           <SketchField
             id="name"
             label="What should I call you?"
