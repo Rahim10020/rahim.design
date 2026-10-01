@@ -7,27 +7,29 @@ export default function BlueprintNote() {
       {/* Ligne verticale principale (pleine hauteur) */}
       <div
         aria-hidden
-        className="absolute inset-y-0 left-[38px] w-0.5 bg-foreground"
+        className="absolute inset-y-0 left-[28px] lg:left-[38px] w-0.5 bg-foreground"
       />
 
       {/* Rangée 1 */}
-      <div className="flex h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
-        <p className="whitespace-nowrap pl-8 text-3xl">Don't want to</p>
+      <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
+        <p className="whitespace-nowrap pl-8 text-3xl lg:text-3xl">
+          Don't want to
+        </p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
-      <div className="flex h-[88px] items-stretch border-b-2 border-foreground-alt-a pl-[90px]">
+      <div className="flex h-[68px] lg:h-[88px] items-stretch border-b-2 border-foreground-alt-a pl-[90px]">
         <div
           aria-hidden
-          className="w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
+          className="w-[50px] lg:w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
         />
-        <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
+        <p className="flex items-center whitespace-nowrap pl-6 text-3xl lg:text-3xl">
           fill out the form?
         </p>
       </div>
 
       {/* Rangée 3 */}
-      <div className="flex h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
+      <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[90px]">
         <p className="whitespace-nowrap pl-5 text-xl">Say hello on WhatsApp.</p>
       </div>
 
