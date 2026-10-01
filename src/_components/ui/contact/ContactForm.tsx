@@ -16,7 +16,7 @@ export default function ContactForm() {
   return (
     <SketchCard>
       <form
-        className="flex flex-col gap-8"
+        className="flex flex-col gap-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -51,12 +51,12 @@ export default function ContactForm() {
         <SketchTextarea
           id="message"
           label="Tell me a little about your project."
-          placeholder="What are you trying to build? What problem are you looking to solve? Where are you now?"
+          placeholder="What are you trying to build ? What problem are you looking to solve ? Where are you now ?"
           required
         />
 
         <div className="flex justify-end">
-          <Button type="submit" variant="primary" className="px-8 py-3 text-lg">
+          <Button type="submit" variant="primary" className="px-8 py-2 text-md">
             Start conversation
           </Button>
         </div>

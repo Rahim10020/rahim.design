@@ -12,7 +12,7 @@ export default function SketchRadio({
   defaultChecked,
 }: SketchRadioProps) {
   return (
-    <label className="flex items-center gap-3 cursor-pointer text-lg text-foreground">
+    <label className="flex items-center gap-3 cursor-pointer text-md text-foreground">
       <input
         type="radio"
         name={name}

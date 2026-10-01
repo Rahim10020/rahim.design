@@ -13,7 +13,7 @@ export default function SketchTextarea({
 }: SketchTextareaProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-md lg:text-xl text-foreground">
+      <label htmlFor={id} className="text-lg text-foreground">
         {label}
       </label>
       <textarea
@@ -22,7 +22,7 @@ export default function SketchTextarea({
         required={required}
         placeholder={placeholder}
         rows={9}
-        className="w-full bg-transparent border-2 border-foreground rounded-none p-6 text-md lg:text-xl leading-relaxed placeholder:text-foreground/60 focus:outline-none min-h-[100px] resize-y"
+        className="w-full bg-transparent border-2 border-foreground rounded-none p-6 text-md leading-relaxed placeholder:text-foreground/60 placeholder:max-w-sm focus:outline-none min-h-[50px] resize-y"
       />
     </div>
   );
