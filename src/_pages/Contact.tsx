@@ -2,18 +2,23 @@ import ContactForm from "../_components/ui/contact/ContactForm";
 import SocialRow from "../_components/ui/contact/SocialRow";
 import EmailLink from "../_components/ui/EmailLink";
 import BlueprintNote from "../_components/ui/forms/BlueprintNote";
+import { useLocale } from "../lib/i18n";
+import { getContact } from "../locales/contact";
 
 export default function ContactPage() {
+  const t = getContact(useLocale());
+  const form = t.form;
+
   return (
     <section className="w-full bg-background min-h-screen">
       <div className="max-w-350 mx-auto px-page-x pt-12 pb-24 mb-24">
         <div className="mx-auto w-full max-w-8xl">
           <div className="flex items-start justify-between">
             <h1 className="text-4xl md:text-5xl font-medium text-foreground max-w-md">
-              Let's start with your project.
+              {t.pageTitle}
             </h1>
             <h2 className="hidden md:block text-2xl lg:text-4xl font-medium text-foreground">
-              CONTACT
+              {t.pageEyebrow}
             </h2>
           </div>
 
@@ -29,6 +34,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-8 items-center text-center lg:items-start lg:text-left">
                 <EmailLink
                   label="rahim100codeur@gmail.com"
+                  copiedLabel={form.copied}
                   className="underline underline-offset-8 decoration-2"
                 />
                 <SocialRow />

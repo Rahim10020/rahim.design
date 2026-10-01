@@ -4,17 +4,20 @@ import SketchCard from "../forms/SketchCard";
 import SketchField from "../forms/SketchField";
 import SketchRadio from "../forms/SketchRadio";
 import SketchTextarea from "../forms/SketchTextarea";
+import { useLocale } from "../../../lib/i18n";
+import { getContact } from "../../../locales/contact";
 
 const PROJECT_TYPES = [
-  "A web product",
-  "Improve something existing",
-  "A site/landing page",
-  "I do not know yet",
-];
+  { key: "webProduct", value: "web_product" },
+  { key: "improveExisting", value: "improve_existing" },
+  { key: "landingPage", value: "landing_page" },
+  { key: "unknownYet", value: "unknown" },
+] as const;
 
 type SubmitStatus = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
+  const t = getContact(useLocale()).form;
   const [status, setStatus] = useState<SubmitStatus>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -62,15 +65,15 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           <SketchField
             id="name"
-            label="What should I call you?"
-            placeholder="Your name"
+            label={t.nameLabel}
+            placeholder={t.namePlaceholder}
             autoComplete="name"
             required
           />
           <SketchField
             id="email"
-            label="Where can I answer you?"
-            placeholder="your@email.com"
+            label={t.emailLabel}
+            placeholder={t.emailPlaceholder}
             type="email"
             autoComplete="email"
             required
@@ -79,19 +82,24 @@ export default function ContactForm() {
 
         <fieldset>
           <legend className="text-xl text-foreground mb-4">
-            What are we going to build?
+            {t.typesLegend}
           </legend>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-            {PROJECT_TYPES.map((t) => (
-              <SketchRadio key={t} name="projectType" value={t} label={t} />
+            {PROJECT_TYPES.map((type) => (
+              <SketchRadio
+                key={type.key}
+                name="projectType"
+                value={type.value}
+                label={t.types[type.key]}
+              />
             ))}
           </div>
         </fieldset>
 
         <SketchTextarea
           id="message"
-          label="Tell me a little about your project."
-          placeholder="What are you trying to build ? What problem are you looking to solve ? Where are you now ?"
+          label={t.messageLabel}
+          placeholder={t.messagePlaceholder}
           required
         />
 
@@ -103,7 +111,7 @@ export default function ContactForm() {
               disabled={isSending}
               className="px-8 py-2 text-md"
             >
-              {isSending ? "Sending..." : "Start conversation"}
+              {isSending ? t.sending : t.submit}
             </Button>
           </div>
           {status === "sent" && (
@@ -111,7 +119,7 @@ export default function ContactForm() {
               role="status"
               className="text-center lg:text-right text-foreground"
             >
-              Message sent. I&apos;ll answer you soon.
+              {t.success}
             </p>
           )}
           {status === "error" && (
@@ -119,7 +127,7 @@ export default function ContactForm() {
               role="alert"
               className="text-center lg:text-right text-foreground"
             >
-              Something went wrong. Try again or write me on WhatsApp.
+              {t.error}
             </p>
           )}
         </div>

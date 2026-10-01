@@ -1,35 +1,39 @@
 import { WHATSAPP_URL } from "../../../routes";
 import ArrowRightIcon from "../../icons/ArrowRightIcon";
+import { useLocale } from "../../../lib/i18n";
+import { getContact } from "../../../locales/contact";
 
 export default function BlueprintNote() {
+  const t = getContact(useLocale()).blueprint;
+
   return (
-    <div className="relative w-full max-w-[460px] text-foreground">
+    <div className="relative w-full max-w-115 text-foreground">
       {/* Ligne verticale principale (pleine hauteur) */}
       <div
         aria-hidden
-        className="absolute inset-y-0 left-[28px] lg:left-[38px] w-0.5 bg-foreground"
+        className="absolute inset-y-0 left-7 lg:left-9.5 w-0.5 bg-foreground"
       />
 
       {/* Rangée 1 */}
-      <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[40px] lg:pl-[90px]">
-        <p className="whitespace-nowrap pl-8 text-3xl">Don't want to</p>
+      <div className="flex h-17 lg:h-22 items-center border-b-2 border-foreground-alt-a pl-[40px] lg:pl-[90px]">
+        <p className="whitespace-nowrap pl-8 text-3xl">{t.line1}</p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
-      <div className="flex h-[68px] lg:h-[88px] items-stretch border-b-2 border-foreground-alt-a pl-[90px]">
+      <div className="flex h-17 lg:h-22 items-stretch border-b-2 border-foreground-alt-a pl-[90px]">
         <div
           aria-hidden
-          className="w-[38px] lg:w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
+          className="w-9.5 lg:w-[100px] shrink-0 border-r-2 border-foreground-alt-a"
         />
         <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
-          fill out the form?
+          {t.line2}
         </p>
       </div>
 
       {/* Rangée 3 */}
-      <div className="flex h-[68px] lg:h-[88px] items-center border-b-2 border-foreground-alt-a pl-[30px] lg:pl-[90px]">
+      <div className="flex h-17 lg:h-22 items-center border-b-2 border-foreground-alt-a pl-[30px] lg:pl-[90px]">
         <p className="whitespace-nowrap pl-5 text-xl text-foreground-alt-a">
-          Say hello on WhatsApp.
+          {t.line3}
         </p>
       </div>
 
@@ -42,7 +46,7 @@ export default function BlueprintNote() {
           rel="noopener noreferrer"
           className="flex w-[220px] items-center gap-8 border-2 border-foreground-alt-a py-2 pl-10 text-xl bg-accent-e"
         >
-          Whatsapp <ArrowRightIcon size={20} />
+          {t.cta} <ArrowRightIcon size={20} />
         </a>
       </div>
     </div>
