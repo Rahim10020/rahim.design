@@ -38,7 +38,7 @@ export default function BlueprintNote() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-[240px] items-center gap-12 border-2 border-foreground-alt-a py-3 pl-10 text-xl transition-colors hover:bg-background-alt"
+          className="flex w-[240px] items-center gap-12 border-2 border-foreground-alt-a py-3 pl-10 text-xl bg-accent-e"
         >
           Whatsapp <ArrowRightIcon size={20} />
         </a>
