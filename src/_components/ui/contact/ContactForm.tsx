@@ -96,7 +96,7 @@ export default function ContactForm() {
         />
 
         <div className="flex flex-col gap-4">
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center mt-8 lg:mt-0 lg:justify-end">
             <Button
               type="submit"
               variant="primary"
