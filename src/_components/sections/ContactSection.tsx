@@ -22,7 +22,7 @@ const SOCIALS = [
 ];
 
 function useLomeTime() {
-  const [time, setTime] = useState<string | null>(null);
+  const [time, setTime] = useState("--:--:--");
   useEffect(() => {
     const fmt = new Intl.DateTimeFormat("fr-FR", {
       hour: "2-digit",
@@ -103,16 +103,9 @@ export default function ContactSection() {
               <div />
               <div className="border-l-2 border-foreground h-4 md:h-20" />
               <div className="border-l-2 border-foreground h-4 md:h-20" />
-              <div className="border-l-2 border-foreground h-4 md:h-20 flex items-end justify-end pb-2 pr-4 lg:pr-0 lg:pb-6 overflow-clip">
-                <p
-                  role="timer"
-                  aria-live="off"
-                  aria-label={
-                    lomeTime ? `Heure à Lomé : ${lomeTime}` : "Heure à Lomé"
-                  }
-                  className="text-xl lg:text-2xl text-foreground tabular-nums leading-none whitespace-nowrap text-right min-w-[11ch] [font-variant-numeric:tabular-nums_lining-nums] [font-features-['tnum'_1]]"
-                >
-                  {lomeTime ?? "\u00A0"}
+              <div className="border-l-2 border-foreground h-4 md:h-20 flex items-end justify-end pb-2 pr-4 lg:pr-0 lg:pb-6">
+                <p className="text-xl lg:text-2xl text-foreground tabular-nums leading-none">
+                  {lomeTime}
                 </p>
               </div>
 
