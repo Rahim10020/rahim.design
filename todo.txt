@@ -1,9 +1,5 @@
 -- La prochaine fois je continue avec:
     1- Trouver des images de couverture pour mes services
 
--- inserer les images et les videos webm dans les contenu markdown. demander a opencode 
-    la meilleure maniere de le faire sachant que je veux respecter les 
-    dimensions actuelles de l'image placeholder.
-
-    -- checker a quoi correspondent les ordre dans les contents et voir comment 
-    je peux changer les ordre de mes projets
+-- inserer les images et les videos webm dans le reste des projets.
+-- faire et coder le nouveau design de la section tools
