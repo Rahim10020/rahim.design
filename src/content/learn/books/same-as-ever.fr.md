@@ -2,7 +2,7 @@
 title: "Résumé : The Design of Everyday Things"
 date: "2026-08-20"
 description: "Les principes de Don Norman sur l'affordance, le feedback et l'ergonomie du quotidien."
-imageSrc: "/images/books/same_as_ever/same_as_ever.png"
+imageSrc: "/images/books/same_as_ever/same_as_ever.webp"
 ---
 
 ## Rendre les actions découvrables

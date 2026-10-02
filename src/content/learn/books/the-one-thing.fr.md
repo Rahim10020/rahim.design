@@ -2,7 +2,7 @@
 title: "Résumé : The ONE Thing"
 date: "2026-08-15"
 description: "Les concepts clés et notes sur les résultats extraordinaires, d'après le livre de Gary Keller et Jay Papasan."
-imageSrc: "/images/books/the_one_thing/the_one_thing.png"
+imageSrc: "/images/books/the_one_thing/the_one_thing.webp"
 ---
 
 ## Philosophie centrale : la puissance de voir petit
@@ -39,11 +39,11 @@ La plupart des gens fonctionnent avec une **to-do list** quotidienne. Mais les t
 
 Ceux qui réussissent fonctionnent différemment. Ils ne tombent pas dans le piège du « cocher » — cocher cent tâches à faible valeur pour finir la journée avec un bureau propre. À la place, ils transforment leur to-do list en **success list** en appliquant la priorité.
 
-| To-do list                 | Success list                  |
-| :------------------------- | :---------------------------- |
-| Longue et désorganisée     | Courte et très ciblée         |
+| To-do list                 | Success list                                 |
+| :------------------------- | :------------------------------------------- |
+| Longue et désorganisée     | Courte et très ciblée                        |
 | Remplie de « à faire »     | Construite autour du « à faire en priorité » |
-| Te tire dans tous les sens | Te guide dans une direction précise |
+| Te tire dans tous les sens | Te guide dans une direction précise          |
 
 ### Pousser Pareto à l'extrême (Pareto extrême)
 

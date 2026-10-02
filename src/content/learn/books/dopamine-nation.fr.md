@@ -2,7 +2,7 @@
 title: "Résumé : Dopamine Nation"
 date: "2026-08-20"
 description: "Les principes de Don Norman sur l'affordance, le feedback et l'ergonomie du quotidien."
-imageSrc: "/images/books/dopamine_nation/dopamine_nation.png"
+imageSrc: "/images/books/dopamine_nation/dopamine_nation.webp"
 ---
 
 ## Rendre les actions découvrables

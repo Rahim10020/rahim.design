@@ -2,7 +2,7 @@
 title: "Résumé : Atomic Habits"
 date: "2026-07-10"
 description: "Les idées clés du livre de James Clear sur les petites habitudes qui changent tout."
-imageSrc: "/images/books/atomic_habits/atomic_habits.png"
+imageSrc: "/images/books/atomic_habits/atomic_habits.webp"
 ---
 
 ## Les petites habitudes s'accumulent

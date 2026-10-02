@@ -2,7 +2,7 @@
 title: "Summary: Dopamine nation"
 date: "2026-08-20"
 description: "Don Norman's principles on affordance, feedback, and everyday ergonomics."
-imageSrc: "/images/books/dopamine_nation/dopamine_nation.png"
+imageSrc: "/images/books/dopamine_nation/dopamine_nation.webp"
 ---
 
 ## Make actions discoverable

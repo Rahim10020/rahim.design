@@ -2,7 +2,7 @@
 title: "Summary: The 48 Laws of Power"
 date: "2026-08-20"
 description: "Don Norman's principles on affordance, feedback, and everyday ergonomics."
-imageSrc: "/images/books/48_laws_of_power/48_laws_of_power.png"
+imageSrc: "/images/books/48_laws_of_power/48_laws_of_power.webp"
 ---
 
 ## Make actions discoverable

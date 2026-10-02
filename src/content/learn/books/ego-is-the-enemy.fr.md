@@ -2,7 +2,7 @@
 title: "Résumé : Ego is the Enemy"
 date: "2026-08-20"
 description: "Les principes de Don Norman sur l'affordance, le feedback et l'ergonomie du quotidien."
-imageSrc: "/images/books/ego_is_the_enemy/ego_is_the_enemy.png"
+imageSrc: "/images/books/ego_is_the_enemy/ego_is_the_enemy.webp"
 ---
 
 ## Rendre les actions découvrables
