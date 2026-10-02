@@ -14,7 +14,7 @@ year: "2025"
 | -------------------- | ---------------------- | ---- |
 | Design & Development | Mobile (Android & iOS) | 2025 |
 
-![R HabitTracker project image — à remplacer](/images/others/image_placeholder.svg)
+![R HabitTracker habits list](/images/projects/habitTracker/habit-1.jpeg)
 
 ## The context
 
@@ -38,15 +38,17 @@ Instead of overwhelming users with data, the app focuses on what matters: the ha
 
 **Before we think about pixels, let's think about the journey.**
 
-![R HabitTracker UX — à remplacer](/images/others/image_placeholder.svg)
-
 The journey is built around a simple daily loop: open the app, see today's habits, mark them as done, and watch progress grow over time. Creating a habit takes seconds, and checking in takes even less — so the app never stands between the user and the routine they're building.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-![R HabitTracker UI design — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/habitTracker/habit-2.jpeg" alt="R HabitTracker habit detail" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/habitTracker/habit-3.jpeg" alt="R HabitTracker progress heatmap" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/habitTracker/habits-dark.jpeg" alt="R HabitTracker dark theme" loading="lazy" />
+</div>
 
 The interface is warm and encouraging, with soft colors, expressive icons and a clear sense of rhythm. A light and a dark theme are both included and remembered across sessions, so the app feels personal from the first launch.
 
@@ -63,8 +65,6 @@ Some decisions that changed the experience.
 
 **The design was ready. Now it had to be brought to life.**
 
-![R HabitTracker Development — à remplacer](/images/others/image_placeholder.svg)
-
 The app was built as a single, cross-platform product so it could run smoothly on both Android and iOS. Special care was put into two areas that define the experience: reliable local reminders that fire on time, and a fast, private data layer that keeps every habit and every completion safely on the device.
 
 The project is open source and available on GitHub: [github.com/Rahim10020/HabitTracker-Mkoko-](https://github.com/Rahim10020/HabitTracker-Mkoko-)
@@ -73,7 +73,7 @@ The project is open source and available on GitHub: [github.com/Rahim10020/Habit
 
 **And finally, it looks like this.**
 
-![R HabitTracker result — à remplacer](/images/others/image_placeholder.svg)
+![R HabitTracker habits list](/images/projects/habitTracker/habit-1.jpeg)
 
 A focused habit tracker that does one thing well: help people show up for themselves, a little every day, and see how far they've come.
 

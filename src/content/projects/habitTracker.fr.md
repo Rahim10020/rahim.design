@@ -14,7 +14,7 @@ year: "2025"
 | ---------------------- | ---------------------- | ----- |
 | Design & Développement | Mobile (Android & iOS) | 2025  |
 
-![Image du projet R HabitTracker — à remplacer](/images/others/image_placeholder.svg)
+![Liste des habitudes R HabitTracker](/images/projects/habitTracker/habit-1.jpeg)
 
 ## Le contexte
 
@@ -38,15 +38,17 @@ Plutôt que de submerger l'utilisateur de données, l'application se concentre s
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de R HabitTracker — à remplacer](/images/others/image_placeholder.svg)
-
 Le parcours est construit autour d'une boucle quotidienne simple : ouvrir l'application, voir les habitudes du jour, les marquer comme faites, et regarder les progrès grandir avec le temps. Créer une habitude prend quelques secondes, et la valider encore moins — l'application ne s'interpose jamais entre l'utilisateur et la routine qu'il construit.
 
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de R HabitTracker — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/habitTracker/habit-2.jpeg" alt="Détail d'habitude R HabitTracker" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/habitTracker/habit-3.jpeg" alt="Progression R HabitTracker" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/habitTracker/habits-dark.jpeg" alt="R HabitTracker en thème sombre" loading="lazy" />
+</div>
 
 L'interface est chaleureuse et encourageante, avec des couleurs douces, des icônes expressives et un vrai sens du rythme. Un thème clair et un thème sombre sont inclus et mémorisés entre les sessions, pour que l'application devienne personnelle dès le premier lancement.
 
@@ -63,8 +65,6 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de R HabitTracker — à remplacer](/images/others/image_placeholder.svg)
-
 L'application a été conçue comme un seul produit multiplateforme, afin de tourner de manière fluide sur Android comme sur iOS. Une attention particulière a été portée à deux points qui définissent l'expérience : des rappels locaux fiables, qui se déclenchent à l'heure prévue, et une couche de données rapide et privée qui garde chaque habitude et chaque validation en sécurité sur l'appareil.
 
 Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/HabitTracker-Mkoko-](https://github.com/Rahim10020/HabitTracker-Mkoko-)
@@ -73,7 +73,7 @@ Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/Habi
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de R HabitTracker — à remplacer](/images/others/image_placeholder.svg)
+![Liste des habitudes R HabitTracker](/images/projects/habitTracker/habit-1.jpeg)
 
 Une application de suivi d'habitudes concentrée, qui fait bien une seule chose : aider à être présent pour soi-même, un peu chaque jour, et voir le chemin parcouru.
 

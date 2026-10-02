@@ -15,7 +15,7 @@ link: "https://focusly-work.vercel.app/"
 | ---------------------- | ---------- | ----- |
 | Design & Développement | Web        | 2025  |
 
-![Image du projet Focusly — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de Focusly](/images/projects/focusly/focusly.webm)
 
 ## Le contexte
 
@@ -39,15 +39,19 @@ Plutôt que de traiter chaque fonctionnalité comme un monde à part, tout s'art
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de Focusly — à remplacer](/images/others/image_placeholder.svg)
-
 Le parcours suit un rythme naturel : créer un compte, découvrir son espace, ajouter ce qui compte pour aujourd'hui, lancer une session de concentration, puis consulter ses progrès en fin de semaine. Chaque partie de l'application répond à une question claire — _que dois-je faire maintenant ?_ — et reste discrète le reste du temps.
 
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de Focusly — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-5">
+  <img class="grid-cell" src="/images/projects/focusly/home-mobile.webp" alt="Accueil de Focusly sur mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/create-account-mobile.webp" alt="Création de compte Focusly sur mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Connexion à Focusly sur mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Calendrier Focusly sur mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/stats-mobile.webp" alt="Statistiques Focusly sur mobile" loading="lazy" />
+</div>
 
 L'interface est épurée et structurée, construite autour d'une hiérarchie visuelle claire et d'une palette calme qui garde l'attention sur le travail lui-même. Un thème clair et un thème sombre sont inclus, et la mise en page s'adapte naturellement des grands écrans aux plus petits.
 
@@ -64,8 +68,6 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de Focusly — à remplacer](/images/others/image_placeholder.svg)
-
 Focusly a été conçue comme une application web moderne, pensée pour être rapide, fluide et fiable sur n'importe quel appareil. Un soin particulier a été apporté aux éléments dont les utilisateurs dépendent le plus : la synchronisation en temps réel entre les sessions, des rappels et minuteurs fiables, et une couche de données qui garde chaque tâche et chaque session de concentration en sécurité.
 
 Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/focusly](https://github.com/Rahim10020/focusly)
@@ -74,7 +76,7 @@ Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/focu
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de Focusly — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de Focusly](/images/projects/focusly/focusly.webm)
 
 Un espace unique et concentré, qui transforme les intentions en pratique quotidienne — et montre, jour après jour, tout ce qui a réellement été accompli.
 

@@ -15,7 +15,7 @@ link: "https://twocoderz-team.vercel.app"
 | -------------------- | -------- | ---- |
 | Design & Development | Web      | 2026 |
 
-![twocoderz.team project image — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team demo video](/images/projects/twocoderz/twocoderz.webm)
 
 ## The context
 
@@ -39,15 +39,22 @@ Instead of trying to look like everyone else, the site leans into what makes a t
 
 **Before we think about pixels, let's think about the journey.**
 
-![twocoderz.team UX — à remplacer](/images/others/image_placeholder.svg)
-
 The journey is short and focused: land on a clear promise, understand the services in a few seconds, see proof through client testimonials, and reach out. There's no noise, no filler — just the essentials that help a potential client decide whether to start a conversation.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-![twocoderz.team UI design — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-4 rows-2">
+  <img class="grid-cell" src="/images/projects/twocoderz/home-mobile.webp" alt="twocoderz.team home on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/services-mobile.webp" alt="twocoderz.team services on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/faqs-mobile.webp" alt="twocoderz.team FAQs on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/newsletter-mobile.webp" alt="twocoderz.team newsletter on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/contact-mobile.webp" alt="twocoderz.team contact on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/menu-mobile.webp" alt="twocoderz.team menu on mobile" loading="lazy" />
+</div>
 
 The interface is bold and modern, with strong typography, generous spacing and subtle motion that gives the site a sense of rhythm without distracting from the content. It adapts cleanly across desktop, tablet and mobile.
 
@@ -62,8 +69,6 @@ Some decisions that changed the experience.
 
 **The design was ready. Now it had to be brought to life.**
 
-![twocoderz.team Development — à remplacer](/images/others/image_placeholder.svg)
-
 The site was built as a modern single-page application, designed to feel fast and fluid on any device. Care was put into the parts visitors notice most: smooth transitions between sections, a fully responsive layout, and analytics that help us understand how people actually use the site.
 
 The project is open source and available on GitHub: [github.com/twocoderz/twocoderz.team](https://github.com/twocoderz/twocoderz.team)
@@ -74,7 +79,7 @@ The live website is available at: [twocoderz-team.vercel.app](https://twocoderz-
 
 **And finally, it looks like this.**
 
-![twocoderz.team result — à remplacer](/images/others/image_placeholder.svg)
+![twocoderz.team demo video](/images/projects/twocoderz/twocoderz.webm)
 
 A studio website that looks the part: modern, focused, and built to convert visitors into conversations. It's now the front door of twocoderz — and the first project we're proud to show potential clients.
 

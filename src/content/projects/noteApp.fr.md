@@ -14,7 +14,7 @@ year: "2025"
 | ---------------------- | ---------------------- | ----- |
 | Design & Développement | Mobile (Android & iOS) | 2025  |
 
-![Image du projet R_noteApp — à remplacer](/images/others/image_placeholder.svg)
+![Liste des notes R_noteApp](/images/projects/noteApp/hotes-1.jpeg)
 
 ## Le contexte
 
@@ -38,15 +38,18 @@ Plutôt que d'ajouter toujours plus de fonctionnalités, l'accent a été mis su
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de R_noteApp — à remplacer](/images/others/image_placeholder.svg)
-
 Le parcours est court et clair : ouvrir l'application, voir ses notes, en créer une en un geste, la ranger dans une catégorie, puis la retrouver plus tard via la recherche ou les filtres. Chaque écran a un seul rôle, et rien ne vient s'interposer entre l'utilisateur et l'écriture.
 
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de R_noteApp — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-4">
+  <img class="grid-cell" src="/images/projects/noteApp/notes-2.jpeg" alt="Éditeur de note R_noteApp" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-4.jpeg" alt="Recherche R_noteApp" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-3.jpeg" alt="Catégories R_noteApp" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-5.jpeg" alt="Thème sombre R_noteApp" loading="lazy" />
+</div>
 
 L'interface est épurée et minimaliste, avec une typographie douce et une mise en page calme qui met les notes en avant. Un thème clair et un thème sombre sont inclus, pour que l'application soit agréable à utiliser le matin comme tard le soir.
 
@@ -62,8 +65,6 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de R_noteApp — à remplacer](/images/others/image_placeholder.svg)
-
 L'application a été conçue comme un seul produit multiplateforme, afin de tourner de manière fluide sur Android comme sur iOS sans dupliquer le travail. Une attention particulière a été portée à la sensation de rapidité : les notes se chargent instantanément, la recherche réagit à la frappe, et le changement de thème est immédiat.
 
 Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/NoteApp-Mkoko-](https://github.com/Rahim10020/NoteApp-Mkoko-)
@@ -72,7 +73,7 @@ Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/Note
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de R_noteApp — à remplacer](/images/others/image_placeholder.svg)
+![Liste des notes R_noteApp](/images/projects/noteApp/hotes-1.jpeg)
 
 Une application de prise de notes moderne et concentrée, qui fait exactement ce qu'elle promet : capturer vos pensées, les garder organisées, et vous les rendre au moment où vous en avez besoin.
 

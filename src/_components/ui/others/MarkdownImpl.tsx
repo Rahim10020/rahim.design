@@ -1,14 +1,67 @@
+import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 const external = (url: string) => /^https?:\/\//i.test(url);
+const isVideo = (src?: string) =>
+  !!src && /\.(webm|mp4)(\?.*)?$/i.test(src);
+
+// Classes statiques pour que Tailwind les détecte au scan.
+const COLS: Record<string, string> = {
+  "cols-2": "grid-cols-2",
+  "cols-3": "grid-cols-3",
+  "cols-4": "grid-cols-4",
+  "cols-5": "grid-cols-5",
+};
+const ROWS: Record<string, string> = {
+  "rows-1": "grid-rows-1",
+  "rows-2": "grid-rows-2",
+};
+
+/** Grille 16:9 globale : même bloc que le placeholder (max-w-3xl, aspect-video). */
+function MediaGrid({
+  cols,
+  rows,
+  children,
+}: {
+  cols: string;
+  rows?: string;
+  children: ReactNode;
+}) {
+  return (
+    <figure className="mx-auto m-12 max-w-3xl">
+      <div
+        className={`grid aspect-video w-full overflow-hidden ${cols} ${rows ?? ""}`}
+      >
+        {children}
+      </div>
+    </figure>
+  );
+}
 
 export default function Markdown({ content }: { content: string }) {
   return (
     <div className="prose mx-auto">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
         components={{
+          div: ({ className, children }) => {
+            if (typeof className === "string" && className.includes("media-grid")) {
+              const colsKey = className.match(/cols-\d+/)?.[0] ?? "cols-3";
+              const rowsKey = className.match(/rows-\d+/)?.[0];
+              return (
+                <MediaGrid
+                  cols={COLS[colsKey] ?? "grid-cols-3"}
+                  rows={rowsKey ? ROWS[rowsKey] : undefined}
+                >
+                  {children}
+                </MediaGrid>
+              );
+            }
+            return <div className={className}>{children}</div>;
+          },
           h2: ({ children }) => (
             <h2 className="text-foreground mx-auto mb-3 mt-8 max-w-xl text-4xl font-medium">
               {children}
@@ -40,19 +93,50 @@ export default function Markdown({ content }: { content: string }) {
               {children}
             </a>
           ),
-          img: ({ src, alt }) => (
-            <figure className="mx-auto m-12 max-w-3xl">
-              <img
-                src={src}
-                alt={alt ?? ""}
-                width={1280}
-                height={720}
-                loading="lazy"
-                decoding="async"
-                className="aspect-video w-full object-cover"
-              />
-            </figure>
-          ),
+          img: ({ src, alt, className }) => {
+            // Cellule de grille (HTML brut avec class="grid-cell") : sans <figure>, crop propre.
+            if (typeof className === "string" && className.includes("grid-cell")) {
+              return (
+                <img
+                  src={src}
+                  alt={alt ?? ""}
+                  loading="lazy"
+                  decoding="async"
+                  className="block h-full w-full object-cover"
+                />
+              );
+            }
+            // Vidéo démo : même bloc 16:9 que le placeholder image.
+            if (isVideo(src)) {
+              return (
+                <figure className="mx-auto m-12 max-w-3xl">
+                  <video
+                    src={src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={alt ?? "Project demo video"}
+                    className="aspect-video w-full object-cover"
+                  />
+                </figure>
+              );
+            }
+            return (
+              <figure className="mx-auto m-12 max-w-3xl">
+                <img
+                  src={src}
+                  alt={alt ?? ""}
+                  width={1280}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-video w-full object-cover"
+                />
+              </figure>
+            );
+          },
           ul: ({ children }) => (
             <ul className="mx-auto my-5 max-w-xl list-disc pl-6 text-foreground">
               {children}
