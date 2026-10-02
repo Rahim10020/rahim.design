@@ -1,8 +1,9 @@
 -- La prochaine fois je continue avec:
     1- Trouver des images de couverture pour mes services
-    2- faire des recherches sur comment creer une image gif anime de mon projet afin de l'utiliser dans 
-        portfolio
 
--- Page de detail d'un projet: modifier chaque markdown apres avoir polish tous les 
-    projets a mettre dans le portfolio
--- apres rechecker les ordres des projets
+-- inserer les images et les videos webm dans les contenu markdown. demander a opencode 
+    la meilleure maniere de le faire sachant que je veux respecter les 
+    dimensions actuelles de l'image placeholder.
+
+    -- checker a quoi correspondent les ordre dans les contents et voir comment 
+    je peux changer les ordre de mes projets
