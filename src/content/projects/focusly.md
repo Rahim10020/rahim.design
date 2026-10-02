@@ -48,8 +48,8 @@ The journey follows a natural rhythm: set up an account, see your workspace, add
 <div class="media-grid cols-5">
   <img class="grid-cell" src="/images/projects/focusly/home-mobile.webp" alt="Focusly home on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/focusly/create-account-mobile.webp" alt="Focusly create account on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Focusly login on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Focusly calendar on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Focusly login on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/focusly/stats-mobile.webp" alt="Focusly stats on mobile" loading="lazy" />
 </div>
 
