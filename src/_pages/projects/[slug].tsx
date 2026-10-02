@@ -69,8 +69,12 @@ export default function ProjectDetail() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Open ${project.meta.title}`}
+              className="group"
             >
-              <OpenLinkIcon />
+              <OpenLinkIcon
+                strokeWidth={1.5}
+                className="text-foreground-alt-a group-hover:text-foreground transition-colors duration-200"
+              />
             </a>
           )}
         </div>
