@@ -4,8 +4,7 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 const external = (url: string) => /^https?:\/\//i.test(url);
-const isVideo = (src?: string) =>
-  !!src && /\.(webm|mp4)(\?.*)?$/i.test(src);
+const isVideo = (src?: string) => !!src && /\.(webm|mp4)(\?.*)?$/i.test(src);
 
 // Classes statiques pour que Tailwind les détecte au scan.
 const COLS: Record<string, string> = {
@@ -32,7 +31,7 @@ function MediaGrid({
   return (
     <figure className="mx-auto m-12 max-w-3xl">
       <div
-        className={`grid aspect-video w-full overflow-hidden ${cols} ${rows ?? ""}`}
+        className={`grid aspect-video w-full overflow-hidden rounded-xl ${cols} ${rows ?? ""}`}
       >
         {children}
       </div>
@@ -48,7 +47,10 @@ export default function Markdown({ content }: { content: string }) {
         rehypePlugins={[rehypeRaw]}
         components={{
           div: ({ className, children }) => {
-            if (typeof className === "string" && className.includes("media-grid")) {
+            if (
+              typeof className === "string" &&
+              className.includes("media-grid")
+            ) {
               const colsKey = className.match(/cols-\d+/)?.[0] ?? "cols-3";
               const rowsKey = className.match(/rows-\d+/)?.[0];
               return (
@@ -95,7 +97,10 @@ export default function Markdown({ content }: { content: string }) {
           ),
           img: ({ src, alt, className }) => {
             // Cellule de grille (HTML brut avec class="grid-cell") : sans <figure>, crop propre.
-            if (typeof className === "string" && className.includes("grid-cell")) {
+            if (
+              typeof className === "string" &&
+              className.includes("grid-cell")
+            ) {
               return (
                 <img
                   src={src}
@@ -118,7 +123,7 @@ export default function Markdown({ content }: { content: string }) {
                     playsInline
                     preload="metadata"
                     aria-label={alt ?? "Project demo video"}
-                    className="aspect-video w-full object-cover"
+                    className="aspect-video w-full rounded-xl object-cover"
                   />
                 </figure>
               );
@@ -132,7 +137,7 @@ export default function Markdown({ content }: { content: string }) {
                   height={720}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-video w-full object-cover"
+                  className="aspect-video w-full rounded-xl object-cover"
                 />
               </figure>
             );
