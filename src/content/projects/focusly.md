@@ -9,6 +9,7 @@ role: "Design & Development"
 platform: "Web"
 year: "2025"
 link: "https://focusly-work.vercel.app/"
+imageSrc: "/images/projects/focusly/focusly.webm"
 ---
 
 | ROLE                 | PLATFORM | YEAR |

@@ -107,7 +107,7 @@ export default function Markdown({ content }: { content: string }) {
                   alt={alt ?? ""}
                   loading="lazy"
                   decoding="async"
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full object-cover object-top"
                 />
               );
             }
@@ -137,7 +137,7 @@ export default function Markdown({ content }: { content: string }) {
                   height={720}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-video w-full rounded-xl object-cover"
+                  className="aspect-video w-full rounded-xl object-cover object-top"
                 />
               </figure>
             );

@@ -19,23 +19,38 @@ export default function AllProjectCard({
   href,
   className = "",
 }: AllProjectCardProps) {
+  const isVideo =
+    !!imageSrc && /\.(webm|mp4)(\?.*)?$/i.test(imageSrc);
   return (
     <a
       href={href}
       className={`group relative block w-full mb-6 break-inside-avoid overflow-hidden bg-background ${className}`}
     >
-      {/* Image */}
-      <div className={`w-full ${imageSrc ? "" : imageHeight}`}>
+      {/* Image — hauteur fixe identique au placeholder, le média s'adapte */}
+      <div className={`w-full ${imageHeight}`}>
         {imageSrc ? (
-          <img
-            src={imageSrc}
-            alt={title}
-            width={1200}
-            height={800}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
+          isVideo ? (
+            <video
+              src={imageSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={title}
+              className="w-full h-full rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          ) : (
+            <img
+              src={imageSrc}
+              alt={title}
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          )
         ) : (
           <img
             src="/images/others/image_placeholder.svg"

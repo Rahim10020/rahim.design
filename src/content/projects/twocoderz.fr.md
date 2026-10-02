@@ -9,6 +9,7 @@ role: "Design & Développement"
 platform: "Web"
 year: "2026"
 link: "https://twocoderz-team.vercel.app"
+imageSrc: "/images/projects/twocoderz/twocoderz.webm"
 ---
 
 | RÔLE                   | PLATEFORME | ANNÉE |

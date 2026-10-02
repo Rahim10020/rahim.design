@@ -8,6 +8,7 @@ imageHeight: "h-120"
 role: "Design & Development"
 platform: "Mobile (Android & iOS)"
 year: "2025"
+imageSrc: "/images/projects/noteApp/hotes-1.jpeg"
 ---
 
 | ROLE                 | PLATFORM               | YEAR |
