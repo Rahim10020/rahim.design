@@ -4,7 +4,7 @@ import KnowMeGrid from "../_components/ui/cards/KnowMeGrid";
 import SectionTitle from "../_components/ui/others/SectionTitle";
 import PieChart from "../_components/ui/others/PieChart";
 import SimpleList from "./about/SimpleList";
-import ToolGroup from "./about/ToolGroup";
+import ToolsTable from "./about/ToolsTable";
 import { ROUTES } from "../routes";
 import { useLocale } from "../lib/i18n";
 import { getAbout } from "../locales/about";
@@ -86,49 +86,41 @@ export default function AboutPage() {
       </div>
       {/* fith section */}
       <div className="py-24">
-        <SectionTitle variant="xl" className="max-w-xs lg:max-w-lg">
-          {t.toolsTitle}
-        </SectionTitle>
-        <div className="flex flex-col lg:flex-row items-start justify-between mx-auto max-w-sm lg:mx-0 lg:max-w-none gap-16">
-          <ToolGroup
-            title={t.toolsDesign}
-            titleClassName="text-foreground text-2xl md:text-3xl font-medium"
-            icons={[
-              { src: "/icons/tools/figma.svg", alt: "Logo Figma" },
-              { src: "/icons/tools/excalidraw.png", alt: "Logo Excalidraw" },
-            ]}
-            iconClassName="w-16 lg:w-24 h-16 lg:h-24"
-            iconSize={96}
-          />
-          <ToolGroup
-            title={t.toolsFrontend}
-            titleClassName="text-foreground text-2xl md:text-3xl font-medium"
-            icons={[
-              { src: "/icons/tools/react.svg", alt: "Logo React" },
-              { src: "/icons/tools/typescript.svg", alt: "Logo TypeScript" },
-              { src: "/icons/tools/next-js.svg", alt: "Logo Next.js" },
-              {
-                src: "/icons/tools/tailwind-css.png",
-                alt: "Logo Tailwind CSS",
-              },
-            ]}
-            iconClassName="w-12 h-12 lg:w-16 lg:h-16"
-            iconSize={64}
-          />
-          <ToolGroup
-            title={t.toolsBrainstorm}
-            titleClassName="text-foreground text-2xl md:text-3xl max-w-xs lg:max-w-xl font-medium"
-            icons={[
-              { src: "/icons/tools/claude.png", alt: "Logo Claude" },
-              { src: "/icons/tools/open-ai.png", alt: "Logo OpenAI" },
-            ]}
-            iconClassName="w-12 h-12 lg:w-16 lg:h-16"
-            iconSize={64}
-          />
-        </div>
-        <p className="text-foreground text-xl font-normal leading-relaxed mt-24 max-w-sm md:max-w-lg lg:max-w-2xl">
-          {t.toolsNote}
-        </p>
+        <ToolsTable
+          title={t.toolsTitle}
+          rows={[
+            {
+              label: t.toolsDesign,
+              description: t.toolsDesignDesc,
+              icons: [
+                { src: "/icons/tools/figma.svg", alt: "Logo Figma" },
+                { src: "/icons/tools/excalidraw.png", alt: "Logo Excalidraw" },
+              ],
+            },
+            {
+              label: t.toolsFrontend,
+              description: t.toolsFrontendDesc,
+              icons: [
+                { src: "/icons/tools/react.svg", alt: "Logo React" },
+                { src: "/icons/tools/typescript.svg", alt: "Logo TypeScript" },
+                { src: "/icons/tools/next-js.svg", alt: "Logo Next.js" },
+                {
+                  src: "/icons/tools/tailwind-css.png",
+                  alt: "Logo Tailwind CSS",
+                },
+              ],
+            },
+            {
+              label: t.toolsBrainstorm,
+              description: t.toolsBrainstormDesc,
+              icons: [
+                { src: "/icons/tools/claude.png", alt: "Logo Claude" },
+                { src: "/icons/tools/open-ai.png", alt: "Logo OpenAI" },
+              ],
+            },
+          ]}
+          note={t.toolsNote}
+        />
       </div>
       {/* sixth section */}
       <div className="pt-24">

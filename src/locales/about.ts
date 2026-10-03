@@ -30,8 +30,14 @@ const aboutFr = {
   expectTitle: "Ce que tu peux attendre de moi.",
   toolsTitle: "Les outils que j'utilise pour faire le travail.",
   toolsDesign: "Design",
+  toolsDesignDesc:
+    "Les outils qui m'aident à donner une forme claire aux idées.",
   toolsFrontend: "Front-end",
+  toolsFrontendDesc:
+    "Les technologies que j'utilise pour transformer les designs en produits fonctionnels.",
   toolsBrainstorm: "Pour réfléchir et coder",
+  toolsBrainstormDesc:
+    "Les outils qui m'aident à explorer, réfléchir, résoudre et construire.",
   toolsNote:
     "Je ne choisis pas une technologie parce qu'elle est à la mode. Je choisis l'outil qui correspond au problème.",
   hobbiesTitle: "Et quand je ne suis pas devant mon écran ?",
@@ -75,8 +81,13 @@ const aboutEn = {
   expectTitle: "Some things you can expect from me.",
   toolsTitle: "The tools I use to get the job done.",
   toolsDesign: "Design",
+  toolsDesignDesc: "The tools that help me give clear form to ideas.",
   toolsFrontend: "Front-end",
+  toolsFrontendDesc:
+    "The technologies I use to transform designs into functional products.",
   toolsBrainstorm: "For brainstorming and code",
+  toolsBrainstormDesc:
+    "The tools that help me explore, think, solve and build.",
   toolsNote:
     "I don't choose a technology because it's fashionable. I choose the tool that corresponds to the problem.",
   hobbiesTitle: "And when I'm not in front of my screen?",
