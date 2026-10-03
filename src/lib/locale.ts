@@ -35,8 +35,12 @@ function readStoredLocale(): SupportedLocale | null {
 
 function readUrlLocale(): SupportedLocale | null {
   try {
-    const param = new URLSearchParams(window.location.search).get("lang");
-    return normalizeLocale(param);
+    const search = new URLSearchParams(window.location.search);
+    const fromParam = normalizeLocale(search.get("lang"));
+    if (fromParam) return fromParam;
+    // Crawl de pré-rendu sans ?lang : forcer FR (locale canonique du HTML statique)
+    if (search.has("prerender")) return "fr";
+    return null;
   } catch {
     return null;
   }

@@ -36,7 +36,11 @@ export default function ProjectDetail() {
 
   if (project === undefined || (project && project.meta.slug !== slug)) {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-20" aria-busy="true">
+      <div
+        className="mx-auto max-w-3xl px-6 py-20"
+        aria-busy="true"
+        data-ready="pending"
+      >
         <p className="text-xl text-foreground-alt">…</p>
       </div>
     );
@@ -51,7 +55,7 @@ export default function ProjectDetail() {
   const nextProject = projects[currentIndex + 1];
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-20">
+    <article className="mx-auto max-w-3xl px-6 py-20" data-ready="ready">
       <ReadingProgress label={t.readingProgress} />
       <header className="mx-auto mb-10 max-w-xl">
         <Link
@@ -117,7 +121,7 @@ export default function ProjectDetail() {
 function NotFound() {
   const t = getUi(useLocale()).projectDetail;
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
+    <div className="mx-auto max-w-6xl px-6 py-20" data-ready="not-found">
       <div className="flex items-center justify-center py-48">
         <div>
           <div className="flex flex-col items-center gap-12">

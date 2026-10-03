@@ -7,6 +7,7 @@ import Preloader from "../ui/for-animation/Preloader";
 import PageTransition from "../ui/for-animation/PageTransition";
 import { applyDetectedLocale } from "../../lib/locale";
 import { LocaleContext } from "../../lib/i18n";
+import { isPrerender } from "../../lib/prerender";
 import { ScrollTrigger } from "../../lib/gsap";
 
 function MainFocus() {
@@ -19,10 +20,13 @@ function MainFocus() {
 
 export default function MainLayout() {
   const [locale] = useState(() => applyDetectedLocale());
+  // Pré-rendu : pas d'overlay bloquant, HTML final direct dans le snapshot
+  const [prerender] = useState(() => isPrerender());
   const [ready, setReady] = useState(
     () =>
-      typeof sessionStorage !== "undefined" &&
-      sessionStorage.getItem("rd-preloader") === "1",
+      prerender ||
+      (typeof sessionStorage !== "undefined" &&
+        sessionStorage.getItem("rd-preloader") === "1"),
   );
   const handlePreloaderDone = useCallback(() => {
     setReady(true);
@@ -33,7 +37,7 @@ export default function MainLayout() {
       <ScrollRestoration />
       <MainFocus />
       {!ready && <Preloader onDone={handlePreloaderDone} />}
-      <PageTransition />
+      {!prerender && <PageTransition />}
       <a href="#main" className="skip-link">
         Aller au contenu
       </a>
