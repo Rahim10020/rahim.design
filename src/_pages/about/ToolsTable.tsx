@@ -38,10 +38,10 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           <h3 className="text-foreground text-2xl md:text-3xl font-medium">
             {row.label}
           </h3>
-          <p className="text-foreground text-lg md:text-xl leading-relaxed">
+          <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-sm">
             {row.description}
           </p>
-          <div className="flex items-center gap-4 lg:gap-6">
+          <div className="flex items-center justify-end gap-4 lg:gap-6">
             {row.icons.map((icon) => (
               <img
                 key={icon.src}
@@ -51,14 +51,14 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
                 height={64}
                 loading="lazy"
                 decoding="async"
-                className="w-12 h-12 lg:w-16 lg:h-16"
+                className="w-8 h-8 lg:w-10 lg:h-10"
               />
             ))}
           </div>
         </div>
       ))}
       {/* Footer */}
-      <p className="border-t-2 border-foreground px-6 py-10 md:p-12 text-center text-foreground text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+      <p className="px-6 py-10 md:p-12 text-center md:text-left text-foreground text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
         {note}
       </p>
     </div>
