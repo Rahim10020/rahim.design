@@ -30,10 +30,12 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
         </h2>
       </div>
       {/* Rows */}
-      {rows.map((row) => (
+      {rows.map((row, index) => (
         <div
           key={row.label}
-          className="border-t-2 border-foreground py-8 md:py-10 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center"
+          className={`border-t-2 border-foreground py-8 md:py-12 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center ${
+            index === rows.length - 1 ? "border-b-2" : ""
+          }`}
         >
           <h3 className="text-foreground text-2xl md:text-3xl font-medium max-w-50">
             {row.label}
