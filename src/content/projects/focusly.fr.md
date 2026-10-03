@@ -1,6 +1,6 @@
 ---
 title: "Focusly"
-order: 1
+order: 3
 category: "Web"
 description: "Un espace de productivité moderne qui réunit gestion de tâches, sessions Pomodoro et insights au même endroit."
 tags: ["Web", "Productivité", "Design", "Next.js"]

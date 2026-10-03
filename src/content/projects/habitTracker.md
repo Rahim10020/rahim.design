@@ -1,6 +1,6 @@
 ---
 title: "R_HabitTracker"
-order: 5
+order: 6
 category: "Mobile"
 description: "A habit-tracking app that helps you build lasting routines and see your progress at a glance."
 tags: ["Mobile", "Productivity", "Wellness", "Flutter"]

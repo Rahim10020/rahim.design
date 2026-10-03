@@ -1,6 +1,6 @@
 ---
 title: "twocoderz.team"
-order: 7
+order: 1
 category: "Web"
 description: "Le site officiel de twocoderz, un studio de deux personnes qui aide les entreprises à construire une présence digitale claire et moderne."
 tags: ["Web", "Agence", "Design", "React"]

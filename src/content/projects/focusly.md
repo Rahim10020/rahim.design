@@ -1,6 +1,6 @@
 ---
 title: "Focusly"
-order: 6
+order: 3
 category: "Web"
 description: "A modern productivity workspace that combines task management, Pomodoro sessions and insights in one place."
 tags: ["Web", "Productivity", "Design", "Next.js"]

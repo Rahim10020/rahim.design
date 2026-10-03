@@ -1,6 +1,6 @@
 ---
 title: "rahimdev.me"
-order: 9
+order: 2
 category: "Web"
 description: "My first personal portfolio — the site that marked the beginning of my journey as a developer."
 tags: ["Web", "Portfolio", "Personal", "Next.js"]

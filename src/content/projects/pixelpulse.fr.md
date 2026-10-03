@@ -1,6 +1,6 @@
 ---
 title: "PixelPulse"
-order: 8
+order: 5
 category: "Web"
 description: "Une plateforme de blog moderne où développeurs et passionnés de tech peuvent publier, lire et discuter de contenu technologique."
 tags: ["Web", "Blog", "Éditorial", "Next.js"]
