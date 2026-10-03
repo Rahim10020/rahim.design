@@ -29,7 +29,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           aria-hidden="true"
           className="hidden md:block border-r-2 border-foreground"
         />
-        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight p-6 md:p-10 lg:p-12">
+        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight py-6 md:p-10 lg:pb-14 lg:pt-2 lg:pl-12">
           {title}
         </h2>
       </div>
