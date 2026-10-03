@@ -39,17 +39,20 @@ Plutôt que d'ajouter toujours plus de fonctionnalités, l'accent a été mis su
 
 **Avant de penser aux pixels, pensons au parcours.**
 
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/noteApp/notes-4.jpeg" alt="R_noteApp edit" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-5.jpeg" alt="R_noteApp category detail" loading="lazy" />
+</div>
+
 Le parcours est court et clair : ouvrir l'application, voir ses notes, en créer une en un geste, la ranger dans une catégorie, puis la retrouver plus tard via la recherche ou les filtres. Chaque écran a un seul rôle, et rien ne vient s'interposer entre l'utilisateur et l'écriture.
 
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-<div class="media-grid cols-4">
-  <img class="grid-cell" src="/images/projects/noteApp/notes-2.jpeg" alt="Éditeur de note R_noteApp" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-4.jpeg" alt="Recherche R_noteApp" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-3.jpeg" alt="Catégories R_noteApp" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-5.jpeg" alt="Thème sombre R_noteApp" loading="lazy" />
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/noteApp/notes-2.jpeg" alt="R_noteApp search" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-3.jpeg" alt="R_noteApp home" loading="lazy" />
 </div>
 
 L'interface est épurée et minimaliste, avec une typographie douce et une mise en page calme qui met les notes en avant. Un thème clair et un thème sombre sont inclus, pour que l'application soit agréable à utiliser le matin comme tard le soir.

@@ -39,17 +39,20 @@ Instead of adding more features, the focus was on making the essential ones feel
 
 **Before we think about pixels, let's think about the journey.**
 
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/noteApp/notes-4.jpeg" alt="R_noteApp edit" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-5.jpeg" alt="R_noteApp category detail" loading="lazy" />
+</div>
+
 The journey is short and clear: open the app, see your notes, create one in a tap, sort it into a category, and find it later through search or filters. Every screen has one job, and nothing gets in the way of writing.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-<div class="media-grid cols-4">
-  <img class="grid-cell" src="/images/projects/noteApp/notes-2.jpeg" alt="R_noteApp note editor" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-4.jpeg" alt="R_noteApp search" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-3.jpeg" alt="R_noteApp categories" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/noteApp/notes-5.jpeg" alt="R_noteApp dark theme" loading="lazy" />
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/noteApp/notes-2.jpeg" alt="R_noteApp search" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/noteApp/notes-3.jpeg" alt="R_noteApp home" loading="lazy" />
 </div>
 
 The interface is clean and minimal, with soft typography and a calm layout that puts the notes first. A light and a dark theme are both included, so the app feels right whether it's used in the morning or late at night.
