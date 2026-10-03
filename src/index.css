@@ -100,6 +100,12 @@ footer li {
   transform: translateY(0);
 }
 
+/* Cible de focus programmatique (skip-link / nav) : le focus est déplacé
+   pour les lecteurs d'écran, mais aucun anneau n'est peint. */
+#main:focus {
+  outline: none;
+}
+
 /* Hide scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
