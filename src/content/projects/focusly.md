@@ -40,17 +40,20 @@ Instead of treating each feature as its own world, everything revolves around a 
 
 **Before we think about pixels, let's think about the journey.**
 
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Focusly login on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Focusly calendar on mobile" loading="lazy" />
+</div>
+
 The journey follows a natural rhythm: set up an account, see your workspace, add what matters for today, start a focus session, and check your progress at the end of the week. Each part of the app answers one clear question — _what should I do now?_ — and stays out of the way the rest of the time.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-<div class="media-grid cols-5">
+<div class="media-grid cols-3">
   <img class="grid-cell" src="/images/projects/focusly/home-mobile.webp" alt="Focusly home on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/focusly/create-account-mobile.webp" alt="Focusly create account on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Focusly calendar on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Focusly login on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/focusly/stats-mobile.webp" alt="Focusly stats on mobile" loading="lazy" />
 </div>
 
