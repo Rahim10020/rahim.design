@@ -13,9 +13,7 @@ export default function NotFoundPage() {
           <p className="text-xl text-foreground-alt">404</p>
           <div className="mt-6 flex flex-col items-center gap-8">
             <AsteriskIcon size={54} />
-            <h1 className="text-4xl text-foreground md:text-6xl">
-              {t.title}
-            </h1>
+            <h1 className="text-4xl text-foreground md:text-6xl">{t.title}</h1>
             <p className="max-w-md text-xl leading-relaxed text-foreground-alt">
               {t.description}
             </p>

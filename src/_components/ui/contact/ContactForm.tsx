@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Button from "../Button";
 import SketchCard from "../forms/SketchCard";
 import SketchField from "../forms/SketchField";
 import SketchRadio from "../forms/SketchRadio";
 import SketchTextarea from "../forms/SketchTextarea";
+import ContactToast from "./ContactToast";
 import { useLocale } from "../../../lib/i18n";
 import { getContact } from "../../../locales/contact";
 
@@ -19,6 +20,9 @@ type SubmitStatus = "idle" | "sending" | "sent" | "error";
 export default function ContactForm() {
   const t = getContact(useLocale()).form;
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [toastVisible, setToastVisible] = useState(false);
+
+  const closeToast = useCallback(() => setToastVisible(false), []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,6 +33,7 @@ export default function ContactForm() {
 
     if (!formspreeId) {
       setStatus("error");
+      setToastVisible(true);
       return;
     }
 
@@ -41,17 +46,22 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error(`Formspree responded with ${res.status}`);
       setStatus("sent");
+      setToastVisible(true);
       form.reset();
     } catch {
       setStatus("error");
+      setToastVisible(true);
     }
   }
 
   const isSending = status === "sending";
+  const toastTone =
+    status === "sent" ? "success" : status === "error" ? "error" : null;
 
   return (
-    <SketchCard>
-      <form className="flex flex-col gap-8 lg:gap-12" onSubmit={handleSubmit}>
+    <>
+      <SketchCard>
+        <form className="flex flex-col gap-8 lg:gap-12" onSubmit={handleSubmit}>
         {/* Honeypot anti-spam : les humains ne le voient/remplissent jamais */}
         <input
           type="text"
@@ -114,24 +124,18 @@ export default function ContactForm() {
               {isSending ? t.sending : t.submit}
             </Button>
           </div>
-          {status === "sent" && (
-            <p
-              role="status"
-              className="text-center lg:text-right text-foreground"
-            >
-              {t.success}
-            </p>
-          )}
-          {status === "error" && (
-            <p
-              role="alert"
-              className="text-center lg:text-right text-foreground"
-            >
-              {t.error}
-            </p>
-          )}
         </div>
-      </form>
-    </SketchCard>
+        </form>
+      </SketchCard>
+      {toastVisible && toastTone && (
+        <ContactToast
+          tone={toastTone}
+          title={toastTone === "success" ? t.toastSuccessTitle : t.toastErrorTitle}
+          message={toastTone === "success" ? t.success : t.error}
+          dismissLabel={t.dismiss}
+          onClose={closeToast}
+        />
+      )}
+    </>
   );
 }

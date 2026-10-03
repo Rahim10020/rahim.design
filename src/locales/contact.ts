@@ -28,6 +28,9 @@ const contactFr = {
     sending: "Envoi...",
     success: "Message envoyé. Je te réponds rapidement.",
     error: "Une erreur est survenue. Réessaie ou écris-moi sur WhatsApp.",
+    toastSuccessTitle: "Message envoyé",
+    toastErrorTitle: "Échec d'envoi",
+    dismiss: "Fermer",
     copied: "Copié",
   },
 };
@@ -60,6 +63,9 @@ const contactEn = {
     sending: "Sending...",
     success: "Message sent. I'll answer you soon.",
     error: "Something went wrong. Try again or write me on WhatsApp.",
+    toastSuccessTitle: "Message sent",
+    toastErrorTitle: "Sending failed",
+    dismiss: "Dismiss",
     copied: "Copied",
   },
 };
