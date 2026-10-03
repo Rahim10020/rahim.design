@@ -16,22 +16,6 @@
   font-display: swap;
   src: url("/fonts/sniglet-800-latin.woff2") format("woff2");
 }
-@font-face {
-  font-family: "Hedvig Letters Serif";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/hedvig-400-latin.woff2") format("woff2");
-}
-/* Hedvig n'existe qu'en 400 côté Google : le 700 est synthétisé
-   (comportement identique à avant, sans requête supplémentaire). */
-@font-face {
-  font-family: "Hedvig Letters Serif";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/hedvig-400-latin.woff2") format("woff2");
-}
 
 :root {
   /* Colors */
@@ -50,7 +34,6 @@
 
   /* Typographie */
   --sans: "Sniglet", sans-serif;
-  --serif: "Hedvig Letters Serif", serif;
 
   /* Spacing — 4px grid, named by usage */
   --space-micro: 0.25rem; /* 4px — éléments très serrés */
