@@ -3,5 +3,3 @@ for f in *.png; do cwebp -q 85 "$f" -o "${f%.png}.webp"; done
 
 -- La prochaine fois je continue avec:
     1- Trouver des images de couverture pour mes services
-
--- faire et coder le nouveau design de la section tools
