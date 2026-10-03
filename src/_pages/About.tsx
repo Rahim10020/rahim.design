@@ -15,7 +15,7 @@ export default function AboutPage() {
   const t = getAbout(locale);
   const knowme = getKnowme(locale);
   return (
-    <PageShell>
+    <PageShell overflowHidden>
       {/* First section */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-0 lg:gap-16">
         <div className="flex flex-col gap-4">
