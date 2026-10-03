@@ -8,7 +8,10 @@
     "build": "tsc -b && node scripts/generate-sitemap.mjs && vite build",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/vite": "^4.3.2",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
@@ -36,7 +40,8 @@
     "tailwindcss": "^4.3.2",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.62.0",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "vitest": "^5.0.3"
   },
   "description": "[![Rahim ALI — Web Developer & UX/UI Designer](https://rahim-dev-me.vercel.app/images/og-image.png)](https://rahim-dev-me.vercel.app/)",
   "main": "eslint.config.js",

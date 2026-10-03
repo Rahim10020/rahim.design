@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import SEO from "../SEO";
@@ -8,7 +8,14 @@ import PageTransition from "../ui/for-animation/PageTransition";
 import { applyDetectedLocale } from "../../lib/locale";
 import { LocaleContext } from "../../lib/i18n";
 import { ScrollTrigger } from "../../lib/gsap";
-import ScrollToTop from "./ScrollToTop";
+
+function MainFocus() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.getElementById("main")?.focus({ preventScroll: true });
+  }, [pathname]);
+  return null;
+}
 
 export default function MainLayout() {
   const [locale] = useState(() => applyDetectedLocale());
@@ -23,7 +30,8 @@ export default function MainLayout() {
   }, []);
   return (
     <LocaleContext.Provider value={locale}>
-      <ScrollToTop />
+      <ScrollRestoration />
+      <MainFocus />
       {!ready && <Preloader onDone={handlePreloaderDone} />}
       <PageTransition />
       <a href="#main" className="skip-link">
