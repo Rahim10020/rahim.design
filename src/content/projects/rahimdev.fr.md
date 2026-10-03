@@ -40,7 +40,10 @@ Je me suis concentré sur l'essentiel : un hero fort, une section à propos clai
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![Page d'accueil de rahimdev.me — hero animé du portfolio](/images/projects/rahimdev.me/home.webp)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/rahimdev.me/home.webp" alt="rahimdev.me home page — animated portfolio hero" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/project-detail.webp" alt="rahimdev.me project detail — full presentation" loading="lazy" />
+</div>
 
 Le parcours était direct : arriver sur le hero, comprendre ce que je fais, parcourir les projets sélectionnés, et me contacter. Aucun détour, aucune page inutile. Ce portfolio m'a appris à quel point un chemin linéaire et clair compte — et à quel point ajouter des sections "au cas où" crée de la confusion.
 
@@ -48,11 +51,10 @@ Le parcours était direct : arriver sur le hero, comprendre ce que je fais, parc
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-<div class="media-grid cols-2">
-  <img class="grid-cell" src="/images/projects/rahimdev.me/projects.webp" alt="Page projets de rahimdev.me — sélection de réalisations" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/rahimdev.me/project-detail.webp" alt="Détail d'un projet rahimdev.me — présentation complète" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/rahimdev.me/detail.webp" alt="Vue détaillée de rahimdev.me — contenu de page" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/rahimdev.me/contact.webp" alt="Page contact de rahimdev.me — formulaire et informations" loading="lazy" />
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/rahimdev.me/projects.webp" alt="rahimdev.me projects page — selected work" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/detail.webp" alt="rahimdev.me detail view — page content" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/contact.webp" alt="rahimdev.me contact page — form and information" loading="lazy" />
 </div>
 
 L'interface reposait sur une typographie forte, des espacements généreux et des animations subtiles pour donner un sentiment de mouvement. Un thème sombre et un thème clair étaient inclus, ainsi qu'un curseur personnalisé et un défilement fluide. C'était ambitieux pour un premier portfolio — et honnêtement, avec le recul, il essayait d'en faire un peu trop à la fois.

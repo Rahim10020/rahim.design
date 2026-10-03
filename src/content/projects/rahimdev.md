@@ -40,7 +40,10 @@ I focused on the essentials: a strong hero, a clear about section, a few feature
 
 **Before we think about pixels, let's think about the journey.**
 
-![rahimdev.me home page — animated portfolio hero](/images/projects/rahimdev.me/home.webp)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/rahimdev.me/home.webp" alt="rahimdev.me home page — animated portfolio hero" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/project-detail.webp" alt="rahimdev.me project detail — full presentation" loading="lazy" />
+</div>
 
 The journey was direct: land on the hero, understand what I do, scroll through selected work, and reach out. No detours, no unnecessary pages. This portfolio taught me how much a clear linear path matters — and how much confusion can be created by adding sections "just in case".
 
@@ -48,9 +51,8 @@ The journey was direct: land on the hero, understand what I do, scroll through s
 
 **Once the route was clear, we could finally talk about the interface.**
 
-<div class="media-grid cols-2">
+<div class="media-grid cols-3">
   <img class="grid-cell" src="/images/projects/rahimdev.me/projects.webp" alt="rahimdev.me projects page — selected work" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/rahimdev.me/project-detail.webp" alt="rahimdev.me project detail — full presentation" loading="lazy" />
   <img class="grid-cell" src="/images/projects/rahimdev.me/detail.webp" alt="rahimdev.me detail view — page content" loading="lazy" />
   <img class="grid-cell" src="/images/projects/rahimdev.me/contact.webp" alt="rahimdev.me contact page — form and information" loading="lazy" />
 </div>
