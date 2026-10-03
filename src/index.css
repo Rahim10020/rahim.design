@@ -109,6 +109,25 @@ footer li {
   scrollbar-width: none;
 }
 
+/* Scrollbar globale — fine et discrète */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground-alt-a) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-alt-a);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
 /* Remplissage liquide directionnel (nav, dropdown, filters) — transform only */
 .liquid-fill {
   will-change: transform;
