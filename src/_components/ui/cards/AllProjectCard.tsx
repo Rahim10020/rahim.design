@@ -1,4 +1,5 @@
 import { type ProjectCategory } from "../../../data/project";
+import LazyVideo from "../others/LazyVideo";
 
 interface AllProjectCardProps {
   title: string;
@@ -30,14 +31,9 @@ export default function AllProjectCard({
       <div className={`w-full ${imageHeight}`}>
         {imageSrc ? (
           isVideo ? (
-            <video
+            <LazyVideo
               src={imageSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={title}
+              ariaLabel={title}
               className="w-full h-full rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             />
           ) : (

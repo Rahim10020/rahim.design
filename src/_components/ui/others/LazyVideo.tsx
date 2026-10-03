@@ -1,0 +1,82 @@
+import { useEffect, useRef, useState } from "react";
+
+interface LazyVideoProps {
+  src: string;
+  poster?: string;
+  ariaLabel?: string;
+  className?: string;
+}
+
+function autoplayAllowed(): boolean {
+  if (typeof window === "undefined") return true;
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const saveData =
+    "connection" in navigator &&
+    (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection?.saveData === true;
+  return !reducedMotion && !saveData;
+}
+
+/**
+ * Vidéo lazy avec autoplay optimisé :
+ * - `preload="none"` + src injectée seulement à ~200px du viewport (plus
+ *   aucun téléchargement au chargement initial pour les vidéos hors écran).
+ * - Lecture seulement quand visible, pause hors écran (économise CPU/batterie).
+ * - Respecte `prefers-reduced-motion` et `Save-Data` : pas d'autoplay,
+ *   source chargée d'emblée avec contrôles natifs.
+ */
+export default function LazyVideo({
+  src,
+  poster,
+  ariaLabel,
+  className = "",
+}: LazyVideoProps) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [canAutoplay] = useState(autoplayAllowed);
+  const [activeSrc, setActiveSrc] = useState<string | undefined>(() =>
+    canAutoplay ? undefined : src,
+  );
+
+  useEffect(() => {
+    if (!canAutoplay) return;
+    const video = ref.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        if (entry.isIntersecting) {
+          setActiveSrc((current) => current ?? src);
+          void video.play().catch(() => {
+            /* autoplay bloqué : reste sur la première frame */
+          });
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [canAutoplay, src]);
+
+  return (
+    <video
+      ref={ref}
+      src={activeSrc}
+      muted
+      loop
+      playsInline
+      autoPlay={canAutoplay}
+      preload="none"
+      controls={!canAutoplay}
+      aria-label={ariaLabel}
+      {...(poster ? { poster } : {})}
+      className={className}
+    />
+  );
+}

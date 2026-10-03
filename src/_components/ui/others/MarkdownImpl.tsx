@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import LazyVideo from "./LazyVideo";
 
 const external = (url: string) => /^https?:\/\//i.test(url);
 const isVideo = (src?: string) => !!src && /\.(webm|mp4)(\?.*)?$/i.test(src);
@@ -115,14 +116,9 @@ export default function Markdown({ content }: { content: string }) {
             if (isVideo(src)) {
               return (
                 <figure className="mx-auto m-12 max-w-3xl">
-                  <video
-                    src={src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-label={alt ?? "Project demo video"}
+                  <LazyVideo
+                    src={src ?? ""}
+                    ariaLabel={alt ?? "Project demo video"}
                     className="aspect-video w-full rounded-xl object-cover"
                   />
                 </figure>

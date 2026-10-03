@@ -1,3 +1,5 @@
+import LazyVideo from "../others/LazyVideo";
+
 interface ProjectCardProps {
   title: string;
   category?: string;
@@ -29,14 +31,9 @@ export default function ProjectCard({
       >
         {imageSrc ? (
           isVideo ? (
-            <video
+            <LazyVideo
               src={imageSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={imageAlt || title}
+              ariaLabel={imageAlt || title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
           ) : (
