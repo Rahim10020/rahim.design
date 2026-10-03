@@ -25,7 +25,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           aria-hidden="true"
           className="hidden md:block border-r-2 border-foreground"
         />
-        <h2 className="text-foreground text-3xl md:text-4xl font-medium leading-tight p-6 md:p-10 lg:p-12">
+        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight p-6 md:p-10 lg:p-12">
           {title}
         </h2>
       </div>
@@ -33,12 +33,12 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
       {rows.map((row) => (
         <div
           key={row.label}
-          className="border-t-2 border-foreground px-6 py-8 md:p-10 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center"
+          className="border-t-2 border-foreground py-8 md:py-10 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center"
         >
           <h3 className="text-foreground text-2xl md:text-3xl font-medium">
             {row.label}
           </h3>
-          <p className="text-foreground text-lg md:text-xl leading-relaxed max-w-sm">
+          <p className="text-foreground-alt-a text-lg md:text-xl leading-relaxed max-w-sm">
             {row.description}
           </p>
           <div className="flex items-center justify-end gap-4 lg:gap-6">
@@ -58,7 +58,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
         </div>
       ))}
       {/* Footer */}
-      <p className="px-6 py-10 md:p-12 text-center md:text-left text-foreground text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+      <p className="px-6 py-10 md:p-12 text-center md:text-left text-foreground-alt-a text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
         {note}
       </p>
     </div>
