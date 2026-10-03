@@ -24,14 +24,14 @@ export default function HeroSection() {
               </div>
 
               <div className="w-full flex justify-center lg:justify-end">
-                <div className="flex flex-col items-center lg:items-end justify-end gap-12 md:gap-comfortable text-center lg:text-right">
-                  <p className="text-foreground text-xl md:text-2xl leading-relaxed font-normal max-w-xs md:max-w-md">
+                <div className="flex flex-col items-center lg:items-start gap-12 md:gap-14 text-center lg:text-left">
+                  <p className="text-foreground-alt-a text-xl md:text-2xl leading-relaxed font-normal max-w-xs md:max-w-lg">
                     {t.sub}
                   </p>
 
                   <div>
                     <Link to={ROUTES.CONTACT} className="inline-flex">
-                      <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                      <Button className="px-8 py-3 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                         {t.cta}
                       </Button>
                     </Link>

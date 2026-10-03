@@ -26,8 +26,8 @@ export const ui = {
     },
     highlightWord: { fr: "idée.", en: "idea." },
     sub: {
-      fr: "Je suis Rahim ALI. Je conçois et je code des choses qui rendent le web simple, intuitif et vivant.",
-      en: "I am Rahim ALI. I design and code things that make the web feel simple, intuitive, and alive.",
+      fr: "Je suis Rahim ALI. Je conçois et je code des produits qui rendent le web simple, intuitif et vivant.",
+      en: "I am Rahim ALI. I design and code products that make the web simple, intuitive, and alive.",
     },
     cta: { fr: "Alors, on construit quoi ?", en: "So what are we building?" },
   },
