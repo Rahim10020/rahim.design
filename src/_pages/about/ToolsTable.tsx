@@ -25,7 +25,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           aria-hidden="true"
           className="hidden md:block border-r-2 border-foreground"
         />
-        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight p-6 md:p-10 lg:p-12">
+        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight py-6 md:p-10 lg:p-12">
           {title}
         </h2>
       </div>
@@ -41,7 +41,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           <p className="text-foreground-alt-a text-lg md:text-xl leading-relaxed max-w-sm">
             {row.description}
           </p>
-          <div className="flex items-center justify-end gap-4 lg:gap-6">
+          <div className="flex items-center justify-start lg:justify-end gap-4 lg:gap-6">
             {row.icons.map((icon) => (
               <img
                 key={icon.src}
