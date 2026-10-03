@@ -29,7 +29,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           aria-hidden="true"
           className="hidden md:block border-r-2 border-foreground"
         />
-        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight py-6 md:p-10 lg:pb-14 lg:pt-2 lg:pl-12">
+        <h2 className="text-foreground text-3xl md:text-4xl max-w-xs lg:max-w-sm font-medium leading-tight py-6 md:p-10 lg:pb-14 lg:pt-2 lg:pl-12">
           {title}
         </h2>
       </div>
@@ -62,7 +62,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
       ))}
       {/* Footer — filet pleine largeur, citation en 6xl */}
       <div className="border-t-2 border-foreground">
-        <p className="mx-auto w-full max-w-6xl px-6 py-10 md:p-12 text-center lg:text-left text-foreground-alt-a text-xl md:text-2xl leading-relaxed">
+        <p className="mx-auto w-full max-w-2xl px-6 py-10 md:p-12 text-center lg:text-left text-foreground-alt-a text-xl md:text-2xl leading-relaxed">
           <span className="block max-w-2xl mx-auto">{note}</span>
         </p>
       </div>
