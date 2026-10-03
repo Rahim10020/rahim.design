@@ -40,18 +40,21 @@ Plutôt que de traiter chaque fonctionnalité comme un monde à part, tout s'art
 
 **Avant de penser aux pixels, pensons au parcours.**
 
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Focusly login on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Focusly calendar on mobile" loading="lazy" />
+</div>
+
 Le parcours suit un rythme naturel : créer un compte, découvrir son espace, ajouter ce qui compte pour aujourd'hui, lancer une session de concentration, puis consulter ses progrès en fin de semaine. Chaque partie de l'application répond à une question claire — _que dois-je faire maintenant ?_ — et reste discrète le reste du temps.
 
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-<div class="media-grid cols-5">
-  <img class="grid-cell" src="/images/projects/focusly/home-mobile.webp" alt="Accueil de Focusly sur mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/create-account-mobile.webp" alt="Création de compte Focusly sur mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/calendar-mobile.webp" alt="Calendrier Focusly sur mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/login-mobile.webp" alt="Connexion à Focusly sur mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/focusly/stats-mobile.webp" alt="Statistiques Focusly sur mobile" loading="lazy" />
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/focusly/home-mobile.webp" alt="Focusly home on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/create-account-mobile.webp" alt="Focusly create account on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/focusly/stats-mobile.webp" alt="Focusly stats on mobile" loading="lazy" />
 </div>
 
 L'interface est épurée et structurée, construite autour d'une hiérarchie visuelle claire et d'une palette calme qui garde l'attention sur le travail lui-même. Un thème clair et un thème sombre sont inclus, et la mise en page s'adapte naturellement des grands écrans aux plus petits.

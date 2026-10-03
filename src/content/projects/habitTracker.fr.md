@@ -1,5 +1,5 @@
 ---
-title: "R HabitTracker"
+title: "R_HabitTracker"
 order: 5
 category: "Mobile"
 description: "Une application de suivi d'habitudes qui aide à construire des routines durables et à voir ses progrès en un coup d'œil."
