@@ -12,8 +12,8 @@ link: "https://pixelpulse-blog.vercel.app/"
 imageSrc: "/images/projects/pixelpulse/pixelpulse.webm"
 ---
 
-| RÔLE                   | PLATEFORME | ANNÉE |
-| ---------------------- | ---------- | ----- |
+| RÔLE                   | PLATEFORME | ANNÉE | /images/projects/pixelpulse/home.webp |
+| ---------------------- | ---------- | ----- | ------------------------------------- |
 | Design & Développement | Web        | 2025  |
 
 ![Vidéo démo de PixelPulse — navigation sur la plateforme blog](/images/projects/pixelpulse/pixelpulse.webm)
@@ -40,7 +40,10 @@ Plutôt que de traiter la lecture et l'écriture comme deux mondes séparés, to
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![Page d'accueil de PixelPulse — mise en avant des articles tech](/images/projects/pixelpulse/home.webp)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/pixelpulse/home.webp" alt="PixelPulse home page — featured tech articles" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="PixelPulse article extended view — rich content" loading="lazy" />
+</div>
 
 Le parcours est pensé pour deux types de visiteurs. Les lecteurs arrivent sur une page d'accueil claire, découvrent les articles par catégorie ou par recherche, et plongent dans une lecture bien mise en forme. Les auteurs se connectent, écrivent dans un éditeur familier, publient, et voient leur travail rejoindre le reste de la plateforme. Chaque chemin est court, évident et dépourvu d'étapes inutiles.
 
@@ -48,10 +51,9 @@ Le parcours est pensé pour deux types de visiteurs. Les lecteurs arrivent sur u
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-<div class="media-grid cols-3">
-  <img class="grid-cell" src="/images/projects/pixelpulse/article-detail.webp" alt="Détail d'un article PixelPulse avec commentaires" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="Vue détaillée d'un article PixelPulse — contenu enrichi" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/pixelpulse/menu-open.webp" alt="Menu de navigation ouvert de PixelPulse" loading="lazy" />
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/pixelpulse/article-detail.webp" alt="PixelPulse article detail with comments" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/menu-open.webp" alt="PixelPulse open navigation menu" loading="lazy" />
 </div>
 
 L'interface met le contenu en avant : typographie généreuse, hiérarchie claire, et une mise en page qui s'efface pendant la lecture. Les couleurs sont utilisées avec retenue pour souligner ce qui compte — catégories, appels à l'action, identité des auteurs — et l'ensemble reste cohérent de la page d'accueil jusqu'à l'éditeur et au panneau d'administration.

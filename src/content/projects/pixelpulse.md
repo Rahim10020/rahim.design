@@ -40,7 +40,10 @@ Instead of treating reading and writing as two separate worlds, everything is bu
 
 **Before we think about pixels, let's think about the journey.**
 
-![PixelPulse home page — featured tech articles](/images/projects/pixelpulse/home.webp)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/pixelpulse/home.webp" alt="PixelPulse home page — featured tech articles" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="PixelPulse article extended view — rich content" loading="lazy" />
+</div>
 
 The journey is built for two kinds of visitors. Readers land on a clear home, discover articles by category or search, and dive into a well-formatted reading experience. Authors sign in, write in a familiar editor, publish, and see their work join the rest of the platform. Each path is short, obvious, and free of unnecessary steps.
 
@@ -48,9 +51,8 @@ The journey is built for two kinds of visitors. Readers land on a clear home, di
 
 **Once the route was clear, we could finally talk about the interface.**
 
-<div class="media-grid cols-3">
+<div class="media-grid cols-2">
   <img class="grid-cell" src="/images/projects/pixelpulse/article-detail.webp" alt="PixelPulse article detail with comments" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="PixelPulse article extended view — rich content" loading="lazy" />
   <img class="grid-cell" src="/images/projects/pixelpulse/menu-open.webp" alt="PixelPulse open navigation menu" loading="lazy" />
 </div>
 
