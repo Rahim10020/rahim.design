@@ -15,9 +15,7 @@ export default function AboutSection() {
               <Logo size={128} />
             </div>
             <div className="flex items-start justify-end">
-              <h2 className="text-2xl md:text-4xl font-medium">
-                {t.behind}
-              </h2>
+              <h2 className="text-2xl md:text-4xl font-medium">{t.behind}</h2>
             </div>
           </div>
 
@@ -52,7 +50,7 @@ export default function AboutSection() {
                 <div className="flex items-center justify-center lg:justify-start">
                   <a
                     href={ROUTES.ABOUT}
-                    className="text-xl text-foreground-alt font-normal underline decoration-2"
+                    className="text-xl text-foreground-alt font-normal hover:underline"
                   >
                     {t.knowMore}
                   </a>

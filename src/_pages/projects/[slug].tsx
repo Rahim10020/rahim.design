@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
+import ReadingProgress from "../../_components/ui/others/ReadingProgress";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -51,6 +52,7 @@ export default function ProjectDetail() {
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-20">
+      <ReadingProgress label={t.readingProgress} />
       <header className="mx-auto mb-10 max-w-xl">
         <Link
           to={ROUTES.PROJECTS.LIST}

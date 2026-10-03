@@ -54,7 +54,7 @@ export default function ContactSection() {
                 <h2 className="text-5xl md:text-6xl font-medium text-foreground leading-[1.05]">
                   {t.contactSectionTitle}
                 </h2>
-                <p className="text-foreground leading-relaxed text-xl max-w-xs lg:max-w-lg mx-auto lg:mx-0 ">
+                <p className="text-foreground-alt-a leading-relaxed text-xl max-w-xs lg:max-w-lg mx-auto lg:mx-0 ">
                   {t.leftParagraph}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export default function ContactSection() {
             {/* Center col */}
             <div className="lg:col-span-4 flex flex-col items-center lg:items-start gap-element text-center lg:text-left">
               <EmailLink label={EMAIL} />
-              <p className="text-foreground leading-relaxed text-xl max-w-sm lg:max-w-lg mx-auto lg:mx-0 ">
+              <p className="text-foreground-alt-a leading-relaxed text-xl max-w-sm lg:max-w-lg mx-auto lg:mx-0 ">
                 {t.centerParagraph}
               </p>
             </div>

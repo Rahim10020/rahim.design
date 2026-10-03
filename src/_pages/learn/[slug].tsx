@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "../../_components/ui/others/Markdown";
+import ReadingProgress from "../../_components/ui/others/ReadingProgress";
 import ContentImages from "../../_components/ui/others/ContentImages";
 import { ArrowLeftIcon, AsteriskIcon } from "../../_components/icons";
 import { getLearnArticleAsync } from "../../lib/content";
@@ -41,6 +42,7 @@ export default function LearnArticle() {
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-20">
+      <ReadingProgress label={t.readingProgress} />
       <header className="mx-auto mb-10 max-w-xl">
         <Link
           to={ROUTES.LEARN.LIST}

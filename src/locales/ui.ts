@@ -124,10 +124,12 @@ export const ui = {
     recent: { fr: "Projet récent", en: "Recent Project" },
     next: { fr: "Projet suivant", en: "Next Project" },
     notFound: { fr: "Projet introuvable.", en: "Project not found." },
+    readingProgress: { fr: "Progression de lecture", en: "Reading progress" },
   },
   learnDetail: {
     back: { fr: "Retour à Apprendre", en: "Back to learn" },
     notFound: { fr: "Article introuvable.", en: "Learn article not found." },
+    readingProgress: { fr: "Progression de lecture", en: "Reading progress" },
   },
   notFoundPage: {
     title: { fr: "Page introuvable.", en: "Page not found." },
@@ -262,10 +264,12 @@ export function getUi(locale: SupportedLocale) {
       recent: pick(ui.projectDetail.recent),
       next: pick(ui.projectDetail.next),
       notFound: pick(ui.projectDetail.notFound),
+      readingProgress: pick(ui.projectDetail.readingProgress),
     },
     learnDetail: {
       back: pick(ui.learnDetail.back),
       notFound: pick(ui.learnDetail.notFound),
+      readingProgress: pick(ui.learnDetail.readingProgress),
     },
     notFoundPage: {
       title: pick(ui.notFoundPage.title),

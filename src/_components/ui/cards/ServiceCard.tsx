@@ -50,7 +50,7 @@ export default function ServiceCard({
       </h3>
 
       {/* Description */}
-      <p className="text-foreground text-base md:text-xl font-normal mx-auto max-w-sm lg:max-w-none leading-relaxed text-left">
+      <p className="text-foreground-alt-a text-base md:text-xl font-normal mx-auto max-w-sm lg:max-w-none leading-relaxed text-left">
         {description}
       </p>
     </article>
