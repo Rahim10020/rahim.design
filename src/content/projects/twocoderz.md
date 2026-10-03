@@ -22,7 +22,7 @@ imageSrc: "/images/projects/twocoderz/twocoderz.webm"
 
 **It all starts with a problem.**
 
-As a two-person studio, we needed a place to exist online — a site that would introduce who we are, what we do, and why a business should trust us with its digital presence. twocoderz.team is that place: a modern, bilingual agency website built to turn curiosity into conversations.
+As a two-person studio, we needed a place to exist online — a site that would introduce who we are, what we do, and why a business should trust us with its digital presence. twocoderz.team is that place: a modern agency website built to turn curiosity into conversations.
 
 ## The challenge
 
@@ -40,21 +40,24 @@ Instead of trying to look like everyone else, the site leans into what makes a t
 
 **Before we think about pixels, let's think about the journey.**
 
+<div class="media-grid cols-4">
+  <img class="grid-cell" src="/images/projects/twocoderz/home-mobile.webp" alt="twocoderz.team home on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/menu-mobile.webp" alt="twocoderz.team menu on mobile" loading="lazy" />
+</div>
+
 The journey is short and focused: land on a clear promise, understand the services in a few seconds, see proof through client testimonials, and reach out. There's no noise, no filler — just the essentials that help a potential client decide whether to start a conversation.
 
 ## UI Design
 
 **Once the route was clear, we could finally talk about the interface.**
 
-<div class="media-grid cols-4 rows-2">
-  <img class="grid-cell" src="/images/projects/twocoderz/home-mobile.webp" alt="twocoderz.team home on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+<div class="media-grid cols-4">
   <img class="grid-cell" src="/images/projects/twocoderz/services-mobile.webp" alt="twocoderz.team services on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/twocoderz/faqs-mobile.webp" alt="twocoderz.team FAQs on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/twocoderz/newsletter-mobile.webp" alt="twocoderz.team newsletter on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/twocoderz/contact-mobile.webp" alt="twocoderz.team contact on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/menu-mobile.webp" alt="twocoderz.team menu on mobile" loading="lazy" />
 </div>
 
 The interface is bold and modern, with strong typography, generous spacing and subtle motion that gives the site a sense of rhythm without distracting from the content. It adapts cleanly across desktop, tablet and mobile.
