@@ -116,6 +116,40 @@ function findBestPath(
   );
 }
 
+function resolveImageFields(
+  data: Record<string, unknown>,
+  path: string,
+): { imageSrc?: string; images: string[] } {
+  const images = stringArray(data, "images", path);
+  const imageSrc = optionalString(data, "imageSrc", path) || images[0];
+  return {
+    ...(imageSrc ? { imageSrc } : {}),
+    images: images.filter((image) => image !== imageSrc),
+  };
+}
+
+function pickLocalized<T extends { slug: string }>(
+  all: LocalizedEntry<T>[],
+  locale: SupportedLocale,
+): LocalizedEntry<T>[] {
+  // Regroupe par slug : locale demandée prioritaire, fallback fr puis en
+  const bySlug = new Map<string, LocalizedEntry<T>[]>();
+  for (const entry of all) {
+    const list = bySlug.get(entry.meta.slug) ?? [];
+    list.push(entry);
+    bySlug.set(entry.meta.slug, list);
+  }
+  const resolved: LocalizedEntry<T>[] = [];
+  for (const list of bySlug.values()) {
+    const chosen =
+      list.find((e) => e.locale === locale) ??
+      list.find((e) => e.locale === "fr") ??
+      list.find((e) => e.locale === "en");
+    if (chosen) resolved.push(chosen);
+  }
+  return resolved;
+}
+
 function parseLearnFile(
   path: string,
   raw: string,
@@ -128,8 +162,7 @@ function parseLearnFile(
   const type = typeFromPath(path);
   const slug = slugFromPath(path);
   if (!type || !slug) return null;
-  const images = stringArray(data, "images", path);
-  const imageSrc = optionalString(data, "imageSrc", path) || images[0];
+  const { imageSrc, images } = resolveImageFields(data, path);
   return {
     meta: {
       slug,
@@ -138,7 +171,7 @@ function parseLearnFile(
       description: requiredString(data, "description", path),
       type,
       ...(imageSrc ? { imageSrc } : {}),
-      images: images.filter((image) => image !== imageSrc),
+      images,
     },
     content,
     locale: localeFromPath(path),
@@ -155,8 +188,7 @@ function parseProjectFile(
   const order = requiredNumber(data, "order", path);
   if (!slug || !PROJECT_CATEGORIES.includes(category as ProjectCategory))
     throw new Error(`Invalid content in ${path}: unknown project category`);
-  const imageSrc = optionalString(data, "imageSrc", path);
-  const images = stringArray(data, "images", path);
+  const { imageSrc, images } = resolveImageFields(data, path);
   const link = optionalString(data, "link", path);
   return {
     meta: {
@@ -170,8 +202,8 @@ function parseProjectFile(
       role: optionalString(data, "role", path) || "À compléter",
       platform: optionalString(data, "platform", path) || "À compléter",
       year: optionalString(data, "year", path) || "À compléter",
-      ...(imageSrc || images[0] ? { imageSrc: imageSrc || images[0] } : {}),
-      images: images.filter((image) => image !== (imageSrc || images[0])),
+      ...(imageSrc ? { imageSrc } : {}),
+      images,
       ...(link ? { link } : {}),
     },
     content,
@@ -201,100 +233,17 @@ function learnEntries(
   const all = Object.entries(modules)
     .filter(([path]) => path.includes("/content/learn/"))
     .flatMap(([path, raw]) => {
-      const { data, content } = parseFrontmatter(raw);
-      const type = typeFromPath(path);
-      const slug = slugFromPath(path);
-      const entryLocale = localeFromPath(path);
-      const images = stringArray(data, "images", path);
-      const imageSrc = optionalString(data, "imageSrc", path) || images[0];
-      return type && slug
-        ? [
-            {
-              meta: {
-                slug,
-                title: requiredString(data, "title", path),
-                date: requiredString(data, "date", path),
-                description: requiredString(data, "description", path),
-                type,
-                ...(imageSrc ? { imageSrc } : {}),
-                images: images.filter((image) => image !== imageSrc),
-              },
-              content,
-              locale: entryLocale,
-            },
-          ]
-        : [];
+      const entry = parseLearnFile(path, raw);
+      return entry ? [entry] : [];
     });
-  // Regroupe par slug : locale demandée prioritaire, fallback fr puis en
-  const bySlug = new Map<string, LocalizedEntry<ArticleFrontmatter>[]>();
-  for (const entry of all) {
-    const list = bySlug.get(entry.meta.slug) ?? [];
-    list.push(entry);
-    bySlug.set(entry.meta.slug, list);
-  }
-  const resolved: LocalizedEntry<ArticleFrontmatter>[] = [];
-  for (const list of bySlug.values()) {
-    const exact = list.find((e) => e.locale === locale);
-    const fallbackFr = list.find((e) => e.locale === "fr");
-    const fallbackEn = list.find((e) => e.locale === "en");
-    const chosen = exact ?? fallbackFr ?? fallbackEn;
-    if (chosen) resolved.push(chosen);
-  }
-  return resolved;
+  return pickLocalized(all, locale);
 }
 
 function projectEntries(locale: SupportedLocale): LocalizedEntry<Project>[] {
   const all = Object.entries(modules)
     .filter(([path]) => path.includes("/content/projects/"))
-    .flatMap(([path, raw]) => {
-      const { data, content } = parseFrontmatter(raw);
-      const category = requiredString(data, "category", path);
-      const slug = slugFromPath(path);
-      const order = requiredNumber(data, "order", path);
-      if (!slug || !PROJECT_CATEGORIES.includes(category as ProjectCategory))
-        throw new Error(`Invalid content in ${path}: unknown project category`);
-      const imageSrc = optionalString(data, "imageSrc", path);
-      const images = stringArray(data, "images", path);
-      const link = optionalString(data, "link", path);
-      return [
-        {
-          meta: {
-            slug,
-            order,
-            title: requiredString(data, "title", path),
-            category: category as ProjectCategory,
-            description: requiredString(data, "description", path),
-            tags: stringArray(data, "tags", path),
-            imageHeight: optionalString(data, "imageHeight", path) || "h-96",
-            role: optionalString(data, "role", path) || "À compléter",
-            platform: optionalString(data, "platform", path) || "À compléter",
-            year: optionalString(data, "year", path) || "À compléter",
-            ...(imageSrc || images[0]
-              ? { imageSrc: imageSrc || images[0] }
-              : {}),
-            images: images.filter((image) => image !== (imageSrc || images[0])),
-            ...(link ? { link } : {}),
-          },
-          content,
-          locale: localeFromPath(path),
-        },
-      ];
-    });
-  const bySlug = new Map<string, LocalizedEntry<Project>[]>();
-  for (const entry of all) {
-    const list = bySlug.get(entry.meta.slug) ?? [];
-    list.push(entry);
-    bySlug.set(entry.meta.slug, list);
-  }
-  const resolved: LocalizedEntry<Project>[] = [];
-  for (const list of bySlug.values()) {
-    const exact = list.find((e) => e.locale === locale);
-    const fallbackFr = list.find((e) => e.locale === "fr");
-    const fallbackEn = list.find((e) => e.locale === "en");
-    const chosen = exact ?? fallbackFr ?? fallbackEn;
-    if (chosen) resolved.push(chosen);
-  }
-  return resolved;
+    .map(([path, raw]) => parseProjectFile(path, raw));
+  return pickLocalized(all, locale);
 }
 
 export const getLearnArticles = (locale: SupportedLocale = "fr") =>

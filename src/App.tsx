@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./_components/layout/MainLayout";
+import RouteFallback from "./_components/ui/RouteFallback";
 import HomePage from "./_pages/HomePage";
 import { ROUTES } from "./routes";
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteFallback />}>
       <RouterProvider router={router} />
     </Suspense>
   );

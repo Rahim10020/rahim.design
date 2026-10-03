@@ -31,41 +31,41 @@
   --space-cluster: 3.5rem; /* 56px — grille de cartes (lignes) */
   --space-section: 4rem; /* 64px — padding vertical de section */
   --space-section-lg: 5rem; /* 80px — padding vertical section (lg) */
+}
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: var(--sans);
-    background-color: var(--background);
-    color: var(--foreground);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+body {
+  font-family: var(--sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  /* Markdown article typography */
+/* Markdown article typography */
 
-  .prose p {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.75;
-  }
+.prose p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
 
-  .prose ul {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
-    list-style-type: disc;
-  }
+.prose ul {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
 
-  .prose li {
-    margin-top: 0.5rem;
-    line-height: 1.75;
-    list-style: inherit;
-  }
+.prose li {
+  margin-top: 0.5rem;
+  line-height: 1.75;
+  list-style: inherit;
 }
 
 /* Reset puces uniquement pour la nav / menus (jamais les listes markdown .prose) */
@@ -168,9 +168,4 @@ html {
   --spacing-section: var(--space-section);
   --spacing-section-lg: var(--space-section-lg);
   --spacing-page-x: var(--space-tight);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
 }

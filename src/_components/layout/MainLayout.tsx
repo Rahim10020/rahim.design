@@ -8,6 +8,7 @@ import PageTransition from "../ui/for-animation/PageTransition";
 import { applyDetectedLocale } from "../../lib/locale";
 import { LocaleContext } from "../../lib/i18n";
 import { ScrollTrigger } from "../../lib/gsap";
+import ScrollToTop from "./ScrollToTop";
 
 export default function MainLayout() {
   const [locale] = useState(() => applyDetectedLocale());
@@ -22,6 +23,7 @@ export default function MainLayout() {
   }, []);
   return (
     <LocaleContext.Provider value={locale}>
+      <ScrollToTop />
       {!ready && <Preloader onDone={handlePreloaderDone} />}
       <PageTransition />
       <a href="#main" className="skip-link">
