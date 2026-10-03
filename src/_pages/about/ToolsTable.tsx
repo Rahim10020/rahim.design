@@ -22,7 +22,7 @@ interface ToolsTableProps {
  */
 export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
   return (
-    <div className="w-[min(100vw-3rem)] max-w-350 ml-[50%] -translate-x-1/2">
+    <div className="w-[calc(100vw-3rem)] max-w-350 ml-[50%] -translate-x-1/2">
       {/* Header — pleine largeur du cadre (alignement actuel conservé) */}
       <div className="grid md:grid-cols-[1fr_3fr]">
         <div
