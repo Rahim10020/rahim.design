@@ -25,7 +25,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           aria-hidden="true"
           className="hidden md:block border-r-2 border-foreground"
         />
-        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight py-6 md:p-10 lg:p-12">
+        <h2 className="text-foreground text-3xl md:text-4xl max-w-sm font-medium leading-tight py-6 md:p-10 lg:pb-14 lg:pt-2 lg:pl-12">
           {title}
         </h2>
       </div>
@@ -35,7 +35,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
           key={row.label}
           className="border-t-2 border-foreground py-8 md:py-10 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center"
         >
-          <h3 className="text-foreground text-2xl md:text-3xl font-medium">
+          <h3 className="text-foreground text-2xl md:text-3xl font-medium max-w-50">
             {row.label}
           </h3>
           <p className="text-foreground-alt-a text-lg md:text-xl leading-relaxed max-w-sm">

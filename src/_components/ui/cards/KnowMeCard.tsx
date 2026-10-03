@@ -31,7 +31,7 @@ export default function KnowMeCard({
         </h3>
 
         {/* Description */}
-        <p className="text-xl text-foreground leading-relaxed">{description}</p>
+        <p className="text-xl text-foreground-alt-a leading-relaxed">{description}</p>
       </div>
     </article>
   );
