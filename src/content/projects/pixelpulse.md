@@ -9,13 +9,14 @@ role: "Design & Development"
 platform: "Web"
 year: "2025"
 link: "https://pixelpulse-blog.vercel.app/"
+imageSrc: "/images/projects/pixelpulse/pixelpulse.webm"
 ---
 
 | ROLE                 | PLATFORM | YEAR |
 | -------------------- | -------- | ---- |
 | Design & Development | Web      | 2025 |
 
-![PixelPulse project image — à remplacer](/images/others/image_placeholder.svg)
+![PixelPulse demo video — browsing the blog platform](/images/projects/pixelpulse/pixelpulse.webm)
 
 ## The context
 
@@ -39,7 +40,7 @@ Instead of treating reading and writing as two separate worlds, everything is bu
 
 **Before we think about pixels, let's think about the journey.**
 
-![PixelPulse UX — à remplacer](/images/others/image_placeholder.svg)
+![PixelPulse home page — featured tech articles](/images/projects/pixelpulse/home.webp)
 
 The journey is built for two kinds of visitors. Readers land on a clear home, discover articles by category or search, and dive into a well-formatted reading experience. Authors sign in, write in a familiar editor, publish, and see their work join the rest of the platform. Each path is short, obvious, and free of unnecessary steps.
 
@@ -47,7 +48,11 @@ The journey is built for two kinds of visitors. Readers land on a clear home, di
 
 **Once the route was clear, we could finally talk about the interface.**
 
-![PixelPulse UI design — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/pixelpulse/article-detail.webp" alt="PixelPulse article detail with comments" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="PixelPulse article extended view — rich content" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/menu-open.webp" alt="PixelPulse open navigation menu" loading="lazy" />
+</div>
 
 The interface puts content first: generous typography, clear hierarchy, and a layout that stays out of the way while reading. Colors are used with restraint to highlight what matters — categories, calls to action, author identity — and the whole experience feels consistent from the home page to the editor and the admin panel.
 
@@ -64,7 +69,7 @@ Some decisions that changed the experience.
 
 **The design was ready. Now it had to be brought to life.**
 
-![PixelPulse Development — à remplacer](/images/others/image_placeholder.svg)
+![PixelPulse about page — platform overview](/images/projects/pixelpulse/about.webp)
 
 PixelPulse was built as a modern full-stack web application, designed to be fast, secure and pleasant to use on any device. Particular care was put into the parts that define a publishing platform: a reliable editor, dependable authentication, safe media handling, and a content structure that stays clean as the site grows.
 
@@ -76,7 +81,7 @@ The live website is available at: **À compléter**
 
 **And finally, it looks like this.**
 
-![PixelPulse result — à remplacer](/images/others/image_placeholder.svg)
+![PixelPulse demo video — reading, writing and discussing tech](/images/projects/pixelpulse/pixelpulse.webm)
 
 A blog platform that feels alive — where reading, writing and discussing technology are part of the same calm, well-designed experience.
 

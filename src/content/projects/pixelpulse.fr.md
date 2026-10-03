@@ -9,13 +9,14 @@ role: "Design & Développement"
 platform: "Web"
 year: "2025"
 link: "https://pixelpulse-blog.vercel.app/"
+imageSrc: "/images/projects/pixelpulse/pixelpulse.webm"
 ---
 
 | RÔLE                   | PLATEFORME | ANNÉE |
 | ---------------------- | ---------- | ----- |
 | Design & Développement | Web        | 2025  |
 
-![Image du projet PixelPulse — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de PixelPulse — navigation sur la plateforme blog](/images/projects/pixelpulse/pixelpulse.webm)
 
 ## Le contexte
 
@@ -39,7 +40,7 @@ Plutôt que de traiter la lecture et l'écriture comme deux mondes séparés, to
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de PixelPulse — à remplacer](/images/others/image_placeholder.svg)
+![Page d'accueil de PixelPulse — mise en avant des articles tech](/images/projects/pixelpulse/home.webp)
 
 Le parcours est pensé pour deux types de visiteurs. Les lecteurs arrivent sur une page d'accueil claire, découvrent les articles par catégorie ou par recherche, et plongent dans une lecture bien mise en forme. Les auteurs se connectent, écrivent dans un éditeur familier, publient, et voient leur travail rejoindre le reste de la plateforme. Chaque chemin est court, évident et dépourvu d'étapes inutiles.
 
@@ -47,7 +48,11 @@ Le parcours est pensé pour deux types de visiteurs. Les lecteurs arrivent sur u
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de PixelPulse — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/pixelpulse/article-detail.webp" alt="Détail d'un article PixelPulse avec commentaires" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/more-detail.webp" alt="Vue détaillée d'un article PixelPulse — contenu enrichi" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/pixelpulse/menu-open.webp" alt="Menu de navigation ouvert de PixelPulse" loading="lazy" />
+</div>
 
 L'interface met le contenu en avant : typographie généreuse, hiérarchie claire, et une mise en page qui s'efface pendant la lecture. Les couleurs sont utilisées avec retenue pour souligner ce qui compte — catégories, appels à l'action, identité des auteurs — et l'ensemble reste cohérent de la page d'accueil jusqu'à l'éditeur et au panneau d'administration.
 
@@ -64,7 +69,7 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de PixelPulse — à remplacer](/images/others/image_placeholder.svg)
+![Page à propos de PixelPulse — présentation de la plateforme](/images/projects/pixelpulse/about.webp)
 
 PixelPulse a été construite comme une application web full-stack moderne, pensée pour être rapide, sécurisée et agréable à utiliser sur n'importe quel appareil. Un soin particulier a été apporté aux éléments qui définissent une plateforme de publication : un éditeur fiable, une authentification solide, une gestion sûre des médias, et une structure de contenu qui reste propre à mesure que le site grandit.
 
@@ -76,7 +81,7 @@ Le site est en ligne à l'adresse : **À compléter**
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de PixelPulse — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de PixelPulse — lecture, écriture et discussion](/images/projects/pixelpulse/pixelpulse.webm)
 
 Une plateforme de blog qui semble vivante — où lire, écrire et discuter de technologie font partie d'une même expérience calme et bien pensée.
 

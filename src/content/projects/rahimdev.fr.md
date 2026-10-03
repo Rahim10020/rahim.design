@@ -9,13 +9,14 @@ role: "Design & Développement"
 platform: "Web"
 year: "2025"
 link: "https://rahim-ali-dev.vercel.app/"
+imageSrc: "/images/projects/rahimdev.me/rahimdev.webm"
 ---
 
 | RÔLE                   | PLATEFORME | ANNÉE |
 | ---------------------- | ---------- | ----- |
 | Design & Développement | Web        | 2025  |
 
-![Image du projet rahimdev.me — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de rahimdev.me — navigation sur le portfolio](/images/projects/rahimdev.me/rahimdev.webm)
 
 ## Le contexte
 
@@ -39,7 +40,7 @@ Je me suis concentré sur l'essentiel : un hero fort, une section à propos clai
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de rahimdev.me — à remplacer](/images/others/image_placeholder.svg)
+![Page d'accueil de rahimdev.me — hero animé du portfolio](/images/projects/rahimdev.me/home.webp)
 
 Le parcours était direct : arriver sur le hero, comprendre ce que je fais, parcourir les projets sélectionnés, et me contacter. Aucun détour, aucune page inutile. Ce portfolio m'a appris à quel point un chemin linéaire et clair compte — et à quel point ajouter des sections "au cas où" crée de la confusion.
 
@@ -47,7 +48,12 @@ Le parcours était direct : arriver sur le hero, comprendre ce que je fais, parc
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de rahimdev.me — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/rahimdev.me/projects.webp" alt="Page projets de rahimdev.me — sélection de réalisations" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/project-detail.webp" alt="Détail d'un projet rahimdev.me — présentation complète" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/detail.webp" alt="Vue détaillée de rahimdev.me — contenu de page" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/rahimdev.me/contact.webp" alt="Page contact de rahimdev.me — formulaire et informations" loading="lazy" />
+</div>
 
 L'interface reposait sur une typographie forte, des espacements généreux et des animations subtiles pour donner un sentiment de mouvement. Un thème sombre et un thème clair étaient inclus, ainsi qu'un curseur personnalisé et un défilement fluide. C'était ambitieux pour un premier portfolio — et honnêtement, avec le recul, il essayait d'en faire un peu trop à la fois.
 
@@ -63,8 +69,6 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de rahimdev.me — à remplacer](/images/others/image_placeholder.svg)
-
 Le site a été construit comme une application Next.js moderne, avec une structure de composants propre. Ce fut l'occasion de mettre en pratique tout ce que j'avais appris sur l'architecture front-end, l'animation et le déploiement, sur un projet qui était vraiment le mien.
 
 Le projet est open source et disponible sur GitHub : [github.com/Rahim10020/rahimdev.me](https://github.com/Rahim10020/rahimdev.me)
@@ -75,7 +79,7 @@ Le site est en ligne à l'adresse : [rahim-ali-dev.vercel.app](https://rahim-ali
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de rahimdev.me — à remplacer](/images/others/image_placeholder.svg)
+![Vidéo démo de rahimdev.me — hero, projets et contact](/images/projects/rahimdev.me/rahimdev.webm)
 
 Un premier portfolio qui a fait son travail : il m'a présenté, a montré mon travail, et m'a donné une adresse à envoyer à des clients potentiels. Il est aussi, discrètement, devenu le point de départ de tout ce qui a suivi.
 

@@ -17,8 +17,7 @@ export default function ProjectCard({
   imageHeight = "h-72",
   className = "",
 }: ProjectCardProps) {
-  const isVideo =
-    !!imageSrc && /\.(webm|mp4)(\?.*)?$/i.test(imageSrc);
+  const isVideo = !!imageSrc && /\.(webm|mp4)(\?.*)?$/i.test(imageSrc);
   return (
     <a
       href={href}
@@ -48,7 +47,7 @@ export default function ProjectCard({
               height={600}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             />
           )
         ) : (
