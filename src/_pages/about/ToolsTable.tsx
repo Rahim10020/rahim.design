@@ -22,7 +22,7 @@ interface ToolsTableProps {
  */
 export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
   return (
-    <div className="w-[min(100vw-3rem,96rem)] ml-[50%] -translate-x-1/2">
+    <div className="w-[min(100vw-3rem)] max-w-350 ml-[50%] -translate-x-1/2">
       {/* Header — pleine largeur du cadre (alignement actuel conservé) */}
       <div className="grid md:grid-cols-[1fr_3fr]">
         <div
@@ -36,7 +36,7 @@ export default function ToolsTable({ title, rows, note }: ToolsTableProps) {
       {/* Rows — filets pleine largeur, contenu en 6xl */}
       {rows.map((row) => (
         <div key={row.label} className="border-t-2 border-foreground">
-          <div className="mx-auto w-full max-w-350 px-6 py-8 md:py-10 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center">
+          <div className="mx-auto w-full max-w-350 px-6 py-8 md:py-12 grid gap-6 md:grid-cols-[1fr_1.5fr_1fr] md:items-center">
             <h3 className="text-foreground text-2xl max-w-50 md:text-3xl font-medium">
               {row.label}
             </h3>
