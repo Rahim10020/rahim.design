@@ -19,7 +19,7 @@ export default function ContactToast({
   message,
   dismissLabel,
   onClose,
-  autoDismissMs = 6000,
+  autoDismissMs = 5000,
 }: ContactToastProps) {
   const toastRef = useRef<HTMLDivElement>(null);
   const isSuccess = tone === "success";
