@@ -179,29 +179,29 @@ export default function Markdown({ content }: { content: string }) {
           ),
           table: ({ children }) => (
             <div className="mx-auto my-6 w-full max-w-xl overflow-x-auto">
-              <table className="w-full border-collapse border border-foreground-alt text-xl text-foreground">
+              <table className="w-full border-collapse border border-foreground text-xl text-foreground">
                 {children}
               </table>
             </div>
           ),
           thead: ({ children }) => (
-            <thead className="border-b text-2xl text-foreground-alt border-foreground-alt">
+            <thead className="border-b text-xls text-foreground-alt border-foreground">
               {children}
             </thead>
           ),
           tbody: ({ children }) => <tbody>{children}</tbody>,
           tr: ({ children }) => (
-            <tr className="border-b border-foreground-alt last:border-0">
+            <tr className="border-b border-foreground last:border-0">
               {children}
             </tr>
           ),
           th: ({ children }) => (
-            <th className="border-r border-foreground-alt px-4 py-2 text-left font-medium last:border-r-0">
+            <th className="border-r border-foreground px-4 py-2 text-left text-xl font-medium last:border-r-0">
               {children}
             </th>
           ),
           td: ({ children }) => (
-            <td className="border-r border-foreground-alt px-4 py-4 last:border-r-0">
+            <td className="border-r border-foreground text-base px-4 py-4 last:border-r-0">
               {children}
             </td>
           ),
