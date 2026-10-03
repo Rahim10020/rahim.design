@@ -4,5 +4,4 @@ for f in *.png; do cwebp -q 85 "$f" -o "${f%.png}.webp"; done
 -- La prochaine fois je continue avec:
     1- Trouver des images de couverture pour mes services
 
--- inserer les images et les videos webm dans le reste des projets.
 -- faire et coder le nouveau design de la section tools
