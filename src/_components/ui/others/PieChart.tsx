@@ -1,4 +1,9 @@
+import { useLocale } from "../../../lib/i18n";
+
 export default function PieChart() {
+  const locale = useLocale();
+  const designerLabel = "Designer";
+  const coderLabel = locale === "en" ? "Coder" : "Codeur";
   return (
     <div>
       <div className="relative w-60 h-60 sm:w-80 sm:h-80">
@@ -16,10 +21,10 @@ export default function PieChart() {
 
         {/* Labels */}
         <span className="absolute left-[08%] top-[40%] text-background text-xl md:text-2xl font-medium select-none">
-          Designer
+          {designerLabel}
         </span>
         <span className="absolute right-[16%] top-[40%] text-background text-xl md:text-2xl font-medium select-none">
-          Coder
+          {coderLabel}
         </span>
       </div>
     </div>
