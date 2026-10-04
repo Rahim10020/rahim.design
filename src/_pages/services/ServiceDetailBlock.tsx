@@ -66,7 +66,7 @@ export default function ServiceDetailBlock({
 }: ServiceDetailBlockProps) {
   const classes = VARIANTS[variant];
   return (
-    <div className="py-24 mx-auto max-w-6xl flex flex-col gap-16">
+    <div className="py-8 lg:py-24 mx-auto max-w-6xl flex flex-col gap-16">
       <div className="flex flex-col lg:flex-row gap-4 items-start justify-between">
         <div className="flex flex-col gap-2">
           <h3 className={classes.title}>{title}</h3>
