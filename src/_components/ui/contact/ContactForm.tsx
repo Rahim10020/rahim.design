@@ -119,7 +119,7 @@ export default function ContactForm() {
                 type="submit"
                 variant="primary"
                 disabled={isSending}
-                className="px-8 py-2 text-md lg:text-lg"
+                className="px-8 py-4 lg:py-2 text-lg lg:text-lg"
               >
                 {isSending ? t.sending : t.submit}
               </Button>
