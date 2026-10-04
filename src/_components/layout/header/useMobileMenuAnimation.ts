@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useEffectEvent } from "react";
 import type { RefObject } from "react";
 
 type MobileMenuAnimationArgs = {
@@ -118,9 +118,16 @@ export function useMobileMenuAnimation({
     };
   }, [mobileMenuOpen, overlayRef, itemsRef, bottomCloseRef]);
 
-  useEffect(() => {
+  // Ferme le menu à la navigation uniquement (pathname/hash).
+  // useEffectEvent : lit toujours le dernier état sans recréer l'effet —
+  // mettre mobileMenuOpen/onNavigate en dépendances refermerait le menu
+  // dès son ouverture.
+  const closeIfOpen = useEffectEvent(() => {
     if (mobileMenuOpen) onNavigate();
-  }, [pathname, hash, mobileMenuOpen, onNavigate]);
+  });
+  useEffect(() => {
+    closeIfOpen();
+  }, [pathname, hash]);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
