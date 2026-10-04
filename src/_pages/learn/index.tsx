@@ -32,7 +32,7 @@ export default function LearnPage() {
 
   return (
     <section className="w-full min-h-screen bg-background">
-      <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-24">
+      <div className="max-w-350 mx-auto px-6 pt-12 pb-24 mb-0 lg:mb-24">
         <div className="mx-auto w-full max-w-6xl">
           <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-10">
             {t.title}
