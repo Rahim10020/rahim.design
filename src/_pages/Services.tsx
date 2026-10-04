@@ -65,7 +65,8 @@ export default function ServicesPage() {
         whatICanDo={t.whatICanDo}
         descriptions={[t.designDesc]}
         items={t.designItems}
-        imageSrc="/images/others/image_placeholder.svg"
+        videoSrc="/images/projects/twocoderz/twocoderz.webm"
+        videoLabel="Démo vidéo du projet Twocoderz"
       />
       {/* Third section */}
       <ServiceDetailBlock
@@ -75,7 +76,8 @@ export default function ServicesPage() {
         whatICanDo={t.whatICanDo}
         descriptions={[t.buildDesc]}
         items={t.buildItems}
-        imageSrc="/images/others/image_placeholder.svg"
+        videoSrc="/images/projects/rahimdev.me/rahimdev.webm"
+        videoLabel="Démo vidéo du projet Rahimdev.me"
       />
       {/* Fourth section */}
       <ServiceDetailBlock
@@ -85,7 +87,8 @@ export default function ServicesPage() {
         whatICanDo={t.whatICanDo}
         descriptions={[t.visibleDescA, t.visibleDescB]}
         items={t.visibleItems}
-        imageSrc="/images/others/image_placeholder.svg"
+        videoSrc="/images/projects/pixelpulse/pixelpulse.webm"
+        videoLabel="Démo vidéo du projet Pixelpulse"
       />
       {/* Fith section */}
       <ServiceDetailBlock

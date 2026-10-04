@@ -1,3 +1,5 @@
+import LazyVideo from "../../_components/ui/others/LazyVideo";
+
 type ServiceDetailVariant = "design" | "build" | "visible" | "improve";
 
 interface ServiceDetailBlockProps {
@@ -8,6 +10,9 @@ interface ServiceDetailBlockProps {
   descriptions: string[];
   items: string[];
   imageSrc?: string;
+  /** Démo vidéo (même cadre que l'image : w-full h-120 object-cover). */
+  videoSrc?: string;
+  videoLabel?: string;
 }
 
 /** Classes exactes de chaque bloc (recopiées des sections Services). */
@@ -28,7 +33,8 @@ const VARIANTS: Record<
     ],
   },
   visible: {
-    title: "text-foreground text-4xl font-medium max-w-xs md:max-w-sm lg:max-w-md",
+    title:
+      "text-foreground text-4xl font-medium max-w-xs md:max-w-sm lg:max-w-md",
     descriptions: [
       "text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg",
       "text-foreground text-xl leading-relaxed max-w-sm md:max-w-lg",
@@ -55,6 +61,8 @@ export default function ServiceDetailBlock({
   descriptions,
   items,
   imageSrc,
+  videoSrc,
+  videoLabel,
 }: ServiceDetailBlockProps) {
   const classes = VARIANTS[variant];
   return (
@@ -95,19 +103,29 @@ export default function ServiceDetailBlock({
           </ul>
         </div>
       </div>
-      {imageSrc && (
+      {videoSrc ? (
         <div className="my-4">
-          <img
-            src={imageSrc}
-            alt=""
-            aria-hidden="true"
-            width={1600}
-            height={900}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-120 object-cover"
+          <LazyVideo
+            src={videoSrc}
+            ariaLabel={videoLabel ?? title}
+            className="w-full h-120 object-cover rounded-3xl"
           />
         </div>
+      ) : (
+        imageSrc && (
+          <div className="my-4">
+            <img
+              src={imageSrc}
+              alt=""
+              aria-hidden="true"
+              width={1600}
+              height={900}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-120 object-cover rounded-3xl"
+            />
+          </div>
+        )
       )}
     </div>
   );
