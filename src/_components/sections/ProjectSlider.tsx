@@ -131,7 +131,7 @@ export default function ProjectSlider({
         {/*  SLIDER  */}
         <div
           ref={sliderRef}
-          className="flex items-end gap-block sm:gap-heading-content overflow-x-auto snap-x snap-mandatory scrollbar-hide px-page-x lg:px-major pb-element"
+          className="flex items-end gap-block sm:gap-heading-content overflow-x-auto snap-x snap-mandatory scrollbar-hide px-page-x pb-element"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div ref={cardsWrapperRef} className="contents">
