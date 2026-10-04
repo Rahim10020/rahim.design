@@ -79,14 +79,14 @@ export default function AboutPage() {
         </div>
       </div>
       {/* fourth section */}
-      <div className="py-24">
+      <div className="py-8 lg:py-24">
         <SectionTitle variant="xl" className="max-w-xl">
           {t.expectTitle}
         </SectionTitle>
         <KnowMeGrid items={knowme} />
       </div>
       {/* fith section */}
-      <div className="py-24">
+      <div className="py-8 lg:py-24">
         <ToolsTable
           title={t.toolsTitle}
           rows={[
@@ -124,7 +124,7 @@ export default function AboutPage() {
         />
       </div>
       {/* sixth section */}
-      <div className="pt-24">
+      <div className="pt-8 lg:pt-24">
         <div>
           <SectionTitle variant="xl" className="max-w-xs lg:max-w-lg">
             {t.hobbiesTitle}
