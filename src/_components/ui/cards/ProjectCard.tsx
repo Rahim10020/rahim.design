@@ -67,7 +67,7 @@ export default function ProjectCard({
 
       {/* Title + Category */}
       <div className="px-micro">
-        <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text group-hover:underline underline-offset-4 decoration-2 transition-all">
+        <h3 className="text-foreground text-xl md:text-3xl font-medium mb-heading-text underline md:no-underline md:group-hover:underline underline-offset-4 decoration-2 transition-all">
           {title}
         </h3>
         {category && (
