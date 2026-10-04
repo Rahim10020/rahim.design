@@ -50,8 +50,7 @@ export const ui = {
     knowMore: { fr: "Apprends à me connaître", en: "Know me more" },
   },
   servicesSection: {
-    titleA: { fr: "Ce que je peux faire", en: "What I can do" },
-    titleB: { fr: "pour toi", en: "for you" },
+    title: { fr: "Ce que je peux faire pour toi", en: "What I can do for you" },
     items: [
       {
         title: { fr: "Concevoir une interface", en: "Design an interface" },
@@ -226,8 +225,7 @@ export function getUi(locale: SupportedLocale) {
       knowMore: pick(ui.aboutSection.knowMore),
     },
     servicesSection: {
-      titleA: pick(ui.servicesSection.titleA),
-      titleB: pick(ui.servicesSection.titleB),
+      title: pick(ui.servicesSection.title),
       items: ui.servicesSection.items.map((s) => ({
         title: pick(s.title),
         description: pick(s.description),

@@ -3,6 +3,10 @@ interface ServiceCardProps {
   description: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Aplat de couleur de la cover (classe Tailwind statique). */
+  coverColor?: string;
+  /** Icône décorative centrée sur l'aplat. */
+  iconSrc?: string;
   className?: string;
 }
 
@@ -11,14 +15,18 @@ export default function ServiceCard({
   description,
   imageSrc,
   imageAlt = "",
+  coverColor,
+  iconSrc,
   className = "",
 }: ServiceCardProps) {
   return (
     <article
       className={`flex flex-col mx-auto w-full max-w-sm lg:max-w-none ${className}`}
     >
-      {/* Image */}
-      <div className="w-full max-w-none aspect-square md:aspect-6/5 overflow-hidden bg-background mb-comfortable">
+      {/* Cover : image, ou aplat couleur + icône, ou placeholder */}
+      <div
+        className={`w-full max-w-none aspect-video md:aspect-6/5 overflow-hidden mb-comfortable flex items-center justify-center ${coverColor ?? "bg-background"}`}
+      >
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -28,6 +36,17 @@ export default function ServiceCard({
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover"
+          />
+        ) : iconSrc ? (
+          <img
+            src={iconSrc}
+            alt=""
+            aria-hidden="true"
+            width={128}
+            height={128}
+            loading="lazy"
+            decoding="async"
+            className="w-24 h-24 md:w-32 md:h-32"
           />
         ) : (
           //Placeholder
