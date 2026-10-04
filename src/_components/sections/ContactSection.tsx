@@ -44,7 +44,7 @@ export default function ContactSection() {
   const lomeTime = useLomeTime();
 
   return (
-    <section className="w-full bg-background my-section lg:py-section-lg">
+    <section className="w-full bg-background my-0 lg:my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
         <div className="mx-auto max-w-8xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-major">
