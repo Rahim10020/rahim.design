@@ -1,3 +1,6 @@
+import { LiquidFills } from "./LiquidHover";
+import { useLiquidTargets } from "./useLiquidTargets";
+
 interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
@@ -15,38 +18,34 @@ export default function Button({
   onClick,
   disabled = false,
 }: ButtonProps) {
+  // Remplissage liquide directionnel (même effet que la nav).
+  // Pointeurs fins uniquement : aucun effet résiduel sur tactile.
+  const targetRef = useLiquidTargets(disabled);
+
   const base =
-    "relative z-10 inline-flex items-center justify-center whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    "relative inline-flex items-center justify-center overflow-hidden isolate whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
 
   const variants = {
     primary:
-      "bg-primary text-foreground border-2 border-foreground focus:ring-foreground-alt-a",
+      "bg-primary text-foreground border-2 border-foreground focus:ring-foreground-alt-a hover:text-background",
     secondary:
-      "bg-foreground text-background border-2 border-foreground focus:ring-foreground",
+      "bg-foreground text-background border-2 border-foreground focus:ring-foreground hover:text-foreground",
   };
 
-  // Effet 3D "raised" en CSS pur (aucun JS/GSAP) :
-  // repos relevé (-4px), hover/clic écrasé sur l'ombre. Le bouton reste
-  // relevé quand disabled (pas d'interaction).
-  const pressEffect = disabled
-    ? ""
-    : "translate-[-4px_-4px] transition-transform duration-200 ease-out hover:translate-[0px_0px] hover:duration-150 active:translate-[0px_0px] active:duration-75";
+  const fillClassName = variant === "primary" ? "bg-foreground" : "bg-primary";
 
   return (
-    <div className="relative inline-flex w-fit">
-      {/* Ombre dure, sous le bouton */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-foreground pointer-events-none"
-      />
-      <button
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
-        className={`${base} ${variants[variant]} ${pressEffect} ${className}`}
-      >
+    <button
+      ref={targetRef as never}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`${base} ${variants[variant]} ${className}`}
+    >
+      {!disabled && <LiquidFills fillClassName={fillClassName} />}
+      <span className="relative z-10 inline-flex items-center justify-center">
         {children}
-      </button>
-    </div>
+      </span>
+    </button>
   );
 }

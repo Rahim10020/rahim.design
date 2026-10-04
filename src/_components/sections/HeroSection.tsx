@@ -31,7 +31,7 @@ export default function HeroSection() {
 
                   <div>
                     <Link to={ROUTES.CONTACT} className="inline-flex">
-                      <Button className="px-8 py-3 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
+                      <Button className="px-8 py-4 text-xl md:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">
                         {t.cta}
                       </Button>
                     </Link>

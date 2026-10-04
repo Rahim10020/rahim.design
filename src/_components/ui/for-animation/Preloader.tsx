@@ -35,7 +35,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         onDone();
         return;
       }
-      // Version courte (≤0.6s) : un seul mot, compteur rapide, sortie brève.
+      // Version longue d'origine : mots cyclés + compteur 1s + sortie 0.5s.
       const counter = { v: 0 };
       const tl = gsap.timeline({
         onComplete: () => {
@@ -44,21 +44,27 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
           onDone();
         },
       });
-      const firstWord = words[0];
-      if (firstWord && wordRef.current) {
-        wordRef.current.textContent = firstWord;
-      }
-      tl.fromTo(
-        wordRef.current,
-        { y: 20, autoAlpha: 0 },
-        { y: 0, autoAlpha: 1, duration: 0.2, ease: "power2.out" },
-        0,
-      );
+      words.forEach((w) => {
+        tl.call(() => {
+          if (wordRef.current) wordRef.current.textContent = w;
+        });
+        tl.fromTo(
+          wordRef.current,
+          { y: 20, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out" },
+          ">",
+        );
+        tl.to(
+          wordRef.current,
+          { y: -14, autoAlpha: 0, duration: 0.25 },
+          ">+0.2",
+        );
+      });
       tl.to(
         counter,
         {
           v: 100,
-          duration: 0.3,
+          duration: 1,
           ease: "power2.inOut",
           onUpdate: () => {
             if (numRef.current)
@@ -73,7 +79,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       );
       tl.to(rootRef.current, {
         yPercent: -100,
-        duration: 0.25,
+        duration: 0.5,
         ease: "power4.inOut",
       });
     },
