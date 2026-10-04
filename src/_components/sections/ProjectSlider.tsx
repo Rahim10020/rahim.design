@@ -5,15 +5,6 @@ import { ChevronRightIcon } from "../icons";
 import { getProjectPath, ROUTES } from "../../routes";
 import type { Project } from "../../data/project";
 import { gsap, useGSAP } from "../../lib/gsap";
-import { isMobileViewport, saveDataEnabled } from "../../lib/device";
-
-/** Pas d'animations en boucle sur mobile / reduced-motion / save-data (INP + batterie). */
-function loopsAllowed(): boolean {
-  if (typeof window === "undefined") return false;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-  if (isMobileViewport() || saveDataEnabled()) return false;
-  return true;
-}
 
 const TOTAL_BARS = 16;
 
@@ -36,8 +27,6 @@ export default function ProjectSlider({
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
   const gaugeRef = useRef<HTMLDivElement>(null);
-  const rightFadeRef = useRef<HTMLDivElement>(null);
-  const seeAllArrowRef = useRef<HTMLSpanElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
@@ -81,25 +70,25 @@ export default function ProjectSlider({
     };
   }, []);
 
-  const getBarHeight = (index: number) => {
+  // État visuel de la jauge (compositeur uniquement : transform + opacity,
+  // pas de height:layout). Index 0 = début du scroll.
+  const getBarStyle = (index: number) => {
     const distance = Math.abs(index - activeIndex);
-    if (distance === 0) return 32;
-    if (distance === 1) return 22;
-    if (distance === 2) return 14;
-    return 8;
+    if (distance === 0) return { scaleY: 1, opacity: 1 };
+    if (distance === 1) return { scaleY: 0.7, opacity: 0.7 };
+    if (distance === 2) return { scaleY: 0.45, opacity: 0.45 };
+    return { scaleY: 0.25, opacity: 0.3 };
   };
 
   /* ------------------------------------------------------------------
-   *  Animations GSAP
+   *  Animation d'entrée GSAP (one-shot, pas de boucle)
    * ------------------------------------------------------------------ */
   useGSAP(
     () => {
       const cards = cardsWrapperRef.current?.children;
       const bars = gaugeRef.current?.children;
-      const arrow = seeAllArrowRef.current;
-      const slider = sliderRef.current;
 
-      if (!cards || !bars || !arrow || !slider) return;
+      if (!cards || !bars) return;
 
       /* --- Entrée de section (cards + gauge, pas le titre) --- */
       const introTl = gsap.timeline({
@@ -129,86 +118,16 @@ export default function ProjectSlider({
           },
           "-=0.3",
         );
-
-      /* --- Gauge qui respire (opacity compositeur, pas height:layout) --- */
-      /* --- Flèche "See all" qui glisse --- */
-      /* Boucles désactivées sur mobile / reduced-motion / save-data. */
-      if (loopsAllowed()) {
-        gsap.to(bars, {
-          opacity: 0.55,
-          duration: 1.2,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          stagger: { each: 0.06, from: "center" },
-        });
-
-        gsap.to(arrow, {
-          x: 4,
-          duration: 0.8,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      }
-
-      /* --- Nudge d'invitation au scroll (une seule fois, au chargement) --- */
-      gsap.fromTo(
-        slider,
-        { scrollLeft: 0 },
-        {
-          scrollLeft: 60,
-          duration: 0.7,
-          ease: "power2.inOut",
-          yoyo: true,
-          repeat: 1,
-          delay: 1.2,
-          scrollTo: { autoKill: false },
-        },
-      );
     },
     { scope: sectionRef },
-  );
-
-  /* ------------------------------------------------------------------
-   *  Rebond de la barre active quand activeIndex change
-   * ------------------------------------------------------------------ */
-  useGSAP(
-    () => {
-      const bars = gaugeRef.current?.children;
-      if (!bars) return;
-
-      const activeBar = bars[activeIndex] as HTMLElement | undefined;
-      if (!activeBar) return;
-
-      gsap.fromTo(
-        activeBar,
-        { scaleY: 1.3 },
-        { scaleY: 1, duration: 0.3, ease: "back.out(2)" },
-      );
-    },
-    { dependencies: [activeIndex], scope: sectionRef },
-  );
-
-  /* ------------------------------------------------------------------
-   *  Fade du bord droit selon position de scroll
-   * ------------------------------------------------------------------ */
-  useGSAP(
-    () => {
-      if (!rightFadeRef.current) return;
-      gsap.to(rightFadeRef.current, {
-        autoAlpha: isAtEnd ? 0 : 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    },
-    { dependencies: [isAtEnd], scope: sectionRef },
   );
 
   return (
     <div ref={sectionRef}>
       {/* Wrapper du slider pour positionner le fade en absolute */}
-      <div className={`relative max-w-350 mx-auto${wrapperClassName ? ` ${wrapperClassName}` : ""}`}>
+      <div
+        className={`relative max-w-350 mx-auto${wrapperClassName ? ` ${wrapperClassName}` : ""}`}
+      >
         {/*  SLIDER  */}
         <div
           ref={sliderRef}
@@ -235,7 +154,7 @@ export default function ProjectSlider({
               className="flex items-center text-foreground text-xl font-medium underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap"
             >
               {seeAllLabel}{" "}
-              <span ref={seeAllArrowRef} className="pl-tight inline-flex">
+              <span className="pl-tight inline-flex">
                 <ChevronRightIcon />
               </span>
             </Link>
@@ -244,9 +163,8 @@ export default function ProjectSlider({
 
         {/* Fade subtil sur le bord droit (indique qu'il y a du contenu) */}
         <div
-          ref={rightFadeRef}
-          className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-background to-transparent"
-          style={{ opacity: 0 }}
+          className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-background to-transparent transition-opacity duration-300"
+          style={{ opacity: isAtEnd ? 0 : 1 }}
         />
       </div>
 
@@ -256,13 +174,19 @@ export default function ProjectSlider({
           ref={gaugeRef}
           className="flex items-end justify-center gap-1.5 h-10"
         >
-          {Array.from({ length: TOTAL_BARS }).map((_, index) => (
-            <div
-              key={index}
-              className="w-0.5 bg-neutral-800 rounded-full transition-[height] duration-150 ease-out"
-              style={{ height: `${getBarHeight(index)}px` }}
-            />
-          ))}
+          {Array.from({ length: TOTAL_BARS }).map((_, index) => {
+            const style = getBarStyle(index);
+            return (
+              <div
+                key={index}
+                className="w-0.5 h-8 bg-neutral-800 rounded-full origin-bottom transition-[transform,opacity] duration-150 ease-out"
+                style={{
+                  transform: `scaleY(${style.scaleY})`,
+                  opacity: style.opacity,
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

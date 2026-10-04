@@ -1,11 +1,5 @@
-import { lazy, Suspense } from "react";
-
-const MarkdownImpl = lazy(() => import("./MarkdownImpl"));
+import MarkdownLite from "./markdownLite";
 
 export default function Markdown({ content }: { content: string }) {
-  return (
-    <Suspense fallback={<div className="prose mx-auto max-w-xl" />}>
-      <MarkdownImpl content={content} />
-    </Suspense>
-  );
+  return <MarkdownLite content={content} />;
 }
