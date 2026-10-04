@@ -7,7 +7,7 @@ import { getUi } from "../locales/ui";
 import type { SupportedLocale } from "../lib/locale";
 import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from "../routes";
 
-const OG_IMAGE_PATH = "/images/og-image.png";
+const OG_IMAGE_PATH = "/images/og-image.webp";
 const OG_IMAGE_WIDTH = "1200";
 const OG_IMAGE_HEIGHT = "630";
 

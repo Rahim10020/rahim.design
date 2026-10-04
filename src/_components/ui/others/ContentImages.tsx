@@ -2,12 +2,18 @@ interface ContentImagesProps {
   primaryImage?: string;
   images: string[];
   alt: string;
+  /**
+   * Image LCP above-the-fold : chargement eager + priorité haute.
+   * Réservé à la primaryImage des pages détail. La galerie reste lazy.
+   */
+  priority?: boolean;
 }
 
 export default function ContentImages({
   primaryImage,
   images,
   alt,
+  priority = false,
 }: ContentImagesProps) {
   return (
     <>
@@ -18,7 +24,8 @@ export default function ContentImages({
             alt={alt}
             width={1280}
             height={720}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding="async"
             className="aspect-video w-full object-cover"
           />

@@ -5,6 +5,8 @@ interface LazyVideoProps {
   poster?: string;
   ariaLabel?: string;
   className?: string;
+  /** Média hero (candidat LCP) : source chargée d'emblée, pas d'attente viewport. */
+  eager?: boolean;
 }
 
 function autoplayAllowed(): boolean {
@@ -32,11 +34,12 @@ export default function LazyVideo({
   poster,
   ariaLabel,
   className = "",
+  eager = false,
 }: LazyVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const [canAutoplay] = useState(autoplayAllowed);
   const [activeSrc, setActiveSrc] = useState<string | undefined>(() =>
-    canAutoplay ? undefined : src,
+    canAutoplay ? (eager ? src : undefined) : src,
   );
 
   useEffect(() => {
@@ -44,6 +47,16 @@ export default function LazyVideo({
     const video = ref.current;
     if (!video) return;
 
+    // Eager (hero LCP) : la src est déjà posée, joue dès que possible.
+    if (eager) {
+      const onCanPlay = () => {
+        void video.play().catch(() => {
+          /* autoplay bloqué : reste sur la première frame */
+        });
+      };
+      video.addEventListener("canplay", onCanPlay);
+      return () => video.removeEventListener("canplay", onCanPlay);
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -62,7 +75,7 @@ export default function LazyVideo({
 
     observer.observe(video);
     return () => observer.disconnect();
-  }, [canAutoplay, src]);
+  }, [canAutoplay, eager, src]);
 
   return (
     <video
@@ -72,7 +85,7 @@ export default function LazyVideo({
       loop
       playsInline
       autoPlay={canAutoplay}
-      preload="none"
+      preload={eager ? "metadata" : "none"}
       controls={!canAutoplay}
       aria-label={ariaLabel}
       {...(poster ? { poster } : {})}

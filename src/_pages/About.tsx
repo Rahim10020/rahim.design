@@ -33,11 +33,12 @@ export default function AboutPage() {
         </div>
         <div className="w-full lg:w-auto">
           <img
-            src="/images/others/rahim-cartoon.png"
+            src="/images/others/rahim-cartoon.webp"
             alt="Illustration de Rahim ALI"
             width={800}
             height={800}
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
             decoding="async"
             className="w-full h-full"
           />
@@ -94,7 +95,7 @@ export default function AboutPage() {
               description: t.toolsDesignDesc,
               icons: [
                 { src: "/icons/tools/figma.svg", alt: "Logo Figma" },
-                { src: "/icons/tools/excalidraw.png", alt: "Logo Excalidraw" },
+                { src: "/icons/tools/excalidraw.webp", alt: "Logo Excalidraw" },
               ],
             },
             {
@@ -104,7 +105,7 @@ export default function AboutPage() {
                 { src: "/icons/tools/react.svg", alt: "Logo React" },
                 { src: "/icons/tools/typescript.svg", alt: "Logo TypeScript" },
                 {
-                  src: "/icons/tools/tailwind-css.png",
+                  src: "/icons/tools/tailwind-css.webp",
                   alt: "Logo Tailwind CSS",
                 },
                 { src: "/icons/tools/next-js.svg", alt: "Logo Next.js" },
@@ -114,8 +115,8 @@ export default function AboutPage() {
               label: t.toolsBrainstorm,
               description: t.toolsBrainstormDesc,
               icons: [
-                { src: "/icons/tools/claude.png", alt: "Logo Claude" },
-                { src: "/icons/tools/open-ai.png", alt: "Logo OpenAI" },
+                { src: "/icons/tools/claude.webp", alt: "Logo Claude" },
+                { src: "/icons/tools/open-ai.webp", alt: "Logo OpenAI" },
               ],
             },
           ]}
@@ -134,7 +135,7 @@ export default function AboutPage() {
             </div>
             <div className="w-full lg:max-w-xl">
               <img
-                src="/images/others/reads.png"
+                src="/images/others/reads.webp"
                 alt="Livres et passions de Rahim"
                 width={1200}
                 height={800}

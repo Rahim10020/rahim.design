@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -18,6 +19,20 @@ const ROWS: Record<string, string> = {
   "rows-1": "grid-rows-1",
   "rows-2": "grid-rows-2",
 };
+
+/** Premier média du source markdown (syntaxe `![]()` ou `<img src>`) : candidat LCP. */
+function firstMediaSrc(source: string): string | undefined {
+  const patterns = [/!\[[^\]]*\]\(\s*([^)\s]+)/, /<img[^>]+src=["']([^"']+)["']/i];
+  let best: { index: number; src: string } | undefined;
+  for (const pattern of patterns) {
+    const match = pattern.exec(source);
+    const src = match?.[1];
+    if (src && (!best || match.index < best.index)) {
+      best = { index: match.index, src };
+    }
+  }
+  return best?.src;
+}
 
 /** Grille 16:9 globale : même bloc que le placeholder (max-w-3xl, aspect-video). */
 function MediaGrid({
@@ -41,6 +56,10 @@ function MediaGrid({
 }
 
 export default function Markdown({ content }: { content: string }) {
+  // Ce composant ne sert que les pages détail : le premier média du source
+  // (image ou vidéo démo, hors galeries) est le candidat LCP → eager + priorité haute.
+  // Comparaison par src (pure, sans mutation pendant le render).
+  const heroSrc = useMemo(() => firstMediaSrc(content), [content]);
   return (
     <div className="prose mx-auto">
       <ReactMarkdown
@@ -119,7 +138,26 @@ export default function Markdown({ content }: { content: string }) {
                   <LazyVideo
                     src={src ?? ""}
                     ariaLabel={alt ?? "Project demo video"}
+                    eager={src != null && src === heroSrc}
                     className="aspect-video w-full rounded-xl object-cover"
+                  />
+                </figure>
+              );
+            }
+            // Premier média hero (candidat LCP) : eager + priorité haute.
+            // Galeries et médias suivants : lazy.
+            if (src != null && src === heroSrc) {
+              return (
+                <figure className="mx-auto m-12 max-w-3xl">
+                  <img
+                    src={src}
+                    alt={alt ?? ""}
+                    width={1280}
+                    height={720}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="aspect-video w-full rounded-xl object-cover object-top"
                   />
                 </figure>
               );

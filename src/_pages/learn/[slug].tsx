@@ -66,6 +66,7 @@ export default function LearnArticle() {
         primaryImage={article.meta.imageSrc}
         images={[]}
         alt={article.meta.title}
+        priority
       />
       <Markdown content={article.content} />
       <ContentImages images={article.meta.images} alt={article.meta.title} />
