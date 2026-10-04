@@ -49,12 +49,9 @@ export default function ContactToast({
 
   return createPortal(
     <div className="fixed inset-x-4 bottom-4 z-100 flex justify-center pointer-events-none sm:inset-x-auto sm:right-6 sm:bottom-6 sm:justify-end">
-      <div ref={toastRef} className="relative w-full sm:w-auto sm:max-w-sm">
+      <div className="w-full sm:w-auto sm:max-w-sm">
         <div
-          aria-hidden
-          className="absolute inset-0 bg-foreground translate-x-1 translate-y-1"
-        />
-        <div
+          ref={toastRef}
           role={isSuccess ? "status" : "alert"}
           className="relative flex items-start gap-3 border-2 border-foreground bg-background px-4 py-3 pointer-events-auto"
         >
