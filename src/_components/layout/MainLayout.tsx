@@ -6,6 +6,7 @@ import SEO from "../SEO";
 import { applyDetectedLocale } from "../../lib/locale";
 import { LocaleContext } from "../../lib/i18n";
 import { isPrerender } from "../../lib/prerender";
+import { isMobileViewport } from "../../lib/device";
 import { initVitals } from "../../lib/vitals";
 
 // Overlays animés GSAP en lazy : le chunk gsap ne part que si l'overlay
@@ -30,6 +31,8 @@ export default function MainLayout() {
   const [ready, setReady] = useState(
     () =>
       prerender ||
+      // Mobile : jamais d'overlay (le chunk GSAP du préloader ne charge même pas).
+      isMobileViewport() ||
       (typeof sessionStorage !== "undefined" &&
         sessionStorage.getItem("rd-preloader") === "1"),
   );

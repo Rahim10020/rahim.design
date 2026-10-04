@@ -5,23 +5,13 @@ import { ChevronRightIcon } from "../icons";
 import { getProjectPath, ROUTES } from "../../routes";
 import type { Project } from "../../data/project";
 import { gsap, useGSAP } from "../../lib/gsap";
+import { isMobileViewport, saveDataEnabled } from "../../lib/device";
 
 /** Pas d'animations en boucle sur mobile / reduced-motion / save-data (INP + batterie). */
 function loopsAllowed(): boolean {
   if (typeof window === "undefined") return false;
-  if (
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-    window.matchMedia("(max-width: 768px)").matches
-  )
-    return false;
-  try {
-    const connection = (
-      navigator as Navigator & { connection?: { saveData?: boolean } }
-    ).connection;
-    if (connection?.saveData) return false;
-  } catch {
-    /* ignore */
-  }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  if (isMobileViewport() || saveDataEnabled()) return false;
   return true;
 }
 

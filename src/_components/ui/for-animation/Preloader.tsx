@@ -1,19 +1,8 @@
 import { useRef, useState } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "../../../lib/gsap";
+import { isMobileViewport, saveDataEnabled } from "../../../lib/device";
 import { useLocale } from "../../../lib/i18n";
 import { getUi } from "../../../locales/ui";
-
-function saveDataEnabled(): boolean {
-  try {
-    return (
-      "connection" in navigator &&
-      (navigator as Navigator & { connection?: { saveData?: boolean } })
-        .connection?.saveData === true
-    );
-  } catch {
-    return false;
-  }
-}
 
 export default function Preloader({ onDone }: { onDone: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -30,7 +19,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         onDone();
         return;
       }
-      if (prefersReducedMotion() || saveDataEnabled()) {
+      if (prefersReducedMotion() || saveDataEnabled() || isMobileViewport()) {
         setDone(true);
         onDone();
         return;
