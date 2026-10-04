@@ -23,7 +23,7 @@ export default function Button({
   const targetRef = useLiquidTargets(disabled);
 
   const base =
-    "relative inline-flex items-center justify-center overflow-hidden isolate whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
+    "relative inline-flex items-center justify-center rounded-4xl overflow-hidden isolate whitespace-nowrap cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
 
   const variants = {
     primary:

@@ -47,7 +47,7 @@ export default function BlueprintNote() {
           rel="noopener noreferrer"
           fillClassName="bg-background"
           contentClassName="gap-2"
-          className="w-55 border-2 border-foreground-alt-a bg-accent-e py-3 pl-10 text-xl text-foreground"
+          className="w-55 border-2 border-foreground-alt-a rounded-4xl bg-accent-e py-3 pl-10 text-xl text-foreground"
         >
           {t.cta} <ArrowRightIcon size={20} />
         </LiquidHoverAnchor>
