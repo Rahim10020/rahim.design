@@ -22,7 +22,7 @@ export default function SectionTitle({
     <h2
       className={cn(
         VARIANTS[variant],
-        "font-medium leading-tight mb-16 lg:mb-20",
+        "font-medium leading-tight mb-12 lg:mb-20",
         className,
       )}
     >

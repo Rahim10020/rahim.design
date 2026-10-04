@@ -100,14 +100,14 @@ export default function ServicesPage() {
         items={t.improveItems}
       />
       {/* Sixth section */}
-      <div className="py-24">
+      <div className="py-14 lg:py-24">
         <SectionTitle variant="lg" className="max-w-xs md:max-w-lg lg:max-w-xl">
           {t.togetherTitle}
         </SectionTitle>
         <KnowMeGrid items={workwithme} />
       </div>
       {/* Seventh section */}
-      <div className="py-24 overflow-hidden">
+      <div className="py-8 lg:py-24 overflow-hidden">
         <div className="max-w-350 mx-auto px-page-x">
           <div className="flex flex-col">
             <SectionTitle
