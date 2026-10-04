@@ -1,6 +1,5 @@
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { Link, type LinkProps } from "react-router-dom";
-import { gsap, useGSAP } from "../../lib/gsap";
 
 const ENTER_DURATION = 0.45;
 const LEAVE_DURATION = 0.4;
@@ -18,19 +17,24 @@ function prefersReducedMotion() {
 
 /**
  * Attache le remplissage liquide directionnel double couche à l'élément.
- * Listeners natifs attachés dans le contexte GSAP -> cleanup automatique,
- * aucune lecture de ref pendant le render (compatible eslint react-hooks/refs).
+ * GSAP chargé en dynamique (hors chemin critique) : pas d'animation tant
+ * que le chunk n'est pas là, listeners nettoyés au démontage.
  * Perf : uniquement transform + border-radius, overwrite auto.
  */
 function useLiquidTargets(disabled: boolean) {
   const ref = useRef<HTMLElement | null>(null);
 
-  useGSAP(
-    (_context, contextSafe) => {
-      const el = ref.current;
-      if (!el || disabled || prefersReducedMotion()) return;
-      if (!contextSafe) return;
-      const fills = el.querySelectorAll<HTMLElement>("[data-liquid-fill]");
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || disabled || prefersReducedMotion()) return;
+    let cancelled = false;
+    let detach: (() => void) | undefined;
+
+    void import("../../lib/gsap").then(({ gsap }) => {
+      if (cancelled) return;
+      const root = ref.current;
+      if (!root) return;
+      const fills = root.querySelectorAll<HTMLElement>("[data-liquid-fill]");
       if (fills.length === 0) return;
 
       gsap.set(fills, {
@@ -43,7 +47,7 @@ function useLiquidTargets(disabled: boolean) {
         xPercent: 0,
       });
 
-      const playEnter = contextSafe((fromTop: boolean) => {
+      const playEnter = (fromTop: boolean) => {
         const targets =
           ref.current?.querySelectorAll<HTMLElement>("[data-liquid-fill]") ??
           [];
@@ -68,9 +72,9 @@ function useLiquidTargets(disabled: boolean) {
           overwrite: "auto",
           stagger: 0.06,
         });
-      });
+      };
 
-      const playLeave = contextSafe((toTop: boolean) => {
+      const playLeave = (toTop: boolean) => {
         const targets =
           ref.current?.querySelectorAll<HTMLElement>("[data-liquid-fill]") ??
           [];
@@ -86,7 +90,7 @@ function useLiquidTargets(disabled: boolean) {
           overwrite: "auto",
           stagger: 0.05,
         });
-      });
+      };
 
       const directionFromEvent = (event: Event, fallback: boolean) => {
         const target = event.currentTarget as HTMLElement | null;
@@ -99,16 +103,16 @@ function useLiquidTargets(disabled: boolean) {
       };
 
       const onEnter = (event: Event) => {
-        playEnter?.(directionFromEvent(event, false));
+        playEnter(directionFromEvent(event, false));
       };
       const onLeave = (event: Event) => {
-        playLeave?.(directionFromEvent(event, false));
+        playLeave(directionFromEvent(event, false));
       };
       const onFocusIn = () => {
-        playEnter?.(false);
+        playEnter(false);
       };
       const onFocusOut = () => {
-        playLeave?.(false);
+        playLeave(false);
       };
 
       el.addEventListener("mouseenter", onEnter);
@@ -116,15 +120,22 @@ function useLiquidTargets(disabled: boolean) {
       el.addEventListener("focus", onFocusIn);
       el.addEventListener("blur", onFocusOut);
 
-      return () => {
+      detach = () => {
         el.removeEventListener("mouseenter", onEnter);
         el.removeEventListener("mouseleave", onLeave);
         el.removeEventListener("focus", onFocusIn);
         el.removeEventListener("blur", onFocusOut);
+        gsap.killTweensOf(
+          root.querySelectorAll<HTMLElement>("[data-liquid-fill]"),
+        );
       };
-    },
-    { scope: ref, dependencies: [disabled] },
-  );
+    });
+
+    return () => {
+      cancelled = true;
+      detach?.();
+    };
+  }, [disabled]);
 
   return ref;
 }

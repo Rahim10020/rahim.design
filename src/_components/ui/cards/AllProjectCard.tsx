@@ -1,5 +1,6 @@
 import { type ProjectCategory } from "../../../data/project";
 import LazyVideo from "../others/LazyVideo";
+import { prefetchMarkdown } from "../others/markdownPrefetch";
 
 interface AllProjectCardProps {
   title: string;
@@ -25,6 +26,8 @@ export default function AllProjectCard({
   return (
     <a
       href={href}
+      onMouseEnter={prefetchMarkdown}
+      onFocus={prefetchMarkdown}
       className={`group relative block w-full mb-6 break-inside-avoid overflow-hidden bg-background ${className}`}
     >
       {/* Image — hauteur fixe identique au placeholder, le média s'adapte */}

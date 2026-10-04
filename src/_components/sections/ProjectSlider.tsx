@@ -6,6 +6,25 @@ import { getProjectPath, ROUTES } from "../../routes";
 import type { Project } from "../../data/project";
 import { gsap, useGSAP } from "../../lib/gsap";
 
+/** Pas d'animations en boucle sur mobile / reduced-motion / save-data (INP + batterie). */
+function loopsAllowed(): boolean {
+  if (typeof window === "undefined") return false;
+  if (
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    window.matchMedia("(max-width: 768px)").matches
+  )
+    return false;
+  try {
+    const connection = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection;
+    if (connection?.saveData) return false;
+  } catch {
+    /* ignore */
+  }
+  return true;
+}
+
 const TOTAL_BARS = 16;
 
 interface ProjectSliderProps {
@@ -121,24 +140,27 @@ export default function ProjectSlider({
           "-=0.3",
         );
 
-      /* --- Gauge qui respire (subtile, en boucle) --- */
-      gsap.to(bars, {
-        height: "+=3",
-        duration: 1.2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        stagger: { each: 0.06, from: "center" },
-      });
+      /* --- Gauge qui respire (opacity compositeur, pas height:layout) --- */
+      /* --- Flèche "See all" qui glisse --- */
+      /* Boucles désactivées sur mobile / reduced-motion / save-data. */
+      if (loopsAllowed()) {
+        gsap.to(bars, {
+          opacity: 0.55,
+          duration: 1.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          stagger: { each: 0.06, from: "center" },
+        });
 
-      /* --- Flèche "See all" qui glisse en boucle --- */
-      gsap.to(arrow, {
-        x: 4,
-        duration: 0.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+        gsap.to(arrow, {
+          x: 4,
+          duration: 0.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
 
       /* --- Nudge d'invitation au scroll (une seule fois, au chargement) --- */
       gsap.fromTo(

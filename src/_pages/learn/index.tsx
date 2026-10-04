@@ -10,6 +10,7 @@ import {
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
+import { prefetchMarkdown } from "../../_components/ui/others/markdownPrefetch";
 
 type LearnFilter = "all" | LearnType;
 
@@ -70,7 +71,12 @@ export default function LearnPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-4xl">
             {filteredArticles.map((article) => (
-              <Link key={article.slug} to={getLearnPath(article.slug)}>
+              <Link
+                key={article.slug}
+                to={getLearnPath(article.slug)}
+                onMouseEnter={prefetchMarkdown}
+                onFocus={prefetchMarkdown}
+              >
                 <LearnCard
                   title={article.title}
                   description={article.description}

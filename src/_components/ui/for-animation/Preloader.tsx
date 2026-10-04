@@ -3,6 +3,18 @@ import { gsap, useGSAP, prefersReducedMotion } from "../../../lib/gsap";
 import { useLocale } from "../../../lib/i18n";
 import { getUi } from "../../../locales/ui";
 
+function saveDataEnabled(): boolean {
+  try {
+    return (
+      "connection" in navigator &&
+      (navigator as Navigator & { connection?: { saveData?: boolean } })
+        .connection?.saveData === true
+    );
+  } catch {
+    return false;
+  }
+}
+
 export default function Preloader({ onDone }: { onDone: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const numRef = useRef<HTMLSpanElement>(null);
@@ -18,11 +30,12 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         onDone();
         return;
       }
-      if (prefersReducedMotion()) {
+      if (prefersReducedMotion() || saveDataEnabled()) {
         setDone(true);
         onDone();
         return;
       }
+      // Version courte (≤0.6s) : un seul mot, compteur rapide, sortie brève.
       const counter = { v: 0 };
       const tl = gsap.timeline({
         onComplete: () => {
@@ -31,27 +44,21 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
           onDone();
         },
       });
-      words.forEach((w) => {
-        tl.call(() => {
-          if (wordRef.current) wordRef.current.textContent = w;
-        });
-        tl.fromTo(
-          wordRef.current,
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out" },
-          ">",
-        );
-        tl.to(
-          wordRef.current,
-          { y: -14, autoAlpha: 0, duration: 0.25 },
-          ">+0.2",
-        );
-      });
+      const firstWord = words[0];
+      if (firstWord && wordRef.current) {
+        wordRef.current.textContent = firstWord;
+      }
+      tl.fromTo(
+        wordRef.current,
+        { y: 20, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.2, ease: "power2.out" },
+        0,
+      );
       tl.to(
         counter,
         {
           v: 100,
-          duration: 1,
+          duration: 0.3,
           ease: "power2.inOut",
           onUpdate: () => {
             if (numRef.current)
@@ -66,7 +73,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       );
       tl.to(rootRef.current, {
         yPercent: -100,
-        duration: 0.5,
+        duration: 0.25,
         ease: "power4.inOut",
       });
     },

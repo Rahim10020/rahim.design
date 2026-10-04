@@ -158,6 +158,13 @@ html {
   overflow: clip;
 }
 
+/* Sections below-fold : saute le rendu hors écran (INP + scroll).
+   intrinsic-size dimensionné pour garder le layout stable (pas de CLS). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .liquid-mask {
     display: none;

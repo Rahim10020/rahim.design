@@ -118,6 +118,19 @@ async function prerender() {
     try {
       await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
       await page.locator("#main").waitFor({ timeout: 20000 });
+      if (route === "/") {
+        // Home : sections below-fold en lazy → attend qu'elles soient montées.
+        try {
+          await page.waitForFunction(
+            () => document.querySelectorAll("[data-section]").length >= 6,
+            { timeout: 20000 },
+          );
+        } catch {
+          console.warn(
+            `[prerender] ${route}: sections lazy incomplètes après 20s, snapshot quand même`,
+          );
+        }
+      }
       if (detailPattern(route)) {
         // Pages détail async : attend le contenu (ou le not-found), pas le squelette
         try {
@@ -146,6 +159,17 @@ async function prerender() {
         .join("")
         .split("?prerender=1")
         .join("");
+      // Le runtime Vite injecte pendant le crawl des <link modulepreload>
+      // en URL absolue (new URL(dep, importerUrl)) : après remplacement
+      // d'origine elles pointeraient vers la prod avec des hashes qui
+      // n'existent pas encore au déploiement → 404. On les retire, le
+      // navigateur les régénère en relatif au runtime. Les modulepreload
+      // relatifs émis par `vite build` sont conservés.
+      const absolutePreload = new RegExp(
+        `<link[^>]+rel="modulepreload"[^>]+href="${SITE_URL.replace(/[./]/g, (c) => `\\${c}`)}[^"]*"[^>]*>`,
+        "g",
+      );
+      html = html.replace(absolutePreload, "");
 
       const file = outFile(route);
       mkdirSync(dirname(file), { recursive: true });
@@ -164,11 +188,33 @@ async function prerender() {
 
 async function main() {
   // Le rewrite SPA renvoie index.html pour toute route : le preview suffit.
+  // detached : groupe de processus dédié pour tuer npx + vite d'un coup
+  // (sinon le fils vite survit au SIGTERM et squatte le port).
   const preview = spawn(
     "npx",
     ["vite", "preview", "--port", String(PREVIEW_PORT), "--strictPort"],
-    { cwd: root, stdio: "ignore", shell: process.platform === "win32" },
+    {
+      cwd: root,
+      stdio: "ignore",
+      shell: process.platform === "win32",
+      detached: process.platform !== "win32",
+    },
   );
+  const killPreview = () => {
+    try {
+      if (preview.pid && process.platform !== "win32") {
+        process.kill(-preview.pid, "SIGTERM");
+        return;
+      }
+    } catch {
+      /* groupe déjà mort, fallback ci-dessous */
+    }
+    try {
+      preview.kill("SIGTERM");
+    } catch {
+      /* déjà mort */
+    }
+  };
 
   try {
     await waitForPreviewReady();
@@ -187,7 +233,7 @@ async function main() {
       `[prerender] skip: ${err?.message ?? err}. dist/ reste la SPA.`,
     );
   } finally {
-    preview.kill("SIGTERM");
+    killPreview();
   }
 }
 

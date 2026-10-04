@@ -1,29 +1,75 @@
-import AboutSection from "../_components/sections/AboutSection";
-import ContactSection from "../_components/sections/ContactSection";
+import { Suspense, lazy } from "react";
 import HeroSection from "../_components/sections/HeroSection";
-import ProjectsSection from "../_components/sections/ProjectsSection";
-import ServicesSection from "../_components/sections/ServicesSection";
-import StepsSection from "../_components/sections/StepsSection";
+
+// Below-fold en lazy : seul le hero part avec le JS initial. Les sections
+// suivantes chargent en parallèle dès que le hero est peint.
+const AboutSection = lazy(
+  () => import("../_components/sections/AboutSection"),
+);
+const ServicesSection = lazy(
+  () => import("../_components/sections/ServicesSection"),
+);
+const ProjectsSection = lazy(
+  () => import("../_components/sections/ProjectsSection"),
+);
+const StepsSection = lazy(
+  () => import("../_components/sections/StepsSection"),
+);
+const ContactSection = lazy(
+  () => import("../_components/sections/ContactSection"),
+);
+
+/**
+ * Placeholder dimensionné (pas de CLS) + signal pour le crawl de pré-rendu
+ * qui attend `[data-section]` avant le snapshot.
+ */
+function BelowFold({
+  name,
+  children,
+}: {
+  name: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div data-section={name} className="cv-auto">
+      <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
+        {children}
+      </Suspense>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
     <div>
       {/* Hero section */}
-      <HeroSection />
+      <div data-section="hero">
+        <HeroSection />
+      </div>
 
       {/* About section */}
-      <AboutSection />
+      <BelowFold name="about">
+        <AboutSection />
+      </BelowFold>
 
       {/* Services section */}
-      <ServicesSection />
+      <BelowFold name="services">
+        <ServicesSection />
+      </BelowFold>
 
       {/* Projects section */}
-      <ProjectsSection />
+      <BelowFold name="projects">
+        <ProjectsSection />
+      </BelowFold>
 
       {/* Steps section */}
-      <StepsSection />
+      <BelowFold name="steps">
+        <StepsSection />
+      </BelowFold>
       {/* Contact section */}
-      <ContactSection />
+      <BelowFold name="contact">
+        <ContactSection />
+      </BelowFold>
     </div>
   );
 }

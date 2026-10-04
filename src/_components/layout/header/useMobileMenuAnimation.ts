@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import type { RefObject } from "react";
-import { gsap, useGSAP } from "../../../lib/gsap";
 
 type MobileMenuAnimationArgs = {
   headerRef: RefObject<HTMLElement | null>;
@@ -12,8 +12,9 @@ type MobileMenuAnimationArgs = {
   onNavigate: () => void;
 };
 
+// GSAP chargé en dynamique (hors chemin critique) : le menu reste utilisable
+// sans animation tant que le chunk n'est pas arrivé (overlay masqué en CSS).
 export function useMobileMenuAnimation({
-  headerRef,
   overlayRef,
   itemsRef,
   bottomCloseRef,
@@ -22,8 +23,11 @@ export function useMobileMenuAnimation({
   hash,
   onNavigate,
 }: MobileMenuAnimationArgs) {
-  useGSAP(
-    () => {
+  // État initial masqué + préchargement du chunk gsap (non bloquant).
+  useEffect(() => {
+    let cancelled = false;
+    void import("../../../lib/gsap").then(({ gsap }) => {
+      if (cancelled) return;
       gsap.set(overlayRef.current, {
         autoAlpha: 0,
         scaleY: 0,
@@ -37,12 +41,16 @@ export function useMobileMenuAnimation({
         autoAlpha: 0,
         scale: 0.8,
       });
-    },
-    { scope: headerRef },
-  );
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [overlayRef, itemsRef, bottomCloseRef]);
 
-  useGSAP(
-    () => {
+  useEffect(() => {
+    let cancelled = false;
+    void import("../../../lib/gsap").then(({ gsap }) => {
+      if (cancelled) return;
       const overlay = overlayRef.current;
       const items = itemsRef.current?.children;
       const bottomClose = bottomCloseRef.current;
@@ -104,24 +112,20 @@ export function useMobileMenuAnimation({
             "-=0.1",
           );
       }
-    },
-    { dependencies: [mobileMenuOpen], scope: headerRef },
-  );
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [mobileMenuOpen, overlayRef, itemsRef, bottomCloseRef]);
 
-  useGSAP(
-    () => {
-      if (mobileMenuOpen) onNavigate();
-    },
-    { dependencies: [pathname, hash], scope: headerRef },
-  );
+  useEffect(() => {
+    if (mobileMenuOpen) onNavigate();
+  }, [pathname, hash, mobileMenuOpen, onNavigate]);
 
-  useGSAP(
-    () => {
-      document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-      return () => {
-        document.body.style.overflow = "";
-      };
-    },
-    { dependencies: [mobileMenuOpen], scope: headerRef },
-  );
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 }

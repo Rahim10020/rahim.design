@@ -1,4 +1,5 @@
 import LazyVideo from "../others/LazyVideo";
+import { prefetchMarkdown } from "../others/markdownPrefetch";
 
 interface ProjectCardProps {
   title: string;
@@ -23,6 +24,8 @@ export default function ProjectCard({
   return (
     <a
       href={href}
+      onMouseEnter={prefetchMarkdown}
+      onFocus={prefetchMarkdown}
       className={`group shrink-0 w-72 sm:w-80 snap-center flex flex-col ${className}`}
     >
       {/* Image */}
