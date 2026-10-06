@@ -1,2 +1,5 @@
 # Conversion d'un dossier entier en WebP
 for f in *.png; do cwebp -q 85 "$f" -o "${f%.png}.webp"; done
+
+-- voir s'il faut ajouter un bouton pour partager les articles (les learn) 
+    et si ce serait pertinent(necessaire) de partager aussi les projets ?
