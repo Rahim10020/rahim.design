@@ -37,7 +37,7 @@ export default function EmptyState({
             type="button"
             fillClassName="bg-primary-alt"
             onClick={onAction}
-            className="px-6 py-2.5 text-lg font-medium cursor-pointer rounded-full border-2 border-foreground bg-transparent text-foreground hover:text-background transition-colors"
+            className="px-6 py-2.5 text-lg font-medium cursor-pointer rounded-full border-2 border-foreground bg-primary-alt text-background transition-colors lg:bg-transparent lg:text-foreground lg:hover:text-background"
           >
             {actionLabel}
           </LiquidHoverButton>
