@@ -7,6 +7,7 @@ import {
 } from "../../data/project";
 import { getProjectPath, ROUTES } from "../../routes";
 import Button from "../../_components/ui/Button";
+import EmptyState from "../../_components/ui/others/EmptyState";
 import { Link } from "react-router-dom";
 import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
 import { useLocale } from "../../lib/i18n";
@@ -62,19 +63,28 @@ export default function ProjectsPage() {
           </div>
 
           {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 gap-6 mx-auto max-w-4xl">
-            {filteredProjects.map((project) => (
-              <AllProjectCard
-                key={project.slug}
-                title={project.title}
-                description={project.description}
-                category={project.category}
-                imageSrc={project.imageSrc}
-                imageHeight={project.imageHeight}
-                href={getProjectPath(project.slug)}
-              />
-            ))}
-          </div>
+          {filteredProjects.length === 0 ? (
+            <EmptyState
+              title={t.emptyTitle}
+              description={t.emptyDescription}
+              actionLabel={t.emptyReset}
+              onAction={() => setActiveFilter("all")}
+            />
+          ) : (
+            <div className="columns-1 md:columns-2 gap-6 mx-auto max-w-4xl">
+              {filteredProjects.map((project) => (
+                <AllProjectCard
+                  key={project.slug}
+                  title={project.title}
+                  description={project.description}
+                  category={project.category}
+                  imageSrc={project.imageSrc}
+                  imageHeight={project.imageHeight}
+                  href={getProjectPath(project.slug)}
+                />
+              ))}
+            </div>
+          )}
           <div className="mt-24 text-center">
             <Link to={ROUTES.CONTACT} className="mt-8 inline-flex">
               <Button className="px-8 py-4 text-xl lg:text-2xl font-medium bg-primary border-2 border-foreground text-foreground">

@@ -1,5 +1,6 @@
 import { type ProjectCategory } from "../../../data/project";
 import LazyVideo from "../others/LazyVideo";
+import ProjectMediaFrame from "../others/ProjectMediaFrame";
 import { prefetchMarkdown } from "../others/markdownPrefetch";
 
 interface AllProjectCardProps {
@@ -21,8 +22,7 @@ export default function AllProjectCard({
   href,
   className = "",
 }: AllProjectCardProps) {
-  const isVideo =
-    !!imageSrc && /\.(webm|mp4)(\?.*)?$/i.test(imageSrc);
+  const isVideo = !!imageSrc && /\.(webm|mp4)(\?.*)?$/i.test(imageSrc);
   return (
     <a
       href={href}
@@ -31,13 +31,13 @@ export default function AllProjectCard({
       className={`group relative block w-full mb-6 break-inside-avoid overflow-hidden bg-background ${className}`}
     >
       {/* Image — hauteur fixe identique au placeholder, le média s'adapte */}
-      <div className={`w-full ${imageHeight}`}>
+      <ProjectMediaFrame className={imageHeight}>
         {imageSrc ? (
           isVideo ? (
             <LazyVideo
               src={imageSrc}
               ariaLabel={title}
-              className="w-full h-full rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             />
           ) : (
             <img
@@ -47,7 +47,7 @@ export default function AllProjectCard({
               height={800}
               loading="lazy"
               decoding="async"
-              className="w-full h-full rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             />
           )
         ) : (
@@ -62,7 +62,7 @@ export default function AllProjectCard({
             className="w-full h-full object-cover"
           />
         )}
-      </div>
+      </ProjectMediaFrame>
 
       {/* Overlay — dégradé sombre en bas, apparaît au survol */}
       <div

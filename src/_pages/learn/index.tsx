@@ -10,6 +10,7 @@ import {
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
+import EmptyState from "../../_components/ui/others/EmptyState";
 import { prefetchMarkdown } from "../../_components/ui/others/markdownPrefetch";
 
 type LearnFilter = "all" | LearnType;
@@ -69,23 +70,32 @@ export default function LearnPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-4xl">
-            {filteredArticles.map((article) => (
-              <Link
-                key={article.slug}
-                to={getLearnPath(article.slug)}
-                onMouseEnter={prefetchMarkdown}
-                onFocus={prefetchMarkdown}
-              >
-                <LearnCard
-                  title={article.title}
-                  description={article.description}
-                  imageSrc={article.imageSrc}
-                  imageAlt={article.title}
-                />
-              </Link>
-            ))}
-          </div>
+          {filteredArticles.length === 0 ? (
+            <EmptyState
+              title={t.emptyTitle}
+              description={t.emptyDescription}
+              actionLabel={t.emptyReset}
+              onAction={() => setSearchParams({})}
+            />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-4xl">
+              {filteredArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  to={getLearnPath(article.slug)}
+                  onMouseEnter={prefetchMarkdown}
+                  onFocus={prefetchMarkdown}
+                >
+                  <LearnCard
+                    title={article.title}
+                    description={article.description}
+                    imageSrc={article.imageSrc}
+                    imageAlt={article.title}
+                  />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

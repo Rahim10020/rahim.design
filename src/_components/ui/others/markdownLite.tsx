@@ -34,7 +34,7 @@ function MediaGrid({ cols, children }: { cols: string; children: ReactNode }) {
   return (
     <figure className="mx-auto m-12 max-w-3xl">
       <div
-        className={`grid aspect-video w-full overflow-hidden rounded-xl ${cols}`}
+        className={`grid aspect-video w-full overflow-hidden rounded-xl bg-background-alt ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)] ${cols}`}
       >
         {children}
       </div>
@@ -48,7 +48,7 @@ function GridCell({ src, alt }: { src: string; alt: string }) {
       <LazyVideo
         src={src}
         ariaLabel={alt || "Project demo video"}
-        className="block h-full w-full object-cover object-top"
+        className="block h-full w-full bg-background-alt object-cover object-top"
       />
     );
   }
@@ -58,7 +58,7 @@ function GridCell({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       loading="lazy"
       decoding="async"
-      className="block h-full w-full object-cover object-top"
+      className="block h-full w-full bg-background-alt object-cover object-top"
     />
   );
 }
@@ -80,7 +80,7 @@ function HeroMedia({
           src={src}
           ariaLabel={alt || "Project demo video"}
           eager={isHero}
-          className="aspect-video w-full rounded-xl object-cover"
+          className="aspect-video w-full rounded-xl bg-background-alt object-cover ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]"
         />
       </figure>
     );
@@ -96,7 +96,7 @@ function HeroMedia({
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="aspect-video w-full rounded-xl object-cover object-top"
+          className="aspect-video w-full rounded-xl bg-background-alt object-cover object-top ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]"
         />
       </figure>
     );
@@ -110,7 +110,7 @@ function HeroMedia({
         height={720}
         loading="lazy"
         decoding="async"
-        className="aspect-video w-full rounded-xl object-cover object-top"
+        className="aspect-video w-full rounded-xl bg-background-alt object-cover object-top ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]"
       />
     </figure>
   );

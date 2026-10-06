@@ -1,3 +1,5 @@
+import ProjectMediaFrame from "../others/ProjectMediaFrame";
+
 interface LearnCardProps {
   title: string;
   description: string;
@@ -15,7 +17,7 @@ export default function LearnCard({
   return (
     <article className={`flex flex-col group ${className}`}>
       {/* Image */}
-      <div className="w-full aspect-2/1 overflow-hidden bg-background mb-6">
+      <ProjectMediaFrame className="aspect-2/1 mb-6">
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -39,7 +41,7 @@ export default function LearnCard({
             className="w-full h-full object-cover"
           />
         )}
-      </div>
+      </ProjectMediaFrame>
 
       {/* Title */}
       <h3 className="text-foreground text-2xl md:text-3xl font-medium underline  lg:no-underline lg:group-hover:underline mb-3">

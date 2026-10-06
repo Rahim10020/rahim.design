@@ -1,4 +1,5 @@
 import LazyVideo from "../others/LazyVideo";
+import ProjectMediaFrame from "../others/ProjectMediaFrame";
 import { prefetchMarkdown } from "../others/markdownPrefetch";
 
 interface ProjectCardProps {
@@ -29,9 +30,7 @@ export default function ProjectCard({
       className={`group shrink-0 w-72 sm:w-80 snap-center flex flex-col ${className}`}
     >
       {/* Image */}
-      <div
-        className={`w-full ${imageHeight} overflow-hidden bg-background mb-element`}
-      >
+      <ProjectMediaFrame className={`${imageHeight} mb-element`}>
         {imageSrc ? (
           isVideo ? (
             <LazyVideo
@@ -63,7 +62,7 @@ export default function ProjectCard({
             className="w-full h-full object-cover"
           />
         )}
-      </div>
+      </ProjectMediaFrame>
 
       {/* Title + Category */}
       <div className="px-micro">

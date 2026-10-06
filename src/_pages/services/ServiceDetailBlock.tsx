@@ -1,4 +1,5 @@
 import LazyVideo from "../../_components/ui/others/LazyVideo";
+import ProjectMediaFrame from "../../_components/ui/others/ProjectMediaFrame";
 
 type ServiceDetailVariant = "design" | "build" | "visible" | "improve";
 
@@ -104,16 +105,16 @@ export default function ServiceDetailBlock({
         </div>
       </div>
       {videoSrc ? (
-        <div className="my-4">
+        <ProjectMediaFrame className="my-4 rounded-3xl">
           <LazyVideo
             src={videoSrc}
             ariaLabel={videoLabel ?? title}
-            className="w-full h-120 object-cover rounded-3xl"
+            className="w-full h-120 object-cover"
           />
-        </div>
+        </ProjectMediaFrame>
       ) : (
         imageSrc && (
-          <div className="my-4">
+          <ProjectMediaFrame className="my-4 rounded-3xl">
             <img
               src={imageSrc}
               alt=""
@@ -122,9 +123,9 @@ export default function ServiceDetailBlock({
               height={900}
               loading="lazy"
               decoding="async"
-              className="w-full h-120 object-cover rounded-3xl"
+              className="w-full h-120 object-cover"
             />
-          </div>
+          </ProjectMediaFrame>
         )
       )}
     </div>
