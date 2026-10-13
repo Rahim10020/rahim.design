@@ -1,6 +1,6 @@
 ---
 title: "R_noteApp"
-order: 4
+order: 7
 category: "Mobile"
 description: "A clean and simple note-taking app that keeps your ideas organized, always within reach."
 tags: ["Mobile", "Productivity", "Design", "Flutter"]
