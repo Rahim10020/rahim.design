@@ -87,8 +87,8 @@ export default function ServicesPage() {
         whatICanDo={t.whatICanDo}
         descriptions={[t.visibleDescA, t.visibleDescB]}
         items={t.visibleItems}
-        videoSrc="/images/projects/pixelpulse/pixelpulse.webm"
-        videoLabel="Démo vidéo du projet Pixelpulse"
+        videoSrc="/images/projects/rahim-design/rahim-design.webm"
+        videoLabel="Démo vidéo du projet rahim-design"
       />
       {/* Fith section */}
       <ServiceDetailBlock
