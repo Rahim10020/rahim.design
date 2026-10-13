@@ -9,13 +9,14 @@ role: "Design & Développement"
 platform: "Mobile (Android)"
 year: "2026"
 link: "https://murmur-landing-three.vercel.app"
+imageSrc: "/images/projects/murmur/home.webp"
 ---
 
 | RÔLE                   | PLATEFORME       | ANNÉE |
 | ---------------------- | ---------------- | ----- |
 | Design & Développement | Mobile (Android) | 2026  |
 
-![Image du projet Murmur — à remplacer](/images/others/image_placeholder.svg)
+![Murmur project image — à remplacer](/images/projects/murmur/home.webp)
 
 ## Le contexte
 
@@ -39,7 +40,10 @@ Tout s'articule autour d'une boucle simple : murmurer une idée, la laisser se s
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-![UX de Murmur — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/murmur/rediscovery.webp" alt="onboarding 1" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/settings-light.webp" alt="onboarind 2" loading="lazy" />
+</div>
 
 Le parcours est volontairement court : ouvrir l'application, appuyer sur l'action principale, parler, arrêter, c'est fait. À partir de là, chaque idée peut être écoutée, renommée, dotée d'un statut, ou associée à un rappel. Rien n'est exigé avant que l'enregistrement soit en sécurité — l'organisation vient toujours après, jamais avant.
 
@@ -47,7 +51,11 @@ Le parcours est volontairement court : ouvrir l'application, appuyer sur l'actio
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-![Design d'interface de Murmur — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/murmur/settings.webp" alt="settings screen" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/home.webp" alt="home screen" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/rediscovery.webp" alt="onboarind 2" loading="lazy" />
+</div>
 
 L'interface est calme et minimaliste, concentrée sur une seule chose à la fois. L'état d'enregistrement est toujours évident — on ne se demande jamais si sa voix est captée. Les thèmes système, clair et sombre sont tous pris en charge, et l'application est disponible en français comme en anglais.
 
@@ -64,7 +72,11 @@ Quelques choix qui ont changé l'expérience.
 
 **Le design était prêt. Il fallait maintenant le faire vivre.**
 
-![Développement de Murmur — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-1.webp" alt="onboarding 1" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-2.webp" alt="onboarind 2" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-3.webp" alt="onboarind 3" loading="lazy" />
+</div>
 
 Murmur a été construite comme une application personnelle et hors ligne pour Android, avec la sécurité des données traitée comme une priorité de premier ordre. L'audio est écrit dans un répertoire privé avant toute sauvegarde de métadonnées, les rappels sont réconciliés avec le système au démarrage, et l'application inclut un système complet d'export et de restauration pour que les idées survivent à un téléphone perdu ou réinstallé.
 
@@ -76,7 +88,7 @@ La landing page est disponible à l'adresse : [murmur-landing-three.vercel.app](
 
 **Et au final, voilà ce que ça donne.**
 
-![Résultat de Murmur — à remplacer](/images/others/image_placeholder.svg)
+![Murmur project image — à remplacer](/images/projects/murmur/home.webp)
 
 Un outil discret et fiable qui fait bien une seule chose : garder vos idées en sécurité jusqu'à ce que vous soyez prêt à y revenir.
 

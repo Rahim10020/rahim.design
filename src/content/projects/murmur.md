@@ -40,7 +40,10 @@ Everything revolves around a simple loop: murmur an idea, let it be saved, and l
 
 **Before we think about pixels, let's think about the journey.**
 
-![Murmur UX — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/murmur/rediscovery.webp" alt="onboarding 1" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/settings-light.webp" alt="onboarind 2" loading="lazy" />
+</div>
 
 The journey is deliberately short: open the app, tap the main action, speak, stop, done. From there, each idea can be listened to, renamed, given a status, or attached to a reminder. Nothing is required before the recording is safe — organization always comes after, never before.
 
@@ -48,7 +51,11 @@ The journey is deliberately short: open the app, tap the main action, speak, sto
 
 **Once the route was clear, we could finally talk about the interface.**
 
-![Murmur UI design — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/murmur/settings.webp" alt="settings screen" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/home.webp" alt="home screen" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/rediscovery.webp" alt="onboarind 2" loading="lazy" />
+</div>
 
 The interface is calm and minimal, focused on one thing at a time. The recording state is always obvious — you never wonder whether your voice is being captured. System, light and dark themes are all supported, and the app is available in both French and English.
 
@@ -65,7 +72,11 @@ Some decisions that changed the experience.
 
 **The design was ready. Now it had to be brought to life.**
 
-![Murmur Development — à remplacer](/images/others/image_placeholder.svg)
+<div class="media-grid cols-3">
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-1.webp" alt="onboarding 1" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-2.webp" alt="onboarind 2" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/murmur/onboarding-3.webp" alt="onboarind 3" loading="lazy" />
+</div>
 
 Murmur was built as a personal, offline-first application for Android, with data safety treated as a first-class concern. Audio is written to a private directory before any metadata is stored, reminders are reconciled with the system at startup, and the app includes a complete export and restore system so ideas can survive a lost or reinstalled phone.
 
@@ -77,7 +88,7 @@ The landing page is available at: [murmur-landing-three.vercel.app](https://murm
 
 **And finally, it looks like this.**
 
-![Murmur result — à remplacer](/images/others/image_placeholder.svg)
+![Murmur project image — à remplacer](/images/projects/murmur/home.webp)
 
 A quiet, dependable tool that does one thing well: keep your ideas safe until you're ready to come back to them.
 
