@@ -1,6 +1,6 @@
 ---
 title: "rahim.design"
-order: 8
+order: 6
 category: "Web"
 description: "My new portfolio brings UX/UI design and front-end development together to turn clear ideas into thoughtful digital experiences."
 tags: ["Web", "Portfolio", "UX/UI Design", "React", "TypeScript"]
