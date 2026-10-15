@@ -1,17 +1,8 @@
 ---
 title: "Summary: Atomic Habits"
 date: "2026-07-10"
-description: "Key takeaways from James Clear's book on the small habits that change everything."
+description: "A work-in-progress summary. I'm reading this book and adding key ideas as I go."
 imageSrc: "/images/books/atomic_habits/atomic_habits.webp"
 ---
 
-## Small habits compound
-
-Lasting progress comes from small actions repeated consistently. Focus on the process you can practice today.
-
-## Four laws of behavior change
-
-1. Make the habit obvious.
-2. Make it attractive.
-3. Make it easy.
-4. Make it satisfying.
+I'm reading this book and will build out this summary as I go. In the meantime, you can read my [summary of The ONE Thing](/learn/the-one-thing?lang=en), which is already well underway.
