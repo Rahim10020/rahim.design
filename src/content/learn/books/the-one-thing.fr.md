@@ -53,10 +53,6 @@ Le principe de Pareto (la règle des 80/20) dit que 80 % de tes résultats vienn
 2. Applique la règle des 20 % pour trouver l'essentiel (5 éléments).
 3. **Applique à nouveau la règle des 20 %** pour trouver l'essentiel de l'essentiel, jusqu'à arriver à **ta ONE Thing** (1 élément).
 
-```
-25 tâches  ──( 20 % )──>  5 tâches essentielles  ──( 20 % )──>  1 tâche essentielle
-```
-
 ### Points clés du mensonge n°1
 
 1. **Privilégie la productivité, pas l'activisme :** laisse ce qui compte le plus guider ta journée.
@@ -79,15 +75,13 @@ Chaque interruption ou changement de tâche a un coût caché pour ton cerveau :
 1. **Le coût du changement :** tu perds du temps à quitter le contexte d'une tâche, puis à charger celui de l'autre dans ta mémoire de travail.
 2. **Le temps de réorientation :** quand tu reprends ton travail initial, il te faut du temps pour retrouver une concentration profonde.
 
-```
-FLUX DE TRAVAIL INTERROMPU :
-[ Travail prioritaire ] ──> (Changement) ──> (Réorientation) ──> [ Distraction ] ──> (Changement) ──> (Réorientation) ──> [ Travail prioritaire ]
-TEMPS NÉCESSAIRE : |=================================================================================| (Long)
+**Un flux de travail interrompu :**
 
-FLUX DE TRAVAIL CONCENTRÉ :
-[ Travail prioritaire ]
-TEMPS NÉCESSAIRE : |==================| (Court et direct)
-```
+1. Tu commences ton travail prioritaire.
+2. Une distraction détourne ton attention.
+3. Tu reviens à ta tâche, puis tu as besoin de temps pour te réorienter et retrouver une concentration profonde.
+
+Quand tu peux rester concentré, tu évites ces étapes supplémentaires de changement et de récupération.
 
 ### Pourquoi le multitâche nuit au succès
 
@@ -122,16 +116,8 @@ Tu n'as pas besoin d'être une personne parfaitement disciplinée pour réussir.
 
 Une étude de l'University College London (2009) indique qu'il faut en moyenne **66 jours** pour acquérir une nouvelle habitude — entre 18 et 254 jours selon sa complexité.
 
-```
-Discipline élevée
-   │ \\
-   │  \\
-   │   \\
-   │    \\  (Discipline sélective nécessaire)
-   │     \\─────★ JOUR 66 : L'HABITUDE S'INSTALLE
-   │           └───────────────────────── (Maintien de la routine : effort minimal)
-Discipline faible ───────────────────────────────────────> Temps
-```
+> **66 jours en moyenne** pour acquérir une nouvelle habitude.
+> La durée observée va de **18 à 254 jours**, selon sa complexité.
 
 ### Points clés du mensonge n°3
 

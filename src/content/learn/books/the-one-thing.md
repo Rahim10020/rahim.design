@@ -53,10 +53,6 @@ The Pareto Principle (the 80/20 rule) states that 80% of your results come from 
 2. Apply the 20% rule to find the vital few (5 items).
 3. **Apply the 20% rule again** to find the vital few of the vital few, until you arrive at **the ONE Thing** (1 item).
 
-```
-25 Tasks  ──( 20% )──>  5 Vital Tasks  ──( 20% )──>  1 Essential Task
-```
-
 ### Key Takeaways for Lie #1
 
 1. **Focus on productivity, not busyness:** Allow what matters most to drive your day.
@@ -79,15 +75,13 @@ Every time you get interrupted or switch tasks, your brain pays a hidden penalty
 1. **Switch Cost:** You lose time shutting down one task context and loading another into your working memory.
 2. **Reorientation Time:** It takes time to regain deep focus after returning to the original work.
 
-```
-INTERRUPTED WORKFLOW:
-[ Primary Work ] ──> (Switch) ──> (Reorient) ──> [ Distraction ] ──> (Switch) ──> (Reorient) ──> [ Primary Work ]
-TIME REQUIRED:  |=================================================================================| (Long)
+**An interrupted workflow:**
 
-FOCUSED WORKFLOW:
-[ Primary Work ]
-TIME REQUIRED:  |==================| (Short & Direct)
-```
+1. You begin your primary work.
+2. A distraction pulls your attention away.
+3. You switch back, then spend time reorienting before you can focus deeply again.
+
+When you can stay focused, you avoid those extra switching and recovery steps.
 
 ### Why Multitasking Harms Success
 
@@ -122,16 +116,8 @@ You do not need to be a completely disciplined person to be successful. In fact,
 
 Research from University College London (2009) reveals that acquiring a new habit takes an average of **66 days** (ranging from 18 to 254 days depending on complexity).
 
-```
-High Discipline
-   │ \
-   │  \
-   │   \  (Selected Discipline Required)
-   │    \
-   │     \─────★ DAY 66: HABIT FORMS
-   │           └───────────────────────── (Routine Maintenance: Minimal Effort)
- Low Discipline ───────────────────────────────────────> Time
-```
+> **66 days on average** to form a new habit.
+> The reported range is **18 to 254 days**, depending on its complexity.
 
 ### Key Takeaways for Lie #3
 
