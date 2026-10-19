@@ -40,23 +40,24 @@ Plutôt que d'essayer de ressembler à tout le monde, le site assume ce qui fait
 
 **Avant de penser aux pixels, pensons au parcours.**
 
-<div class="media-grid cols-4">
+<div class="media-grid cols-2">
   <img class="grid-cell" src="/images/projects/twocoderz/home-mobile.webp" alt="twocoderz.team home on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/twocoderz/menu-mobile.webp" alt="twocoderz.team menu on mobile" loading="lazy" />
 </div>
 
 Le parcours est court et concentré : arriver sur une promesse claire, comprendre les services en quelques secondes, voir la preuve à travers les témoignages clients, puis nous contacter. Pas de bruit, pas de remplissage — seulement l'essentiel qui aide un client potentiel à décider s'il veut entamer la conversation.
 
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
+</div>
+
 ## Design d'interface
 
 **Une fois la route tracée, on pouvait enfin parler de l'interface.**
 
-<div class="media-grid cols-4">
+<div class="media-grid cols-2">
   <img class="grid-cell" src="/images/projects/twocoderz/services-mobile.webp" alt="twocoderz.team services on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/faqs-mobile.webp" alt="twocoderz.team FAQs on mobile" loading="lazy" />
-  <img class="grid-cell" src="/images/projects/twocoderz/newsletter-mobile.webp" alt="twocoderz.team newsletter on mobile" loading="lazy" />
   <img class="grid-cell" src="/images/projects/twocoderz/contact-mobile.webp" alt="twocoderz.team contact on mobile" loading="lazy" />
 </div>
 
@@ -68,6 +69,11 @@ Quelques choix qui ont changé l'expérience.
 
 - **Des animations avec retenue.** Les animations servent à guider l'attention et à donner de la personnalité, jamais à impressionner pour impressionner.
 - **Un positionnement honnête.** Plutôt que de prétendre être une grande agence, le site assume les forces d'un petit studio : la proximité, la concentration et le soin.
+
+<div class="media-grid cols-2">
+  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
+</div>
 
 ## Développement
 
@@ -84,6 +90,13 @@ Le site est en ligne à l'adresse : [twocoderz-team.vercel.app](https://twocoder
 **Et au final, voilà ce que ça donne.**
 
 ![Vidéo démo de twocoderz.team](/images/projects/twocoderz/twocoderz.webm)
+
+<div class="media-grid cols-4">
+  <img class="grid-cell" src="/images/projects/twocoderz/about-mobile.webp" alt="twocoderz.team about on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/process-mobile.webp" alt="twocoderz.team process on mobile" loading="lazy" />
+    <img class="grid-cell" src="/images/projects/twocoderz/home-mobile.webp" alt="twocoderz.team home on mobile" loading="lazy" />
+  <img class="grid-cell" src="/images/projects/twocoderz/menu-mobile.webp" alt="twocoderz.team menu on mobile" loading="lazy" />
+</div>
 
 Un site de studio qui assume son rôle : moderne, concentré, et conçu pour transformer les visiteurs en conversations. C'est aujourd'hui la porte d'entrée de twocoderz — et le premier projet que nous sommes fiers de montrer à nos clients potentiels.
 
