@@ -12,7 +12,7 @@ export default function ProjectsSection() {
     <section className="w-full bg-background my-0 lg:my-section py-section lg:py-section-lg overflow-hidden">
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title — pas d'animation */}
-        <h2 className="text-foreground text-center lg:text-left text-4xl sm:text-5xl font-medium leading-tight mb-16 lg:mb-major max-w-xs lg:max-w-lg">
+        <h2 className="text-foreground text-center text-4xl sm:text-6xl font-medium leading-tight mb-16 lg:mb-24 mx-auto max-w-xs lg:max-w-xl">
           {t.title}
         </h2>
       </div>

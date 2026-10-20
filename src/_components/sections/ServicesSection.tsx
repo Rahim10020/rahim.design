@@ -2,7 +2,7 @@ import ServiceCard from "../ui/cards/ServiceCard";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 
-/** Cover de chaque carte : aplat + icône (même ordre que les items localisés). */
+/** Cover de chaque carte **/
 const COVERS = [
   { coverColor: "bg-accent", iconSrc: "/icons/pinwheel.svg" },
   { coverColor: "bg-primary", iconSrc: "/icons/hammer.svg" },
@@ -15,7 +15,7 @@ export default function ServicesSection() {
     <section className="w-full bg-background my-section lg:py-section-lg">
       <div className="max-w-350 mx-auto px-page-x">
         {/* Title */}
-        <h2 className="text-foreground text-4xl sm:text-5xl font-medium leading-tight mb-heading-content lg:mb-major max-w-xs lg:max-w-md text-center lg:text-left mx-auto lg:mx-0">
+        <h2 className="text-foreground text-4xl sm:text-6xl font-medium leading-tight mb-heading-content lg:mb-major max-w-xs lg:max-w-none text-center mx-auto lg:mx-0">
           {t.title}
         </h2>
 
