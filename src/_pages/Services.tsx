@@ -132,7 +132,7 @@ export default function ServicesPage() {
       </div>
       {/* Eight section */}
       <div className="pt-24">
-        <SectionTitle variant="lg" className="max-w-xs md:max-w-md lg:max-w-xl">
+        <SectionTitle variant="xl" className="max-w-xs md:max-w-md lg:max-w-xl">
           {t.faqTitle}
         </SectionTitle>
         <div className="mx-auto max-w-4xl">

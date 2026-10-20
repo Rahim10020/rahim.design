@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* sixth section */}
       <div className="pt-8 lg:pt-24">
         <div>
-          <SectionTitle variant="xl" className="max-w-xs lg:max-w-lg">
+          <SectionTitle variant="lg" className="max-w-xs lg:max-w-lg">
             {t.hobbiesTitle}
           </SectionTitle>
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
