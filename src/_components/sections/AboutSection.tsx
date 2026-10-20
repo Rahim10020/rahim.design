@@ -15,18 +15,18 @@ export default function AboutSection() {
 
           <div>
             {/* Titres desktop : Codeur commence à la fin de Designer. */}
-            <div className="hidden mb-24 max-w-6xl w-fit mx-auto lg:grid grid-cols-[max-content_max-content]">
-              <h2 className="col-start-1 row-start-1 text-4xl md:text-8xl font-medium text-foreground">
+            <div className="hidden mb-24 w-fit mx-auto lg:grid grid-cols-[max-content_max-content]">
+              <h2 className="col-start-1 row-start-1 text-4xl md:text-9xl font-medium text-foreground">
                 {t.designer}
               </h2>
-              <h2 className="col-start-2 row-start-2 text-4xl md:text-8xl font-medium text-foreground">
+              <h2 className="col-start-2 row-start-2 text-4xl md:text-9xl font-medium text-foreground">
                 {t.coder}
               </h2>
             </div>
 
             {/* Paragraphes */}
             <div className="flex justify-center">
-              <div className="max-w-sm md:max-w-lg lg:max-w-2xl space-y-comfortable">
+              <div className="max-w-sm md:max-w-lg lg:max-w-xl space-y-comfortable">
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
                   {t.p1}
                 </p>
@@ -35,15 +35,15 @@ export default function AboutSection() {
                 </p>
                 <p className="text-lg md:text-2xl font-normal text-foreground leading-relaxed text-center lg:text-left">
                   {t.p3}
+                  <span className="pl-2">
+                    <a
+                      href={ROUTES.ABOUT}
+                      className="text-2xl text-foreground-alt font-normal hover:underline"
+                    >
+                      {t.knowMore}
+                    </a>
+                  </span>
                 </p>
-                <div className="flex items-center justify-center lg:justify-start">
-                  <a
-                    href={ROUTES.ABOUT}
-                    className="text-xl text-foreground-alt font-normal hover:underline"
-                  >
-                    {t.knowMore}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
