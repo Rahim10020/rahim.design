@@ -16,10 +16,10 @@ export default function AboutSection() {
           <div>
             {/* Titres desktop : Codeur commence à la fin de Designer. */}
             <div className="hidden mb-24 w-fit mx-auto lg:grid grid-cols-[max-content_max-content]">
-              <h2 className="col-start-1 row-start-1 text-4xl md:text-9xl font-medium text-foreground">
+              <h2 className="col-start-1 row-start-1 text-4xl md:text-8xl font-medium text-foreground">
                 {t.designer}
               </h2>
-              <h2 className="col-start-2 row-start-2 text-4xl md:text-9xl font-medium text-foreground">
+              <h2 className="col-start-2 row-start-2 text-4xl md:text-8xl font-medium text-foreground">
                 {t.coder}
               </h2>
             </div>
