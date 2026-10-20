@@ -8,11 +8,6 @@ export default function AboutSection() {
     <section className="flex w-full my-section bg-background">
       <div className="max-w-350 mx-auto flex w-full px-page-x">
         <div className="mx-auto w-full max-w-6xl py-block mt-block space-y-block">
-          {/* Titre de section — desktop only */}
-          <div className="hidden lg:flex justify-end">
-            <h2 className="text-2xl md:text-4xl font-medium">{t.behind}</h2>
-          </div>
-
           {/* Titre mobile */}
           <h2 className="lg:hidden text-4xl md:text-5xl lg:text-4xl font-medium text-foreground text-center">
             {t.behind}
@@ -20,11 +15,11 @@ export default function AboutSection() {
 
           <div>
             {/* Titres desktop : Codeur commence à la fin de Designer. */}
-            <div className="hidden mb-24 w-fit mx-auto lg:grid grid-cols-[max-content_max-content]">
-              <h2 className="col-start-1 row-start-1 text-4xl md:text-7xl font-medium text-foreground">
+            <div className="hidden mb-24 max-w-6xl w-fit mx-auto lg:grid grid-cols-[max-content_max-content]">
+              <h2 className="col-start-1 row-start-1 text-4xl md:text-8xl font-medium text-foreground">
                 {t.designer}
               </h2>
-              <h2 className="col-start-2 row-start-2 text-4xl md:text-7xl font-medium text-foreground">
+              <h2 className="col-start-2 row-start-2 text-4xl md:text-8xl font-medium text-foreground">
                 {t.coder}
               </h2>
             </div>
