@@ -64,12 +64,12 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-foreground text-2xl md:text-3xl font-medium mb-heading-text text-left">
+      <h3 className="text-foreground text-2xl md:text-3xl font-medium mb-heading-text text-center lg:text-left">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-foreground-alt-a text-base md:text-xl font-normal mx-auto max-w-sm lg:max-w-none leading-relaxed text-left">
+      <p className="text-foreground-alt-a text-base md:text-xl font-normal mx-auto max-w-sm lg:max-w-none leading-relaxed text-center lg:text-left">
         {description}
       </p>
     </article>

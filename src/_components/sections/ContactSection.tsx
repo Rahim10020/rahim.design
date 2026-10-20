@@ -51,7 +51,7 @@ export default function ContactSection() {
             {/* Left col */}
             <div className="lg:col-span-5 text-center lg:text-left">
               <div className="flex flex-col gap-6 lg:gap-8">
-                <h2 className="text-5xl md:text-6xl font-medium text-foreground leading-[1.05]">
+                <h2 className="text-5xl md:text-6xl max-w-xs lg:max-w-none mx-auto font-medium text-foreground leading-[1.05]">
                   {t.contactSectionTitle}
                 </h2>
                 <p className="text-foreground-alt-a leading-relaxed text-xl max-w-xs lg:max-w-lg mx-auto lg:mx-0 ">
