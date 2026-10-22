@@ -62,6 +62,14 @@ export default function AllProjectCard({
             className="w-full h-full object-cover"
           />
         )}
+
+        {/* Rideau de révélation au changement de filtre */}
+        <span
+          data-filter-curtain
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-20 origin-bottom bg-background-alt"
+          style={{ transform: "scaleY(0)" }}
+        />
       </ProjectMediaFrame>
 
       {/* Overlay — dégradé sombre en bas, apparaît au survol */}

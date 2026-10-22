@@ -10,6 +10,7 @@ import Button from "../../_components/ui/Button";
 import EmptyState from "../../_components/ui/others/EmptyState";
 import { Link } from "react-router-dom";
 import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
+import FilterReveal from "../../_components/ui/for-animation/FilterReveal";
 import { useLocale } from "../../lib/i18n";
 import { getUi } from "../../locales/ui";
 
@@ -46,6 +47,7 @@ export default function ProjectsPage() {
                     key={filter.value}
                     onClick={() => setActiveFilter(filter.value)}
                     active={isActive}
+                    aria-pressed={isActive}
                     className={`
                    px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground
                   ${
@@ -63,15 +65,31 @@ export default function ProjectsPage() {
           </div>
 
           {/* Masonry Grid */}
+          <p role="status" aria-live="polite" className="sr-only">
+            {filteredProjects.length > 0
+              ? t.resultsCount.replace(
+                  "{count}",
+                  String(filteredProjects.length),
+                )
+              : ""}
+          </p>
           {filteredProjects.length === 0 ? (
-            <EmptyState
-              title={t.emptyTitle}
-              description={t.emptyDescription}
-              actionLabel={t.emptyReset}
-              onAction={() => setActiveFilter("all")}
-            />
+            <FilterReveal
+              filterKey={activeFilter}
+              className="mx-auto max-w-4xl"
+            >
+              <EmptyState
+                title={t.emptyTitle}
+                description={t.emptyDescription}
+                actionLabel={t.emptyReset}
+                onAction={() => setActiveFilter("all")}
+              />
+            </FilterReveal>
           ) : (
-            <div className="columns-1 md:columns-2 gap-6 mx-auto max-w-4xl">
+            <FilterReveal
+              filterKey={activeFilter}
+              className="columns-1 md:columns-2 gap-6 mx-auto max-w-4xl"
+            >
               {filteredProjects.map((project) => (
                 <AllProjectCard
                   key={project.slug}
@@ -83,7 +101,7 @@ export default function ProjectsPage() {
                   href={getProjectPath(project.slug)}
                 />
               ))}
-            </div>
+            </FilterReveal>
           )}
           <div className="mt-24 text-center">
             <Link to={ROUTES.CONTACT} className="mt-8 inline-flex">

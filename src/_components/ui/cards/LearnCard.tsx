@@ -41,10 +41,21 @@ export default function LearnCard({
             className="w-full h-full object-cover"
           />
         )}
+
+        {/* Rideau de révélation au changement de filtre */}
+        <span
+          data-filter-curtain
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-20 origin-bottom bg-background-alt"
+          style={{ transform: "scaleY(0)" }}
+        />
       </ProjectMediaFrame>
 
       {/* Title */}
-      <h3 className="text-foreground text-2xl md:text-3xl font-medium underline  lg:no-underline lg:group-hover:underline mb-3">
+      <h3
+        data-filter-title
+        className="text-foreground text-2xl md:text-3xl font-medium underline  lg:no-underline lg:group-hover:underline mb-3"
+      >
         {title}
       </h3>
     </article>

@@ -18,7 +18,7 @@ export default function ProjectMediaFrame({
   return (
     <div
       className={twMerge(
-        "w-full overflow-hidden rounded-xl bg-background-alt ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]",
+        "relative w-full overflow-hidden rounded-xl bg-background-alt ring-1 ring-black/5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.18)]",
         className,
       )}
     >

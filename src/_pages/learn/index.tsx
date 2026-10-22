@@ -12,6 +12,7 @@ import { getUi } from "../../locales/ui";
 import { LiquidHoverButton } from "../../_components/ui/LiquidHover";
 import EmptyState from "../../_components/ui/others/EmptyState";
 import { prefetchMarkdown } from "../../_components/ui/others/markdownPrefetch";
+import FilterReveal from "../../_components/ui/for-animation/FilterReveal";
 
 type LearnFilter = "all" | LearnType;
 
@@ -54,6 +55,7 @@ export default function LearnPage() {
                       )
                     }
                     active={isActive}
+                    aria-pressed={isActive}
                     className={`
                       px-4 lg:px-8 py-2 md:py-2.5 text-lg md:text-xl font-medium cursor-pointer rounded-full border-2 border-foreground
                       ${
@@ -70,15 +72,31 @@ export default function LearnPage() {
             </div>
           </div>
 
+          <p role="status" aria-live="polite" className="sr-only">
+            {filteredArticles.length > 0
+              ? t.resultsCount.replace(
+                  "{count}",
+                  String(filteredArticles.length),
+                )
+              : ""}
+          </p>
           {filteredArticles.length === 0 ? (
-            <EmptyState
-              title={t.emptyTitle}
-              description={t.emptyDescription}
-              actionLabel={t.emptyReset}
-              onAction={() => setSearchParams({})}
-            />
+            <FilterReveal
+              filterKey={activeFilter}
+              className="mx-auto max-w-4xl"
+            >
+              <EmptyState
+                title={t.emptyTitle}
+                description={t.emptyDescription}
+                actionLabel={t.emptyReset}
+                onAction={() => setSearchParams({})}
+              />
+            </FilterReveal>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-4xl">
+            <FilterReveal
+              filterKey={activeFilter}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-4xl"
+            >
               {filteredArticles.map((article) => (
                 <Link
                   key={article.slug}
@@ -94,7 +112,7 @@ export default function LearnPage() {
                   />
                 </Link>
               ))}
-            </div>
+            </FilterReveal>
           )}
         </div>
       </div>

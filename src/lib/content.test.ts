@@ -7,9 +7,9 @@ import {
 } from "./content";
 
 describe("content", () => {
-  it("liste les 6 projets triés par order croissant", () => {
+  it("liste les 8 projets triés par order croissant", () => {
     const projects = getProjects("fr");
-    expect(projects).toHaveLength(6);
+    expect(projects).toHaveLength(8);
     const orders = projects.map((p) => p.order);
     expect([...orders].sort((a, b) => a - b)).toEqual(orders);
   });

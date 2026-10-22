@@ -111,6 +111,10 @@ export const ui = {
     title: { fr: "Projets.", en: "Projects." },
     filterAll: { fr: "Tous", en: "All" },
     cta: { fr: "Parlons de ton projet", en: "Let's talk about your project" },
+    resultsCount: {
+      fr: "Projets affichés : {count}",
+      en: "Projects shown: {count}",
+    },
     emptyTitle: { fr: "Aucun projet ici pour l'instant.", en: "No projects here yet." },
     emptyDescription: {
       fr: "Essaie un autre filtre ou reviens plus tard.",
@@ -123,6 +127,10 @@ export const ui = {
     filterAll: { fr: "Tous", en: "All" },
     filterBooks: { fr: "Livres", en: "Books" },
     filterNotes: { fr: "Notes", en: "Notes" },
+    resultsCount: {
+      fr: "Articles affichés : {count}",
+      en: "Articles shown: {count}",
+    },
     emptyTitle: { fr: "Rien ici pour l'instant.", en: "Nothing here yet." },
     emptyDescription: {
       fr: "Aucun contenu dans ce filtre. Essaie un autre filtre ou reviens plus tard.",
@@ -262,6 +270,7 @@ export function getUi(locale: SupportedLocale) {
       title: pick(ui.projectsPage.title),
       filterAll: pick(ui.projectsPage.filterAll),
       cta: pick(ui.projectsPage.cta),
+      resultsCount: pick(ui.projectsPage.resultsCount),
       emptyTitle: pick(ui.projectsPage.emptyTitle),
       emptyDescription: pick(ui.projectsPage.emptyDescription),
       emptyReset: pick(ui.projectsPage.emptyReset),
@@ -271,6 +280,7 @@ export function getUi(locale: SupportedLocale) {
       filterAll: pick(ui.learnPage.filterAll),
       filterBooks: pick(ui.learnPage.filterBooks),
       filterNotes: pick(ui.learnPage.filterNotes),
+      resultsCount: pick(ui.learnPage.resultsCount),
       emptyTitle: pick(ui.learnPage.emptyTitle),
       emptyDescription: pick(ui.learnPage.emptyDescription),
       emptyReset: pick(ui.learnPage.emptyReset),
