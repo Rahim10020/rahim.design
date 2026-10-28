@@ -36,7 +36,7 @@ export default function MobileMenu({
       aria-label="Menu principal"
       aria-hidden={!mobileMenuOpen}
       inert={!mobileMenuOpen}
-      className="lg:hidden fixed left-0 top-20 z-40 flex h-[calc(100vh-5rem)] w-full flex-col bg-primary-alt"
+      className="lg:hidden fixed left-0 top-16 z-40 flex h-[calc(100vh-5rem)] w-full flex-col bg-primary-alt"
       style={{ visibility: "hidden" }}
     >
       <nav
