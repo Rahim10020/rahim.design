@@ -12,8 +12,8 @@ link: "https://pixelpulse-blog.vercel.app/"
 imageSrc: "/images/projects/pixelpulse/pixelpulse.webm"
 ---
 
-| RÔLE                   | PLATEFORME | ANNÉE | /images/projects/pixelpulse/home.webp |
-| ---------------------- | ---------- | ----- | ------------------------------------- |
+| RÔLE                   | PLATEFORME | ANNÉE |
+| ---------------------- | ---------- | ----- |
 | Design & Développement | Web        | 2025  |
 
 ![Vidéo démo de PixelPulse — navigation sur la plateforme blog](/images/projects/pixelpulse/pixelpulse.webm)
