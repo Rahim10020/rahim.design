@@ -66,8 +66,8 @@ export default function Header() {
         mobileMenuOpen && !isDesktop ? "bg-primary" : "bg-background"
       }`}
     >
-      <div className="max-w-350 mx-auto flex h-20 items-center justify-between px-page-x">
-        <Logo size={isDesktop ? 64 : 38} />
+      <div className="max-w-350 mx-auto flex h-16 items-center justify-between px-page-x">
+        <Logo size={isDesktop ? 52 : 38} />
 
         <span className="lg:hidden text-2xl text-foreground">
           {t.nav.headerMobileTitle}

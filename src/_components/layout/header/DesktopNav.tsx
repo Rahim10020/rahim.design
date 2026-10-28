@@ -44,7 +44,7 @@ export default function DesktopNav({
           <nav className="flex items-center whitespace-nowrap">
             {items.map((link, i) => {
               const isActive = isNavItemActive(link, pathname, hash);
-              const linkClassName = `text-foreground text-xl font-normal px-6 py-4 ${
+              const linkClassName = `text-foreground text-xl font-normal px-6 py-2 ${
                 i !== 0 ? "border-l-2 border-foreground" : ""
               } ${i === 4 ? "border-r-2 border-foreground" : ""} ${
                 isActive ? "bg-primary" : "bg-transparent"
@@ -60,9 +60,7 @@ export default function DesktopNav({
                     onMouseLeave={() => onDropdownChange(null)}
                     onFocus={() => onDropdownChange(link.label)}
                     onBlur={(event) => {
-                      if (
-                        !event.currentTarget.contains(event.relatedTarget)
-                      ) {
+                      if (!event.currentTarget.contains(event.relatedTarget)) {
                         onDropdownChange(null);
                       }
                     }}
@@ -105,14 +103,10 @@ export default function DesktopNav({
                             to={item.to}
                             active={childIsActive}
                             className={`block px-6 py-3 text-xl text-foreground ${
-                              childIsActive
-                                ? "bg-primary"
-                                : "bg-transparent"
+                              childIsActive ? "bg-primary" : "bg-transparent"
                             }`}
                             onClick={() => onDropdownChange(null)}
-                            aria-current={
-                              childIsActive ? "page" : undefined
-                            }
+                            aria-current={childIsActive ? "page" : undefined}
                           >
                             {item.label}
                           </LiquidHoverLink>
@@ -195,15 +189,15 @@ export default function DesktopNav({
       </div>
 
       <button
-        className="flex shrink-0 cursor-pointer items-center justify-center p-4"
+        className="flex shrink-0 cursor-pointer items-center justify-center px-4 py-2"
         onClick={onToggleNav}
         aria-label={navOpen ? hideLabel : showLabel}
         aria-expanded={navOpen}
       >
         {navOpen ? (
-          <CloseIcon strokeWidth={1.5} />
+          <CloseIcon size={18} strokeWidth={1.5} />
         ) : (
-          <MenuIcon strokeWidth={1.5} />
+          <MenuIcon size={18} strokeWidth={1.5} />
         )}
       </button>
     </div>
