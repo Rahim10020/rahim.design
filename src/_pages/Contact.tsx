@@ -14,10 +14,10 @@ export default function ContactPage() {
       <div className="max-w-350 mx-auto px-page-x pt-12 pb-24 mb-0 lg:mb-24">
         <div className="mx-auto w-full max-w-8xl">
           <div className="flex items-start justify-between">
-            <h1 className="text-4xl md:text-5xl font-medium text-foreground max-w-md">
+            <h1 className="text-3xl md:text-4xl font-medium text-foreground max-w-md">
               {t.pageTitle}
             </h1>
-            <h2 className="hidden md:block text-2xl lg:text-4xl font-medium text-foreground">
+            <h2 className="hidden md:block text-2xl lg:text-xl font-medium text-foreground">
               {t.pageEyebrow}
             </h2>
           </div>

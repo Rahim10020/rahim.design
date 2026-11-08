@@ -17,7 +17,7 @@ export default function BlueprintNote() {
 
       {/* Rangée 1 */}
       <div className="flex h-17 lg:h-22 items-center border-b-2 border-foreground-alt-a pl-10 lg:pl-22.5">
-        <p className="whitespace-nowrap pl-8 text-3xl">{t.line1}</p>
+        <p className="whitespace-nowrap pl-8 text-2xl">{t.line1}</p>
       </div>
 
       {/* Rangée 2 : cellule vide + séparateur secondaire */}
@@ -26,7 +26,7 @@ export default function BlueprintNote() {
           aria-hidden
           className="w-9.5 lg:w-25 shrink-0 border-r-2 border-foreground-alt-a"
         />
-        <p className="flex items-center whitespace-nowrap pl-6 text-3xl">
+        <p className="flex items-center whitespace-nowrap pl-6 text-2xl">
           {t.line2}
         </p>
       </div>
