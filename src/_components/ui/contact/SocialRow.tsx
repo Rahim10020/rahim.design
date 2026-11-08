@@ -1,21 +1,10 @@
-import {
-  GITHUB_URL,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-  WHATSAPP_URL,
-} from "../../../routes";
-import {
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  WhatsappIcon,
-} from "../../icons";
+import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from "../../../routes";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "../../icons";
 
 const ITEMS = [
   { label: "GitHub", href: GITHUB_URL, Icon: GithubIcon },
   { label: "Instagram", href: INSTAGRAM_URL, Icon: InstagramIcon },
   { label: "LinkedIn", href: LINKEDIN_URL, Icon: LinkedinIcon },
-  { label: "WhatsApp", href: WHATSAPP_URL, Icon: WhatsappIcon },
 ];
 
 export default function SocialRow() {
