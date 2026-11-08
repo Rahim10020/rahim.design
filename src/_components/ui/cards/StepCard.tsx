@@ -14,11 +14,8 @@ export default function StepCard({
   number,
   title,
   description,
-  backgroundColor,
-  textColor = "dark",
   className = "",
 }: StepCardProps) {
-  const isLightText = textColor === "light";
   const cardRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -73,7 +70,6 @@ export default function StepCard({
       <div
         data-step-body
         className="relative flex-1 p-comfortable sm:p-block min-h-60 flex flex-col"
-        style={{ backgroundColor }}
       >
         {/* Orange accent bar */}
         <div
@@ -83,20 +79,12 @@ export default function StepCard({
         />
 
         {/* Title */}
-        <h3
-          className={`text-2xl md:text-3xl font-medium mt-comfortable mb-element leading-snug ${
-            isLightText ? "text-background" : "text-foreground"
-          }`}
-        >
+        <h3 className="text-2xl md:text-3xl font-medium mt-comfortable mb-element leading-snug text-foreground">
           {title}
         </h3>
 
         {/* Description */}
-        <p
-          className={`text-md md:text-xl leading-relaxed ${
-            isLightText ? "text-white/90" : "text-foreground"
-          }`}
-        >
+        <p className="text-md md:text-xl leading-relaxed text-foreground">
           {description}
         </p>
       </div>
