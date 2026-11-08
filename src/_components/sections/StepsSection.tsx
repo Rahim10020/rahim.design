@@ -77,7 +77,7 @@ export default function StepsSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-background py-section lg:py-section-lg"
+      className="w-full bg-background py-section mb-0 lg:mb-section lg:py-section-lg"
     >
       <div className="max-w-350 mx-auto px-page-x">
         <div className="mx-auto max-w-6xl">
