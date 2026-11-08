@@ -2,7 +2,6 @@ import type { SupportedLocale } from "../lib/locale";
 
 const contactFr = {
   pageTitle: "Commençons par ton projet.",
-  pageEyebrow: "CONTACT",
   blueprint: {
     line1: "Tu ne veux pas",
     line2: "remplir le form ?",
@@ -37,7 +36,6 @@ const contactFr = {
 
 const contactEn = {
   pageTitle: "Let's start with your project.",
-  pageEyebrow: "CONTACT",
   blueprint: {
     line1: "Don't want to",
     line2: "fill out the form?",

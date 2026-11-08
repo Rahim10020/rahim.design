@@ -19,7 +19,7 @@ export default function SocialRow() {
             aria-label={label}
             className="block hover:scale-105 transition-transform"
           >
-            <Icon size={44} />
+            <Icon size={42} />
           </a>
         </li>
       ))}

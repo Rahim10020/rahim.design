@@ -17,9 +17,6 @@ export default function ContactPage() {
             <h1 className="text-3xl md:text-4xl font-medium text-foreground max-w-md">
               {t.pageTitle}
             </h1>
-            <h2 className="hidden md:block text-2xl lg:text-xl font-medium text-foreground">
-              {t.pageEyebrow}
-            </h2>
           </div>
 
           <div className="mt-6 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
