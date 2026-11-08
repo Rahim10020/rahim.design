@@ -4,7 +4,11 @@ import { getUi } from "../../locales/ui";
 
 /** Cover de chaque carte **/
 const COVERS = [
-  { coverColor: "bg-accent", iconSrc: "/icons/pinwheel.svg" },
+  {
+    coverColor: "bg-primary-alt",
+    iconSrc: "/icons/pinwheel.svg",
+    iconClassName: "brightness-0 invert",
+  },
   { coverColor: "bg-primary", iconSrc: "/icons/hammer.svg" },
   { coverColor: "bg-accent-c", iconSrc: "/icons/trefoil.svg" },
 ];
@@ -28,6 +32,7 @@ export default function ServicesSection() {
               description={service.description}
               coverColor={COVERS[index]?.coverColor}
               iconSrc={COVERS[index]?.iconSrc}
+              iconClassName={COVERS[index]?.iconClassName}
             />
           ))}
         </div>

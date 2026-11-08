@@ -7,6 +7,8 @@ interface ServiceCardProps {
   coverColor?: string;
   /** Icône décorative centrée sur l'aplat. */
   iconSrc?: string;
+  /** Classe de style optionnelle pour l'icône. */
+  iconClassName?: string;
   className?: string;
 }
 
@@ -17,6 +19,7 @@ export default function ServiceCard({
   imageAlt = "",
   coverColor,
   iconSrc,
+  iconClassName = "",
   className = "",
 }: ServiceCardProps) {
   return (
@@ -46,7 +49,7 @@ export default function ServiceCard({
             height={128}
             loading="lazy"
             decoding="async"
-            className="w-16 h-16 md:w-24 md:h-24"
+            className={`w-16 h-16 md:w-24 md:h-24 ${iconClassName}`}
           />
         ) : (
           //Placeholder
