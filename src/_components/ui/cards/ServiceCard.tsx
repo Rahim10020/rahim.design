@@ -25,7 +25,7 @@ export default function ServiceCard({
     >
       {/* Cover : image, ou aplat couleur + icône, ou placeholder */}
       <div
-        className={`w-full max-w-none aspect-video md:aspect-6/5 overflow-hidden mb-comfortable flex items-center justify-center ${coverColor ?? "bg-background"}`}
+        className={`w-full max-w-none aspect-video md:aspect-3/2 overflow-hidden mb-comfortable flex items-center justify-center ${coverColor ?? "bg-background"}`}
       >
         {imageSrc ? (
           <img
@@ -46,7 +46,7 @@ export default function ServiceCard({
             height={128}
             loading="lazy"
             decoding="async"
-            className="w-24 h-24 md:w-32 md:h-32"
+            className="w-16 h-16 md:w-24 md:h-24"
           />
         ) : (
           //Placeholder
